@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <View
+            android:id="@+id/item_circle_view"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_circle_red"/>
+
+        <View
+            android:layout_width="2px"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/item_circle_view"
+            android:layout_marginStart="2.4dp"
+            android:background="@color/adapter_line_color"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/item_circle_view">
+
+            <TextView
+                android:id="@+id/just_time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="#ed4040"
+                android:textSize="16sp"
+                android:text="刚刚"/>
+
+            <TextView
+                android:id="@+id/date_time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/just_time_text"
+                android:layout_alignBottom="@+id/just_time_text"
+                android:textColor="@color/adapter_gray_color"
+                android:textSize="12sp"
+                android:text="2017/6/20"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="12.4dp"
+        android:layout_marginRight="12.4dp"
+        android:background="@drawable/shape_bg_adapter_content"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="12dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/user_info_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            >
+
+            <com.dfsx.core.common.view.CircleButton
+                android:id="@+id/item_logo_image_View"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/item_user_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/adapter_gray_color"
+                android:textSize="15dp"
+                android:text="汗啊汗"/>
+
+            <TextView
+                android:id="@+id/user_grade_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:visibility="gone"
+                android:text="白钻"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_info_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:text="杜大爷到了新盖的房子那，瞅了一圈，当时在场很多人，杜大爷说这个房子位置不好，养不起来家禽。老娃子很不高兴，毕竟上梁图个吉利，杜大爷这么说他有点恼火，但也不敢冲撞。就说不信那套，杜大爷在胡说。杜大爷说等你养不起来在找我吧，然后就去上梁了"/>
+
+        <com.dfsx.lzcms.liveroom.view.ImageListGroupView
+            android:id="@+id/item_image_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
+</LinearLayout>

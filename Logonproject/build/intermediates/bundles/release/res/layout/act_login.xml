@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:background="@color/slider_menu_background_color"
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+            android:background="@color/white"
+            android:id="@+id/logon_top_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="5dp"
+            android:layout_alignParentTop="true">
+
+        <ImageButton
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:id="@+id/logon_retun"
+                android:src="@drawable/logon_back_btn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"/>
+
+        <TextView
+                android:textSize="@dimen/titlebar_titlesize"
+                android:id="@+id/act_title_txt"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_title_button"
+                android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+        <RelativeLayout android:layout_width="match_parent"  android:layout_below="@id/logon_top_layout"   android:layout_above="@+id/logon_bottom_layout" android:layout_height="match_parent">
+   <LinearLayout android:layout_width="match_parent"  android:orientation="vertical" android:layout_height="match_parent">
+    <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            >
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:drawablePadding="10dp"
+                android:id="@+id/login_username" android:background="@drawable/login_account"
+                style="@style/CCWEditTextStyle" android:padding="10dp" android:hint="@string/login_account"
+                android:imeOptions="actionNext" android:inputType="textNoSuggestions|text"
+                android:singleLine="true" />
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:drawablePadding="10dp"
+                android:id="@+id/login_password"
+                android:background="@drawable/login_account"
+                style="@style/CCWEditTextStyle" android:padding="10dp"
+                android:hint="@string/login_password" android:layout_marginTop="-1.5dp"
+                android:singleLine="true" android:imeOptions="actionGo" android:password="true"/>
+
+        <!--<CheckBox-->
+                <!--android:button="@drawable/check_background"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/login_remember_password"-->
+                <!--android:id="@+id/btn_savepwd" style="@style/CCWCheckBoxStyle"-->
+                <!--android:layout_marginTop="10dp"/>-->
+    </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:gravity="right|center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+                <TextView
+                        android:textSize="10.0sp"
+                        android:textColor="@color/logon_editr_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:text="忘记密码"
+                        android:layout_centerInParent="true"/>
+                <Button
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@drawable/icon_triangle_right"
+                        />
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                >
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login_login_button"
+                android:id="@+id/login_btn" style="@style/CCWButtonStyle"
+                android:textSize="15.0sp"
+                android:textColor="@color/white"
+                android:minHeight="40dp"
+                android:background="@color/public_resd_bkg"
+                />
+        </LinearLayout>
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:visibility="gone"
+            >
+        <!--<Button-->
+                <!--android:textSize="@dimen/titlebar_titlesize"-->
+                <!--android:textColor="@color/red"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="注册账号"-->
+                <!--android:id="@+id/register_btn"-->
+                <!--android:gravity="center"-->
+                <!--android:background="@null"-->
+                <!--android:layout_centerInParent="true"/>-->
+        </LinearLayout>
+
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            >
+
+        <ImageView
+                android:button="@null"
+                android:layout_marginLeft="13dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/left_logon"
+                android:layout_width="54dp"
+                android:layout_height="1dp"
+                />
+        <TextView
+                android:textSize="17.0sp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/login_other_button"
+                />
+        <ImageView
+                android:button="@null"
+                android:layout_centerVertical="true"
+                android:src="@drawable/right_logon"
+                android:layout_width="54dp"
+                android:layout_height="1dp"
+            />
+
+    </LinearLayout>
+
+
+    <!-- qq. weixin  -->
+    <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/otherlogon"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dip"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="6dip">
+
+        <RelativeLayout style="@style/LoginToggleContainerStyle">
+
+            <ImageButton
+                    android:background="@null"
+                    android:id="@+id/qq_log_btn"
+                    android:src="@drawable/qq"
+                    style="@style/LoginToggleButtonStyle"/>
+
+        </RelativeLayout>
+
+
+            <RelativeLayout style="@style/LoginToggleContainerStyle">
+
+                    <ImageButton
+                            android:background="@null"
+                            android:button="@null"
+                            android:id="@+id/weixin_log"
+                            android:src="@drawable/weixin"
+                            style="@style/LoginToggleButtonStyle"/>
+            </RelativeLayout>
+
+        <RelativeLayout style="@style/LoginToggleContainerStyle">
+
+            <ImageButton
+                    android:background="@null"
+                    android:id="@+id/weibo_log_btn"
+                    android:src="@drawable/weibo"
+                    style="@style/LoginToggleButtonStyle"/>
+        </RelativeLayout>
+    </LinearLayout>
+   </LinearLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+                android:id="@+id/logon_bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="39dp"
+                android:gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                >
+
+                <Button
+                        android:textSize="17.0sp"
+                        android:textColor="@android:color/black"
+                        android:background="@null"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/register_btn"
+                        android:text="即刻注册"
+                        android:layout_centerInParent="true"/>
+
+                <Button
+                        android:layout_toRightOf="@+id/register_btn"
+                        android:layout_width="12dp"
+                        android:layout_centerVertical="true"
+                        android:layout_height="12dp"
+                        android:background="@drawable/icon_triangle_right"
+                        />
+           </RelativeLayout>
+        </RelativeLayout>
+</LinearLayout>
+
+<!-- From: file:/E:/workspace/idea/gztv/Logonproject/src/main/res/layout/act_login.xml -->

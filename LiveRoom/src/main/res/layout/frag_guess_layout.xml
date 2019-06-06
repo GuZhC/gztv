@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/bet_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:listSelector="@color/transparent"
+            android:background="@color/public_bgd"
+            android:divider="@color/transparent"
+            android:layout_above="@+id/bottom_bet_view"
+            android:dividerHeight="0px">
+        </ListView>
+
+        <RelativeLayout
+            android:id="@+id/bottom_bet_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <include layout="@layout/guess_coins_layout"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

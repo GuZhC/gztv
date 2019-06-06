@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white">
+
+    <ScrollView android:layout_width="match_parent"  android:scrollbars="vertical" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                      android:paddingTop="10dp"
+                      android:paddingLeft="13dp"
+                      android:paddingRight="13dp"
+                      android:layout_height="match_parent">
+            <TextView
+                    android:id="@+id/top_tel_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textSize="15.0sp"
+                    android:textColor="@color/news_title_color"
+                    android:hint="当前注册账号"/>
+
+            <RelativeLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:gravity="center_vertical"
+                          android:layout_marginTop="7dp"
+                          android:paddingRight="5dp"
+                          android:background="@color/comment_op_background"
+                          android:layout_height="48dp">
+                <EditText
+                        android:id="@+id/logon_pwd_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@null"
+                        android:paddingLeft="5dp"
+                        android:layout_marginRight="21dp"
+                        android:password="true"
+                        android:textSize="15.0sp"
+                        android:layout_toLeftOf="@+id/show_pwd_btn"
+                        android:textColor="@color/news_title_color"
+                        android:hint="请输入密码"/>
+
+                <ImageView android:layout_width="21dp"
+                           android:id="@+id/show_pwd_btn"
+                           android:layout_marginTop="5dp"
+                           android:layout_alignParentRight="true"
+                           android:layout_centerVertical="true"
+                           android:layout_height="10dp"
+                           android:background="@drawable/hide_pwd_icon"/>
+            </RelativeLayout>
+
+            <EditText
+                    android:id="@+id/logo_agein_pwd_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="7dp"
+                    android:paddingRight="21dp"
+                    android:paddingLeft="5dp"
+                    android:textSize="15.0sp"
+                    android:password="true"
+                    android:textColor="@color/news_title_color"
+                    android:background="@color/comment_op_background"
+                    android:hint="请再次输入密码"/>
+
+            <EditText
+                    android:id="@+id/top_nickname_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="7dp"
+                    android:paddingRight="21dp"
+                    android:paddingLeft="5dp"
+                    android:textSize="15.0sp"
+                    android:textColor="@color/news_title_color"
+                    android:background="@color/comment_op_background"
+                    android:hint="请填写你想要的昵称"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textSize="15.0sp"
+                    android:textColor="@color/news_title_color"
+                    android:text="完善账号信息，将有更多人认识你"/>
+
+            <RelativeLayout android:layout_width="match_parent"  android:layout_marginTop="13dp"
+                            android:id="@+id/user_logo_view"
+                            android:layout_height="wrap_content">
+                    <com.dfsx.core.common.view.CircleImageView android:layout_width="100dp"
+                                                            android:id="@+id/user_imag_btn"
+                                                               android:layout_centerInParent="true"
+                                                            android:layout_centerVertical="true"
+                                                            android:layout_height="105dp"
+                                                            android:background="@drawable/user_info_deafult_logo"/>
+                <ImageView android:layout_width="30dp"
+                           android:id="@+id/user_set_logo_btn"
+                           android:layout_centerVertical="true"
+                           android:layout_toRightOf="@+id/user_imag_btn"
+                           android:layout_height="30dp"
+                           android:layout_marginLeft="-8dp"
+                           android:background="@drawable/user_add_logo_icon"/>
+            </RelativeLayout>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textSize="15.0sp"
+                    android:textColor="@color/grey3"
+                    android:text="请设置你的头像"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_marginTop="29dp"  android:gravity="center_horizontal" android:layout_centerInParent="true"
+                              android:layout_height="wrap_content">
+                    <RadioGroup  android:id="@+id/group_sex_atr"    android:layout_width="130dp"    android:orientation="horizontal" android:layout_height="48dp">
+
+                        <RadioButton
+                                android:id="@+id/bar_nosex_btn"
+                                android:layout_width="30dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:button="@null"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/selector_text_bankground_color"
+                                android:gravity="center"
+                                android:checked="true"
+                                android:text="保密"
+                                android:textColor="@drawable/selector_bar_text_color"
+                                android:textSize="15sp" />
+
+                        <RadioButton
+                                android:id="@+id/bar_man_btn"
+                                android:layout_width="30dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginRight="5dp"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:text="男"
+                                android:textColor="@drawable/selector_bar_text_color"
+                                android:background="@drawable/selector_text_bankground_color"
+                                android:textSize="15sp" />
+
+                        <RadioButton
+                                android:id="@+id/bar_woman_btn"
+                                android:layout_width="30dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:button="@null"
+                                android:text="女"
+                                android:textColor="@drawable/selector_bar_text_color"
+                                android:background="@drawable/selector_text_bankground_color"
+                                android:textSize="15sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_marginTop="40dp" android:gravity="center_horizontal"
+                          android:orientation="vertical" android:layout_height="wrap_content">
+                <EditText
+                        android:id="@+id/user_b_sign_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:paddingLeft="10dp"
+                        android:textSize="15.0sp"
+                        android:textColor="@color/news_title_color"
+                        android:background="@color/comment_op_background"
+                        android:hint="@string/register_user_b_sign_hit"/>
+
+                <TextView
+                        android:id="@+id/user_b_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="7dp"
+                        android:paddingLeft="10dp"
+                        android:gravity="left|center"
+                        android:paddingRight="5dp"
+                        android:textSize="15.0sp"
+                        android:textColor="@color/news_title_color"
+                        android:background="@color/comment_op_background"
+                        android:hint="请选择你的地址"/>
+
+                <EditText
+                        android:id="@+id/mail_ediddttssext"
+                        android:layout_width="305dp"
+                        android:visibility="gone"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="7dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="17dp"
+                        android:drawableRight="@drawable/reg_wel_clear"
+                        android:textSize="15.0sp"
+                        android:textColor="@color/news_title_color"
+                        android:background="@color/comment_op_background"
+                        android:hint="邮箱"/>
+
+                <TextView android:layout_width="305dp" android:id="@+id/comfirm_btn" android:layout_height="55dp" android:layout_marginTop="24dp"
+                          android:background="@color/logon_theme_bkg" android:layout_gravity="center_horizontal"
+                          android:textColor="@color/white" android:text="进入APP" android:textSize="17.0sp"
+                          android:gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+<!-- From: file:/E:/workspace/idea/gztv/Logonproject/src/main/res/layout/frag_user_basic2.xml --><!-- From: file:/E:/workspace/idea/gztv/Logonproject/build/intermediates/bundles/debug/res/layout/frag_user_basic2.xml -->

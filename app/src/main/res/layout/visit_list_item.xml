@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:descendantFocusability="blocksDescendants"
+              android:layout_height="wrap_content">
+
+    <LinearLayout android:layout_width="match_parent"   android:background="@color/white"  android:paddingLeft="13dp" android:paddingRight="7dp" android:orientation="vertical" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:layout_width="wrap_content"   android:layout_alignParentLeft="true" android:layout_height="wrap_content">
+                 <LinearLayout android:layout_width="wrap_content" android:gravity="center"    android:orientation="horizontal" android:layout_height="50dp">
+                     <com.dfsx.core.common.view.CircleButton
+                             android:id="@+id/visit_user_imge"
+                             android:src="@drawable/user_default_commend"
+                             android:layout_width="43dp"
+                             android:layout_height="43dp"
+                             android:layout_alignParentLeft="true"
+                             android:layout_centerVertical="true"/>
+                     <LinearLayout android:layout_width="wrap_content"
+                                   android:orientation="vertical"
+                                   android:layout_height="wrap_content">
+                         <TextView
+                                 android:id="@+id/visit_item_title"
+                                 android:singleLine="true"
+                                 android:ellipsize="end"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/news_item_title_color"
+                                 android:textSize="14.0sp"
+                                 />
+                         <TextView
+                                 android:id="@+id/visit_item_content"
+                                 android:singleLine="true"
+                                 android:ellipsize="end"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/gray_b5"
+                                 android:textSize="12.0sp"
+                                 />
+                     </LinearLayout>
+                 </LinearLayout>
+            </RelativeLayout>
+            <ImageView
+                    android:layout_width="63dp"
+                    android:id="@+id/visit_item_addttion"
+                    android:layout_height="29dp"
+                    android:src="@drawable/commuity_att_normal"
+                    android:background="@null"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:background="@color/item_list_view_divide_color"  android:layout_height="1dp"/>
+</LinearLayout>

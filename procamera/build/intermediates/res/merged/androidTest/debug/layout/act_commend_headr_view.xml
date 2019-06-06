@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"  android:orientation="vertical">
+        <View
+                android:layout_width="match_parent"
+                android:background="@color/line_e9_color"
+                android:layout_height="1dp"/>
+        <include layout="@layout/nc_commend_replay_top_item"   />
+        <View android:layout_width="match_parent"   android:layout_height="2dp"   android:background="@color/white"  />
+        <TextView android:layout_width="match_parent"  android:paddingLeft="5dp"  android:layout_marginTop="23dp"  android:layout_marginBottom="23dp" android:textSize="15.0sp" android:textColor="@color/COLOR_51"  android:text="Ta的评论" android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/layout/act_commend_headr_view.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/bundles/debug/res/layout/act_commend_headr_view.xml -->

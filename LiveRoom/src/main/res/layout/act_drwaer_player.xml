@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/scroll_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/content_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+        </ScrollView>
+
+        <com.dfsx.lzcms.liveroom.view.slidemenu.LiveRoomSlideMenu
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:slidemenu="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- The main content view -->
+            <FrameLayout
+                android:id="@+id/drawer_layout_content_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                slidemenu:layout_role="primaryMenu"
+                />
+            <!-- The navigation drawer -->
+            <FrameLayout
+                android:id="@+id/right_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                slidemenu:layout_role="content"
+                />
+        </com.dfsx.lzcms.liveroom.view.slidemenu.LiveRoomSlideMenu>
+
+        <RelativeLayout
+            android:id="@+id/top_of_drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>

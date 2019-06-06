@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                android:baselineAligned="false">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:id="@+id/LogoImageViewLayOut">
+
+        <ImageView
+                android:layout_width="50dp"
+                android:scaleType="fitXY"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:id="@+id/LogoImageView"
+                android:src="@drawable/radio_item_mark"
+                />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="新闻频道"
+                android:textSize="15.0sp"
+                android:id="@+id/titleTextView"
+                android:layout_centerVertical="true"/>
+
+        <ImageView
+                android:clickable="true"
+                android:id="@+id/Favorites"
+                android:visibility="gone"
+                android:background="@drawable/favorites_bk"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="2dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/item_room_line_container"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:orientation="horizontal">
+    </LinearLayout>
+</LinearLayout><!-- From: file:/E:/workspace/idea/gztv/shopping/src/main/res/layout/adapter_item_live_user_grid_layout.xml -->

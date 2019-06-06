@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:background="@color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+
+    <RelativeLayout
+            android:id="@id/reserved_bar_layout"
+            android:background="@color/red"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentTop="true">
+
+        <ImageButton
+                android:src="@drawable/return_button_xml"
+                android:layout_marginTop="7.0dip"
+                android:layout_marginLeft="7.0dip"
+                android:id="@id/common_return_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/transparent"
+                android:scaleType="center"
+                android:layout_alignParentLeft="true"/>
+
+        <TextView
+                android:textSize="@dimen/titlebar_titlesize"
+                android:id="@id/common_title"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="鍏充簬"
+                android:singleLine="true"
+                android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+    <!--<include android:id="@id/reserved_bar_layout" layout="@layout/common_setting_bar" />-->
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_below="@+id/reserved_bar_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            >
+
+        <ImageView
+                android:layout_width="149dp"
+                android:layout_height="198dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_gravity="center_horizontal"/>
+
+        <TextView
+                android:textSize="15.0sp"
+                android:textColor="@color/lives_bottom_gray"
+                android:visibility="gone"
+                android:text="@string/app_sedcode_text"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/version_code"
+                style="@style/auto_size"/>
+    </LinearLayout>
+    <!--<RelativeLayout  android:id="@+id/slogan"  android:layout_width="fill_parent" android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true">-->
+    <!--<TextView    android:textSize="25.0sp" android:textColor="@color/about_lay1"-->
+    <!--android:text="鎻愪緵鍗撹秺鏈嶅姟 鎴愬氨瀹㈡埛浠峰�"-->
+    <!--android:layout_centerHorizontal="true" style="@style/auto_size"/>-->
+    <!--</RelativeLayout>-->
+    <RelativeLayout
+            android:id="@+id/about_company"
+            android:clickable="true"
+            android:layout_marginBottom="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            >
+
+        <TextView
+                android:id="@+id/about_ly"
+                android:textSize="16.0sp"
+                android:textColor="@color/about_lay1"
+                android:text="成都东方盛行电子有限责任公司 , 技术支持"
+                android:layout_marginBottom="5dp"
+                android:layout_centerHorizontal="true"
+                style="@style/auto_size"/>
+
+        <TextView
+                android:id="@+id/about_tail_tv"
+                android:textSize="13.0sp"
+                android:textColor="@color/lives_bottom_gray"
+                android:text="Copyright@  2016"
+                android:layout_below="@+id/about_ly"
+
+                android:layout_centerHorizontal="true"
+                style="@style/auto_size"/>
+    </RelativeLayout>
+
+</RelativeLayout>

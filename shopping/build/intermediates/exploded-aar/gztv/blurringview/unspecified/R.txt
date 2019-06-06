@@ -1,0 +1,11 @@
+int attr blurRadius 0x7f010000
+int attr downsampleFactor 0x7f010001
+int attr overlayColor 0x7f010002
+int color default_overlay_color 0x7f020000
+int integer default_blur_radius 0x7f030000
+int integer default_downsample_factor 0x7f030001
+int string app_name 0x7f040000
+int[] styleable PxBlurringView { 0x7f010000, 0x7f010001, 0x7f010002 }
+int styleable PxBlurringView_blurRadius 0
+int styleable PxBlurringView_downsampleFactor 1
+int styleable PxBlurringView_overlayColor 2

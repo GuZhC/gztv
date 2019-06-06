@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:background="@color/slider_menu_background_color"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+
+        <RelativeLayout
+                android:id="@+id/load_fail_layout"
+                android:visibility="gone"
+                android:background="@color/ivory"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                >
+            <!--<View android:id="@id/reload_layout"  android:background="@color/loadfail"  android:layout_width="140dp"  android:layout_height="170dp"-->
+            <!--android:layout_centerInParent="true" style="@style/auto_size"/>-->
+            <!--android:layout_below="@id/reload_layout"-->
+            <ImageButton
+                    android:id="@+id/reload_btn"
+                    android:layout_height="60dp"
+                    android:layout_width="68dp"
+                    android:background="@drawable/load_retry"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"/>
+
+            <TextView
+                    android:textSize="13.0sp"
+                    android:textColor="@color/loading_fail_font"
+                    android:text="加载失败,请重新刷新"
+                    android:layout_below="@id/reload_btn"
+                    android:layout_centerHorizontal="true"
+                    style="@style/auto_size"/>
+        </RelativeLayout>
+
+
+        <!--android:layout_below="@id/impnews_page_big_pic"  -->
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scrollbarStyle="outsideOverlay"
+                android:id="@+id/news_scroll_layout"
+                android:divider="@null"
+                />
+    </FrameLayout>
+
+    <!--<LinearLayout android:layout_alignParentTop="true"  android:background="@color/green" android:gravity="center"  android:layout_width="match_parent" android:layout_height="29dp">-->
+    <!--</LinearLayout>-->
+</RelativeLayout>
+

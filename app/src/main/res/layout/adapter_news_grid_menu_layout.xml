@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.dfsx.lzcms.liveroom.view.RectangleRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ratio="1.63"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/item_menu_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <com.dfsx.core.common.view.CircleImageView
+                android:id="@+id/news_menu_logo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/text_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="13dp"
+                android:text="1111"
+                android:textSize="13dp"
+                android:textColor="#636363"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_react_right"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#d7d7d7"
+            android:layout_alignParentRight="true"/>
+    </com.dfsx.lzcms.liveroom.view.RectangleRelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#d7d7d7"
+        android:layout_alignParentRight="true"/>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_checked="true"
+          android:drawable="@drawable/icon_guess_rules_selected"/>
+    <item android:drawable="@drawable/icon_guess_rules"/>
+</selector><!-- From: file:/E:/workspace/idea/gztv/LiveRoom/src/main/res/drawable/img_guess_rules.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/drawable/img_guess_rules.xml -->

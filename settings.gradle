@@ -1,0 +1,1 @@
+include ':app', ':Core', ':pulltorefresh', ':VideoIjkplayer', ':ThirdLoginAndShare', ':OpenImage', ':SelectedMedia', ':LiveRoom', ':Logonproject', ':adderesspicker', ':librestreaming', ':liveRecord', ':blurringview', ':aliyunpush', ':update', ':pullToZoomLibrary', ':shopping', ':searchlibaray', ':datechooseview', ':statistics', ':procamera',':zbarcode'

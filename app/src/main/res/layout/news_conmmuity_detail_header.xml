@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_width="match_parent" xmlns:more="http://schemas.android.com/apk/res-auto"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:scrollbars="vertical"
+            android:layout_height="match_parent">
+
+
+        <LinearLayout android:id="@+id/user_head_layout" android:paddingBottom="10dp"
+                      android:paddingLeft="14dp"
+                      android:paddingRight="14dp"
+                      android:background="@color/white" android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+            <include layout="@layout/community_user_header"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:id="@+id/news_detail_web"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="14dp" android:paddingRight="14dp"
+                android:layout_height="match_parent"
+        >
+
+            <WebView
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:id="@+id/webView_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            <com.dfsx.ganzcms.app.view.TabGrouplayout
+                android:layout_width="wrap_content"
+                                                       android:id="@+id/communt_img_taglay"
+                                                       android:layout_marginTop="15dp"
+                                                       android:layout_height="wrap_content">
+
+            </com.dfsx.ganzcms.app.view.TabGrouplayout>
+
+            <!--  相关  -->
+            <RelativeLayout
+                    android:id="@+id/bottom_relation_layout"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:paddingBottom="10dp"
+                    android:layout_below="@+id/webView_content"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:orientation="horizontal"
+                        android:background="@color/albumback"
+                        android:gravity="left|center_vertical"
+                        android:layout_height="35dp">
+
+                    <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/live_bottom_keyboard_icon"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:textSize="14.0sp"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:layout_height="wrap_content"
+                            android:text="相关阅读"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!--  播放器   -->
+        <LinearLayout
+                android:id="@+id/news_detail_centernss"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_height="204dp"
+        >
+            <include layout="@layout/video_play_container"/>
+        </LinearLayout>
+
+
+        <LinearLayout android:id="@+id/imgs" android:layout_width="match_parent" android:orientation="vertical"
+                      android:background="@color/white"
+                      android:layout_height="wrap_content">
+
+            <!-- 多图 -->
+            <LinearLayout android:id="@+id/commomtiy_imgs" android:paddingLeft="14dp"
+                          android:paddingRight="14dp" android:layout_marginBottom="10dp"
+                          android:orientation="vertical" android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+
+            <!-- 标签  -->
+            <com.dfsx.ganzcms.app.view.TabGrouplayout
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/cmy_group_taglay"
+                    android:layout_marginTop="12dp"
+                    android:layout_height="wrap_content"/>
+
+            <View android:layout_width="match_parent"  android:layout_marginTop="20dp" android:layout_height="1dp"  android:background="@color/line_e9_color"  />
+
+            <!-- 点赞  -->
+            <LinearLayout android:layout_width="match_parent"
+                          android:gravity="center_vertical"
+                          android:layout_marginTop="20dp"
+                          android:id="@+id/bottom_oper_view"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+
+                <View android:layout_width="0dp" android:layout_weight="0.1"
+                      android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:textSize="13.0sp"
+                        android:textColor="@color/user_font_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:visibility="gone"
+                        android:id="@+id/praise_animal_txt"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:text="+1"/>
+
+
+                <LinearLayout android:layout_width="0dp" android:layout_weight="0.8" android:gravity="center"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cvideo_praise_tx"
+                            style="@style/coummnunity_praise_theme"
+                            android:layout_marginRight="45dp"
+                            android:text="0"/>
+
+
+                    <TextView
+                            android:id="@+id/cvideo_stamp_tx"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/coummnunity_stramp_theme"
+                            android:text="0"/>
+                </LinearLayout>
+                <View android:layout_width="0dp" android:layout_weight="0.1"
+                      android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"  android:layout_marginTop="20dp" android:layout_height="1dp"  android:background="@color/line_e9_color"  />
+
+            <!-- 点赞用户 -->
+            <LinearLayout android:layout_width="match_parent" android:paddingLeft="13dp"  android:layout_marginTop="20dp"  android:orientation="horizontal"   android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="0dp" android:gravity="left" android:layout_weight="0.1" android:layout_height="wrap_content">
+                    <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="17dp"
+                            android:background="@null"
+                            android:src="@drawable/community_prise_mark"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp"  android:layout_weight="0.9"  android:layout_height="wrap_content">
+                    <com.dfsx.ganzcms.app.view.MoreTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/mulite_line_txt"
+                            more:textColor="@color/public_purple_bkg"
+                            more:textSize="14.0sp"
+                            more:maxLine="3"
+                            more:text=""/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:orientation="horizontal"
+                          android:layout_marginTop="14dp" android:paddingBottom="10dp"
+                          android:paddingLeft="10dp" android:paddingRight="14dp"
+                          android:background="@color/white" android:layout_height="wrap_content">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:textSize="12.0sp"
+                            android:visibility="gone"
+                            android:id="@+id/communtiry_count_tx"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="@color/black"
+                            android:singleLine="true"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="right"
+                            android:layout_height="wrap_content"
+                            android:text="评论3"/>
+
+                    <ImageView android:layout_width="47dp" android:layout_height="16dp"
+                               android:background="@null"
+                               android:visibility="gone"
+                               android:layout_centerInParent="true"
+                               android:src="@drawable/cvideo_reping_icon"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:textSize="12.0sp"
+                            android:id="@+id/communtiry_brower_count_tx"
+                            android:textColor="@color/search_font_color"
+                            android:singleLine="true"
+                            android:layout_alignParentRight="true"
+                            android:gravity="left"
+                            android:layout_height="wrap_content"
+                            android:text="3次浏览"/>
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:background="@color/comment_background"
+                          android:layout_height="8dp"/>
+            <LinearLayout android:layout_width="match_parent" android:background="@color/comment_op_background"
+                          android:layout_height="1dp"/>
+            <LinearLayout android:id="@+id/comnend_noplay_layout" android:layout_width="match_parent"
+                          android:layout_gravity="center" android:background="@color/white"
+                          android:layout_height="160dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:orientation="vertical"
+                                  android:layout_marginTop="10dp"
+                                  android:gravity="center_horizontal"
+                                  android:layout_height="wrap_content">
+                        <ImageView android:layout_width="151dp" android:layout_height="116dp"
+                                   android:background="@null"
+                                   android:layout_centerInParent="true"
+                                   android:src="@drawable/cvideo_no_commad" android:scaleType="centerInside"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:textSize="14.0sp"
+                                android:textColor="@color/search_font_color"
+                                android:singleLine="true"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:text="速度评论抢沙发"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_video_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp"
+            android:textSize="18dp"
+            android:textColor="@color/black_21"
+            android:textAppearance="@style/TextAppearance.BoldFont"
+            android:text="康定请客"/>
+
+        <TextView
+            android:id="@+id/tv_video_desc_info_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:textColor="@color/gray_75"
+            android:text="aaaa"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/video_comment_num_text"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:drawableLeft="@drawable/icon_comment_msg_black"
+                android:drawablePadding="7dp"
+                android:textColor="@color/black_33"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:text="120"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/tv_video_share"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/icon_video_right_go"
+                android:scaleType="center"
+                android:layout_marginRight="20dp"/>
+
+            <ImageView
+                android:id="@+id/tv_video_store"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:scaleType="center"
+                android:src="@drawable/icon_video_wish"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/line_e0_color"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="30dp"
+            android:paddingBottom="22dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="@color/black_21"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.BoldFont"
+                android:text="@string/tv_series_size"/>
+
+            <TextView
+                android:id="@+id/btn_go_all_video_list"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:drawableRight="@drawable/cloumn_right_icon"
+                android:textSize="15dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="@string/tv_series_all_size"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_video_list"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_height="55dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="23dp"/>
+
+    <LinearLayout
+        android:id="@+id/other_video_info_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/line_e0_color"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/black_21"
+            android:layout_gravity="center_vertical"
+            android:paddingTop="30dp"
+            android:paddingBottom="22dp"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.BoldFont"
+            android:text="@string/tv_series_others"
+            android:id="@+id/textView2"/>
+
+        <com.dfsx.lzcms.liveroom.view.NoScrollGridView
+            android:id="@+id/other_video_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="2"
+            android:horizontalSpacing="24dp"
+            android:verticalSpacing="20dp"
+            android:background="@color/white"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="35dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/line_e0_color"/>
+
+    <LinearLayout
+        android:id="@+id/comnend_noplay_layout"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:layout_height="160dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="74dp"
+                    android:background="@null"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/video_nocommedn_icon"
+                    android:scaleType="centerInside"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="14.0sp"
+                    android:textColor="@color/search_font_color"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/news_act_nocommemnd_hit"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

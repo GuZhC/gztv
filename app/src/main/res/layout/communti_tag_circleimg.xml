@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+>
+
+        <!--<com.dfsx.core.common.view.CircleButton-->
+        <com.dfsx.ganzcms.app.view.RecentUserImage
+                android:id="@+id/visit_user_imge"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="7dp"
+                android:layout_centerVertical="true"/>
+
+</RelativeLayout>

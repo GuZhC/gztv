@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_bgd">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="3dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/task_layout"
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            >
+
+            <ImageView
+                android:id="@+id/task_bkg_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_task_comment"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/item_task_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.MediumFont"
+                    android:textSize="16dp"
+                    android:text="发表评论"/>
+
+                <TextView
+                    android:id="@+id/item_task_ok_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="13dp"
+                    android:textAppearance="@style/TextAppearance.MediumFont"
+                    android:textSize="32dp"
+                    android:text="0/10"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/item_task_ok_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/icon_task_ok"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@color/black"
+              android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_short_video_detail_title"
+        android:layout_width="wrap_content"
+        android:text="奋力推动治蜀兴川，在上新台阶奋力推动治蜀奋力推动治蜀兴川，在上新台阶奋力推动治蜀"
+        android:textSize="16sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_margin="12dp"
+        android:textColor="@color/color_fe"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_short_video_detail_data"
+            android:textSize="10sp"
+            android:textColor="@color/color_fe"
+            android:layout_width="wrap_content"
+            tools:text="@string/tv_short_video_detail_data"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="28dp"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_short_video_detail_praise"
+            android:layout_weight="1"
+            android:src="@mipmap/icon_short_video_praise"
+            android:layout_width="45dp"
+            android:layout_height="30dp"/>
+
+        <ImageView
+            android:id="@+id/iv_short_video_detail_comment"
+            android:layout_weight="1"
+            android:src="@mipmap/icon_short_video_comm_big"
+            android:layout_width="45dp"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="分享至"
+            android:textSize="10sp"
+            android:layout_marginLeft="38dp"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"/>
+
+
+        <ImageView
+            android:id="@+id/iv_short_video_detail_share_wx"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:text="分享至"
+            android:src="@mipmap/icon_short_video_wx"
+            android:layout_height="30dp"/>
+
+        <ImageView
+            android:id="@+id/iv_short_video_detail_share_pyq"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:src="@mipmap/icon_short_video_friends"
+            android:layout_height="30dp"/>
+
+        <ImageView
+            android:id="@+id/iv_short_video_detail_share_wb"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:src="@mipmap/icon_short_video_wb"
+            android:layout_height="30dp"/>
+
+        <ImageView
+            android:id="@+id/iv_short_video_detail_share_qq"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:src="@mipmap/icon_short_video_qq"
+            android:layout_height="30dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="54dp"
+        android:text="相关推荐"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="56dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/shape_bg_item_video"
+        android:layout_height="3dp"/>
+
+</LinearLayout>

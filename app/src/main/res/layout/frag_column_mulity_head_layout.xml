@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+        >
+    <LinearLayout android:layout_width="match_parent"  android:orientation="vertical"  android:layout_height="match_parent">
+        <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:background="@color/public_purple_bkg"-->
+                <!--android:layout_height="@dimen/status_bar_height"/>-->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="30dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/top_bar_bankground"
+                android:id="@+id/top_bar">
+
+        <RelativeLayout android:layout_width="match_parent"  android:gravity="center"
+                        android:layout_height="33dp">
+            <ImageButton android:layout_width="22dp"  android:visibility="gone" android:background="@null"  android:id="@+id/header_add_btn" android:layout_centerVertical="true"  android:layout_alignParentLeft="true"  android:layout_height="22dp"    android:src="@drawable/header_add_video"  />
+            <LinearLayout android:layout_width="match_parent"   android:layout_toRightOf="@+id/header_add_btn"
+                          android:gravity="center"  android:layout_toLeftOf="@+id/search_btn"  android:orientation="horizontal" android:layout_height="40dp">
+                <HorizontalScrollView
+                        android:id="@+id/hsv_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:fadingEdgeLength="0dp"
+                        android:overScrollMode="never"
+                        android:scrollbars="none"
+                >
+                    <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                    >
+                        <!--android:background="@drawable/bg_shape_center_bar_bkg"-->
+
+                        <LinearLayout
+                                android:id="@+id/hsv_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                        ></LinearLayout>
+
+                        <RelativeLayout
+                                android:id="@+id/scroll_bottom_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:layout_alignParentBottom="true">
+
+                            <ImageView
+                                    android:id="@+id/img1"
+                                    android:layout_width="60dp"
+                                    android:layout_height="1dp"
+                                    android:visibility="gone"
+                                    android:background="@color/tv_column_nomal"
+                            />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+            <ImageView   android:id="@+id/search_btn" android:visibility="gone"
+                           android:layout_width="17dp"
+                           android:layout_centerVertical="true"
+                           android:layout_alignParentRight="true"  android:layout_height="17dp"
+                              android:background="@drawable/main_head_sarch"  />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上传"
+                    android:id="@+id/file_up_btn"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textColor="@color/COLOR_33"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:textSize="13.0sp"
+            />
+        </RelativeLayout>
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="0dp"
+                android:fadingEdgeLength="0dp"
+                android:overScrollMode="never"
+                android:background="@android:color/white"
+        >
+        </android.support.v4.view.ViewPager>
+    </LinearLayout>
+
+</LinearLayout>

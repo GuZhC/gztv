@@ -1,0 +1,27 @@
+<resources>
+
+    <style name="DialogActivity" parent="android:Theme.Dialog">
+        <!-- 下面这两个是最重要的 -->
+        <item name="android:windowIsFloating">true</item> <!-- 是否浮现在activity之上 (内容会居中显示并靠左右有距离)-->
+        <item name="android:windowNoTitle">true</item> <!-- 无标题 -->
+        <!-- 设置透明下面两个一定要同时设置 -->
+        <item name="android:windowBackground">@android:color/transparent</item> <!-- 背景透明 -->
+        <item name="android:windowIsTranslucent">true</item> <!-- 半透明 -->
+        <!-- 设置模糊 -->
+        <item name="android:backgroundDimEnabled">true</item> <!-- 模糊 -->
+        <!-- 去掉边框（测试时没发现其作用） -->
+        <item name="android:windowFrame">@null</item>
+    </style>
+
+    <style name="CusAnimationDialog">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_bottom_up</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_bottom_down</item>
+    </style>
+
+    <style name="ActStartLoad"
+           parent="android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:descendantFocusability="blocksDescendants"
+                android:baselineAligned="false">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/LogoImageViewLayOut">
+
+        <ImageView
+                android:layout_width="80dp"
+                android:scaleType="center"
+                android:layout_height="97dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/LogoImageView"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/icon_app_logo"
+                />
+        <!--<TextView   android:layout_width="wrap_content" android:text="97.2hHZ"  android:textAppearance="@style/CCWTextAppearanceMedium"-->
+
+        <!--android:textColor="@color/black" android:layout_marginLeft="5dp" android:layout_gravity="bottom"-->
+        <!--android:layout_height="wrap_content" android:id="@+id/audio_frequency"/>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_toRightOf="@+id/LogoImageViewLayOut"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+            <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text="新闻频道"
+                    android:textAppearance="@style/CCWTextAppearanceLarge"
+                    android:id="@+id/titleTextView"
+                    android:layout_centerVertical="true"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+            <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:text="新闻频道简介"
+                    android:maxLines="2"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/CCWTextAppearanceSmall"
+                    android:id="@+id/contentTextView"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                    />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/comment_zone"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+        <ImageView
+                android:layout_marginTop="5dp"
+                android:clickable="true"
+                android:id="@+id/Forward"
+
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="2dp"
+                >
+            <!--android:background="@drawable/forward_bk"-->
+        </ImageView>
+
+        <ImageView
+                android:clickable="true"
+                android:id="@+id/Favorites"
+                android:background="@drawable/favorites_bk"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="2dp">
+
+        </ImageView>
+    </LinearLayout>
+
+</RelativeLayout>

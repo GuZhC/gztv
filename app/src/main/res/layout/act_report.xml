@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_bgd">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/black_title_bar_color">
+
+        <ImageView
+            android:id="@+id/close_act_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_left_back"/>
+
+        <LinearLayout
+            android:id="@+id/top_center_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/top_right_text_view"
+            android:layout_toRightOf="@+id/close_act_img"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:text="举报"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/top_right_text_view"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/report_reason_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape_report_box">
+
+        <CheckBox
+            android:id="@+id/check_ad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_marginTop="12dp"
+            android:text="广告营销"
+            android:button="@null"
+            android:drawableLeft="@drawable/check_live_alert_agree"
+            android:drawablePadding="25dp"
+            android:textSize="17sp"
+            android:layout_marginLeft="25dp"
+            android:textColor="#3c3b4a"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="12dp"
+            android:background="#c8c8c8"/>
+
+        <CheckBox
+            android:id="@+id/check_se_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_marginTop="12dp"
+            android:text="淫秽色情"
+            android:button="@null"
+            android:drawableLeft="@drawable/check_live_alert_agree"
+            android:drawablePadding="25dp"
+            android:textSize="17sp"
+            android:layout_marginLeft="25dp"
+            android:textColor="#3c3b4a"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="12dp"
+            android:background="#c8c8c8"/>
+
+        <CheckBox
+            android:id="@+id/check_eyimanma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_marginTop="12dp"
+            android:text="恶意谩骂"
+            android:button="@null"
+            android:drawableLeft="@drawable/check_live_alert_agree"
+            android:drawablePadding="25dp"
+            android:textSize="17sp"
+            android:layout_marginLeft="25dp"
+            android:textColor="#3c3b4a"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="12dp"
+            android:background="#c8c8c8"/>
+
+        <CheckBox
+            android:id="@+id/check_diyugongji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_marginTop="12dp"
+            android:text="地域攻击"
+            android:button="@null"
+            android:drawableLeft="@drawable/check_live_alert_agree"
+            android:drawablePadding="25dp"
+            android:textSize="17sp"
+            android:layout_marginLeft="25dp"
+            android:textColor="#3c3b4a"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="12dp"
+            android:background="#c8c8c8"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/check_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:text="其他"
+                android:button="@null"
+                android:drawableLeft="@drawable/check_live_alert_agree"
+                android:drawablePadding="25dp"
+                android:textSize="17sp"
+                android:layout_marginLeft="25dp"
+                android:textColor="#3c3b4a"/>
+
+            <EditText
+                android:id="@+id/edit_other_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="35dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/transparent"
+                android:hint="请输入理由"
+                android:textSize="17sp"
+                android:textColor="#c8c8c8"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:background="@drawable/btn_report"/>
+</LinearLayout>

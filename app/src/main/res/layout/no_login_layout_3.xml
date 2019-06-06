@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="35dp"
+            android:background="@drawable/bg_no_login_layout3">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textColor="@color/COLOR_33"
+                android:text="请选择登录方式"/>
+
+        <LinearLayout android:layout_width="match_parent"   android:layout_marginTop="35dp" android:gravity="center_horizontal" android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="250dp" android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <ImageView
+                        android:id="@+id/no_login_weixin"
+                        android:layout_width="61dp"
+                        android:layout_height="61dp"
+                        android:layout_weight="1.0"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/my_weixin_btn"/>
+
+                <ImageView
+                        android:id="@+id/no_login_qq"
+                        android:layout_width="61dp"
+                        android:layout_height="61dp"
+                        android:layout_weight="1.0"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/my_qq_btn"/>
+
+                <ImageView
+                        android:id="@+id/no_login_weibo"
+                        android:layout_width="61dp"
+                        android:layout_weight="1.0"
+                        android:layout_height="61dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/my_weibo_btn"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="45dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+        >
+            <LinearLayout android:layout_width="250dp" android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <ImageView
+                        android:id="@+id/no_account_logon_btn"
+                        android:layout_width="95dp"
+                        android:layout_weight="1.0"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/no_account_lonon_select_btn"/>
+                <ImageView
+                        android:id="@+id/no_telephone_logon_btn"
+                        android:layout_width="95dp"
+                        android:layout_weight="1.0"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/no_tele_lonon_normal_btn"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

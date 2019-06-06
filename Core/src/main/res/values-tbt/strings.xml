@@ -1,0 +1,8 @@
+<resources>
+
+
+
+    <string name="news_act_nocommemnd_hit">གནས་སྐབས་འབྲེལ་ཡོད་ནང་དོན་མེད།</string>
+    <string name="news_act_replay_hit">དཔྱད་བརྗོད་སྟོང་པར་འཇོག་མི་རུང་།</string>
+    <string name="news_act_replay_success_hit">དཔྱད་བརྗོད་ལེགས་འགྲུབ་བྱུང་བ།</string>
+</resources>

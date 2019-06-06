@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="live_channel">false</item>
+    <item type="id" name="live_channel_cursor">false</item>
+    <!--  impnews  heyang-->
+    <item type="id" name="ssd">false</item>
+    <item type="id" name="toplogcommon">false</item>
+    <item type="id" name="toplogtitle">false</item>
+    <item type="id" name="impnews_page_big_pic">false</item>
+    <item type="id" name="impnews_page_group">false</item>
+    <item type="id" name="impnews_page_location">false</item>
+    <item type="id" name="impnews_ch_scroll">false</item>
+    <item type="id" name="impnews_bottom_layout">false</item>
+    <item name="scroll_item_text_id" type="id"></item>
+    <item name="scroll_item_week_id" type="id"></item>
+    <!---首页  heyang-->
+    <item type="id" name="impnews_cdhannel_layout">false</item>
+    <item type="id" name="bottom_bar_send">false</item>
+
+    <!-- 主页 heyang-->
+    <item type="id" name="imageView_ItemImage">false</item>
+    <item type="id" name="txt_descibr">false</item>
+    <item type="id" name="main_grid_item">false</item>
+    <item type="id" name="main_page_big_pic">false</item>
+    <item type="id" name="main_page_group">false</item>
+    <item type="id" name="main_page_location">false</item>
+    <item type="id" name="main_line">false</item>
+    <item type="id" name="gridview"/>
+    <item type="id" name="logon_btn">false</item>
+    <item type="id" name="ad_detail_web">false</item>
+    <item type="id" name="ad_detail_process">false</item>
+    <item type="id" name="logonPage">false</item>
+    <item type="id" name="main_vPager">false</item>
+
+    <!-- 登陆页面 heyang-->
+    <item type="id" name="login_username">false</item>
+    <item type="id" name="login_password">false</item>
+    <item type="id" name="logon_top_layout">false</item>
+    <item type="id" name="logon_retun">false</item>
+    <item type="id" name="otherlogon">false</item>
+    <item type="id" name="weixin_log">false</item>
+    <item type="id" name="qq_log_btn">false</item>
+    <item type="id" name="weibo_log_btn">false</item>
+    <item type="id" name="renren_log_btn">false</item>
+    <item type="id" name="logon_btn_layout">false</item>
+    <item type="id" name="register_btn">false</item>
+    <item type="id" name="forget_btn">false</item>
+    <item type="id" name="login_btn">false</item>
+
+    <!-- 民生新闻 -->
+    <item type="id" name="livehood_scroll_layout">false</item>
+    <item type="id" name="livelihood_list_item_image_layout">false</item>
+    <item type="id" name="livelihood_news_list_item_image">false</item>
+    <item type="id" name="livelihood_list_item_title">false</item>
+    <item type="id" name="livelihood_list_item_content">false</item>
+    <item type="id" name="livelihood_list_item_time">false</item>
+    <item type="id" name="livelihood_list_item_comment">false</item>
+    <item type="id" name="livelihood_news_video_player">false</item>
+
+    <!-- 要闻页面 heyang-->
+    <item type="id" name="news_tab_news">false</item>
+    <item type="id" name="news_tab_live">false</item>
+    <item type="id" name="news_tab_politics">false</item>
+    <item type="id" name="news_tab_society">false</item>
+    <item type="id" name="news_tab_more">false</item>
+    <item type="id" name="news_list_item_image_layout">false</item>
+    <item type="id" name="news_list_item_title">false</item>
+    <item type="id" name="news_news_list_item_image">false</item>
+    <item type="id" name="news_list_item_content">false</item>
+    <item type="id" name="news_list_item_time">false</item>
+    <item type="id" name="news_detail_web">false</item>
+    <item type="id" name="news_detail_process">false</item>
+    <item type="id" name="news_scroll_layout">false</item>
+    <item type="id" name="new_detail_return_layout">false</item>
+    <item type="id" name="news_image_news_back_btn">false</item>
+    <item type="id" name="news_list_item_source">false</item>
+    <item type="id" name="socirtyNews_video_player">false</item>
+    <item type="id" name="commandTitle">false</item>
+    <item type="id" name="socitivynews_video_share">false</item>
+    <item type="id" name="socitivynews_video_command">false</item>
+    <item type="id" name="socitynews_comment_edit">false</item>
+    <item type="id" name="socitiynews_comment_share">false</item>
+    <item type="id" name="socitiynews_comment_favioty">false</item>
+    <item type="id" name="socitiynews_comment_collect">false</item>
+    <item type="id" name="news_list_item_show">false</item>
+    <item type="id" name="newsDetail_title">false</item>
+    <item type="id" name="news_list_item_title_layout">false</item>
+    <item type="id" name="load_fail_layout">false</item>
+    <item type="id" name="reload_btn">false</item>
+    <item type="id" name="reload_layout">false</item>
+
+    <!---绑定其他方式登陆  heyang-->
+    <item type="id" name="progress_load_bar">false</item>
+    <item type="id" name="weibo_Logon_oauth">false</item>
+    <!-- 应用设置 heyang-->
+    <item type="id" name="setting_image_top_back">false</item>
+    <item type="id" name="setting_back">false</item>
+    <item type="id" name="setting_change_view_rel">false</item>
+    <item type="id" name="setting_logon_before_layout">false</item>
+    <item type="id" name="setting_change_view_name">false</item>
+    <item type="id" name="setting_change_view_rel_arrow">false</item>
+    <item type="id" name="setting_help_layout">false</item>
+    <item type="id" name="setting_about_layout">false</item>
+    <item type="id" name="setting_push_btn">false</item>
+    <item type="id" name="setting_autoplay_btn">false</item>
+    <item type="id" name="setting_font_layout">false</item>
+    <item type="id" name="setting_font_btn">false</item>
+    <item type="id" name="app_person_logon">false</item>
+    <item type="id" name="app_livegrade_btn">false</item>
+    <item type="id" name="app_myhistory_btn">false</item>
+    <item type="id" name="app_mycollect_btn">false</item>
+    <item type="id" name="app_mycomment_btn">false</item>
+    <item type="id" name="app_mydown_btn">false</item>
+    <item type="id" name="app_mymessage_btn">false</item>
+    <item type="id" name="leftip">false</item>
+    <item type="id" name="cache_title">false</item>
+    <item type="id" name="pname_layout">false</item>
+    <item type="id" name="use_spacecache">false</item>
+    <item type="id" name="mainfone_layout">false</item>
+    <item type="id" name="myFont_title">false</item>
+    <item type="id" name="fontsize_setting_rl">false</item>
+    <item type="id" name="fontsize_setting_a">false</item>
+    <item type="id" name="font_small_layout">false</item>
+    <item type="id" name="font_big_layout">false</item>
+    <item type="id" name="fontsize_seek_bar">false</item>
+    <item type="id" name="cache_size_text">false</item>
+    <item type="id" name="clearCache_layout">false</item>
+    <item type="id" name="comments_scroll_layout">false</item>
+    <!-- 跟帖  -->
+    <item type="id" name="comments_comment_collect">false</item>
+    <item type="id" name="comments_comment_edit">false</item>
+    <item type="id" name="common_title">false</item>
+    <item type="id" name="book_commend_title">false</item>
+    <item type="id" name="comments_query_content">false</item>
+    <item type="id" name="common_clear_btn">false</item>
+    <item type="id" name="commend_logo_btn">false</item>
+    <item type="id" name="common_cancel_btn">false</item>
+    <item type="id" name="common_return_btn">false</item>
+    <item type="id" name="common_logon_now">false</item>
+    <!--  commonBar  -->
+    <item type="id" name="comments_bar_layout">false</item>
+
+    <!-- 个人信息 heyang-->
+    <item type="id" name="setting_head_icon">false</item>
+    <item type="id" name="indvidual_image_top_back">false</item>
+    <item type="id" name="indvidual_change_view_name">false</item>
+
+    <!--  评论  -->
+    <item type="id" name="comments_list_item_title">false</item>
+    <item type="id" name="comments_list_item_username">false</item>
+    <item type="id" name="comments_list_item_site">false</item>
+    <item type="id" name="comments_list_item_time">false</item>
+    <item type="id" name="comments_list_number">false</item>
+    <item type="id" name="commend_list_item_title_layout">false</item>
+    <item type="id" name="commend_list_item_site_layout">false</item>
+    <item type="id" name="commend_list_item_thumb_up">false</item>
+
+    <item type="id" name="comments_detail_return_layout">false</item>
+    <item type="id" name="comments_list_item_show">false</item>
+    <item type="id" name="comments_wake_layout">false</item>
+    <item type="id" name="image_id">false</item>
+    <item type="id" name="tv_id">false</item>
+
+    <!--  消息  -->
+    <item type="id" name="massages_list_item_title">false</item>
+    <item type="id" name="massages_detail_return_layout">false</item>
+    <item type="id" name="massages_list_item_show">false</item>
+    <item type="id" name="massages_wake_layout">false</item>
+    <item type="id" name="massages_list_scroll">false</item>
+    <item type="id" name="massages_list_item_image">false</item>
+    <item type="id" name="massges_list_item_time">false</item>
+
+    <!-- 直播预约-->
+    <item type="id" name="reserved_bar_layout">false</item>
+    <item type="id" name="reserved_list_scroll">false</item>
+
+    <!-- 爱文山 -->
+    <item type="id" name="content_wenshan">false</item>
+    <item type="id" name="wenshannavigationLayOut">false</item>
+    <item type="id" name="wenshannavigationBar">false</item>
+    <item type="id" name="wenshan_container">false</item>
+
+    <!-- 爆料社区 -->
+    <!--<item type="id" name="disclosure_list_title">false</item>-->
+    <!--<item type="id" name="disclosure_list_iamgelayout">false</item>-->
+    <!--<item type="id" name="disclosure_list_content">false</item>-->
+    <!--<item type="id" name="disclosure_pinglunimg">false</item>-->
+    <!--<item type="id" name="disclosure_del_btn">false</item>-->
+    <!--<item type="id" name="disclosure_praise">false</item>-->
+    <!--<item type="id" name="disclosure_pinglunnum">false</item>-->
+    <!--<item type="id" name="disclosure_time">false</item>-->
+    <!--<item type="id" name="disclosure_scroll_layout">false</item>-->
+    <!--<item type="id" name="disclosure_user_imge">false</item>-->
+    <!--<item type="id" name="disclosure_user_name">false</item>-->
+    <!--<item type="id" name="disclosure_net_img">false</item>-->
+    <!--<item type="id" name="dislosure_user_layout">false</item>-->
+    <!--<item type="id" name="disclosure_praise_img">false</item>-->
+    <!--<item type="id" name="disclosure_praise_layout">false</item>-->
+
+    <!-- 爆料详情 -->
+    <item type="id" name="discuredetail_title">false</item>
+    <item type="id" name="distaile_time">false</item>
+    <item type="id" name="disclsuredetail_imag">false</item>
+    <item type="id" name="disclsuredetail_descrive">false</item>
+
+    <!--  下载 -->
+    <item type="id" name="DownTabHost">false</item>
+
+    <!---  爆料详情   -->
+    <item type="id" name="disdateil_user_imge">false</item>
+    <item type="id" name="disdateil__user_name">false</item>
+    <item type="id" name="disdateil_content">false</item>
+    <item type="id" name="disdateil_replay">false</item>
+    <item type="id" name="disdateil_replay_num">false</item>
+    <item type="id" name="disdateil__user_time">false</item>
+    <item type="id" name="disdetail_comment_share">false</item>
+    <item type="id" name="disdetail_comment_purse">false</item>
+    <item type="id" name="disdetail_comment_collect">false</item>
+    <item type="id" name="disdetail_comment_edit">false</item>
+    <item type="id" name="distaile_web_group">false</item>
+    <item type="id" name="disclosure_content_web">false</item>
+    <item type="id" name="disdetail_head_reply">false</item>
+    <item type="id" name="disdetail_head_replytext">false</item>
+    <item type="id" name="disdetail_head_replynum">false</item>
+    <item type="id" name="disdetail_head_just">false</item>
+    <item type="id" name="disdetail_head_time">false</item>
+
+    <!-- Glide图片框架的TAG IDs -->
+    <item type="id" name="glide_tag_id"/>
+
+    <item type="id" name="two_rely_first"/>
+    <item type="id" name="two_rely_second"/>
+
+    <item type="id" name="commny_bg_position"/>
+    <item type="id" name="commny_bg_urls"/>
+
+    <item type="id" name="tag_live_service_group"/>
+
+    <item type="id" name="tag_live_service_item"/>
+
+    <item type="id" name="news_commend_cmsId"/>
+    <item type="id" name="news_commend_cms_refid"/>
+
+    <item type="id"
+          name="tag_commend_thumb"></item>
+    <item type="id"
+          name="tag_replay_thumb"></item>
+    <item type="id"
+          name="tag_replay_cid"></item>
+    <item type="id"
+          name="tag_replay_item_cid"></item>
+    <item type="id"
+          name="tag_colplay_cid"></item>
+    <item type="id"
+          name="tag_weekIndex_cid"></item>
+
+    <item type="id"
+          name="tag_hedlinegroup_pos"></item>
+    <item type="id"
+          name="tag_hedlinegroup_path"></item>
+
+    <item type="id"
+          name="tag_first"></item>
+    <item type="id"
+          name="tag_more"></item>
+
+    <!--<item type="id" name="cirbutton_user_id"/>-->
+
+</resources>

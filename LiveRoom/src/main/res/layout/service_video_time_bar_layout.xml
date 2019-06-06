@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:max="100"
+            android:progressDrawable="@drawable/bg_seek"
+            android:thumb="@drawable/bg_thumb"
+            android:thumbOffset="10dp"/>
+
+        <TextView
+            android:id="@+id/start_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:minWidth="30dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="11dp"
+            android:text="0:00"
+            android:textAppearance="@style/TextAppearance.BoldFont"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            android:textSize="11dp"
+            android:text="/"
+            android:textAppearance="@style/TextAppearance.BoldFont"/>
+
+        <TextView
+            android:id="@+id/all_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="30dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            android:textSize="11dp"
+            android:text="00:00"
+            android:textAppearance="@style/TextAppearance.BoldFont"/>
+    </LinearLayout>
+</LinearLayout>

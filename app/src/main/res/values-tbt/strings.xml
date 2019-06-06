@@ -1,0 +1,66 @@
+<resources>
+    <!--<string name="app_name">甘孜手机台</string>-->
+    <!--<string name="web_start_app_scheme">dfsxganzitv</string>-->
+
+    <!-- 首页 start-->
+    <string name="tab_me">我的</string>
+    <string name="tab_first">首页</string>
+    <string name="tab_tv">视听</string>
+    <string name="tab_live">直播</string>
+    <string name="tab_vms">圈子</string>
+
+
+    <!-- 列表页 -->
+    <string name="news_item_viewcount_hit">ལྟ་ཀློག་ཚད།།</string>
+    <string name="news_item_viewcountex_hit">རྗེས་ཀྱི་བལྟ་བཤེར།</string>
+    <string name="news_item_viewplay_hit">རྗེས་ཀྱི་གཏོང་བ།</string>
+    <string name="news_act_daodu_hit">ཁྲིད་འདོན།</string>
+    <string name="news_act_comned_hit">དཔྱད་བརྗོད</string>
+    <string name="news_act_bottom_ommend_hit">སྐད་ཆ་ཅུང་ཤོད་དང་།</string>
+    <string name="news_act_report_bottom_hit">མཇུག་མར་ཐོན་ཟིན་པས་དེ་ལས་མང་པའི་དཔྱད་བརྗོད་མི་འདུག</string>
+    <string name="news_act_video_wake_wifi_hit">འཁྱེར་འཕྲིན་དྲྭ་རྒྱ་གཏོང་བའམ་ཡང་ན་བརྙན་རིས་གཏོང་བ་སྣོན་འཇུག་བྱེད་པར་བཞུར་ཚད་འགྲོ་གྲོན་སྤྱོད་དགོས་པའི་ངེས་པ་ཡོད།མུ་མཐུད་དམ།</string>
+    <string name="news_act_shou_hit">བསྡུ་བ།</string>
+    <string name="news_act_expend_hit">སྤེལ་བ།</string>
+    <string name="favority_success_hit">ཉར་ཚགས་ལེགས་འགྲུབ།</string>
+    <string name="favority_faild_hit">ཉར་ཚགས་མེད་པ་བཟོ།</string>
+    <string name="columnplay_item_bottom_hit">དེ་བས་མང་པོ་བལྟ།</string>
+    <string name="news_act_raltion_hit">འབྲེལ་ཡོད་ནང་དོན།</string>
+    <string name="news_act_sawitch_hit">བརྗེ་བ།</string>
+    <string name="news_act_nocommemnd_hit">གནས་སྐབས་དཔྱད་བརྗོད་མེད།མགྱོགས་མྱུར་རྩེད་ཤོག</string>
+    <string name="news_act_replay_item_hit">ཕྱིར་ལན་འདེབས་པ།</string>
+    <string name="no_data_hit">གཞི་གྲངས་མེད་པ།</string>
+    <string name="news_act_no_video_hit">བརྙན་རིས་ཀྱི་ཁུངས་མི་འདུག</string>
+
+
+    <string name="hello_world">Hello world!</string>
+    <string name="neterror">连接服务器失败</string>
+    <string name="commend_show_text">评论暂未开启</string>
+    <string name="send_text">发表</string>
+    <string name="live_tv">电视</string>
+    <string name="live_radio">电台</string>
+    <string name="news_tail_app">随时新闻爆料 扫描下载视听文山客户端</string>
+    <string name="news_tail_weibo">更多精彩,关注视听文山新浪微博</string>
+    <string name="math_format">%02d</string>
+    <string name="file_up_title">标题(必填)</string>
+    <string name="file_up_content">分享身边新鲜事</string>
+    <string name="disclure_name_hit">请填写您的姓名(必选)</string>
+    <string name="disclure_tel_hit">请填写您的电话号码(必选)</string>
+
+    <string name="app_sedcode_text">扫描二维码,获取智慧安州客户端</string>
+    <string name="yanzheng_logon_wake">登陆后可在移动设备上我的收藏，</string>
+    <string name="question_title_hit">请为你的提问输入标题</string>
+    <string name="question_content_hit">请为你的提问进行简单的描述</string>
+    <string name="shop_comcire_hit">请留下你的个人信息，以便工作人员联系或发货</string>
+    <string name="request_netdata_result">没有数据</string>
+    <string name="talent_rank_hit">未进入榜单</string>
+    <string name="shop_exchange_address_hit">注意！此商品确认兑换后需要凭密码到指定地点领取</string>
+
+    <string name="add_attention">加关注</string>
+
+    <string name="tv_series_num" formatted="false">ཁྱོན་ལེའུ%d</string>
+    <string name="tv_series_all_size">ཐམས་ཅད།</string>
+    <string name="tv_series_play_desc"  formatted="false">མིག་སྔར་ལེའུ%2d  ཁྱོན་ལེའུ%d</string>
+    <string name="tv_series_comment_desc"  formatted="false">དཔྱད་བརྗོད་ཚ་ཤོས།%d</string>
+    <string name="tv_series_size">ལེའུ་འདེམས་པ།</string>
+    <string name="tv_series_others">གཞན་པ།</string>
+</resources>

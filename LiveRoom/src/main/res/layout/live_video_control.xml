@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/video_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+        <com.fivehundredpx.android.blur.BlurringView
+            android:id="@+id/video_img_blur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:blurRadius="11"
+            app:downsampleFactor="6"
+            app:overlayColor="#D9000000"/>
+
+        <FrameLayout
+            android:id="@+id/video_controller_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/center_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <com.dfsx.lzcms.liveroom.view.LoadingView
+                android:id="@+id/loading"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                app:track_icon="@drawable/v_loading_1"
+                app:direction="left"
+                app:scale_type="fit_center"
+                app:text_origin_color="#fbd42d"
+                />
+
+            <TextView
+                android:id="@+id/center_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"
+                android:layout_below="@+id/loading"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                android:text="欢迎测试"/>
+
+            <RelativeLayout
+                android:id="@+id/yugao_down_time_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/bkg_time_down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bg_yugao_down_time"/>
+
+                <TextView
+                    android:id="@+id/text_down_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_alignLeft="@+id/bkg_time_down"
+                    android:layout_alignRight="@+id/bkg_time_down"
+                    android:layout_alignBottom="@+id/bkg_time_down"
+                    android:layout_marginLeft="22dp"
+                    android:gravity="center"
+                    android:textSize="28dp"
+                    android:textAppearance="@style/TextAppearance.BoldFont"
+                    android:textColor="@color/white"
+                    android:text=""/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<resources>
+    <!--<string name="app_name">OpenImage</string>-->
+
+    <string name="login_account">账号</string>
+    <string name="login_password">密码</string>
+    <string name="login_register_button">注册</string>
+    <string name="login_agin_password">确认密码</string>
+    <string name="login_nick">昵称</string>
+    <string name="login_email">邮箱</string>
+    <string name="login_login_button">登录</string>
+    <string name="login_other_button">其他登录方式</string>
+    <string name="login_title_button">用户登录</string>
+    <string name="register_user_hit">用户名长度6-20，由英文、数字、下划线组成</string>
+    <string name="register_pwd_hit">密码长度6-20，由字母、数字、符号组合</string>
+    <string name="register_verifty_hit">验证码已发送至</string>
+    <string name="register_verifty_retry_hit">请重新获取验证码</string>
+    <string name="register_user_b_sign_hit">填写个性签名</string>
+    <string name="register_user_pwd_hit">请设置密码(密码包括大小字母，数字，6位以上)</string>
+    <string name="third_cancel_hit">解除绑定</string>
+    <string name="third_add_hit">+绑定</string>
+
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="@color/gray_a9"/>
+
+    <corners android:radius="5dp"/>
+</shape><!-- From: file:/E:/workspace/idea/gztv/LiveRoom/src/main/res/drawable/shape_chat_note_bg.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/drawable/shape_chat_note_bg.xml -->

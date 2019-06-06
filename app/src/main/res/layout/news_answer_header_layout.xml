@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout android:layout_width="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:layout_height="49dp">
+            <LinearLayout android:layout_width="0dp" android:id="@+id/quest_view"   android:gravity="center_horizontal" android:layout_weight="1" android:orientation="horizontal" android:layout_height="wrap_content">
+                    <ImageView
+                            android:layout_width="53dp"
+                            android:layout_height="17dp"
+                            android:src="@drawable/commnity_tiwen_icon"
+                            android:background="@null"
+                            />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp"  android:id="@+id/anwer_view"  android:layout_weight="1" android:gravity="center_horizontal" android:orientation="horizontal" android:layout_height="wrap_content">
+                    <ImageView
+                            android:layout_width="53dp"
+                            android:layout_height="17dp"
+                            android:src="@drawable/commnity_huida_icon"
+                            android:background="@null"
+                            />
+            </LinearLayout>
+    </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:background="@color/video_w4_bankground"  android:layout_height="1dp" />
+</LinearLayout>

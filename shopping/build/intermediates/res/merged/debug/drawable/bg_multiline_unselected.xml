@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <stroke
+        android:color="#30000000"
+        android:width="2px"/>
+    <solid android:color="#30000000"/>
+</shape><!-- From: file:/E:/workspace/idea/gztv/LiveRoom/src/main/res/drawable/bg_multiline_unselected.xml --><!-- From: file:/E:/workspace/idea/gztv/shopping/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/drawable/bg_multiline_unselected.xml -->

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:scrollbars="vertical"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <!-- 标题  -->
+            <RelativeLayout
+                    android:id="@+id/new_detail_title_layout"
+                    android:layout_marginBottom="3dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textSize="20.0sp"
+                        android:id="@+id/question_title"
+                        android:textColor="@color/user_font_color"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="left"
+                        android:maxLines="2"
+                        android:layout_height="wrap_content"
+                        android:text="标题"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/news_detail_centernss"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/new_detail_title_layout"
+                    >
+                <include layout="@layout/video_play_container"  />
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/news_detail_web"
+                    android:layout_width="match_parent"
+                    android:scrollbars="none"
+                    android:paddingLeft="14dp" android:paddingRight="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/news_detail_centernss"
+                    >
+
+                <LinearLayout android:layout_width="match_parent"    android:paddingRight="10dp"
+                              android:paddingLeft="10dp" android:orientation="vertical"  android:layout_height="match_parent">
+                    <WebView
+                            android:id="@+id/webView_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    <!-- 多图 -->
+                    <LinearLayout android:id="@+id/commomtiy_imgs"
+                                  android:layout_marginTop="5dp"
+                                  android:layout_marginBottom="10dp"
+                                  android:orientation="vertical" android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout android:id="@+id/imgs" android:layout_width="match_parent" android:background="@color/white"
+                            android:layout_below="@+id/news_detail_web" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                              android:layout_height="wrap_content">
+                    <LinearLayout android:layout_width="match_parent"  android:layout_height="1dp" android:background="@color/COLOR_LINE_E9"  />
+                    <LinearLayout android:layout_width="match_parent" android:orientation="horizontal"
+                                  android:paddingTop="10dp" android:paddingBottom="10dp" android:paddingLeft="10dp"
+                                  android:paddingRight="14dp" android:background="@color/white"
+                                  android:layout_height="wrap_content">
+
+                        <!-- 新版本  -->
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1.0"
+                                        android:id="@+id/qinfo_attetn_view"
+                                      android:layout_height="wrap_content">
+                            <ImageView android:layout_width="18dp" android:layout_height="17dp"
+                                       android:background="@null"
+                                       android:src="@drawable/quesinfo_attaues_icon"
+                                       android:scaleType="centerInside"/>
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:textSize="12.0sp"
+                                    android:textColor="@color/user_font_color"
+                                    android:layout_height="wrap_content"
+                                    android:text="关注问题"/>
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1.0"
+                                      android:id="@+id/qinfo_yaoqing_view"
+                                      android:layout_height="wrap_content">
+                            <ImageView android:layout_width="18dp" android:layout_height="17dp"
+                                       android:background="@null"
+                                       android:src="@drawable/quesinfo_huida_icon"
+                                       android:scaleType="centerInside"/>
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:textSize="12.0sp"
+                                    android:textColor="@color/user_font_color"
+                                    android:layout_height="wrap_content"
+                                    android:text="邀请回答"/>
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1.0"
+                                      android:id="@+id/qinfo_chuida_view"
+                                      android:layout_height="wrap_content">
+                            <ImageView android:layout_width="18dp" android:layout_height="17dp"
+                                       android:background="@null"
+                                       android:src="@drawable/cvideo_pen_icon"
+                                       android:scaleType="centerInside"/>
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:textSize="12.0sp"
+                                    android:textColor="@color/user_font_color"
+                                    android:layout_height="wrap_content"
+                                    android:text="我来回答"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="match_parent" android:background="@color/comment_background"
+                                  android:layout_height="8dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:background="@color/comment_op_background"
+                                  android:layout_height="1dp"/>
+                    <LinearLayout android:id="@+id/comnend_noplay_layout" android:layout_width="match_parent"
+                                  android:layout_gravity="center" android:background="@color/comment_op_background"
+                                  android:layout_height="160dp">
+                        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                            <LinearLayout android:layout_width="match_parent"
+                                          android:orientation="vertical"
+                                          android:layout_marginTop="10dp"
+                                          android:gravity="center_horizontal"
+                                          android:layout_height="wrap_content">
+                                <ImageView android:layout_width="151dp" android:layout_height="116dp"
+                                           android:background="@null"
+                                           android:layout_centerInParent="true"
+                                           android:src="@drawable/cvideo_no_commad" android:scaleType="centerInside"/>
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:textSize="14.0sp"
+                                        android:textColor="@color/search_font_color"
+                                        android:singleLine="true"
+                                        android:gravity="center"
+                                        android:layout_height="wrap_content"
+                                        android:text="速度评论抢沙发"/>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
+

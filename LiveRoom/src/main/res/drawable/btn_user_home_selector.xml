@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="false">
+        <layer-list>
+            <item android:drawable="@drawable/icon_user_page"/>
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="#80999999"/>
+
+                    <size android:width="45px"
+                        android:height="45px"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <item android:drawable="@drawable/icon_user_page"/>
+</selector>

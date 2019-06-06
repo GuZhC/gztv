@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="video_resultion_array">
+        <item>"352x288px"</item>
+        <item>"640x480px"</item>
+        <item>"1280x720px"</item>
+        <item>"1920x1080px"</item>
+    </string-array>
+</resources>

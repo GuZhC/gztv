@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+
+    <solid
+            android:color="@color/gray_303_bg"/>
+    <stroke
+            android:width="1px"
+            android:color="@color/white"/>
+
+</shape><!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/drawable/shape_news_commend_circle_bk.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/bundles/debug/res/drawable/shape_news_commend_circle_bk.xml -->

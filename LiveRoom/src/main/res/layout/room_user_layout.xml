@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/room_owner_info_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:paddingBottom="3dp"
+        android:background="@drawable/bg_room_owner_info">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp">
+
+            <com.dfsx.core.common.view.CircleButton
+                android:id="@+id/room_user_logo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_user_default_logo"
+                android:scaleType="centerCrop"/>
+
+            <LinearLayout
+                android:id="@+id/room_info_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/room_user_logo"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:paddingRight="5dp"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/user_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="110dp"
+                    android:layout_marginTop="2dp"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    android:text="ID:10047618"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/add_concern_img"
+                android:layout_width="35dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:scaleType="fitCenter"
+                android:visibility="visible"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@+id/room_info_layout"
+                android:src="@drawable/icon_add_concern"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

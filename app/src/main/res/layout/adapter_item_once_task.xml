@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_bgd">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="3dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/task_layout"
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:background="@drawable/bg_once_task"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="13dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_task_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black_31"
+                    android:textAppearance="@style/TextAppearance.MediumFont"
+                    android:textSize="16dp"
+                    android:text="实名认证"/>
+
+                <TextView
+                    android:id="@+id/item_task_click_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#e8528e"
+                    android:drawablePadding="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:drawableRight="@drawable/icon_riht_red_arrow"
+                    android:textAppearance="@style/TextAppearance.MediumFont"
+                    android:textSize="16dp"
+                    android:text="去认证"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                >
+
+                <TextView
+                    android:id="@+id/task_gold_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/icon_task_gold_bkg"
+                    android:text="+15"
+                    android:textSize="15dp"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/item_task_ok_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/icon_task_ok"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

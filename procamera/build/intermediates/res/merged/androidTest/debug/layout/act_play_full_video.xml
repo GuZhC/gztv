@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:imgtop="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:background="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/full_screen_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+    </FrameLayout>
+
+    <!--<RelativeLayout android:layout_width="match_parent"  android:visibility="gone" android:background="@color/black" android:layout_height="match_parent">-->
+
+    <!--</RelativeLayout>-->
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+       <LinearLayout android:layout_width="match_parent"
+                     android:layout_alignParentBottom="true" android:orientation="vertical"
+                       android:layout_height="wrap_content">
+           <LinearLayout android:layout_width="match_parent" android:paddingLeft="10dp"
+                         android:paddingRight="10dp"
+                         android:orientation="vertical" android:layout_height="wrap_content">
+               <!-- 第一部分  -->
+               <LinearLayout android:layout_width="match_parent" android:orientation="horizontal"
+                             android:layout_height="92dp">
+                   <LinearLayout android:layout_width="0dp"
+                                 android:orientation="vertical"
+                                 android:layout_weight="0.7"
+                                 android:layout_height="89dp">
+                       <TextView
+                               android:id="@+id/txt_local_txt"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:gravity="left"
+                               android:singleLine="true"
+                               android:ellipsize="end"
+                               android:paddingRight="5dp"
+                               android:paddingLeft="5dp"
+                               android:paddingTop="3dp"
+                               android:maxLength="15"
+                               android:paddingBottom="3dp"
+                               android:text=""
+                               android:drawableLeft="@drawable/act_address"
+                               android:background="@drawable/act_info_address_bg"
+                               android:textSize="12dp"
+                               android:textColor="@color/white"
+                       />
+
+                       <LinearLayout android:layout_width="wrap_content"
+                                     android:orientation="horizontal"
+                                     android:layout_marginTop="12dp"
+                                     android:gravity="center_vertical"
+                                     android:layout_height="60dp">
+
+
+                           <com.dfsx.core.common.view.CircleButton
+                                   android:id="@+id/act_user_image"
+                                   android:layout_width="45dp"
+                                   android:layout_height="45dp"
+                                   android:scaleType="centerCrop"
+                                   android:background="@null"
+                                   android:layout_centerVertical="true"
+                                   android:layout_marginRight="9dp"
+                                   android:src="@drawable/glide_default_image"/>
+
+                           <ImageView
+                                   android:id="@+id/act_user_attion"
+                                   android:layout_width="24dp"
+                                   android:layout_height="24dp"
+                                   android:layout_marginLeft="-20dp"
+                                   android:background="@drawable/act_info_attion_btn"/>
+
+                           <TextView
+                                   android:id="@+id/act_user_name"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="match_parent"
+                                   android:gravity="center"
+                                   android:singleLine="true"
+                                   android:layout_marginLeft="10dp"
+                                   android:ellipsize="end"
+                                   android:maxLength="30"
+                                   android:text=""
+                                   android:textSize="15dp"
+                                      android:textColor="@color/white"
+                           />
+                       </LinearLayout>
+                   </LinearLayout>
+
+                   <RelativeLayout android:layout_width="64dp"
+                                   android:gravity="bottom"
+                                   android:layout_height="match_parent">
+
+                       <ImageView
+                               android:id="@+id/act_animal_btn"
+                               android:layout_width="37dp"
+                               android:layout_height="20dp"
+                               android:visibility="gone"
+                               android:layout_gravity="bottom"
+                               android:src="@drawable/act_info_praise_add"/>
+
+
+                       <RelativeLayout android:layout_width="43dp"  android:layout_gravity="bottom"
+                                       android:layout_marginTop="20dp"  android:orientation="horizontal"
+                                     android:gravity="center"  android:layout_height="50dp">
+                           <ImageView
+                                   android:id="@+id/act_praise_btn"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="match_parent"
+                                   android:background="@drawable/act_info_praise_btn"/>
+                           <TextView
+                                   android:id="@+id/act_praise_number_tx"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="50dp"
+                                   android:paddingTop="25dp"
+                                   android:gravity="center"
+                                   android:singleLine="true"
+                                   android:ellipsize="end"
+                                   android:text="0"
+                                   android:textSize="8dp"
+                                   android:textColor="@color/white"
+                           />
+                       </RelativeLayout>
+                   </RelativeLayout>
+               </LinearLayout>
+               <TextView
+                       android:id="@+id/act_des_txt"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="13dp"
+                       android:gravity="left"
+                       android:maxLines="2"
+                       android:ellipsize="end"
+                       android:text="cdcdcd"
+                       android:textSize="13dp"
+                       android:textColor="@color/white"
+               />
+           </LinearLayout>
+
+           <!--  进度条  -->
+           <ProgressBar android:layout_width="match_parent"   android:layout_marginTop="17dp" android:layout_height="1dp"
+               android:id="@+id/video_length_bar"
+               style="@android:style/Widget.ProgressBar.Horizontal"
+               android:max="100"
+               android:progressDrawable="@drawable/act_video_progress"
+           />
+
+           <!--  收藏  -->
+           <LinearLayout android:layout_width="match_parent"
+                         android:orientation="horizontal"
+                         android:gravity="center_vertical"
+                         android:layout_marginTop="10dp"
+                         android:id="@+id/comunity_botom_view"
+                         android:layout_height="60dp">
+
+               <LinearLayout android:layout_width="0dp"  android:orientation="vertical" android:id="@+id/act_item_fav"  android:gravity="center" android:layout_weight="0.8" android:layout_height="match_parent">
+                   <ImageView
+                           android:layout_width="23dp"
+                           android:layout_height="20dp"
+                           android:id="@+id/bottom_favroty_btn"
+                           android:background="@drawable/act_fav_btn_selecter"
+                           android:layout_centerVertical="true"/>
+                   <TextView
+                           android:id="@+id/act_fav_num_txt"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="3dp"
+                           android:gravity="center"
+                           android:text="111"
+                           android:textSize="13dp"
+                           android:textColor="@color/white"
+                   />
+               </LinearLayout>
+
+               <LinearLayout android:layout_width="0dp"  android:orientation="vertical" android:id="@+id/act_item_commend" android:gravity="center" android:layout_weight="1.0"
+                               android:layout_height="match_parent">
+                   <!--android:background="@drawable/act_commend_btn_selecter"-->
+                   <ImageView
+                           android:layout_width="23dp"
+                           android:layout_height="20dp"
+                           android:id="@+id/comnity_item_praise"
+                           android:background="@drawable/act_commend_btn_selecter"
+                           android:layout_centerVertical="true"/>
+
+                   <TextView
+                           android:id="@+id/act_commend_num_txt"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="3dp"
+                           android:gravity="center"
+                           android:text="111"
+                           android:textSize="13dp"
+                           android:textColor="@color/white"
+                   />
+               </LinearLayout>
+
+               <LinearLayout android:layout_width="0dp"  android:orientation="vertical" android:gravity="center"   android:id="@+id/act_item_share" android:layout_height="match_parent" android:layout_weight="1.0">
+                   <ImageView
+                           android:layout_width="19dp"
+                           android:layout_height="19dp"
+                           android:layout_centerInParent="true"
+                           android:background="@drawable/act_share_btn_selecter"
+                           android:layout_centerVertical="true"/>
+                   <TextView
+                           android:id="@+id/act_share_num_txt"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="3dp"
+                           android:gravity="center"
+                           android:text="111"
+                           android:textSize="13dp"
+                           android:textColor="@color/white"
+                   />
+               </LinearLayout>
+           </LinearLayout>
+       </LinearLayout>
+
+
+        <RelativeLayout android:layout_width="60dp"  android:visibility="gone" android:id="@+id/act_play_btn"  android:layout_centerInParent="true" android:layout_height="60dp">
+            <ImageView
+                    android:layout_width="31dp"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/video_play_mark"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout android:layout_width="48dp" android:layout_alignParentTop="true" android:layout_marginTop="10dp"
+                         android:layout_alignParentLeft="true" android:id="@+id/act_back_btn" android:layout_height="48dp">
+            <ImageView
+                    android:layout_width="11dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/act_info_back_icon"/>
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</RelativeLayout><!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/layout/act_play_full_video.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/bundles/debug/res/layout/act_play_full_video.xml -->

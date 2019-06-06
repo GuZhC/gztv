@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/Core/src/main/res/values/attr.xml -->
+    <eat-comment/>
+    <attr format="color" name="bb_barColor"/>
+    <attr format="dimension" name="bb_barPaddingBottom"/>
+    <attr format="dimension" name="bb_barPaddingLeft"/>
+    <attr format="dimension" name="bb_barPaddingRight"/>
+    <attr format="dimension" name="bb_barPaddingTop"/>
+    <attr format="integer" name="bb_delay"/>
+    <attr format="dimension" name="bb_indicatorCornerRadius"/>
+    <attr format="dimension" name="bb_indicatorGap"/>
+    <attr name="bb_indicatorGravity">
+        <enum name="CENTER" value="17"/>
+        <enum name="LEFT" value="3"/>
+        <enum name="RIGHT" value="5"/>
+        <enum name="TOP" value="48"/>
+    </attr>
+    <attr format="dimension" name="bb_indicatorHeight"/>
+    <attr format="color" name="bb_indicatorSelectColor"/>
+    <attr format="reference" name="bb_indicatorSelectRes"/>
+    <attr name="bb_indicatorStyle">
+        <enum name="DRAWABLE_RESOURCE" value="0"/>
+        <enum name="CORNER_RECTANGLE" value="1"/>
+    </attr>
+    <attr format="color" name="bb_indicatorUnselectColor"/>
+    <attr format="reference" name="bb_indicatorUnselectRes"/>
+    <attr format="dimension" name="bb_indicatorWidth"/>
+    <attr format="boolean" name="bb_isAutoScrollEnable"/>
+    <attr format="boolean" name="bb_isBarShowWhenLast"/>
+    <attr format="boolean" name="bb_isIndicatorShow"/>
+    <attr format="boolean" name="bb_isLoopEnable"/>
+    <attr format="boolean" name="bb_isTitleShow"/>
+    <attr format="integer" name="bb_period"/>
+    <attr format="float" name="bb_scale"/>
+    <attr format="color" name="bb_textColor"/>
+    <attr format="dimension" name="bb_textSize"/>
+    <!-- From: file:/E:/workspace/idea/gztv/Core/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="COLOR_21">#ff212121</color>
+    <color name="COLOR_f7f9">#fff7f7f9</color>
+    <color name="about_lay1">#ff2b2b2b</color>
+    <color name="albumback">#E1E0DE</color>
+    <color name="bar_bkg">#fff3f2f3</color>
+    <color name="bar_red">#ed4040</color>
+    <color name="bar_text_normal">#ff8a8a8a</color>
+    <color name="bar_text_selected">#ffed4040</color>
+    <color name="black">#ff000000</color>
+    <color name="black_50a">#50000000</color>
+    <color name="blue">#0000ff</color>
+    <color name="blue2">#ff6eb6d7</color>
+    <color name="bottom_font_selector_color">#f26520</color>
+    <color name="bunch_cloum_font_color">#e6262525</color>
+    <color name="cm_default_shared_space_color">#f7f7f9</color>
+    <color name="commend_site_color">#ff6b6b6b</color>
+    <color name="comment_background">#fff1f1f1</color>
+    <color name="comment_op_background">#fff9f9f9</color>
+    <color name="cursor">#ff0f80dd</color>
+    <color name="cursor_bottm">#ff0f80dd</color>
+    <color name="detail_title_text_color">#ff999999</color>
+    <color name="disclosure_bakground">#fff9f9fa</color>
+    <color name="disclsoure_font">#ff6f7d88</color>
+    <color name="favirtory_title_color">#f67f1d</color>
+    <color name="food_background_color">#eeeeee</color>
+    <color name="gray_303_bg">#fff0f0f0</color>
+    <color name="grey3">#ff999999</color>
+    <color name="grey4">#ffcccccc</color>
+    <color name="horscroll_bk">#fff0f0f0</color>
+    <color name="horscroll_unline_bk">#ffe2342c</color>
+    <color name="ivory">#fff2f2f2</color>
+    <color name="line_color">#ffd3d3d3</color>
+    <color name="link_text_color">#ff103d87</color>
+    <color name="list_text_color">#ff888888</color>
+    <color name="live_tab_selected_text_color">#f67811</color>
+    <color name="live_tab_unselected_text_color">#8798a5</color>
+    <color name="lives_bottom_gray">#ff8b8b8b</color>
+    <color name="loadfail">#fff7f3f7</color>
+    <color name="loading_fail_font">#ffbfbfbf</color>
+    <color name="login_normal_text_color">#ff393361</color>
+    <color name="logon_editr_color">#ff9f9f9f</color>
+    <color name="maincolor">#d92f27</color>
+    <color name="maket_spn_line_color">#dedede</color>
+    <color name="navigationbar_item_selected_text_color">#f67811</color>
+    <color name="navigationbar_item_unselected_text_color">#5b5b5b</color>
+    <color name="news_bottom_g">#ff5b5b5b</color>
+    <color name="news_destaul_Layou_backnground">#ffe3e3e3</color>
+    <color name="news_title_color">#ff333333</color>
+    <color name="news_title_color1">#ff363636</color>
+    <color name="none_color">#00000000</color>
+    <color name="normal_text_color">#ff333333</color>
+    <color name="plugin_camera_black">#000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="public_bgd">#f8f8f8</color>
+    <color name="public_red_bkg">#ed4040</color>
+    <color name="red">#ed4040</color>
+    <color name="result_view">#b0000000</color>
+    <color name="search_font_color">#cbcbcb</color>
+    <color name="setting_bkcolor">#fff67f1d</color>
+    <color name="setting_title_color">#362471</color>
+    <color name="sharedefault">#D9DEDF</color>
+    <color name="shop_bankground">#fff7f7f9</color>
+    <color name="shop_priset_font">#ffcd4040</color>
+    <color name="slider_menu_background_color">#f8f8f8</color>
+    <color name="slider_menu_more_color">#666666</color>
+    <color name="style_blue">#4285f4</color>
+    <color name="style_divider_color">#C9C7CD</color>
+    <color name="style_red">#ff4c41</color>
+    <color name="tab_text_unselected">#ff959595</color>
+    <color name="talent_no_rank_backnground">#66ffffff</color>
+    <color name="talent_praise_bankground">#53aefa</color>
+    <color name="talent_rank_space">#f2f2f2</color>
+    <color name="translucent_background">#60000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="whitehalf">#80ffffff</color>
+    <declare-styleable name="BaseBanner"><attr name="bb_scale"/><attr name="bb_isLoopEnable"/><attr name="bb_delay"/><attr name="bb_period"/><attr name="bb_isAutoScrollEnable"/><attr name="bb_barColor"/><attr name="bb_isBarShowWhenLast"/><attr name="bb_barPaddingLeft"/><attr name="bb_barPaddingTop"/><attr name="bb_barPaddingRight"/><attr name="bb_barPaddingBottom"/><attr name="bb_textColor"/><attr name="bb_textSize"/><attr name="bb_isTitleShow"/><attr name="bb_isIndicatorShow"/><attr name="bb_indicatorGravity"/></declare-styleable>
+    <declare-styleable name="BaseIndicatorBanner"><attr name="bb_indicatorStyle"/><attr name="bb_indicatorWidth"/><attr name="bb_indicatorHeight"/><attr name="bb_indicatorGap"/><attr name="bb_indicatorSelectColor"/><attr name="bb_indicatorUnselectColor"/><attr name="bb_indicatorCornerRadius"/><attr name="bb_indicatorSelectRes"/><attr name="bb_indicatorUnselectRes"/></declare-styleable>
+    <declare-styleable name="CircleButton"><attr format="dimension" name="border_width"/><attr format="color" name="border_color"/></declare-styleable>
+    <declare-styleable name="CircleImageView"><attr format="dimension" name="civ_border_width"/><attr format="color" name="civ_border_color"/><attr format="boolean" name="civ_border_overlay"/><attr format="color" name="civ_fill_color"/><attr format="color" name="civ_circle_background_color"/></declare-styleable>
+    <declare-styleable name="ProgressButton"><attr format="float" name="progressbtn_radius"/><attr format="color" name="progressbtn_backgroud_color"/><attr format="color" name="progressbtn_backgroud_second_color"/><attr format="color" name="progressbtn_text_color"/><attr format="color" name="progressbtn_text_covercolor"/></declare-styleable>
+    <declare-styleable name="SwitchView"><attr format="boolean" name="hasShadow"/><attr format="color" name="primaryColor"/><attr format="color" name="primaryColorDark"/><attr format="boolean" name="isOpened"/></declare-styleable>
+    <drawable name="demand_video_comment_item_divider_colr">#b8b8b8</drawable>
+    <drawable name="live_tab_indicator_selected">#b8b8b8</drawable>
+    <drawable name="live_tab_indicator_unselected">#ffffffff</drawable>
+    <!-- From: file:/E:/workspace/idea/gztv/Core/src/main/res/values/ids.xml -->
+    <eat-comment/>
+    <item name="cirbutton_user_id" type="id"/>
+    <item name="tag_base_grid_list" type="id"/>
+    <!-- From: file:/E:/workspace/idea/gztv/Core/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">Core</string>
+    <string name="denied_message">如果你拒绝使用这个权限，你不能使用这个服务 \n \n 请在设置里的权限管理打开此权限</string>
+    <string name="downloaded"> %s %%</string>
+    <string name="help">帮助</string>
+    <string name="news_act_nocommemnd_hit">暂无评论</string>
+    <string name="news_act_replay_hit">评论不能为空</string>
+    <string name="news_act_replay_success_hit">评论成功</string>
+    <string name="no_permissions">应用需要必要的运行权限</string>
+    <string name="permission">权限(permission)</string>
+    <string name="quit">退出</string>
+    <string name="settings">设置</string>
+    <string name="string_help_text">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。\n\n最后点击两次后退按钮，即可返回。</string>
+    <!-- From: file:/E:/workspace/idea/gztv/Core/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="TextAppearance.BoldCondensedFont" parent="android:TextAppearance">
+        <!-- Custom Attr-->
+        <item name="fontPath">fonts/Roboto-BoldCondensed.ttf</item>
+    </style>
+    <style name="TextAppearance.BoldFont" parent="android:TextAppearance">
+        <!-- Custom Attr-->
+        <item name="fontPath">fonts/Roboto-Bold.ttf</item>
+    </style>
+    <style name="TextAppearance.LightFont" parent="android:TextAppearance">
+        <!-- Custom Attr-->
+        <item name="fontPath">fonts/Roboto-Light.ttf</item>
+    </style>
+    <style name="TextAppearance.MediumFont" parent="android:TextAppearance">
+        <!-- Custom Attr-->
+        <item name="fontPath">fonts/Roboto-Medium.ttf</item>
+    </style>
+    <style name="customer_progress_dialog" parent="@android:style/Widget.ProgressBar">-->
+        <item name="android:indeterminateDuration">2000</item>
+        <item name="android:fullDark">@drawable/loading_nor</item>
+    </style>
+    <style name="theme.customer_progress_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:alertDialogStyle">@style/customer_progress_dialog</item>
+        <item name="android:progressBarStyleSmall">@style/customer_progress_dialog</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:paddingLeft">5dip</item>
+        //图片与左边距的距离
+        <item name="android:paddingRight">5dip</item>
+        //message与右边距的距离
+        <item name="android:textSize">15sp</item>
+        //message字体的大小
+        <item name="android:textColor">@android:color/white</item>
+        //message字体的颜色
+    </style>
+</resources>

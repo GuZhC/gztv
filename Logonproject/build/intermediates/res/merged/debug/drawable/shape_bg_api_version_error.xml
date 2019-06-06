@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners android:radius="10dp"/>
+
+    <solid android:color="@color/white"/>
+</shape><!-- From: file:/E:/workspace/idea/gztv/Core/src/main/res/drawable/shape_bg_api_version_error.xml --><!-- From: file:/E:/workspace/idea/gztv/Logonproject/build/intermediates/exploded-aar/gztv/Core/unspecified/res/drawable/shape_bg_api_version_error.xml -->

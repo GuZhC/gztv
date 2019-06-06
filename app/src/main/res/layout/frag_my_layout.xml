@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/public_bgd"
+    android:focusable="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/my_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_marginTop="4dp"
+        android:visibility="gone"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
+
+        <com.dfsx.ganzcms.app.view.TwoRelyView
+            android:id="@+id/my_wallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:firstDrawableRight="@drawable/icon_wallet"
+            app:firstDrawablePadding="0dp"
+            app:viewSpace="8dp"
+            app:secondText="我的钱包"
+            app:secondTextColor="@color/black_36"
+            app:secondTextSize="14sp"
+            />
+
+        <com.dfsx.ganzcms.app.view.TwoRelyView
+            android:id="@+id/add_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:firstDrawableRight="@drawable/icon_add_money"
+            app:firstDrawablePadding="0dp"
+            app:viewSpace="8dp"
+            app:secondText="充值中心"
+            app:secondTextColor="@color/black_36"
+            app:secondTextSize="14sp"
+            />
+
+        <com.dfsx.ganzcms.app.view.TwoRelyView
+            android:id="@+id/pay_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:firstDrawableRight="@drawable/icon_pay_record"
+            app:firstDrawablePadding="0dp"
+            app:viewSpace="8dp"
+            app:secondText="消费记录"
+            app:secondTextColor="@color/black_36"
+            app:secondTextSize="14sp"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"/>
+
+    <LinearLayout
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:background="@drawable/item_selector">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="center"
+            android:src="@drawable/icon_my_video"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
+            android:textColor="@color/black_36"
+            android:text="我的视频"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_triangle_right"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/topic_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:visibility="gone"
+        android:paddingRight="10dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/item_selector">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="center"
+            android:src="@drawable/icon_my_topic"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
+            android:textColor="@color/black_36"
+            android:text="我的话题"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_triangle_right"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/my_live_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:visibility="gone"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/item_selector">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="center"
+            android:src="@drawable/icon_my_live"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
+            android:textColor="@color/black_36"
+            android:text="我的直播"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_triangle_right"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/my_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/item_selector">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="center"
+            android:src="@drawable/icon_my_notification"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
+            android:textColor="@color/black_36"
+            android:text="我的消息"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_triangle_right"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/my_share_id_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/item_selector">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="center"
+            android:src="@drawable/icon_my_person_share"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
+            android:textColor="@color/black_36"
+            android:text="分享名片"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_triangle_right"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/my_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="1dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/item_selector">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="center"
+            android:src="@drawable/icon_my_account_settings"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
+            android:textColor="@color/black_36"
+            android:text="账号设置"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_triangle_right"
+            />
+    </LinearLayout>
+
+</LinearLayout>

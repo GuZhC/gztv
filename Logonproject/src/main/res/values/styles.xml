@@ -1,0 +1,125 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="customer_progress_dialog" parent="@android:style/Widget.ProgressBar">-->
+        <item name="android:indeterminateDuration">2000</item>
+        <item name="android:fullDark">@drawable/loading_nor</item>
+    </style>
+
+    <style name="auto_size">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="LoginToggleContainerStyle" >
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="LoginToggleButtonStyle" >
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="LoginToggleTextViewStyle" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="CCWEditTextStyle" parent="@android:style/Widget.Holo.Light.EditText">
+        <item name="android:textSize">@dimen/logon_text_size</item>
+        <item name="android:textColor">@color/logon_editr_color</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/edit_background</item>
+    </style>
+
+    <style name="CCWButtonStyle" parent="@android:style/Widget.Holo.Light.Button">
+        <item name="android:textSize">@dimen/middle_text_size</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:minHeight">40dp</item>
+    </style>
+
+    <!--<style name="theme.customer_progress_dialog" parent="@android:style/Theme.Dialog">-->
+        <!--<item name="android:alertDialogStyle">@style/customer_progress_dialog</item>-->
+        <!--<item name="android:progressBarStyleSmall">@style/customer_progress_dialog</item>-->
+        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--<item name="android:paddingLeft">5dip</item>  //图片与左边距的距离-->
+        <!--<item name="android:paddingRight">5dip</item> //message与右边距的距离-->
+        <!--<item name="android:textSize">15sp</item>      //message字体的大小-->
+        <!--<item name="android:textColor">@android:color/white</item>  //message字体的颜色-->
+    <!--</style>-->
+
+    <style name="headImagThema" >
+        <item name="android:textSize">11.0sp</item>
+        <item name="android:textColor">@color/head_img_font</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingLeft">7dp</item>
+    </style>
+
+    <style name="headpassThema" >
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/pass_font_font</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingLeft">7dp</item>
+    </style>
+
+    <style name="headTitleThema" >
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:textColor">@color/head_left_font</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingLeft">7dp</item>
+    </style>
+
+    <style name="headMessageThema" >
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/text_commom_font_color</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="Theme_RecorderDialog" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+         <item name="android:windowBackground">@android:color/transparent</item>
+         <!--<item name="android:backgroundDimEnabled">true</item>-->
+         <!--<item name="android:backgroundDimAmount">0.5</item>-->
+    </style>
+
+      <style name="dialogWindowAnim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+
+    <style name="thirdcancelBtn" parent="headTitleThema">
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:paddingRight">3dp</item>
+        <item name="android:background">@drawable/selector_third_text_cancel_color</item>
+        <item name="android:textColor">@color/text_commom_font_color</item>
+        <item name="android:text">@string/third_cancel_hit</item>
+    </style>
+
+    <style name="thirdAddBtn"  parent="headTitleThema">
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:paddingRight">3dp</item>
+        <item name="android:background">@drawable/selector_third_text_add_color</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:text">@string/third_add_hit</item>
+    </style>
+
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@color/white"
+              android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/fl_short_video_vp_root"
+        android:layout_width="match_parent"
+        android:clipChildren="false"
+        android:layout_height="wrap_content">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_short_video_top"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:clipChildren="false"
+            android:layout_height="164dp"/>
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/img_short_video_more"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="10dp"
+        android:src="@mipmap/img_short_video_more"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

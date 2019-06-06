@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">searchLibaray</string>
+
+    <string name="search_input_hit">请输入内容</string>
+    <string name="search_btn_cancel">取消</string>
+    <string name="search_word">文章</string>
+    <string name="search_live">直播</string>
+    <string name="search_vms">圈子</string>
+    <string name="search_user">用户</string>
+    <string name="search_history">历史记录</string>
+    <string name="search_del_cancel">我再想想</string>
+    <string name="search_del_ok">确定清除</string>
+    <string name="search_concern">关注</string>
+</resources>

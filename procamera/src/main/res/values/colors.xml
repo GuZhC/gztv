@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="commnity_progress_bkg">#80000000</color>
+    <color name="COLOR_E4">#ffe4e4e4</color>
+    <color name="news_commend_avaer_color">#ff7888a9</color>
+    <color name="conmminty_time_color">#a6a6a6</color>
+    <color name="line_e9_color">#ffe9e9e9</color>
+    <color name="COLOR_51">#515151</color>
+    <color name="nc_comnend_praise_item">#ff858585</color>
+    <color name="COLOR_33">#ff333333</color>
+    <color name="COLOR_f3">#fff3f3f3</color>
+    <color name="gray_75">#ff757575</color>
+    <color name="video_commend_bankground">#fff7f7f7</color>
+
+
+    <color name="public_purple_bkg">#ff279ae2</color>
+
+    <color name="act_home_noraml_font">#ff333333</color>
+    <color name="act_home_select_font">#ff1aac19</color>
+
+
+</resources>

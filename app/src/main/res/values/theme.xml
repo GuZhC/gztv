@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CCWTheme" parent="@android:style/Theme.Holo.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@drawable/window_background</item>
+        <item name="android:windowAnimationStyle">@style/CCWWindowAnimationStyle</item>
+        <item name="android:textAppearanceLarge">@style/CCWTextAppearanceLarge</item>
+        <item name="android:textAppearanceMedium">@style/CCWTextAppearanceMedium</item>
+        <item name="android:textAppearanceSmall">@style/CCWTextAppearanceSmall</item>
+        <item name="android:editTextStyle">@style/CCWEditTextStyle</item>
+        <item name="android:buttonStyle">@style/CCWButtonStyle</item>
+        <item name="android:checkboxStyle">@style/CCWCheckBoxStyle</item>
+    </style>
+
+    <style name="CCWDialogTheme" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:textAppearanceLarge">@style/CCWTextAppearanceLarge</item>
+        <item name="android:textAppearanceMedium">@style/CCWTextAppearanceMedium</item>
+        <item name="android:textAppearanceSmall">@style/CCWTextAppearanceSmall</item>
+        <item name="android:editTextStyle">@style/CCWEditTextStyle</item>
+        <item name="android:buttonStyle">@style/CCWButtonStyle</item>
+        <item name="android:checkboxStyle">@style/CCWCheckBoxStyle</item>
+    </style>
+
+    <style name="CCWFullScreenDialogTheme" parent="CCWDialogTheme">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="CCWWindowAnimationStyle" parent="@android:style/Animation.Translucent">
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+
+    <style name="CCWTextAppearanceLarge" parent="android:TextAppearance.Medium">
+        <item name="android:textSize">@dimen/large_text_size</item>
+        <item name="android:textColor">@color/normal_text_color</item>
+    </style>
+
+    <style name="CCWTextAppearanceMedium" parent="android:TextAppearance.Medium">
+        <item name="android:textSize">@dimen/middle_text_size</item>
+        <item name="android:textColor">@color/normal_text_color</item>
+    </style>
+
+    <style name="CCWTextAppearanceSmall" parent="android:TextAppearance.Small">
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:textColor">@color/normal_text_color</item>
+    </style>
+
+    <!--<style name="CCWEditTextStyle" parent="@android:style/Widget.Holo.Light.EditText">-->
+        <!--<item name="android:textSize">@dimen/middle_text_size</item>-->
+        <!--<item name="android:textColor">@color/normal_text_color</item>-->
+        <!--<item name="android:padding">5dp</item>-->
+        <!--<item name="android:background">@drawable/edit_background</item>-->
+    <!--</style>-->
+
+    <!--<style name="CCWButtonStyle" parent="@android:style/Widget.Holo.Light.Button">-->
+        <!--<item name="android:textSize">@dimen/middle_text_size</item>-->
+        <!--<item name="android:textColor">#FFFFFFFF</item>-->
+        <!--<item name="android:background">@drawable/button_background</item>-->
+        <!--<item name="android:minHeight">40dp</item>-->
+    <!--</style>-->
+
+    <style name="CCWCheckBoxStyle" parent="@android:style/Widget.Holo.CompoundButton.CheckBox">
+        <item name="android:textSize">@dimen/middle_text_size</item>
+        <item name="android:textColor">@color/normal_text_color</item>
+    </style>
+
+    <!-- hy 2015-4-1 -->
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>:
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <item name="android:windowNoTitle">true</item>:
+        <!-- <item name="android:windowBackground">@null</item>除去背景色-->
+        <!--<item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>-->
+        <!--<item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>-->
+    </style>
+
+    <style name="CustomProgressDialog" parent="@style/CustomDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="CRengBoxText" parent="@android:style/Theme.Dialog">
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">3dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:background">@drawable/shape_rectangle_bkg</item>
+    </style>
+
+</resources>

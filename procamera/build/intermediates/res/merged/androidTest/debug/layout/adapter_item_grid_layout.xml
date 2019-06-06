@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:id="@+id/grid_container_layout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+    >
+
+        <FrameLayout
+                android:id="@+id/container_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/shop_bankground"
+        >
+
+            <!--<com.dfsx.lzcms.liveroom.view.RectangleRelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="300dp"-->
+                    <!--app:ratio="1">-->
+
+                <ImageView
+                        android:id="@+id/shop_image_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"/>
+            <!--</com.dfsx.lzcms.liveroom.view.RectangleRelativeLayout>-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/shop_image_view"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:scaleType="centerCrop"/>-->
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/item_image_container_layout">
+
+                <!--  名次 -->
+                <RelativeLayout android:layout_width="48dp" android:id="@+id/top_rank_layout"  android:layout_height="48dp"
+                                android:layout_alignParentLeft="true"   android:visibility="gone"
+                                android:layout_alignParentTop="true"  android:background="@drawable/abs_grid_rank_bankground"
+                >
+                    <!--<ImageView android:layout_width="match_parent"-->
+                               <!--android:background="@null"-->
+                               <!--android:id="@+id/item_grid_num_bacnkground"-->
+                               <!--android:src="@drawable/abs_grid_rank_bankground"-->
+                               <!--android:layout_height="match_parent"/>-->
+
+                    <TextView
+                            android:id="@+id/item_grid_rank_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="top"
+                            android:paddingLeft="7dp"
+                            android:paddingTop="7dp"
+                            android:textSize="11sp"
+                            android:text="12"
+                            android:textColor="@color/white"/>
+                </RelativeLayout>
+
+
+                <ImageView android:layout_width="25dp"
+                           android:background="@null"
+                           android:layout_alignParentLeft="true"
+                           android:layout_alignParentTop="true"
+                           android:layout_marginLeft="9dp"
+                           android:id="@+id/item_grid_rank"
+                           android:src="@drawable/glide_default_image"
+                           android:layout_height="39dp"/>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="vertical"
+                              android:paddingBottom="7dp"
+                              android:layout_alignParentBottom="true"
+                              android:id="@+id/shop_pricess_container"
+                              android:layout_height="wrap_content">
+
+                    <TextView
+                            android:id="@+id/item_grid_describt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="11sp"
+                            android:paddingLeft="10dp"
+                            android:text="11"
+                            android:textColor="@color/white"/>
+
+                    <RelativeLayout android:layout_width="match_parent"
+                                    android:layout_marginTop="8dp"
+                                    android:paddingRight="9dp"
+                                    android:paddingLeft="9dp"
+                                    android:gravity="center_vertical"
+                                    android:layout_height="24dp">
+
+                        <LinearLayout android:layout_width="wrap_content"
+                                      android:orientation="horizontal"
+                                      android:layout_height="match_parent">
+                            <com.dfsx.core.common.view.CircleButton android:layout_width="24dp"
+                                       android:background="@null"
+                                       android:id="@+id/item_grid_logo" android:layout_centerVertical="true"
+                                       android:src="@drawable/glide_default_image"
+                                       android:layout_height="24dp"/>
+
+                            <TextView
+                                    android:id="@+id/item_grid_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textSize="10sp"
+                                    android:gravity="center"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="张三"
+                                    android:textColor="@color/white"/>
+                        </LinearLayout>
+
+                        <ImageView android:layout_width="10dp"
+                                   android:background="@drawable/abs_grid_bottom_icon"
+                                   android:layout_toLeftOf="@+id/item_grid_count"
+                                   android:layout_centerVertical="true"
+                                   android:layout_height="12dp"/>
+
+                        <TextView
+                                android:id="@+id/item_grid_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:textSize="10sp"
+                                android:gravity="center"
+                                android:layout_marginLeft="3dp"
+                                android:text=""
+                                android:textColor="@color/white"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </FrameLayout>
+    </RelativeLayout>
+</LinearLayout><!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/layout/adapter_item_grid_layout.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/bundles/debug/res/layout/adapter_item_grid_layout.xml -->

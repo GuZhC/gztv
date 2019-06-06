@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/Logonproject/build/intermediates/exploded-aar/com.github.CymChad/BaseRecyclerViewAdapterHelper/2.9.40/res/values-en/values-en.xml -->
+    <eat-comment/>
+    <string name="brvah_load_end">No more data</string>
+    <string name="brvah_load_failed">load more failed</string>
+    <string name="brvah_loading">Loading...</string>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginRight="13dp"
+                        android:orientation="horizontal">
+                        <RelativeLayout android:layout_width="match_parent"
+                                        android:layout_height="73dp">
+                       <FrameLayout android:layout_width="match_parent" android:background="@color/public_bgd"    android:paddingTop="5dp"
+                                    android:layout_height="67dp">
+                        <RelativeLayout android:layout_width="match_parent"  android:paddingRight="10dp" android:gravity="center_vertical" android:background="@color/white"  android:layout_height="match_parent">
+                                <ImageView  android:id="@+id/radio_thumb_img"  android:layout_marginLeft="28dp"  android:layout_marginRight="5dp"  android:layout_width="87dp"  android:scaleType="centerInside"  android:background="@drawable/fm_cirbut_img"  android:layout_height="match_parent"  android:layout_alignParentLeft="true" android:layout_centerVertical="true"  />
+                                <RelativeLayout android:layout_width="wrap_content" android:gravity="center" android:layout_toRightOf="@+id/radio_thumb_img"  android:layout_toLeftOf="@+id/cradio_lab_img"  android:layout_marginRight="5dp" android:layout_centerInParent="true" android:layout_height="match_parent">
+                                       <LinearLayout  android:layout_width="wrap_content"  android:layout_height="wrap_content"  android:orientation="vertical">
+                                               <TextView
+                                                       android:layout_height="wrap_content"
+                                                       android:layout_width="match_parent"
+                                                       android:gravity="center"
+                                                       android:textSize="14.0sp"
+                                                       android:textColor="@color/tv_name_selected"
+                                                       android:id="@+id/radio_title_tx"
+                                                       android:text=""/>
+                                               <TextView
+                                                       android:layout_height="wrap_content"
+                                                       android:layout_width="match_parent"
+                                                       android:gravity="center"
+                                                       android:textSize="12.0sp"
+                                                       android:textColor="@color/gray_75"
+                                                       android:singleLine="true"
+                                                       android:ellipsize="end"
+                                                       android:id="@+id/radio_des_tx"
+                                                       android:maxLength="30"
+                                                       android:text=""/>
+                                       </LinearLayout>
+                                </RelativeLayout>
+                                <ImageView android:layout_width="14dp"  android:id="@+id/cradio_lab_img" android:layout_height="21dp"   android:background="@drawable/radio_item_selectmark"  android:visibility="invisible"  android:layout_alignParentRight="true" android:layout_centerVertical="true"  />
+                        </RelativeLayout>
+                       </FrameLayout>
+                    <RelativeLayout android:layout_width="87dp" android:background="#f1f1f1"  android:layout_alignParentLeft="true"  android:layout_alignParentTop="true" android:layout_height="73dp">
+                      <ImageView android:layout_width="match_parent"  android:id="@+id/cradio_lasssb_img"  android:background="@drawable/glide_default_image" android:layout_height="match_parent" android:scaleType="fitXY"  android:layout_centerVertical="true"  />
+                    </RelativeLayout>
+                        </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="13dp"
+                        android:background="@color/public_bgd"
+                        android:orientation="horizontal">
+                </LinearLayout>
+                <!--<LinearLayout android:layout_width="wrap_content" android:gravity="left|center_vertical"  android:layout_height="73dp">-->
+                        <!--<ImageView android:layout_width="87dp"  android:id="@+id/cradio_lasssb_img"  android:background="@drawable/main_page_zhibo" android:layout_height="match_parent"  android:layout_alignParentRight="true" android:layout_centerVertical="true"  />-->
+                <!--</LinearLayout>-->
+                </LinearLayout>
+        </LinearLayout>

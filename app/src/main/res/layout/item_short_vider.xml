@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_short_video_share_content"
+            android:layout_width="match_parent"
+            android:background="@color/head_ad_font"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_short_video_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/tv_short_video_title"
+                android:layout_width="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="16dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="奋力推动治蜀兴川，在上新台阶"
+                android:textColor="@color/color_fe"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/tv_short_video_play"
+                android:layout_width="56dp"
+                android:background="@drawable/icon_list_play"
+                android:layout_centerInParent="true"
+                android:layout_height="56dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_short_video_share"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:background="@color/commnity_progress_bkg"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_short_video_share_wx"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:layout_marginLeft="130sp"
+                android:layout_marginTop="50dp"
+                android:drawableTop="@mipmap/icon_short_video_wx"
+                android:gravity="center_horizontal"
+                android:drawablePadding="6dp"
+                android:text="@string/tv_short_video_wx"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tv_short_video_share_friends"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="130sp"
+                android:layout_marginTop="50dp"
+                android:drawableTop="@mipmap/icon_short_video_friends"
+                android:gravity="center_horizontal"
+                android:drawablePadding="6dp"
+                android:text="@string/tv_short_video_friends"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btn_short_video_look_again"
+                android:layout_width="134dp"
+                android:text="@string/tv_look_again"
+                android:textColor="@color/color_333"
+                android:textSize="16sp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="38dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/shape_btn_short_video_white"
+                android:layout_height="36dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/cb_short_video_sound"
+                android:button="@null"
+                android:checked="false"
+                android:enabled="false"
+                android:visibility="gone"
+                android:background="@drawable/cb_video_sound_bg"
+                android:layout_width="18dp"
+                android:layout_margin="8dp"
+                android:layout_height="17dp"/>
+
+            <TextView
+                android:id="@+id/tv_short_video_time"
+                android:layout_width="52dp"
+                tools:text="15 : 24"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:background="@drawable/shap_short_video_time"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/white"
+                android:layout_height="18dp"/>
+        </RelativeLayout>
+
+
+        <FrameLayout
+            android:id="@+id/fl_short_video_video"
+            android:layout_width="match_parent"
+            android:transitionName="short_video"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_short_video_bottom"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="54dp">
+
+        <View
+            android:id="@+id/tv_short_video_go_detail"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <CheckBox
+            android:id="@+id/tv_short_video_praise"
+            android:layout_width="wrap_content"
+            android:button="@drawable/selector_short_video_prise"
+            android:checked="true"
+            android:textSize="15sp"
+            android:layout_marginRight="6dp"
+            tools:text="25432"
+            android:padding="6dp"
+            android:textColor="@color/color_333"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_short_video_look_count"
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp_10"
+            android:layout_marginRight="6dp"
+            android:drawablePadding="6dp"
+            android:drawableLeft="@mipmap/icon_short_video_look_num"
+            android:textColor="@color/color_333"
+            tools:text="25432"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_short_video_comment"
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp_10"
+            android:layout_marginRight="6dp"
+            android:drawablePadding="6dp"
+            android:drawableLeft="@mipmap/icon_short_viewo_comment"
+            android:textColor="@color/color_333"
+            tools:text="254"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/tv_short_video_share"
+            android:layout_width="wrap_content"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp_10"
+            android:layout_marginRight="6dp"
+            android:drawablePadding="6dp"
+            android:drawableLeft="@mipmap/icon_short_video_share"
+            android:textColor="@color/color_333"
+            android:text="分享"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</LinearLayout>

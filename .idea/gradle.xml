@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$USER_HOME$/.gradle" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Core" />
+            <option value="$PROJECT_DIR$/LiveRoom" />
+            <option value="$PROJECT_DIR$/Logonproject" />
+            <option value="$PROJECT_DIR$/OpenImage" />
+            <option value="$PROJECT_DIR$/SelectedMedia" />
+            <option value="$PROJECT_DIR$/ThirdLoginAndShare" />
+            <option value="$PROJECT_DIR$/VideoIjkplayer" />
+            <option value="$PROJECT_DIR$/adderesspicker" />
+            <option value="$PROJECT_DIR$/aliyunpush" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/blurringview" />
+            <option value="$PROJECT_DIR$/datechooseview" />
+            <option value="$PROJECT_DIR$/librestreaming" />
+            <option value="$PROJECT_DIR$/liveRecord" />
+            <option value="$PROJECT_DIR$/procamera" />
+            <option value="$PROJECT_DIR$/pullToZoomLibrary" />
+            <option value="$PROJECT_DIR$/pulltorefresh" />
+            <option value="$PROJECT_DIR$/searchlibaray" />
+            <option value="$PROJECT_DIR$/shopping" />
+            <option value="$PROJECT_DIR$/statistics" />
+            <option value="$PROJECT_DIR$/update" />
+            <option value="$PROJECT_DIR$/zbarcode" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

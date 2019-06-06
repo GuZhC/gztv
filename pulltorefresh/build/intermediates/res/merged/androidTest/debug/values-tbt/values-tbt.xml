@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/pulltorefresh/build/intermediates/bundles/debug/res/values-tbt/values-tbt.xml -->
+    <eat-comment/>
+    <string name="pull_to_refresh_from_bottom_pull_label">མནན་གཏོང་ནང་འཇུག་དེ་བས་མང་།…</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">ད་ལྟ་ནང་འཇོག་བྱེད་བཞིན་པ།…</string>
+    <string name="pull_to_refresh_from_bottom_release_label">མནན་གཏོང་ནང་འཇུག་དེ་བས་མང་།…</string>
+    <string name="pull_to_refresh_pull_label">མར་མནན་གསར་སྤེལ།…</string>
+    <string name="pull_to_refresh_refreshing_label">ནང་འཇུག་བྱེད་བཞིན་པ།…</string>
+    <string name="pull_to_refresh_release_label">མར་གཏོང་གསར་སྤེལ།…</string>
+</resources>

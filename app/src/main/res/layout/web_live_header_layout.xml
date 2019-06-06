@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_bar_bankground">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_centerHorizontal="true"
+            style="@style/ChatMessageTextShadowStyle"
+            android:text="直播"
+            android:layout_marginTop="32dp"
+            android:textColor="@color/COLOR_33"/>
+    </RelativeLayout>
+</LinearLayout>

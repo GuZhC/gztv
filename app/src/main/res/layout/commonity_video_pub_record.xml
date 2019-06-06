@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/black"
+              android:orientation="vertical">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <com.dfsx.ganzcms.app.act.MovieRecorderView
+                    android:id="@+id/movieRecorderView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:isshow_time="false"
+                    />
+        </FrameLayout>
+        <RelativeLayout android:layout_width="match_parent"  android:visibility="gone"  android:gravity="center_vertical"  android:layout_alignParentTop="true" android:layout_height="wrap_content">
+            <SeekBar
+                    android:minHeight="11dp"
+                    android:maxHeight="11dp"
+                    android:id="@+id/record_seek_bar"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/progress_custom"
+                    android:thumb="@null"
+                    android:gravity="center"
+                    android:thumbOffset="8dp"
+                    android:indeterminate="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+        <RelativeLayout android:layout_width="match_parent"   android:layout_alignParentBottom="true" android:layout_marginBottom="62dp" android:paddingTop="30dp"    android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"  android:orientation="vertical" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="match_parent" android:gravity="center_vertical"  android:layout_height="wrap_content">
+           <RelativeLayout android:layout_width="match_parent"  android:gravity="center_vertical" android:layout_height="wrap_content">
+            <ImageView
+                    android:id="@+id/delete_button"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:visibility="gone"
+                    android:background="@null"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/community_record_cancel"
+                    />
+
+            <ImageView
+                    android:id="@+id/shoot_button"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:src="@drawable/community_record_start"
+                    />
+
+            <ImageView
+                android:id="@+id/switch_camera_button"
+                android:layout_marginLeft="25dp"
+                android:layout_toRightOf="@+id/shoot_button"
+                android:layout_width="31dp"
+                android:layout_centerVertical="true"
+                android:layout_height="28dp"
+                android:background="@null"
+                android:src="@drawable/community_record_swicth"
+                />
+
+            <ImageView
+                    android:id="@+id/video_apply_button"
+                    android:layout_marginRight="50dp"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:src="@drawable/community_record_apply"
+                    android:layout_centerVertical="true"
+                    />
+           </RelativeLayout>
+        </LinearLayout>
+         <LinearLayout android:layout_width="match_parent"   android:visibility="gone" android:layout_height="wrap_content">
+            <Button android:id="@+id/localtion_fileup_btn"   android:layout_width="match_parent"  android:textColor="@color/black"  android:textSize="13.0sp" android:background="@color/up_btn_background" android:layout_height="42dp" android:text="本地上传" />
+         </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

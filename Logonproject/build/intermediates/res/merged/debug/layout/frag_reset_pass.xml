@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white">
+
+    <LinearLayout android:layout_width="match_parent" android:orientation="vertical"  android:paddingTop="10dp"
+                  android:layout_height="match_parent">
+        <RelativeLayout android:layout_width="match_parent"  android:visibility="gone" android:paddingLeft="16dp" android:paddingRight="12dp"
+                        android:layout_height="wrap_content">
+            <ImageView android:layout_width="9dp" android:layout_centerVertical="true"
+                       android:layout_alignParentLeft="true" android:layout_height="14dp"
+                       android:background="@drawable/reg_ver_left_back"/>
+            <TextView android:layout_width="wrap_content" android:layout_centerInParent="true"
+                      android:layout_height="wrap_content" android:text="重置密码" android:textSize="17.0sp"
+                      android:textColor="@color/news_title_color"
+            />
+        </RelativeLayout>
+        <!--<View android:layout_width="match_parent" android:layout_height="1dp"  android:background="@color/line_color" />-->
+        <LinearLayout android:layout_width="match_parent"  android:layout_marginTop="10dp" android:gravity="center_horizontal"
+                      android:orientation="vertical" android:layout_height="wrap_content">
+            <EditText
+                    android:id="@+id/pass_new_edt"
+                    android:layout_width="305dp"
+                    android:layout_height="48dp"
+                    android:paddingLeft="15dp"
+                    android:textSize="15.0sp"
+                    android:password="true"
+                    android:textColor="@color/news_title_color"
+                    android:background="@color/comment_op_background"
+                    android:hint="@string/register_user_pwd_hit"/>
+
+            <EditText
+                    android:id="@+id/pass_again_edt"
+                    android:layout_width="305dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="7dp"
+                    android:paddingLeft="15dp"
+                    android:password="true"
+                    android:paddingRight="17dp"
+                    android:textSize="15.0sp"
+                    android:textColor="@color/news_title_color"
+                    android:background="@color/comment_op_background"
+                    android:hint="请再次输入"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                      android:layout_height="wrap_content">
+
+            <TextView android:layout_width="305dp"  android:id="@+id/comfirm_btn" android:layout_height="48dp" android:layout_marginTop="17dp"
+                      android:background="@color/button_enable_color" android:layout_gravity="center_horizontal"
+                      android:textColor="@color/white" android:text="确认" android:textSize="17.0sp"
+                      android:gravity="center"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/E:/workspace/idea/gztv/Logonproject/src/main/res/layout/frag_reset_pass.xml -->

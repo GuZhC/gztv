@@ -1,0 +1,78 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.dfsx.core">
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature
+            android:name="android.hardware.camera.autofocus"
+            android:required="false"/>
+
+    <application
+            android:allowBackup="true"
+            android:label="@string/app_name"
+    >
+
+        <activity
+                android:name=".PermissionsActivity"
+                android:configChanges="orientation|screenSize">
+        </activity>
+        <activity
+            android:name=".common.act.ApiVersionErrorActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize"/>
+        <activity
+                android:name=".common.act.WhiteTopBarActivity"
+                android:configChanges="orientation|screenSize"
+                android:windowSoftInputMode="stateHidden|adjustResize"
+                android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data
+                        android:scheme="white_top_bar"
+                        android:host="com.dfsx.lscms.default"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".common.act.DefaultFragmentActivity"
+                android:configChanges="keyboard|keyboardHidden|uiMode"
+                android:windowSoftInputMode="stateHidden|adjustPan"
+                android:screenOrientation="portrait"
+                android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data
+                        android:scheme="@string/app_name"
+                        android:host="go_home"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data
+                        android:scheme="@string/app_name"
+                        android:host="go_checktele"/>
+                <data
+                        android:scheme="@string/app_name"
+                        android:host="go_communitPub"/>
+
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>

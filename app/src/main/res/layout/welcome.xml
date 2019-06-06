@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <!--<FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">-->
+        <ImageView
+                android:id="@+id/showAd_back"
+                android:fadingEdge="none"
+                android:layout_above="@+id/bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/welcome_banground_img"
+                android:scaleType="fitXY"
+        />
+        <!--</FrameLayout>-->
+        <RelativeLayout android:layout_width="match_parent" android:visibility="gone"
+                        android:background="@color/white"
+                        android:id="@+id/bottom_layout" android:layout_alignParentBottom="true" android:gravity="center"
+                        android:layout_height="119dp">
+            <ImageView
+                    android:layout_width="189dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="71dp"
+                    android:background="@drawable/wel_bottom_logo"/>
+        </RelativeLayout>
+        <!--android:background="@drawable/wel_bottom_logo"-->
+
+        <!--<RelativeLayout android:layout_width="76dp" android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginTop="25dp"-->
+        <!--android:layout_marginRight="10dp" android:layout_height="27dp">-->
+
+        <ImageView
+                android:id="@+id/jump_ad_btn"
+                android:fadingEdge="none"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:background="@drawable/ad_jump_img"/>
+
+        <!--<TextView android:layout_width="match_parent" android:id="@+id/top_time_txt"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="12" android:paddingLeft="10dp" android:gravity="left|center_vertical"-->
+        <!--android:textColor="@color/comment_background" android:textSize="12.0sp"-->
+        <!---->
+        <!--/>-->
+
+        <TextView
+                android:text=""
+                android:id="@+id/top_time_txt"
+                android:background="@drawable/video_top_time_bg"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <!--</RelativeLayout>-->
+    </RelativeLayout>
+
+</LinearLayout>
+
+

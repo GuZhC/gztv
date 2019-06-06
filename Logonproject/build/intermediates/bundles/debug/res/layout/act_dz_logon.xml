@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"  android:paddingTop="10dp">
+        <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                      android:layout_height="match_parent">
+            <RelativeLayout android:layout_width="match_parent" android:paddingLeft="16dp" android:paddingRight="12dp"
+                            android:layout_height="wrap_content">
+                <ImageView android:layout_width="35dp"  android:id="@+id/back_btn" android:scaleType="center"   android:layout_centerVertical="true"
+                           android:layout_alignParentLeft="true" android:layout_height="20dp"
+                           android:src="@drawable/reg_ver_left_back"/>
+                <TextView android:layout_width="wrap_content" android:layout_centerInParent="true"
+                          android:layout_height="wrap_content" android:text="登录" android:textSize="17.0sp"
+                          android:textColor="@color/news_title_color" />
+                <!--<ImageView android:layout_width="54dp"  android:id="@+id/logon_register_btn" android:layout_centerVertical="true"-->
+                           <!--android:layout_alignParentRight="true" android:layout_height="27dp"-->
+                           <!--android:background="@drawable/reg_log_reg"/>-->
+
+                <TextView android:layout_width="54dp" android:visibility="gone"  android:id="@+id/logon_register_btn" android:layout_centerVertical="true"
+                           android:layout_alignParentRight="true" android:layout_height="27dp"
+                           android:gravity="center"  android:text="注册"  android:textColor="@color/white"  android:textSize="13.0sp"
+                           android:background="@color/public_purple_bkg"/>
+            </RelativeLayout>
+            <LinearLayout android:layout_width="match_parent"  android:layout_marginTop="23dp" android:gravity="center_horizontal"
+                          android:orientation="vertical" android:layout_height="wrap_content">
+                <EditText
+                        android:id="@+id/mail_edittext"
+                        android:layout_width="305dp"
+                        android:layout_height="48dp"
+                        android:paddingLeft="15dp"
+                        android:visibility="gone"
+                        android:textSize="15.0sp"
+                        android:textColor="@color/news_title_color"
+                        android:background="@color/comment_op_background"
+                        android:hint="中国大陆(+86)"/>
+
+                <EditText
+                        android:id="@+id/logo_telephont_edt"
+                        android:layout_width="305dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="7dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="17dp"
+                        android:textSize="15.0sp"
+                        android:textColor="@color/news_title_color"
+                        android:background="@color/comment_op_background"
+                        android:hint="请输入用户名或手机号"/>
+
+
+                <LinearLayout android:layout_width="305dp"
+                              android:orientation="horizontal"
+                              android:gravity="center_vertical"
+                              android:layout_marginTop="7dp"
+                              android:paddingRight="5dp"
+                                android:background="@color/comment_op_background"
+                                android:layout_height="48dp">
+                    <EditText
+                            android:id="@+id/logon_pass_edt"
+                            android:layout_width="279dp"
+                            android:layout_height="48dp"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="17dp"
+                            android:background="@null"
+                            android:password="true"
+                            android:textSize="15.0sp"
+                            android:textColor="@color/news_title_color"
+                            android:hint="请输入密码"/>
+
+                    <ImageView android:layout_width="21dp"
+                               android:id="@+id/show_pwd_btn"
+                               android:layout_marginTop="5dp"
+                               android:layout_centerVertical="true"
+                               android:layout_height="10dp"
+                               android:background="@drawable/hide_pwd_icon"/>
+
+                </LinearLayout>
+
+
+                <TextView android:layout_width="305dp"  android:id="@+id/logo_comfirm_btn" android:layout_height="48dp" android:layout_marginTop="17dp"
+                          android:background="@color/button_enable_color"
+                          android:textColor="@color/white" android:text="登陆" android:textSize="17.0sp"
+                          android:gravity="center"/>
+
+                <TextView android:layout_width="wrap_content"   android:id="@+id/logon_forget_btn" android:layout_height="wrap_content" android:layout_marginTop="17dp"
+                          android:textColor="@color/wel_eft_hit_font" android:text="忘记密码？" android:textSize="15.0sp"
+                          android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- share -->
+            <LinearLayout android:layout_width="match_parent"  android:visibility="gone" android:layout_marginTop="30dp"  android:layout_height="wrap_content">
+                <include layout="@layout/bar_share_layout"  />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+<!-- From: file:/E:/workspace/idea/gztv/Logonproject/src/main/res/layout/act_dz_logon.xml -->

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="#e5dddddd"
+        android:gravity="center_vertical">
+
+        <com.dfsx.core.common.view.CircleImageView
+            android:id="@+id/image_radio"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/tv_radio_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:text="111111"
+            android:textColor="@color/black_33"/>
+
+        <ImageView
+            android:id="@+id/radio_status_image"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/icon_radio_play"
+            />
+    </LinearLayout>
+</LinearLayout>

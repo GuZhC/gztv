@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_checked="true">
+        <shape android:shape="rectangle"
+            >
+            <solid android:color="#fbd42d"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle"
+            >
+            <solid android:color="#80ffffff"/>
+        </shape>
+    </item>
+</selector><!-- From: file:/E:/workspace/idea/gztv/LiveRoom/src/main/res/drawable/beauty_level_line.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/drawable/beauty_level_line.xml -->

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+            android:id="@+id/news_list_item_image_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_centerVertical="true">
+
+        <ImageView
+                android:id="@+id/news_news_list_item_image"
+                android:src="@drawable/search_time"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                    android:textSize="15.0sp"
+                    android:textColor="@drawable/news_title_color_xml"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:id="@+id/search_list_item_title"
+                    android:layout_toRightOf="@+id/news_news_list_item_image"
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+        <ImageButton
+                android:id="@+id/search_list_del"
+                android:src="@drawable/search_del"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@null"
+                android:scaleType="centerCrop"/>
+            </RelativeLayout>
+    </LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/decelerate_interpolator" >
+
+    <translate
+        android:duration="500"
+        android:fromYDelta="0.0"
+        android:toYDelta="100.0%p" />
+
+</set><!-- From: file:/E:/workspace/idea/gztv/ThirdLoginAndShare/src/main/res/anim/slide_out_bottom.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/ThirdLoginAndShare/unspecified/res/anim/slide_out_bottom.xml -->

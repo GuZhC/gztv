@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/pop_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/bg_image_live_logo"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="57dp"
+                android:layout_marginRight="57dp"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true">
+
+                <LinearLayout
+                    android:id="@+id/ll_popup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="18dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/item_popupwindows_live"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="普 通 直 播"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:background="@drawable/btn_bg_live_start"
+                            android:gravity="center"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="18dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/item_popupwindows_yugao"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="预 约 直 播"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:background="@drawable/btn_bg_yugao_start"
+                            android:gravity="center"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="18dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/item_popupwindows_service_live"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="活 动 直 播"
+                            android:textColor="@color/public_purple_bkg"
+                            android:textSize="15dp"
+                            android:background="@drawable/btn_bg_service_live_start"
+                            android:gravity="center"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="0dp"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/item_popupwindows_up"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn_bg_upload_video_start"
+                            android:textColor="#fc5267"
+                            android:textSize="15dp"
+                            android:text="上 传 视 频"
+                            android:gravity="center"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:visibility="gone"
+                        android:paddingRight="10dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/item_popupwindows_ups"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/shape_middle_button"
+                            android:textColor="#585858"
+                            android:textSize="15.0sp"
+                            android:paddingLeft="10dp"
+                            android:gravity="center"
+                            android:drawableLeft="@drawable/pengyou_auth"
+                            android:text="上传视频"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/item_popupwindows_cannel"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/shape_middle_button"
+                            android:textColor="#585858"
+                            android:textSize="15.0sp"
+                            android:paddingLeft="10dp"
+                            android:gravity="center"
+                            android:drawableLeft="@drawable/pengyou_auth"
+                            android:text="取消"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="18dp"
+                        android:paddingBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/item_popupwindows_cannels"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="取消"
+                            android:textSize="15dp"
+                            android:gravity="center"
+                            android:textColor="@color/gray_75"
+                            android:background="@drawable/shape_btn_live_cancle"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:paddingBottom="23dp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#6c6c6c"
+                        android:textSize="11dp"
+                        android:text="开播默认同意遵守《乐事TV直播管理条例》"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/item_popupwindows_cannels_1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerInside"
+        android:layout_alignParentRight="true"
+        android:layout_margin="15dp"
+        android:visibility="gone"
+        android:background="@color/transparent"
+        android:src="@drawable/new_middle_cancel"
+        />
+</RelativeLayout>

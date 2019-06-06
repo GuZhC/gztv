@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout android:layout_width="match_parent"  android:layout_height="wrap_content">
+                        <FrameLayout android:layout_width="match_parent"     android:layout_height="wrap_content">
+                                <RelativeLayout android:layout_width="match_parent"
+                                                android:layout_marginTop="67dp"
+                                                android:layout_height="wrap_content">
+                                        <!--<RelativeLayout android:layout_width="253dp"  android:paddingRight="15dp"-->
+                                                        <!--android:paddingLeft="15dp"-->
+                                                        <!--android:background="@drawable/fm_circle_bankground"-->
+                                                        <!--android:paddingTop="15dp"-->
+                                                        <!--android:gravity="center"-->
+                                                        <!--android:paddingBottom="15dp"  android:layout_height="253dp">-->
+                                              <!--<FrameLayout android:layout_width="match_parent"-->
+                                                           <!--android:layout_height="match_parent">-->
+                                                <ImageView
+                                                        android:src="@drawable/fm_cirbut_img"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerHorizontal="true"
+                                                        android:layout_centerVertical="true"
+                                                        android:scaleType="center"
+                                                        android:id="@+id/fm_ciru_lay"
+                                                        />
+                                              <!--</FrameLayout>-->
+                                                <ImageButton android:layout_width="wrap_content"  android:scaleType="center"   android:layout_centerHorizontal="true"
+                                                               android:id="@+id/radio_plays_btn" android:layout_centerVertical="true"  android:layout_height="wrap_content"  android:src="@drawable/radio_play"
+                                                             android:background="@null"  />
+                                        <!--</RelativeLayout>-->
+                                </RelativeLayout>
+                        </FrameLayout>
+
+                        <!--android:layout_marginTop="-40dp"-->
+
+                        <ImageView
+                                android:id="@+id/fm_header_lay"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentTop="true"
+                                android:background="@drawable/head_fm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                />
+                        <!--<RelativeLayout  android:layout_below="@+id/fm_header_lay" android:layout_marginTop="-60dp"  android:layout_width="match_parent" android:layout_height="wrap_content">-->
+                        <!--<ImageView-->
+                        <!--android:src="@drawable/radio_play"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:visibility="gone"-->
+                        <!--android:clickable="true"-->
+                        <!--android:id="@+id/audio_play"-->
+                        <!--android:layout_centerInParent="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_centerHorizontal="true"-->
+                        <!--android:layout_width="wrap_content"/>-->
+                        <!--</RelativeLayout>-->
+                </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+                <TextView
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_width="fill_parent"
+                        android:textSize="13sp"
+                        android:id="@+id/HZ_TextView"
+                        android:textStyle="bold"
+                        android:layout_weight="1"></TextView>
+        </LinearLayout>
+
+        <!--  -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:visibility="gone"
+                android:gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:paddingRight="20dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical">
+                        <ImageView
+                                android:background="@drawable/vol_minus"
+                                android:layout_width="20dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="17dp">
+                        </ImageView>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="6">
+                        <SeekBar
+                                android:minHeight="3dp"
+                                android:maxHeight="3dp"
+                                android:id="@+id/radio_seek_bar"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:progress="0"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:progressDrawable="@drawable/progress_custom"
+                                android:thumb="@drawable/thumb_custom"
+                                android:gravity="center"
+                                android:thumbOffset="5dp"
+                                android:indeterminate="false"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"/>
+                </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_marginTop="50dp"
+                      android:visibility="gone"
+                      android:orientation="horizontal"
+                      android:layout_height="66dp">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                        <RelativeLayout android:layout_width="wrap_content"  android:layout_toLeftOf="@+id/radio_play_btn"  android:layout_marginRight="40dp" android:layout_height="match_parent">
+                                <LinearLayout android:layout_width="wrap_content"    android:paddingTop="3dp"  android:gravity="center" android:orientation="vertical"  android:layout_height="match_parent">
+                                        <TextView
+                                                android:layout_height="wrap_content"
+                                                android:layout_width="wrap_content"
+                                                android:textSize="16.0sp"
+                                                android:gravity="bottom"
+                                                android:textColor="@color/conmminty_title_color"
+                                                android:id="@+id/HZ_TextVsddsiew"
+                                                android:textStyle="bold"
+                                                android:text="FM 102.8"/>
+                                        <TextView
+                                                android:layout_height="wrap_content"
+                                                android:layout_width="wrap_content"
+                                                android:gravity="bottom"
+                                                android:textSize="10.0sp"
+                                                android:textColor="@color/radio_plying_txt_font"
+                                                android:id="@+id/HZ_TecddxtVssiew"
+                                                android:text="正在收听"/>
+                                </LinearLayout>
+                        </RelativeLayout>
+                        <ImageButton android:layout_width="63dp" android:id="@+id/radio_play_btn"  android:layout_centerInParent="true" android:layout_height="63dp"  android:src="@drawable/radio_play"
+                                     android:background="@null"  />
+                </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"  android:visibility="gone"   android:layout_marginTop="10dp" android:layout_height="wrap_content">
+                <GridView  android:id="@+id/channel_grid"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:horizontalSpacing="3dp"
+                           android:numColumns="2"
+                           android:scrollbars="none"
+                           android:paddingLeft="5dp"
+                           android:verticalSpacing="5dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"   android:layout_marginBottom="5dp"    android:paddingLeft="13dp"
+                      android:paddingRight="13dp" android:layout_gravity="center_vertical" android:gravity="left"  android:paddingTop="5dp"  android:paddingBottom="5dp"   android:orientation="horizontal"    android:layout_marginTop="5dp" android:layout_height="wrap_content">
+                <!--<ImageView-->
+                        <!--android:layout_height="20dp"-->
+                        <!--android:layout_width="5dp"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:background="@drawable/left_icon"-->
+                        <!--android:layout_marginRight="10dp"-->
+                        <!--/>-->
+                <TextView
+                        android:layout_height="20dp"
+                        android:layout_width="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/public_red_bkg"
+                        android:layout_marginRight="10dp"
+                        />
+
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="14.0sp"
+                        android:gravity="center"
+                        android:textColor="@color/tv_name_selected"
+                        android:text="列表"/>
+        </LinearLayout>
+
+
+</LinearLayout>
+

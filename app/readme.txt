@@ -1,0 +1,39 @@
+页面和对应的类文件:
+MainTabActivity 主页
+LiveVideoPopupWindow 主页点击直播空间的弹窗
+PrepareLiveActivity 开始直播信息填写界面
+LiveRecordStreamingActivity 主播直播界面
+LiveRecordInfoFrag 主播的直播信息界面
+LiveFragment 主页直播列表面界面
+MyFragment 主页我的界面
+MyWalletFragment 我的钱包界面
+AddMoneyFragment 充值中心界面
+PayRecordFragment 消费记录界面
+MyMessageFragment 我的消息界面
+UserLiveFragment 用户的直播列表界面(个人页的直播)
+LiveRoomActivity 竞技直播界面
+LiveChatFragment 竞技直播聊天界面
+LiveGuessFragment 竞技直播竞猜界面
+LiveGuessRulesFragment 竞技直播竞猜规则界面
+LivePlayerInfoFragment 竞技直播人物信息界面
+LiveFullScreenRoomActivity 全屏展示直播的界面（show类型的直播）(观看)
+LiveInfoFrag 直播信息展示界面(观看)
+LiveBackPlayFullScreenRoomActivity 直播回放界面
+LiveBackPlayInfoFrag 直播回放信息展示界面
+ShareCard 分享名片界面
+PersonInforFragment 账号设置界面
+
+AbsChatRoomActivity 所有可以进入聊天室的抽象类，实现进入聊天室功能（支持自动进入房间和手动调用方法进入房间）
+DrawerActivity show类直播界面的框架类，主要实现抽屉的效果(slideMenu 实现， content界面为LiveInfoFrag， 视频的界面为primaryMenu)
+
+LiveRoomAdapter 主页直播列表adapter,个人页直播列表adapter
+
+IjkVideoView 播放器的核心播放功能界面。视频播放器的引擎! 不包括播放器的控制界面 (里面直播设置播放器的解码方式，
+选择不同的MediaPlayer，选择不同的Surface, 设置不同的播放器参数)
+
+Xmpp包下面全是IM聊天的配置类
+XmppManager 负者XMpp链接管理（初始化，登录链接，添加provider）
+XmppRoomManager 聊天室的管理类。所有聊天室的操作都使用它间接操作。起缓存和单例的作用
+XmppChatRoom 聊天室的具体操作类
+
+

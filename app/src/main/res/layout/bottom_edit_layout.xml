@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <RelativeLayout
+            android:background="@drawable/shape_rectangle_bkg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
+
+        <EditText
+                android:id="@+id/edit_text"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:background="@drawable/shape_editbox"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:focusableInTouchMode="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="36dp"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginRight="5.0dip"
+                android:layout_marginTop="6.0dip"
+                android:layout_marginBottom="6.0dip"
+                android:hint="我来说几句"
+                android:drawableLeft="@drawable/pen_icon"
+                android:drawablePadding="5.0dip"
+                android:layout_toLeftOf="@+id/right_layout"
+                android:maxLines="4"/>
+
+        <LinearLayout
+            android:id="@+id/right_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/edit_text"
+            android:orientation="horizontal">
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

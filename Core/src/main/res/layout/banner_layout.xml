@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.dfsx.bannacms.app.view.banner.SimpleImageBanner
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:banner="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/simple_img_banner"
+        banner:bb_barColor="@color/black_50a"
+        banner:bb_indicatorGap="5dp"
+        banner:bb_textSize="14sp"
+        banner:bb_textColor="@color/white"
+        banner:bb_indicatorGravity="TOP"
+        banner:bb_indicatorSelectColor="@color/public_red_bkg"
+        banner:bb_indicatorUnselectColor="@color/white">
+
+</com.dfsx.bannacms.app.view.banner.SimpleImageBanner>

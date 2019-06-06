@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+<com.dfsx.ganzcms.app.view.zoom.ZoomHeaderCoordinatorLayout
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="#00000000"
+        android:orientation="vertical"
+        app:layout_behavior="com.dfsx.core.common.view.FlingBehavior"
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+        <!--头    -->
+
+        <RelativeLayout android:layout_width="match_parent"    android:id="@+id/scroll_snap_view"
+                        app:layout_scrollFlags="scroll|snap"       android:layout_height="218dp">
+            <FrameLayout android:layout_width="match_parent"   android:layout_height="match_parent">
+                <ImageView android:layout_width="match_parent"  android:scaleType="centerCrop"
+                           android:id="@+id/top_bangrond_view" android:layout_height="match_parent"  />
+                <com.fivehundredpx.android.blur.BlurringView
+                        android:id="@+id/room_home_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        app:blurRadius="11"
+                        app:downsampleFactor="6"
+                        app:overlayColor="#C9000000"/>
+            </FrameLayout>
+            <RelativeLayout android:layout_width="match_parent"
+                            android:paddingTop="5dp"  android:paddingRight="15dp"  android:paddingLeft="15dp"
+                            android:layout_height="match_parent">
+                <ImageButton  android:id="@+id/slider_fg_back"  android:layout_width="26dp" android:layout_height="26dp"  android:layout_alignParentTop="true"   android:background="@null"    android:src="@drawable/slider_left_back"  android:layout_centerVertical="true"  />
+                <RelativeLayout android:layout_width="wrap_content" android:layout_marginTop="20dp"  android:gravity="center_horizontal" android:layout_centerInParent="true" android:layout_height="wrap_content">
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:orientation="vertical"
+                                  android:gravity="center_horizontal"
+                                  android:layout_height="wrap_content">
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:layout_gravity="center_horizontal"
+                                      android:orientation="horizontal"
+                                      android:layout_height="wrap_content">
+                            <RelativeLayout android:layout_width="match_parent"
+                                            android:layout_marginTop="15dp"
+                                            android:layout_height="match_parent">
+                                <com.dfsx.core.common.view.CircleButton  android:id="@+id/slider_person_img"
+                                                                         android:layout_width="70dp"
+                                                                         android:layout_height="70dp"
+                                                                         android:background="@null"
+                                                                         android:scaleType="centerCrop"
+                                                                         android:layout_centerVertical="true"
+                                                                         android:layout_centerInParent="true"
+                                />
+                                <TextView android:id="@+id/slider_persons_id"    android:layout_toRightOf="@+id/slider_person_img"  android:layout_marginLeft="10dp"   android:textSize="12.0dip"  android:textColor="@color/perosn_home_aid_font" android:gravity="center"   android:layout_centerVertical="true"     android:layout_width="wrap_content"  android:layout_height="wrap_content"    android:text=""   />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+
+                        <RelativeLayout android:layout_width="match_parent"
+                                        android:layout_marginTop="2dp" android:gravity="center_vertical"
+                                        android:layout_height="wrap_content">
+                            <TextView android:id="@+id/slider_person_name" android:singleLine="true" android:ellipsize="end"  android:textSize="17.0dip"
+                                      android:textColor="@color/perosn_home_name_font"
+                                      android:layout_centerInParent="true" android:layout_marginRight="10dp"
+                                      android:gravity="center"  android:layout_centerVertical="true"
+                                      android:layout_width="wrap_content"  android:layout_height="wrap_content"
+                                      android:text=""   />
+                            <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:id="@+id/cmy_user_level"
+                                    android:layout_height="17dp"
+                                    android:layout_toRightOf="@+id/slider_person_name"
+                                    android:layout_centerVertical="true"/>
+                        </RelativeLayout>
+
+                        <TextView android:id="@+id/slider_person_mark" android:layout_marginTop="10dp"   android:maxLines="2" android:ellipsize="end"  android:textSize="14.0dip" android:textColor="@color/perosn_home_signe_font" android:gravity="center_horizontal"   android:layout_centerVertical="true"     android:layout_width="match_parent"  android:layout_height="wrap_content"    android:text=""   />
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:layout_marginTop="10dp"
+                                      android:orientation="vertical"
+                                      android:layout_height="wrap_content">
+                            <View android:layout_width="match_parent"  android:layout_height="0.1dp" style="@style/ThemeOverlay.AppCompat.Light" android:background="@color/line_50_e9_color"/>
+                            <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginRight="12dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                <LinearLayout android:layout_width="wrap_content"  android:gravity="center_vertical"  android:orientation="horizontal"
+                                              android:layout_height="match_parent">
+                                    <LinearLayout
+                                            android:id="@+id/user_store_view"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="bottom"
+                                            android:layout_marginRight="10dp"
+                                            android:visibility="gone"
+                                            android:orientation="horizontal">
+
+                                        <TextView
+                                                android:id="@+id/user_store_num_text"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:shadowColor="#2c2c2c"
+                                                android:shadowDx="2"
+                                                style="@style/TextAppearance.BoldFont"
+                                                android:shadowDy="2"
+                                                android:shadowRadius="2"
+                                                android:textSize="19sp"
+                                                android:textStyle="bold"
+                                                android:textColor="#ffffff"
+                                                android:text=""/>
+
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/white"
+                                                android:textSize="12sp"
+                                                android:layout_marginLeft="4dp"
+                                                android:text="收藏"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                            android:id="@+id/user_concern_view"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="bottom"
+                                            android:orientation="horizontal">
+
+                                        <TextView
+                                                android:id="@+id/user_concern_num_text"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:shadowColor="#2c2c2c"
+                                                android:shadowDx="2"
+                                                android:shadowDy="2"
+                                                style="@style/TextAppearance.BoldFont"
+                                                android:shadowRadius="2"
+                                                android:textSize="19sp"
+                                                android:textStyle="bold"
+                                                android:textColor="#ffffff"
+                                                android:text=""/>
+
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/white"
+                                                android:textSize="12sp"
+                                                android:layout_marginLeft="4dp"
+                                                android:text="关注"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                            android:id="@+id/user_fans_view"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="bottom"
+                                            android:layout_marginLeft="16dp"
+                                            android:orientation="horizontal">
+
+                                        <TextView
+                                                android:id="@+id/user_fans_num_text"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:shadowColor="#2c2c2c"
+                                                style="@style/TextAppearance.BoldFont"
+                                                android:shadowDx="2"
+                                                android:shadowDy="2"
+                                                android:shadowRadius="2"
+                                                android:textSize="19sp"
+                                                android:textStyle="bold"
+                                                android:textColor="#ffffff"
+                                                android:text=""/>
+
+                                        <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:textColor="@color/white"
+                                                android:layout_marginLeft="4dp"
+                                                android:textSize="12sp"
+                                                android:text="粉丝"/>
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <ImageView
+                                        android:layout_width="28dp"
+                                        android:id="@+id/cmy_user_report"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_height="28dp"
+                                        android:src="@drawable/comnity_report_icon"
+                                        android:layout_centerVertical="true"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                <ImageButton  android:id="@+id/slider_fg_share"  android:layout_alignParentRight="true"  android:layout_width="21dp" android:layout_height="24dp"  android:layout_alignParentTop="true"   android:background="@null"    android:src="@drawable/peron_home_share"  android:layout_centerVertical="true"  />
+            </RelativeLayout>
+        </RelativeLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:id="@+id/bar_top_float_vew"
+                      android:gravity="center_horizontal"
+                      android:background="@color/black"
+                      android:layout_height="42dp">
+            <HorizontalScrollView
+                    android:id="@+id/hsv_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fadingEdgeLength="0dp"
+                    android:overScrollMode="never"
+                    android:layout_gravity="center_horizontal"
+                    android:scrollbars="none">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_height="match_parent">
+
+                    <LinearLayout
+                            android:id="@+id/hsv_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"></LinearLayout>
+
+                    <RelativeLayout
+                            android:id="@+id/scroll_bottom_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center_horizontal">
+
+                        <ImageView
+                                android:id="@+id/img1"
+                                android:layout_width="60dp"
+                                android:visibility="gone"
+                                android:layout_height="2dp"
+                                android:background="@color/perosn_home_midlle_sele_font"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+        />
+    </RelativeLayout>
+</com.dfsx.ganzcms.app.view.zoom.ZoomHeaderCoordinatorLayout>
+
+       <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView
+               android:id="@+id/per_home_addattrion_btn"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:background="@null"
+               android:visibility="gone"
+               android:layout_alignParentRight="true"
+               android:layout_alignParentBottom="true"
+               android:layout_marginBottom="40dp"
+               android:layout_marginRight="20dp"
+               android:src="@drawable/per_home_addttion"
+       />
+   </RelativeLayout>
+
+</RelativeLayout>

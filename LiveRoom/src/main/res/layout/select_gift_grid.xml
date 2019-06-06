@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:descendantFocusability="blocksDescendants"
+              android:orientation="vertical">
+
+    <com.dfsx.lzcms.liveroom.view.NoScrollGridView
+            android:id="@+id/select_gift_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="4"
+            android:horizontalSpacing="0px"
+            android:verticalSpacing="0px"
+            android:background="@color/transparent"
+            android:scrollbars="none"
+            android:listSelector="@color/transparent"/>
+
+
+</LinearLayout>

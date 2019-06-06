@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/stop_bg_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bg_stop_live"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/stop_bg_image"
+                    android:layout_alignRight="@+id/stop_bg_image"
+                    android:layout_alignTop="@+id/stop_bg_image"
+                    android:layout_marginTop="75dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bg_stop_live_text"/>
+
+                <Button
+                    android:id="@+id/btn_stop_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/stop_bg_image"
+                    android:layout_alignRight="@+id/stop_bg_image"
+                    android:layout_alignBottom="@+id/stop_bg_image"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginBottom="17dp"
+                    android:gravity="center"
+                    android:minHeight="35dp"
+                    android:background="@drawable/shape_btn_stop_live_ok"
+                    android:text="确定退出"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/btn_cancel_image"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_cancle_white"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <RelativeLayout android:layout_width="match_parent" android:id="@+id/portlayout_container" android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/top_list_view_layout"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        >
+
+    </FrameLayout>
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1">-->
+
+        
+        <RelativeLayout
+            android:id="@+id/bottom_top_view"
+            android:layout_width="match_parent" android:layout_weight="1"
+                        android:layout_below="@+id/top_list_view_layout"
+                        android:layout_above="@+id/bottom_list_view_layout" android:layout_height="match_parent">
+            <com.handmark.pulltorefresh.library.PullToRefreshListView
+                    android:id="@+id/frag_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:listSelector="@color/transparent"
+                    android:divider="@color/transparent"
+                    android:dividerHeight="0px"
+                    android:scrollbars="vertical"
+            />
+
+            <LinearLayout
+                    android:id="@+id/empty_layout"
+                    android:background="@color/white"
+                    android:layout_centerInParent="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/empty_layout"-->
+            <!--android:background="@color/green"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical">-->
+        <!--</LinearLayout>-->
+
+        <!--<com.handmark.pulltorefresh.library.PullToRefreshListView-->
+            <!--android:id="@+id/frag_list_view"-->
+            <!--android:background="@color/red"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:listSelector="@color/transparent"-->
+            <!--android:divider="@color/transparent"-->
+            <!--android:dividerHeight="0px"-->
+            <!--android:layout_below="@+id/top_list_view_layout"-->
+            <!--android:layout_above="@+id/bottom_list_view_layout"-->
+            <!--android:scrollbars="vertical"-->
+            <!--/>-->
+
+    <!--</RelativeLayout>-->
+
+    <FrameLayout
+            android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_list_view_layout"
+        android:layout_width="match_parent"
+            android:background="@color/white"
+            android:visibility="invisible"
+        android:layout_height="wrap_content"
+        >
+
+    </FrameLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+            android:id="@+id/full_list_view_layout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+
+    </FrameLayout>
+</LinearLayout>

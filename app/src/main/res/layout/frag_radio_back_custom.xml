@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                  android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:background="@color/COLOR_33"    android:orientation="vertical"
+                      android:layout_height="wrap_content">
+            <HorizontalScrollView
+                    android:id="@+id/hsv_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+
+                    android:fadingEdgeLength="0dp"
+                    android:overScrollMode="never"
+                    android:paddingLeft="18dp"
+                    android:scrollbars="none">
+
+                <LinearLayout
+                        android:id="@+id/hsv_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"></LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"  android:layout_height="match_parent">
+            <ListView
+                    android:id="@+id/tv_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@color/transparent"
+                    android:dividerHeight="0px"
+                    android:scrollbars="vertical"
+                    android:listSelector="@color/transparent"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

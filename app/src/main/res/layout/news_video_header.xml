@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_width="match_parent" xmlns:more="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/tools"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+          <!--<LinearLayout android:layout_width="match_parent" android:orientation="vertical"   android:layout_height="wrap_content">-->
+              <!--<RelativeLayout-->
+                      <!--android:id="@+id/news_detail_centernss"-->
+                      <!--android:layout_width="match_parent"-->
+                      <!--android:layout_height="211dp"-->
+              <!--&gt;-->
+                  <!--<include layout="@layout/video_play_container"   />-->
+                  <!--<ImageButton android:layout_width="43dp" android:layout_height="43dp"-->
+                               <!--android:background="@null"-->
+                               <!--android:id="@+id/cvideo_back_btn"-->
+                               <!--android:src="@drawable/cvideo_back_btn"-->
+                               <!--android:layout_alignParentLeft="true"-->
+                               <!--android:layout_alignParentTop="true"-->
+                               <!--android:layout_marginLeft="10dp"-->
+                               <!--android:layout_marginTop="10dp"-->
+                  <!--/>-->
+              <!--</RelativeLayout>-->
+              <!--<ProgressBar android:layout_width="match_parent" android:layout_height="3dp"-->
+                           <!--android:id="@+id/video_length_bar"-->
+                           <!--style="@android:style/Widget.ProgressBar.Horizontal"-->
+                           <!--android:max="100"-->
+                           <!--android:progressDrawable="@drawable/news_video_progress"-->
+              <!--/>-->
+          <!--</LinearLayout>-->
+
+            <LinearLayout android:layout_width="match_parent"
+                           android:paddingLeft="15dp"  android:paddingRight="15dp"
+                           android:paddingTop="18dp"
+                          android:orientation="vertical" android:layout_height="wrap_content">
+            <TextView
+                    android:textSize="16.0sp"
+                    android:id="@+id/cvideo_title_tx"
+                    android:textColor="@color/user_font_color"
+                    android:layout_width="match_parent"
+                    android:gravity="left"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_height="wrap_content"
+                     />
+
+            <LinearLayout android:layout_width="match_parent"  android:paddingTop="10dp" android:orientation="horizontal" android:layout_height="wrap_content">
+                <TextView
+                        android:textSize="12.0sp"
+                        android:id="@+id/cvideo_view_txt"
+                        android:textColor="@color/COLOR_AD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:gravity="left"
+                        android:text=""/>
+
+                <TextView
+                        android:textSize="12.0sp"
+                        android:id="@+id/cvideo_view_time"
+                        android:textColor="@color/COLOR_AD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:gravity="left"
+                        android:text=""/>
+            </LinearLayout>
+
+            <!--<TextView-->
+                    <!--android:textSize="15.0sp"-->
+                    <!--android:id="@+id/cvideo_sumamry_text"-->
+                    <!--android:textColor="@color/conmminty_title_color"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingTop="19dp"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:gravity="left"-->
+                    <!--android:text=""/>-->
+
+                <LinearLayout android:layout_width="match_parent" android:layout_marginTop="17dp"
+                              android:background="@color/public_bgd" android:orientation="horizontal"
+                              android:layout_height="wrap_content">
+                <com.dfsx.ganzcms.app.view.MyCollapseeView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:id="@+id/cvideo_sumamry_text"
+                        android:text=""
+                        android:textColor="@color/conmminty_title_color"
+                        android:paddingTop="5dp"
+                        android:paddingLeft="13dp"
+                        android:paddingRight="10dp"
+                        app:collapsedLines="3"
+                        app:tipsColor="#5193EA"
+                        app:expandedText="展开"
+                        app:collapsedText="收起"
+                        app:expandedDrawable="@mipmap/ic_expanded"
+                        app:collapsedDrawable="@mipmap/ic_collapsed"
+                        app:tipsUnderline="true"
+                        app:tipsGravity="end"
+                        app:tipsClickable="true"/>
+                </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:gravity="center_vertical"
+                          android:layout_marginTop="23dp"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+
+                <ImageView
+                        android:id="@+id/cvideo_play_parise_btn"
+                        android:src="@drawable/cvideo_play_parise"
+                        android:background="@null"
+                        android:layout_width="18dp"
+                        android:layout_height="16dp"
+                        android:layout_marginRight="5dp"
+                        />
+
+                <TextView
+                        android:textSize="13.0sp"
+                        android:id="@+id/cvideo_play_parise_txt"
+                        android:textColor="@color/user_font_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:layout_marginRight="25dp"
+                        android:text="1"/>
+
+                <ImageView
+                        android:id="@+id/cvideo_play_stramp_btn"
+                        android:src="@drawable/cvideo_stramp_btn"
+                        android:layout_width="18dp"
+                        android:background="@null"
+                        android:layout_height="16dp"
+                        android:layout_marginRight="5dp"
+                        />
+
+                <TextView
+                        android:textSize="13.0sp"
+                        android:id="@+id/cvideo_play_stramp_txt"
+                        android:textColor="@color/user_font_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="1"/>
+            </LinearLayout>
+            </LinearLayout>
+
+        <!-- 点赞列表 -->
+        <LinearLayout android:layout_width="match_parent" android:paddingLeft="13dp"  android:layout_marginTop="25dp"  android:orientation="horizontal"   android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="0dp" android:gravity="left" android:layout_weight="0.1" android:layout_height="wrap_content">
+                <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="17dp"
+                        android:id="@+id/praise_mark"
+                        android:background="@null"
+                        android:src="@drawable/community_prise_mark"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp"  android:layout_weight="0.9"  android:layout_height="wrap_content">
+                <com.dfsx.ganzcms.app.view.MoreTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mulite_line_txt"
+                        more:textColor="@color/public_purple_bkg"
+                        more:textSize="14.0sp"
+                        more:maxLine="3"
+                        more:text=""/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 相关推荐 -->
+        <include  layout="@layout/news_relation_list_header"  />
+
+               <LinearLayout android:layout_width="match_parent"  android:orientation="vertical" android:layout_height="wrap_content">
+                   <LinearLayout android:id="@+id/commomtiy_imgs"  android:paddingLeft="14dp"  android:paddingRight="14dp"  android:layout_marginBottom="10dp" android:orientation="vertical" android:layout_width="match_parent"   android:layout_height="wrap_content"/>
+                   <LinearLayout   android:layout_width="match_parent"     android:orientation="horizontal"  android:paddingTop="10dp"  android:paddingBottom="10dp"  android:paddingLeft="10dp" android:paddingRight="14dp"      android:background="@color/white"  android:layout_height="wrap_content">
+                      <RelativeLayout android:layout_width="match_parent" android:gravity="center_vertical"  android:layout_height="wrap_content">
+                          <!--<ImageView android:layout_width="30dp" android:layout_height="16dp" android:background="@null"-->
+                                     <!--android:layout_centerInParent="true"-->
+                                     <!--android:src="@drawable/video_bottom_icon"  />-->
+                          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:gravity="center"
+                                    android:text="@string/news_act_comned_hit"
+                                    android:textSize="17sp"
+                                    android:textColor="@color/news_item_title_color"
+                          />
+                          <TextView
+                                  android:layout_width="wrap_content"
+                                  android:textSize="12.0sp"
+                                  android:id="@+id/communtiry_brower_count_tx"
+                                  android:textColor="@color/search_font_color"
+                                  android:layout_alignParentRight="true"
+                                  android:gravity="center"
+                                  android:layout_marginTop="5dp"
+                                  android:text="1111"
+                                  android:layout_height="wrap_content"
+                                  />
+                      </RelativeLayout>
+                   </LinearLayout>
+                   <View   android:layout_width="match_parent"  android:background="@color/comment_background" android:layout_height="8dp"/>
+                <LinearLayout  android:id="@+id/comnend_noplay_layout"   android:layout_width="match_parent"    android:layout_gravity="center"     android:background="@color/white"  android:layout_height="160dp">
+                    <RelativeLayout android:layout_width="match_parent" android:gravity="center" android:layout_height="match_parent">
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:orientation="vertical"
+                                  android:gravity="center_horizontal"
+                                  android:layout_height="wrap_content">
+
+                        <ImageView android:layout_width="48dp" android:layout_height="32dp"
+                                   android:layout_centerInParent="true"
+                                   android:layout_gravity="center"
+                                   android:background="@drawable/video_nocommedn_icon"
+                                  />
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:textSize="14.0sp"
+                                android:textColor="@color/search_font_color"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:text="@string/news_act_nocommemnd_hit"/>
+                    </LinearLayout>
+                    </RelativeLayout>
+                   </LinearLayout>
+               </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+

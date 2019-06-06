@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_bgd"
+    android:orientation="vertical">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="210dp">
+        <FrameLayout
+                android:id="@+id/video_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:keepScreenOn="true"
+                android:layout_gravity="center"
+                android:background="@color/black">
+        </FrameLayout>
+        <ImageView
+                android:id="@+id/live_yv_play_btn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/video_head_icon"/>
+    </RelativeLayout>
+
+
+    <RadioGroup
+            android:id="@+id/tv_operation_bar"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:orientation="horizontal">
+
+        <RadioButton
+                android:id="@+id/bar_channel"
+                android:layout_width="128dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:checked="true"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:background="@drawable/tv_pindao_bankground"
+                android:button="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:text=" "
+                android:paddingLeft="55dp"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+        <RadioButton
+                android:id="@+id/bar_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:text="+回放"
+                android:textColor="@drawable/selector_bar_text_color"
+                android:textSize="15sp" />
+
+        <RadioButton
+                android:id="@+id/bar_commend"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:button="@android:color/transparent"
+                android:gravity="left|center_vertical"
+                android:text="+聊天"
+                android:textColor="@drawable/selector_bar_text_color"
+                android:textSize="15sp" />
+    </RadioGroup>
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#e1e1e1" />
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/tv_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/white"
+            android:fadingEdgeLength="0dp"
+            android:overScrollMode="never"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_item_line"
+        android:paddingBottom="6dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="6dp">
+
+        <TextView
+            android:id="@+id/live_channel_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1111"
+            android:textColor="@color/news_title_color1"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <RadioGroup
+            android:id="@+id/live_radio_bar"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/bar_today"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/today_background"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:paddingRight="1dp"
+                android:text="今天"
+                android:textColor="@drawable/selector_bar_text_color"
+                android:textSize="15sp" />
+
+
+            <RadioButton
+                android:id="@+id/bar_yestoday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/yestoday_background"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:text="昨天"
+                android:textColor="@drawable/selector_bar_text_color"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/bar_the_day_before_yestoday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/before_yestoday_background"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:paddingLeft="-1dp"
+                android:text="前天"
+                android:textColor="@drawable/selector_bar_text_color"
+                android:textSize="15sp" />
+        </RadioGroup>
+    </RelativeLayout>
+
+      <!--<ScrollView android:layout_width="match_parent"  android:scrollbars="vertical" android:layout_height="match_parent">-->
+          <LinearLayout android:layout_width="match_parent" android:visibility="gone"   android:orientation="horizontal" android:layout_height="match_parent">
+                  <LinearLayout   android:layout_width="0dp" android:background="#efefef"   android:orientation="vertical" android:layout_weight="0.2" android:layout_height="match_parent">
+                      <!--<TextView android:layout_width="match_parent"  android:visibility="gone"  android:id="@+id/tv_todat_tx"   android:textSize="16.0sp"  android:textColor="@color/tv_name_selected" android:layout_height="20dp"  android:text="今天"  android:gravity="center"/>-->
+                      <ScrollView     android:layout_width="match_parent"  android:scrollbars="vertical" android:layout_height="match_parent">
+                          <LinearLayout  android:id="@+id/tv_week_bofy" android:layout_width="match_parent"   android:orientation="vertical" android:layout_height="match_parent">
+                          </LinearLayout>
+                      </ScrollView>
+                  </LinearLayout>
+              <LinearLayout android:layout_width="0dp"  android:layout_weight="0.8"   android:layout_height="match_parent">
+                  <ListView
+                          android:id="@+id/tv_list"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:divider="@color/transparent"
+                          android:dividerHeight="0px"
+                          android:scrollbars="vertical"
+                          android:listSelector="@color/transparent"/>
+              </LinearLayout>
+          </LinearLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/full_screen_video_containerss"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"></FrameLayout>
+</LinearLayout>

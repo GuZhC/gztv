@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:imgtop="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout android:layout_width="match_parent" android:paddingLeft="13dp" android:paddingRight="13dp"   android:id="@+id/top_back_layout"  android:layout_alignParentTop="true" android:layout_height="48dp">
+        <RelativeLayout android:layout_width="48dp"  android:id="@+id/top_back_btn" android:layout_height="match_parent">
+            <ImageView android:layout_width="11dp" android:layout_height="11dp" android:layout_centerVertical="true"
+                        android:background="@drawable/news_commend_page_back"
+                      />
+            />
+        </RelativeLayout>
+            <TextView
+                    android:id="@+id/act_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="我的视频"
+                    android:textSize="16sp"
+                    android:textColor="@color/COLOR_33" />
+
+        <TextView
+                android:id="@+id/act_top_comfire_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text="确定"
+                android:textSize="15sp"
+                android:textColor="@color/COLOR_33" />
+    </RelativeLayout>
+
+
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/gridViewFromMediaChooser"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white"
+              android:layout_below="@+id/top_back_layout"
+              android:cacheColorHint="#00000000"
+              android:choiceMode="multipleChoice"
+              android:columnWidth="100dp"
+              android:drawSelectorOnTop="false"
+              android:gravity="center"
+              android:horizontalSpacing="3dp"
+              android:listSelector="@android:color/black"
+              android:numColumns="3"
+              android:paddingLeft="1dp"
+              android:paddingRight="1dp"
+              android:paddingTop="2dp"
+              android:stretchMode="columnWidth"
+              android:verticalSpacing="2dp"
+              android:paddingBottom="56dp">
+
+    </GridView>
+
+</RelativeLayout><!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/layout/my_grid_layout_video_chooser.xml -->

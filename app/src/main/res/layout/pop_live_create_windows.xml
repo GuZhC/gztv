@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+    <LinearLayout
+        android:id="@+id/ll_popup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <ImageButton
+                        android:id="@+id/item_swicth_live"
+                        android:layout_width="27dp"
+                        android:layout_height="24dp"
+                        android:background="@null"
+                        android:src="@drawable/live_create_icon"
+                        />
+
+                <ImageButton
+                        android:id="@+id/item_cancel_btn"
+                        android:layout_width="27dp"
+                        android:layout_height="24dp"
+                        android:background="@null"
+                        android:src="@drawable/live_create_cancel"
+                        />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+            <ImageView
+                    android:id="@+id/item_swicth_hedimage"
+                    android:layout_width="57dp"
+                    android:layout_height="57dp"
+                    android:background="@null"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/live_create_icon"
+                    />
+            <EditText
+                    android:id="@+id/item_head_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:background="@null"
+                    android:textColor="@color/white"
+                    android:textSize="13.0dp"
+                    />
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"  android:layout_height="1dp"  android:background="@color/live_head_line_banground"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="horizontal" >
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <EditText
+                        android:id="@+id/item_live_pass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:textColor="@color/white"
+                        android:textSize="15.0sp"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="10dp"
+                        android:gravity="left|center_vertical"
+                        android:text="" />
+
+                <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:background="@null"
+                        android:layout_toLeftOf="@+id/item_liev_pass_descrie"
+                        android:src="@drawable/live_lock_icon"
+                        android:layout_centerVertical="true"
+                         />
+
+                <TextView
+                        android:id="@+id/item_liev_pass_descrie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:textColor="@color/white"
+                        android:textSize="15.0sp"
+                        android:gravity="left|center_vertical"
+                        android:text="我要加密直播" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal"
+                android:visibility="gone"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:orientation="horizontal" >
+            <ImageButton
+                    android:id="@+id/item_live_crate_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/live_create_btn"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:text="取消" />
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="horizontal" >-->
+            <!--<ImageButton-->
+                    <!--android:id="@+id/item_popupwindows_cannels"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@null"-->
+                    <!--android:paddingLeft="10dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:src="@drawable/new_middle_cancel"-->
+                    <!--/>-->
+        <!--</LinearLayout>-->
+
+    </LinearLayout>
+
+</RelativeLayout>

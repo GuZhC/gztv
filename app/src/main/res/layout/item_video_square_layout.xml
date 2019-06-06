@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.dfsx.lzcms.liveroom.view.RectangleRelativeLayout
+        android:id="@+id/video_square_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_item_video"
+        android:gravity="center"
+        app:ratio="1">
+
+        <TextView
+            android:id="@+id/item_video_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:drawableLeft="@drawable/icon_tv_series_play"
+            android:drawablePadding="0dp"
+            android:textColor="@color/black_21"/>
+    </com.dfsx.lzcms.liveroom.view.RectangleRelativeLayout>
+</LinearLayout>

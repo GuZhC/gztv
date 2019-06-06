@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"  android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+              android:background="@color/white"
+  >
+
+    <LinearLayout android:layout_width="match_parent"  android:paddingRight="13dp"
+                  android:paddingLeft="13dp" android:orientation="vertical"    android:layout_height="wrap_content">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <!--<LinearLayout android:layout_width="match_parent"      android:gravity="center_vertical"   android:orientation="horizontal" android:layout_height="wrap_content">-->
+                <!--<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">-->
+                    <!--<RelativeLayout android:layout_width="wrap_content"-->
+                                    <!--android:gravity="center"-->
+                                    <!--android:layout_height="match_parent">-->
+                        <!--<LinearLayout android:layout_width="wrap_content"-->
+                                      <!--android:orientation="horizontal"-->
+                                      <!--android:layout_height="match_parent">-->
+                            <!--<LinearLayout android:layout_width="wrap_content"-->
+                                          <!--android:layout_marginRight="10dp"-->
+                                          <!--android:layout_height="match_parent">-->
+                                <!--<com.dfsx.core.common.view.CircleButton-->
+                                        <!--android:id="@+id/disclosure_user_imge"-->
+                                        <!--android:src="@drawable/user_default_commend"-->
+                                        <!--android:layout_width="40dp"-->
+                                        <!--android:layout_height="40dp"-->
+                                        <!--android:layout_alignParentLeft="true"-->
+                                        <!--android:layout_centerVertical="true"/>-->
+                            <!--</LinearLayout>-->
+                            <!--<LinearLayout android:layout_width="wrap_content"-->
+                                          <!--android:orientation="vertical"-->
+                                          <!--android:paddingTop="2dp"-->
+                                          <!--android:layout_gravity="center_vertical"-->
+                                          <!--android:layout_height="match_parent">-->
+                                <!--<TextView-->
+                                        <!--android:textSize="14.0sp"-->
+                                        <!--android:id="@+id/disclosure_user_name"-->
+                                        <!--android:textColor="@color/user_font_color"-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:text="马应龙"/>-->
+                                <!--<TextView-->
+                                        <!--android:textSize="10.0sp"-->
+                                        <!--android:layout_marginTop="4dp"-->
+                                        <!--android:id="@+id/disclosure_list_time"-->
+                                        <!--android:textColor="@color/conmminty_time_color"-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:text="5小时前"/>-->
+                            <!--</LinearLayout>-->
+                        <!--</LinearLayout>-->
+                    <!--</RelativeLayout>-->
+                    <!--<RelativeLayout android:layout_width="wrap_content"-->
+                                    <!--android:layout_alignParentRight="true"-->
+                                    <!--android:layout_height="match_parent">-->
+                        <!--<ImageView-->
+                                <!--android:layout_width="63dp"-->
+                                <!--android:id="@+id/disclosure_oper"-->
+                                <!--android:layout_height="29dp"-->
+                                <!--android:src="@drawable/commuity_att_normal"-->
+                                <!--android:background="@null"-->
+                                <!--android:layout_centerVertical="true"/>-->
+                    <!--</RelativeLayout>-->
+                <!--</RelativeLayout>-->
+            <!--</LinearLayout>-->
+            <include layout="@layout/community_user_header"/>
+        </LinearLayout>
+
+        <LinearLayout android:orientation="vertical"  android:layout_marginTop="10dp" android:paddingRight="10dp"
+                      android:paddingLeft="10dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <!--<com.dfsx.lscms.app.util.Richtext-->
+                    <!--android:textSize="13.0sp"-->
+                    <!--android:textColor="@color/conmminty_title_color"-->
+                    <!--android:ellipsize="end"-->
+                    <!--android:maxLength="144"-->
+                    <!--android:textAppearance="@style/TextAppearance.lightFont"-->
+                    <!--android:id="@+id/disclosure_no_list_title"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="csdcd"-->
+                    <!--/>-->
+            <com.dfsx.ganzcms.app.util.Richtext
+                    style="@style/baseTopiicTextStyle"
+                    android:id="@+id/disclosure_no_list_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            <!--   标签 -->
+            <com.dfsx.ganzcms.app.view.TabGrouplayout
+                android:layout_width="wrap_content"
+                                                    android:id="@+id/communt_noimg_taglay"
+                                                    android:layout_marginTop="9dp"
+                                                    android:layout_height="wrap_content">
+
+            </com.dfsx.ganzcms.app.view.TabGrouplayout>
+
+        </LinearLayout>
+
+
+        <!-- 到访记录  -->
+        <LinearLayout   android:id="@+id/disclosure_visit_layout"    android:orientation="horizontal"
+                        android:layout_width="match_parent" android:paddingLeft="9dp"  android:gravity="center_vertical"  android:layout_marginTop="14dp"  android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="49dp"
+                    android:layout_height="25dp"
+                    android:id="@+id/cumonuity_no_vist_bnt"
+                    android:background="@null"
+                    android:src="@drawable/community_visit_icon"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    />
+            <LinearLayout android:layout_width="wrap_content" android:id="@+id/community_no_vist" android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/community11_no_vist_number"
+                    android:paddingLeft="9dp"
+                    android:gravity="center"
+                    android:paddingRight="9dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:background="@drawable/shape_circle"
+                    android:textSize="10.0sp"
+                    android:textColor="@color/COLOR_CC"
+                    android:layout_centerVertical="true"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"  android:layout_marginTop="16dp" android:background="@color/comment_background" android:layout_height="1dp"/>
+
+        <LinearLayout     android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:gravity="center_vertical"
+                          android:layout_height="49dp">
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"  android:visibility="gone"
+                    >
+
+                <TextView
+                        android:id="@+id/disclosure_column_tx"
+                        android:textSize="11.0sp"
+                        android:textColor="@color/conmminty_column_color"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="栏目"
+                        android:layout_centerVertical="true"/>
+
+                <RelativeLayout
+                        android:id="@+id/disclosure_praise_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                    <ImageView
+                            android:id="@+id/disclosure_commend_img"
+                            android:layout_width="17dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/commonrity_list_commend_icon"
+                            android:layout_marginLeft="15.0dip"
+                            android:layout_centerVertical="true"/>
+
+                    <TextView
+                            android:id="@+id/disclosure_iamg_comend"
+                            android:textSize="11.0sp"
+                            android:layout_marginLeft="4.0dip"
+                            android:textColor="@color/conmminty_column_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1233"
+                            android:layout_toRightOf="@+id/disclosure_commend_img"
+                            android:layout_centerVertical="true"/>
+                </RelativeLayout>
+
+                <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/communti_brower_img"
+                        android:layout_toLeftOf="@+id/disclosure_imag_read"
+                        android:layout_marginRight="5dp"
+                        android:layout_centerVertical="true"/>
+                <TextView
+                        android:textSize="11.0sp"
+                        android:textColor="@color/conmminty_column_color"
+                        android:gravity="center"
+                        android:id="@+id/disclosure_imag_read"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="32323阅读"
+                        android:layout_centerVertical="true"/>
+                <TextView android:textSize="16.0sp"  android:id="@+id/disclosure_del_btn" android:visibility="gone"  android:textColor="@color/black"  android:text="删除"  android:gravity="center"     android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_alignParentRight="true" android:paddingRight="10.0dip"    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+
+            <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="16dp"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:src="@drawable/commuity_parise_normal"
+                    android:background="@null"
+                    android:layout_centerVertical="true"/>
+
+            <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_weight="1"
+                    android:id="@+id/comnity_item_commend"
+                    android:src="@drawable/commuity_pen"
+                    android:background="@null"
+                    android:layout_centerVertical="true"/>
+
+            <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="18dp"
+                    android:layout_weight="1"
+                    android:id="@+id/comnity_item_share"
+                    android:src="@drawable/commuity_share"
+                    android:background="@null"
+                    android:layout_centerVertical="true"/>
+
+            <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="16dp"
+                    android:id="@+id/comnity_item_favority"
+                    android:layout_weight="1"
+                    android:src="@drawable/communtiy_item_falnoral"
+                    android:background="@null"
+                    android:layout_centerVertical="true"/>
+
+
+
+
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:background="@color/comment_op_background" android:layout_height="1dp"/>
+        </LinearLayout>
+    <View android:background="@color/slider_menu_background_color" android:layout_width="match_parent" android:layout_height="5dp"  />
+</LinearLayout>

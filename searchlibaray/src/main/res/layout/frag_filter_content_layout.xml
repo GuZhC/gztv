@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RadioGroup
+        android:id="@+id/radio_filter_group"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_select_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_word"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:checked="true"
+            android:paddingTop="10dp"
+            android:drawablePadding="10dp"
+            android:drawableBottom="@drawable/shape_selector_line"
+            android:textColor="@drawable/check_filter_text_color"
+            android:button="@null"/>
+
+        <RadioButton
+            android:id="@+id/radio_select_live"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_live"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:drawablePadding="10dp"
+            android:drawableBottom="@drawable/shape_selector_line"
+            android:textColor="@drawable/check_filter_text_color"
+            android:button="@null"/>
+
+        <RadioButton
+            android:id="@+id/radio_select_quan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_vms"
+            android:textSize="16dp"
+            android:layout_weight="1.06"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:drawablePadding="10dp"
+            android:drawableBottom="@drawable/shape_selector_line"
+            android:textColor="@drawable/check_filter_text_color"
+            android:button="@null"/>
+
+        <RadioButton
+            android:id="@+id/radio_select_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_user"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:drawablePadding="10dp"
+            android:drawableBottom="@drawable/shape_selector_line"
+            android:textColor="@drawable/check_filter_text_color"
+            android:button="@null"/>
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/line_color"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:background="#f7f7f7"/>
+
+    <LinearLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/pull_to_refresh_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:listSelector="@color/transparent"
+        android:divider="@color/transparent"
+        android:dividerHeight="0px"
+        >
+
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+</LinearLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@color/slider_menu_background_color"
+    android:layout_height="45dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:id="@+id/tab_radio_group"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/bottom_tab_news"
+                    android:text="@string/tab_first"
+                    android:layout_weight="0.1"
+                    android:drawableTop="@drawable/tab_news"
+                    style="@style/RadioButtonBottomTab"/>
+
+                <RadioButton
+                    android:id="@+id/bottom_tab_tv"
+                    android:text="@string/tab_tv"
+                    android:layout_weight="0.1"
+                    android:drawableTop="@drawable/tab_ds"
+                    style="@style/RadioButtonBottomTab"/>
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/bottom_tab_live"-->
+                    <!--android:text="@string/tab_live"-->
+                    <!--android:layout_weight="0.1"-->
+                    <!--android:checked="true"-->
+                    <!--android:drawableTop="@drawable/tab_tv"-->
+                    <!--style="@style/RadioButtonliveBottomTab"/>-->
+
+                <RadioButton
+                    android:id="@+id/rb_trade"
+                    android:layout_weight="0.1"
+                    style="@style/RadioButtonBottomTab"/>
+
+                <RadioButton
+                    android:id="@+id/bottom_tab_cmy"
+                    android:text="@string/tab_vms"
+                    android:layout_weight="0.1"
+                    android:drawableTop="@drawable/tab_live"
+                    style="@style/RadioButtonBottomTab"/>
+
+                <!--  添加消息未读 小红点 提示-->
+                <RadioButton
+                    android:id="@+id/bottom_tab_me"
+                    android:layout_weight="0.1"
+                    android:visibility="invisible"
+                    style="@style/RadioButtonBottomTab"/>
+
+                <!--<RadioButton-->
+                <!--android:id="@+id/bottom_tab_me"-->
+                <!--android:visibility="gone"-->
+                <!--android:text="我的"-->
+                <!--android:layout_weight="0.1"-->
+                <!--android:drawableTop="@drawable/tab_me"-->
+                <!--style="@style/RadioButtonBottomTab"/>-->
+            </RadioGroup>
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="400dp"
+              android:background="@android:color/transparent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+        >
+
+        <ImageView
+                android:id="@+id/bkgs_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="167dp"
+                android:background="@drawable/dialog_top_bk"
+                android:layout_centerHorizontal="true"
+        />
+        <TextView
+                android:textSize="13.0sp"
+                android:id="@+id/act_title_txt"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="差点迟到差点迟到"
+                android:layout_centerInParent="true"/>
+    </LinearLayout>
+
+    <!--<Button-->
+    <!--android:id="@+id/btsn_qian_dao"-->
+    <!--android:layout_width="28dp"-->
+    <!--android:layout_height="28dp"-->
+    <!--android:background="@drawable/close_ad_btn"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginTop="16dp"/>-->
+
+</LinearLayout>

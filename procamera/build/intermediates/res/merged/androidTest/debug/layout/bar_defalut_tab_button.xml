@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="27dp"
+    android:button="@null"
+             android:layout_weight="1.0"
+    android:text="现场"
+    android:gravity="center_vertical"
+    android:textSize="16sp"
+             android:layout_marginRight="30dp"
+    android:drawablePadding="2dp"
+             android:paddingBottom="3dp"
+             android:paddingRight="10dp"
+    android:checked="true"
+             android:background="@drawable/tab_title_bg_selector"
+    android:textColor="@color/act_group_bar_text_color">
+</RadioButton>
+
+        <!--android:background="@drawable/bar_act_item_selector"--><!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/layout/bar_defalut_tab_button.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/bundles/debug/res/layout/bar_defalut_tab_button.xml -->

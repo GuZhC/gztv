@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\workspace\idea\gztv\update\res"><file name="bg_shape_cancel_btn" path="E:\workspace\idea\gztv\update\res\drawable\bg_shape_cancel_btn.xml" qualifiers="" type="drawable"/><file name="bg_shape_comfire_btn" path="E:\workspace\idea\gztv\update\res\drawable\bg_shape_comfire_btn.xml" qualifiers="" type="drawable"/><file name="bg_white_radius_6" path="E:\workspace\idea\gztv\update\res\drawable\bg_white_radius_6.xml" qualifiers="" type="drawable"/><file name="ic_dialog_close" path="E:\workspace\idea\gztv\update\res\drawable\ic_dialog_close.png" qualifiers="" type="drawable"/><file name="ic_dialog_default" path="E:\workspace\idea\gztv\update\res\drawable\ic_dialog_default.png" qualifiers="" type="drawable"/><file name="dialog_top_bk" path="E:\workspace\idea\gztv\update\res\drawable-xxhdpi\dialog_top_bk.png" qualifiers="xxhdpi" type="drawable"/><file name="act_no_install_unknow_app" path="E:\workspace\idea\gztv\update\res\layout\act_no_install_unknow_app.xml" qualifiers="" type="layout"/><file name="dialog_update" path="E:\workspace\idea\gztv\update\res\layout\dialog_update.xml" qualifiers="" type="layout"/><file name="start_adware_pop_layout" path="E:\workspace\idea\gztv\update\res\layout\start_adware_pop_layout.xml" qualifiers="" type="layout"/><file path="E:\workspace\idea\gztv\update\res\values\strings.xml" qualifiers=""><string name="download_success">下载完成，点击安装</string><string name="dialogPositiveButton">立即下载</string><string name="app_no_new_update">没有发现新版本</string><string name="newUpdateAvailable">发现新版本</string><string name="dialogNegativeButton">以后再说</string><string name="download_progress">正在下载:%1$d%%</string><string name="denied_message">如果你拒绝使用这个权限，你不能使用这个服务 \n \n 请在设置里的权限管理打开此权限</string></file><file path="E:\workspace\idea\gztv\update\res\values\styles.xml" qualifiers=""><style name="DialogActivity" parent="Theme.AppCompat">
+        <!--对话框背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!--背景透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 是否有覆盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--背景变暗-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style><style name="Button" parent="Theme.AppCompat.Light">
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+    </style><style name="UpdateDialog" parent="DialogActivity">
+        <!--背景变暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style></file><file name="apk_file_path" path="E:\workspace\idea\gztv\update\res\xml\apk_file_path.xml" qualifiers="" type="xml"/></source><source path="E:\workspace\idea\gztv\update\build\generated\res\rs\debug"/><source path="E:\workspace\idea\gztv\update\build\generated\res\resValues\debug"/></dataSet><dataSet config="debug"><source path="E:\workspace\idea\gztv\update\build-types\debug\res"/></dataSet><mergedItems/></merger>

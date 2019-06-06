@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/VideoIjkplayer/unspecified/res/values-tbt/values-tbt.xml -->
+    <eat-comment/>
+    <string name="VideoView_error_text_unknown">བརྙན་རིས་བསྣན་འཇུག་ལེགས་འགྲུབ་མ་བྱུང་བ།</string>
+    <!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/values-tbt/values-tbt.xml -->
+    <eat-comment/>
+    <string name="check_login_btn_cancel">ཕྱིར་འཐེན་པ།</string>
+    <string name="check_login_btn_ok">གཏན་འཁེལ།</string>
+    <string name="check_login_msg">ཞུ་འཇུག་བྱས་པ་དང་དཔྱད་བརྗོད་བྱ་ཆོག</string>
+    <string name="check_login_title">ེམས་བཟང་གི་དྲན་སྐུལ།</string>
+    <string name="loading_framlayout_hit">ནང་འཇུག་བཞིན་པ།...</string>
+    <!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/Core/unspecified/res/values-tbt/values-tbt.xml -->
+    <eat-comment/>
+    <string name="news_act_nocommemnd_hit">གནས་སྐབས་འབྲེལ་ཡོད་ནང་དོན་མེད།</string>
+    <string name="news_act_replay_hit">དཔྱད་བརྗོད་སྟོང་པར་འཇོག་མི་རུང་།</string>
+    <string name="news_act_replay_success_hit">དཔྱད་བརྗོད་ལེགས་འགྲུབ་བྱུང་བ།</string>
+    <!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/VideoIjkplayer/unspecified/res/values-tbt/values-tbt.xml -->
+    <eat-comment/>
+    <string name="note_network">WiFi མིན་པའི་དྲྭ་སྤྱོད་བཞིན་འདུག་པས།གཏོང་ན་བཞུར་རྒྱུན་འགྲོ་གྲོན་འགྲོ་སྲིད།</string>
+    <string name="note_not_net">དྲ་སྦྲེལ་མི་ཐུབ།དྲ་བ་སྒོ་ཕྱེ་རོགས།</string>
+    <!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/pulltorefresh/unspecified/res/values-tbt/values-tbt.xml -->
+    <eat-comment/>
+    <string name="pull_to_refresh_from_bottom_pull_label">མནན་གཏོང་ནང་འཇུག་དེ་བས་མང་།…</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">ད་ལྟ་ནང་འཇོག་བྱེད་བཞིན་པ།…</string>
+    <string name="pull_to_refresh_from_bottom_release_label">མནན་གཏོང་ནང་འཇུག་དེ་བས་མང་།…</string>
+    <string name="pull_to_refresh_pull_label">མར་མནན་གསར་སྤེལ།…</string>
+    <string name="pull_to_refresh_refreshing_label">ནང་འཇུག་བྱེད་བཞིན་པ།…</string>
+    <string name="pull_to_refresh_release_label">མར་གཏོང་གསར་སྤེལ།…</string>
+    <!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/values-tbt/values-tbt.xml -->
+    <eat-comment/>
+    <string name="share_popwind_qq">QQ།</string>
+    <string name="share_popwind_share">མཉམ་རོལ་བྱེད་ཡུལ།</string>
+    <string name="share_popwind_webo">ཞིན་ལའང་དྲ་བ།</string>
+    <string name="share_popwind_weixin">འཕྲིན་ཕྲན་གྲོགས་པོ།</string>
+    <string name="share_popwind_wxfriends">གྲོགས་པོའི་ར་བ།</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item  android:state_checked="true"  android:drawable="@drawable/selector_text_reg_select_color"/>
+    <item
+            android:drawable="@drawable/selector_text_reg_unselect_color"/>
+</selector><!-- From: file:/E:/workspace/idea/gztv/Logonproject/src/main/res/drawable/selector_text_bankground_color.xml --><!-- From: file:/E:/workspace/idea/gztv/Logonproject/build/intermediates/bundles/debug/res/drawable/selector_text_bankground_color.xml -->

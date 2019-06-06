@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/replay_item_hor"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:paddingTop="10dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+            <com.dfsx.core.common.view.CircleButton
+                    android:id="@+id/replay_user_logo"
+                    android:src="@drawable/user_default_commend"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="23dp">
+
+                        <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_gravity="center_vertical"
+                                android:layout_height="match_parent">
+
+                            <TextView
+                                    android:textSize="16.0sp"
+                                    android:id="@+id/replay_user_name"
+                                    android:textColor="@color/news_commend_avaer_color"
+                                    android:layout_width="wrap_content"
+                                    android:gravity="center"
+                                    android:maxLength="10"
+                                    android:layout_height="wrap_content"
+                                    android:text="匿名"/>
+
+                            <TextView
+                                    android:textSize="10.0sp"
+                                    android:layout_marginTop="4dp"
+                                    android:id="@+id/disclosure_list_time"
+                                    android:textColor="@color/conmminty_time_color"
+                                    android:layout_width="wrap_content"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:text=""/>
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:paddingLeft="5dp"
+                                android:id="@+id/praise_container"
+                                android:visibility="invisible"
+                                android:paddingRight="5dp"
+                                android:gravity="center_vertical"
+                                android:layout_toLeftOf="@+id/comemndg_praise_txt"
+                                android:layout_height="16dp">
+
+                            <ImageView
+                                    android:layout_width="17dp"
+                                    android:adjustViewBounds="true"
+                                    android:id="@+id/replay_praise_child_btn"
+                                    android:background="@null"
+                                    android:src="@drawable/nc_commend_praise"
+                                    android:layout_centerVertical="true"
+                                    android:layout_height="16dp"
+                            />
+                        </RelativeLayout>
+
+
+                        <TextView
+                                android:id="@+id/comemndg_praise_txt"
+                                android:layout_width="wrap_content"
+                                android:visibility="invisible"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_height="wrap_content"
+                                android:textSize="14.0sp"
+                                android:textColor="@color/nc_comnend_praise_item"
+                                android:text="0"
+                        />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:id="@+id/replay_title_value"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top|left"
+                                android:ellipsize="end"
+                                android:textSize="17.0sp"
+                                android:text=" "
+                                android:textColor="@color/COLOR_51"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content">
+                        <!--    android:layout_width="196dp"
+                                android:layout_height="263dp" -->
+                        <ImageView
+                                android:id="@+id/replay_thumb"
+                                android:visibility="gone"
+                                android:layout_marginTop="5dp"
+                                android:layout_width="120dp"
+                                android:layout_height="90dp"
+                                android:scaleType="centerCrop"
+                        />
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center_vertical"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:id="@+id/replay_count_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:textSize="10.0sp"
+                                android:paddingLeft="7dp"
+                                android:paddingRight="7dp"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text=""
+                                android:textColor="@color/normal_text_color"/>
+
+
+                        <TextView
+                                android:id="@+id/replay_time_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12.0sp"
+                                android:gravity="center"
+                                android:text=""
+                                android:layout_marginRight="7dp"
+                                android:textColor="@color/gray_75"/>
+                        <!--  conmminty_replay_tim_font  -->
+
+                        <ImageView
+                                android:id="@+id/disclosure_replay_btn"
+                                android:background="@null"
+                                android:layout_marginTop="2dp"
+                                android:layout_toLeftOf="@+id/comemndg_praise_txt"
+                                android:src="@drawable/common_head_commned"
+                                android:layout_centerVertical="true"
+                                android:adjustViewBounds="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="12dp"
+                        />
+
+                    </LinearLayout>
+
+                    <!-- 回复列表 -->
+                    <LinearLayout
+                            android:id="@+id/replya_exlist_layout"
+                            android:visibility="gone"
+                            android:paddingLeft="3dp"
+                            android:paddingRight="3dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:background="@color/gray_303_bg"
+                            android:layout_width="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:id="@+id/bottom_line_space"
+                android:background="@color/line_e9_color"
+                android:layout_height="1dp"/>
+    </LinearLayout>
+</LinearLayout><!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/layout/commend_item.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/bundles/debug/res/layout/commend_item.xml -->

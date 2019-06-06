@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="15dp">
+
+        <RelativeLayout
+                android:id="@+id/logo_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true">
+
+            <com.dfsx.core.common.view.CircleButton
+                    android:id="@+id/user_logo_no_login"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/icon_default_logo"/>
+
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/no_login_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请先登录"
+                android:layout_below="@+id/logo_layout"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_btn_login"
+                android:textSize="14sp"
+                android:textColor="#eded4040"/>
+
+
+    </RelativeLayout>
+</LinearLayout>

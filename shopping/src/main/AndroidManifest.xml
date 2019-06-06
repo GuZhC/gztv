@@ -1,0 +1,81 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dfsx.shop">
+
+    <application
+        >
+        <!--<activity-->
+        <!--android:name=".ShowWebImageActivity"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:configChanges="keyboard|keyboardHidden|uiMode"-->
+        <!--android:windowSoftInputMode="stateHidden|adjustPan"-->
+        <!--/>-->
+        <!--<activity-->
+            <!--android:name=".act.LoginActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:configChanges="keyboard|keyboardHidden|uiMode"-->
+            <!--android:windowSoftInputMode="stateHidden|adjustPan"-->
+            >
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.VIEW"/>-->
+            <!--<action android:name="com.dfsx.thirdloginandshare.action.VIEW"/>-->
+            <!---->
+            <!--<category android:name="android.intent.category.BROWSABLE"/>-->
+            <!--<category android:name="android.intent.category.DEFAULT"/>-->
+            <!---->
+            <!--<data-->
+            <!--android:scheme="@string/app_name"-->
+            <!--android:host="com.dfsx.lscms.dfsx_third_login"/>-->
+            <!--</intent-filter>-->
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.VIEW"/>-->
+            <!--<action android:name="com.dfsx.thirdloginandshare.action.VIEW"/>-->
+            <!---->
+            <!--<category android:name="android.intent.category.BROWSABLE"/>-->
+            <!--<category android:name="android.intent.category.DEFAULT"/>-->
+            <!---->
+            <!--<data-->
+            <!--android:scheme="@string/app_name"-->
+            <!--android:host="go_login"/>-->
+            <!--</intent-filter>-->
+
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name=".act.RegisterActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:configChanges="keyboard|keyboardHidden|uiMode"-->
+            <!--android:windowSoftInputMode="stateHidden|adjustPan"-->
+            <!--&gt;-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.VIEW"/>-->
+                <!--<action android:name="com.dfsx.thirdloginandshare.action.VIEW"/>-->
+
+                <!--<category android:name="android.intent.category.BROWSABLE"/>-->
+                <!--<category android:name="android.intent.category.DEFAULT"/>-->
+
+                <!--<data-->
+                    <!--android:scheme="@string/app_name"-->
+                    <!--android:host="com.dfsx.lscms.dfsx_third_login"/>-->
+            <!--</intent-filter>-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.VIEW"/>-->
+                <!--<action android:name="com.dfsx.thirdloginandshare.action.VIEW"/>-->
+
+                <!--<category android:name="android.intent.category.BROWSABLE"/>-->
+                <!--<category android:name="android.intent.category.DEFAULT"/>-->
+
+                <!--<data-->
+                    <!--android:scheme="@string/app_name"-->
+                    <!--android:host="go_login"/>-->
+            <!--</intent-filter>-->
+
+        <!--</activity>-->
+
+        <!--<activity-->
+        <!--android:name=".dzfragment.RegWelActivity"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:configChanges="keyboard|keyboardHidden|uiMode"-->
+        <!--android:windowSoftInputMode="stateHidden|adjustPan"-->
+        <!--/>-->
+    </application>
+
+</manifest>

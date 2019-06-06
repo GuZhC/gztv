@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+            android:orientation="vertical"
+            android:id="@+id/videoSurfaceContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:keepScreenOn="true"
+            android:background="@color/black">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="204dp">
+
+
+            <ImageView
+                    android:id="@+id/psoter_imagveo"
+                    android:layout_width="match_parent"
+                    android:adjustViewBounds="true"
+                    android:layout_height="211dp"
+                    android:scaleType="centerCrop"
+                    android:layout_centerInParent="true"
+            />
+
+            <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/player_imagveo"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/video_head_icon"/>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
+

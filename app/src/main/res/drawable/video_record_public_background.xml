@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+        android:shape="oval"
+        android:useLevel="false">
+
+    <!-- 实心 -->
+    <!--<solid android:color="@color/up_btn_background"/>-->
+    <solid android:color="@color/red"/>
+    <size android:height="48dp" android:width="48dp"/>
+    <!-- 边框 -->
+    <stroke
+            android:width="0.5dp"
+            android:color="@color/slider_menu_background_color"/>
+    <!-- 圆角 -->
+    <!--<corners android:bottomLeftRadius="10dp"-->
+            <!--android:topLeftRadius="10dp"-->
+            <!--android:topRightRadius="10dp"-->
+            <!--android:bottomRightRadius="10dp"/>-->
+    <!-- 边距 -->
+    <!--<padding-->
+            <!--android:top="2dp"-->
+            <!--android:bottom="2dp"-->
+            <!--android:left="6dp"-->
+            <!--android:right="6dp"/>-->
+
+</shape>  

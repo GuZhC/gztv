@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" >
+        <LinearLayout android:layout_width="match_parent" android:paddingTop="10dp" android:orientation="vertical"
+                      android:layout_height="match_parent">
+            <RelativeLayout android:layout_width="match_parent" android:paddingLeft="16dp" android:paddingRight="12dp"
+                            android:layout_height="wrap_content">
+                <ImageView android:layout_width="9dp" android:layout_centerVertical="true"
+                           android:layout_alignParentLeft="true" android:layout_height="14dp"
+                           android:background="@drawable/reg_ver_left_back"/>
+                <TextView android:layout_width="wrap_content" android:layout_centerInParent="true"
+                          android:layout_height="wrap_content" android:text="填写个人信息" android:textSize="17.0sp"
+                          android:textColor="@color/wel_user_title_font"/>
+            </RelativeLayout>
+            <View android:layout_width="match_parent" android:visibility="gone" android:layout_height="1dp" android:layout_marginTop="5dp"
+                  android:background="@color/wel_user_sex_font"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_marginTop="15dp"
+                          android:gravity="center_horizontal"
+                          android:orientation="vertical" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:paddingLeft="45dp"
+                              android:orientation="horizontal" android:layout_height="wrap_content">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="当前注册账号"
+                            android:textSize="15.0sp"
+                            android:gravity="left"
+                            android:textColor="@color/wel_user_sex_font"
+                    />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:id="@+id/telephon_txt"
+                            android:paddingLeft="15dp"
+                            android:textSize="15.0sp"
+                            android:gravity="left"
+                            android:textColor="@color/wel_user_sex_font"
+                    />
+
+                </LinearLayout>
+
+                <EditText
+                        android:id="@+id/user_pass_edittext"
+                        android:layout_width="305dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_height="48dp"
+                        android:paddingLeft="15dp"
+                        android:textSize="15.0sp"
+                        android:textColor="@color/news_title_color"
+                        android:password="true"
+                        android:background="@color/comment_op_background"
+                        android:hint="@string/register_user_pwd_hit"/>
+
+                <EditText
+                        android:id="@+id/user_again_pass_edt"
+                        android:layout_width="305dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="7dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="17dp"
+                        android:password="true"
+                        android:textSize="15.0sp"
+                        android:textColor="@color/news_title_color"
+                        android:background="@color/comment_op_background"
+                        android:hint="请再次输入密码"/>
+
+
+                <EditText
+                        android:id="@+id/user_nicknanme_edt"
+                        android:layout_width="305dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="7dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="17dp"
+                        android:textSize="15.0sp"
+                        android:textColor="@color/news_title_color"
+                        android:background="@color/comment_op_background"
+                        android:hint="请填写想要的昵称"/>
+
+                <TextView android:layout_width="305dp" android:id="@+id/user_comfierm_btn" android:layout_height="48dp"
+                          android:layout_marginTop="17dp"
+                          android:background="@color/logon_theme_bkg"
+                          android:textColor="@color/white" android:text="进入" android:textSize="17.0sp"
+                          android:gravity="center"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+<!-- From: file:/E:/workspace/idea/gztv/Logonproject/src/main/res/layout/frag_use_info.xml -->

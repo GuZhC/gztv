@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:gravity="bottom"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <ListView
+        android:id="@+id/list_funitem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:listSelector="@color/transparent"
+        android:clickable="true"
+        android:divider="@color/transparent"
+        android:drawSelectorOnTop="false" />
+
+    <Button
+        android:id="@+id/btn_cansel"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/dialog_style_cancle"
+        android:padding="7dip"
+        android:text="取消"
+        android:textColor="@color/black_36"
+        android:textSize="20sp" />
+
+</LinearLayout>

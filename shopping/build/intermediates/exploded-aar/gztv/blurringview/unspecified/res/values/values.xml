@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/blurringview/src/main/res/values/defaults.xml -->
+    <eat-comment/>
+    <color name="default_overlay_color">#AAFFFFFF</color>
+    <declare-styleable name="PxBlurringView"><attr format="integer" name="blurRadius"/><attr format="integer" name="downsampleFactor"/><attr format="color" name="overlayColor"/></declare-styleable>
+    <integer name="default_blur_radius">15</integer>
+    <integer name="default_downsample_factor">8</integer>
+    <!-- From: file:/E:/workspace/idea/gztv/blurringview/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name"/>
+</resources>

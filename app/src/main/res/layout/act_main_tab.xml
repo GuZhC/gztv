@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/act_main_root_layout"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/portrait_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:id="@+id/head_up_status"
+                    android:paddingLeft="5dp"
+                    android:textSize="14.0sp"
+                    android:visibility="gone"
+                    android:background="@color/public_red_bkg"
+                    android:gravity="left"
+                    android:textColor="@color/white"
+                    android:text="发送中..."
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:background="@color/public_purple_bkg"
+                    android:paddingBottom="10dp"
+                    android:id="@+id/main_top_vew">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:background="@color/public_purple_bkg"
+                        android:layout_height="@dimen/status_bar_height"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:paddingRight="12dp"
+                        >
+
+                        <!--<ImageView-->
+                                <!--android:layout_width="108dp"-->
+                                <!--android:layout_height="101dp"-->
+                                <!--android:src="@drawable/top_left_mark"-->
+                                <!--android:gravity="center"-->
+                                <!--android:background="@null"-->
+                                <!--android:layout_centerVertical="true"-->
+                                <!--android:id="@+id/logsso_image"-->
+                                <!--android:layout_alignParentLeft="true"-->
+                        <!--/>-->
+
+                        <!--<ImageView-->
+                            <!--android:layout_width="118dp"-->
+                            <!--android:layout_height="34dp"-->
+                            <!--android:src="@drawable/main_head_img"-->
+                            <!--android:gravity="center"-->
+                            <!--android:background="@null"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:id="@+id/logo_image"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--/>-->
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:id="@+id/top_rigth_btn"
+                            android:paddingRight="5dp"
+                            android:visibility="gone"
+                            android:gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            android:layout_height="35dp">
+
+                            <ImageView
+                                android:id="@+id/main_head_search_btn"
+                                android:layout_width="17dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_height="17dp"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/main_head_sarch"
+                                android:background="@null"
+                                />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"></FrameLayout>
+
+                <!--android:background="@drawable/tab_bar_bkg"-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <include
+                        layout="@layout/tab_layout"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/bottom_add_news"
+                android:src="@mipmap/tab_short_video"
+                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
+                android:layout_alignParentBottom="true"
+                android:layout_width="77dp"
+                android:layout_height="58dp"/>
+
+            <!--  添加消息未读 小红点 提示  -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_height="45dp"
+                android:paddingRight="30dp">
+
+                <RadioButton
+                    android:id="@+id/bottom_tab_last"
+                    android:text="@string/tab_me"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableTop="@drawable/tab_me"
+                    style="@style/RadioButtonBottomTab2"
+                    />
+
+                <TextView
+                    android:id="@+id/tip_number_tx"
+                    android:visibility="gone"
+                    android:layout_alignRight="@+id/bottom_tab_last"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/video_record_public_background"
+                    android:gravity="top"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/full_screen_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"></FrameLayout>
+    </LinearLayout>
+
+    <!--<ImageView-->
+            <!--android:src="@drawable/top_left_mark"-->
+            <!--android:id="@+id/top_bar_left_images"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_width="72dp"-->
+            <!--android:layout_height="67dp"/>-->
+
+    <RelativeLayout android:layout_width="54dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="45dp"
+                    android:paddingLeft="2dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:layout_marginLeft="13dp"
+                    android:id="@+id/top_bar_left_images"
+                     android:background="@drawable/top_switch_tbr"
+                    android:layout_height="18dp">
+
+        <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/top_switch_circle"
+                android:gravity="center"
+                android:scaleType="centerCrop"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+        />
+
+    </RelativeLayout>
+
+    <!--<ImageView-->
+            <!--android:layout_width="113dp"-->
+            <!--android:layout_height="38dp"-->
+            <!--android:background="@drawable/main_switch_language_btn"-->
+            <!--android:gravity="center"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:id="@+id/top_bar_left_images"-->
+            <!--android:layout_marginTop="40dp"-->
+            <!--android:layout_marginLeft="13dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentTop="true"-->
+    <!--/>-->
+
+    <FrameLayout
+        android:id="@+id/fl_full_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

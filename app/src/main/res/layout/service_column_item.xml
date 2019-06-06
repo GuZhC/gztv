@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="match_parent" android:orientation="vertical" android:layout_height="wrap_content">
+        <TextView
+                android:id="@+id/life_life_txt"
+                android:paddingLeft="14dp"
+                android:gravity="left|center_vertical"
+                android:text="热门生活"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="#f3f3f3"
+                android:textColor="#333333"
+                android:textSize="16.0sp"
+        />
+        <com.dfsx.ganzcms.app.view.MyGridView
+                android:id="@+id/gridview_life"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="0.0dip"
+                android:listSelector="@null"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="0.0dip"/>
+    </LinearLayout>
+    <!--<View android:layout_width="match_parent"  android:id="@+id/bottom_space_line"  android:background="@color/gray_303_bg"  android:layout_height="1dp"/>-->
+</LinearLayout>

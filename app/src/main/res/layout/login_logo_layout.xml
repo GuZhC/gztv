@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp">
+
+            <com.dfsx.core.common.view.CircleButton
+                android:id="@+id/user_logo"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_marginLeft="15dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icon_default_logo"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/user_logo"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="25dp"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/black_36"
+                    android:text="111"/>
+
+                <TextView
+                    android:id="@+id/user_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:textSize="13sp"
+                    android:textColor="#989898"
+                    android:text="ID:"/>
+
+                <TextView
+                    android:id="@+id/user_signature_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:maxLines="3"
+                    android:minLines="3"
+                    android:text=""
+                    android:textColor="#525252"
+                    android:paddingRight="5dp"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_user_right"
+                android:layout_marginRight="15dp"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:orientation="horizontal">
+
+            <com.dfsx.ganzcms.app.view.TwoRelyView
+                android:id="@+id/my_store"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:firstText="0"
+                app:firstTextSize="14sp"
+                app:firstTextColor="@color/black_36"
+                app:viewSpace="5dp"
+                app:secondText="收藏"
+                app:secondTextSize="12sp"
+                app:secondTextColor="@color/text_98"/>
+
+            <com.dfsx.ganzcms.app.view.TwoRelyView
+                android:id="@+id/my_attention"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:firstText="0"
+                app:firstTextSize="14sp"
+                app:viewSpace="5dp"
+                app:firstTextColor="@color/black_36"
+                app:secondText="关注"
+                app:secondTextSize="12sp"
+                app:secondTextColor="@color/text_98"/>
+
+            <com.dfsx.ganzcms.app.view.TwoRelyView
+                android:id="@+id/my_fans"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:firstText="0"
+                app:firstTextSize="14sp"
+                app:viewSpace="5dp"
+                app:firstTextColor="@color/black_36"
+                app:secondText="粉丝"
+                app:secondTextSize="12sp"
+                app:secondTextColor="@color/text_98"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="status_bar_height">0dp</dimen>
+    <dimen name="large_text_size">18dp</dimen>
+    <dimen name="middle_text_size">15dp</dimen>
+    <dimen name="small_text_size">12dp</dimen>
+    <dimen name="navigation_custom_width">250dp</dimen>
+    <dimen name="bottom_bar_size">60dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="slidingmenu_offset">60dp</dimen>
+    <dimen name="shadow_width">5dp</dimen>
+    <dimen name="navigationbar_item_selected_text_size">16.0sp</dimen>
+    <dimen name="navigationbar_item_unselected_text_size">16.0sp</dimen>
+    <dimen name="logon_text_size">14.0sp</dimen>
+
+    <!-- hy  2015-3-31 -->
+    <dimen name="titlebar_titlesize">17.0sp</dimen>
+    <!-- 登陆  -->
+    <dimen name="weixin_title_size">12.0dip</dimen>
+
+    <dimen name="gd_playset_play_auto_lrt">10.0dip</dimen>
+    <dimen name="gd_playset_play_auto_h">50.0dip</dimen>
+    <dimen name="gd_playset_alltext_t">205.0dip</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="ui_10_dip">10dip</dimen>
+    <dimen name="spacing_medium">1dip</dimen>
+    <dimen name="font_community_title_size">15.0sp</dimen>
+
+
+    <dimen name="columnfragment_image_height_size">110dp</dimen>
+</resources>

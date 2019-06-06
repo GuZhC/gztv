@@ -1,0 +1,12 @@
+<resources>
+    <string name="search_input_hit">ནང་དོན་ནང་འཇུག་བྱེད་རོགས།</string>
+    <string name="search_btn_cancel">ཕྱིར་འཐེན།</string>
+    <string name="search_word">རྩོམ།</string>
+    <string name="search_live">ཐད་གཏོང་།</string>
+    <string name="search_vms">སྐོར།</string>
+    <string name="search_user">བཀོལ་སྤྱོད་བྱེད་མཁན།</string>
+    <string name="search_history">ལོ་རྒྱུས་ཟིན་ཐོ།</string>
+    <string name="search_del_cancel">ངས་ད་རུང་འདང་ཞིག་རྒྱག</string>
+    <string name="search_del_ok"> གཙང་སེལ་གཏན་ཁེལ།</string>
+    <string name="search_concern">དོ་ཁུར།</string>
+</resources>

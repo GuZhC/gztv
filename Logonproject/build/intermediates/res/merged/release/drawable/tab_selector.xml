@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/tab_selected" android:state_selected="true" />
+  <!--   <item android:drawable="@drawable/tab_unselected"/> -->
+
+</selector><!-- From: file:/E:/workspace/idea/gztv/SelectedMedia/src/main/res/drawable/tab_selector.xml --><!-- From: file:/E:/workspace/idea/gztv/Logonproject/build/intermediates/exploded-aar/gztv/SelectedMedia/unspecified/res/drawable/tab_selector.xml -->

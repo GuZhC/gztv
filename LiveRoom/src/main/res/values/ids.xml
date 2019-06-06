@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="texture_container" type="id"/>
+    <item type="id" name="tag_base_grid_list"/>
+    <item type="id" name="base_grid_menu_container_id"/>
+</resources>

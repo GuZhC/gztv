@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/COLOR_33"
+        android:state_checked="true"/>
+
+    <item android:color="#333333"/>
+</selector><!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/color/act_group_bar_text_color.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/bundles/debug/res/color/act_group_bar_text_color.xml -->

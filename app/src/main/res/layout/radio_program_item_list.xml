@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_body_layout"
+                android:orientation="vertical">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout android:layout_width="match_parent"
+                                        android:paddingRight="23dp"
+                                        android:layout_height="54dp">
+                                       <LinearLayout  android:layout_width="wrap_content"
+                                                      android:layout_alignParentLeft="true"
+                                                      android:gravity="center_vertical"
+                                                      android:layout_height="match_parent"  android:orientation="horizontal">
+
+                                           <View android:layout_width="4dp" android:visibility="gone"  android:background="@color/public_purple_bkg"
+                                                 android:id="@+id/radio_sel_line"
+                                                 android:layout_height="match_parent"  />
+
+                                           <ImageView android:layout_width="23dp"    android:id="@+id/proram_status_mask"
+                                                      android:layout_height="23dp"  android:layout_marginLeft="30dp"
+                                                      android:src="@drawable/tv_program_normal"
+                                                      android:layout_marginRight="8dp"
+                                                        android:layout_alignParentRight="true"
+                                                      android:layout_centerVertical="true"  />
+
+                                           <TextView
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_width="wrap_content"
+                                                   android:gravity="center"
+                                                   android:layout_marginRight="13dp"
+                                                   android:textSize="13.0sp"
+                                                   android:textColor="#757575"
+                                                   android:singleLine="true"
+                                                   android:ellipsize="end"
+                                                   android:id="@+id/tv_item_time"
+                                                   android:maxLength="30"
+                                                   android:text="11"/>
+
+                                               <TextView
+                                                       android:layout_height="wrap_content"
+                                                       android:layout_width="wrap_content"
+                                                       android:gravity="center"
+                                                       android:textSize="15.0sp"
+                                                       android:maxLength="40"
+                                                       android:singleLine="true"
+                                                       android:ellipsize="end"
+                                                       android:textColor="#333333"
+                                                       android:id="@+id/tv_item_title_tx"
+                                                       android:layout_marginRight="7dp"
+                                                       android:text="11111"/>
+
+
+                                       </LinearLayout>
+                                <ImageView android:layout_width="42dp"  android:id="@+id/radio_play_mask" android:layout_height="18dp"
+                                           android:src="@drawable/live_program_start"
+                                           android:visibility="gone"  android:layout_alignParentRight="true"
+                                           android:layout_centerVertical="true"  />
+                        </RelativeLayout>
+                </LinearLayout>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/line_ef_color"
+                        android:orientation="horizontal"/>
+                </LinearLayout>
+        </LinearLayout>

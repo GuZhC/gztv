@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/list_line_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+</LinearLayout><!-- From: file:/E:/workspace/idea/gztv/LiveRoom/src/main/res/layout/adapter_base_grid_container.xml --><!-- From: file:/E:/workspace/idea/gztv/shopping/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/layout/adapter_base_grid_container.xml -->

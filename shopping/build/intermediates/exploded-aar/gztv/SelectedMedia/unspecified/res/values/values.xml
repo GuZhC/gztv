@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/SelectedMedia/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="black_303_item_text_title">#ff404041</color>
+    <color name="headerbar_color"> #81D4FA</color>
+    <color name="headerbar_selected_tab_color"> #34b4e3 </color>
+    <color name="headerbar_title_color"> #FFFFFF </color>
+    <color name="list_splide_line_backgroud"> #e5e5e5 </color>
+    <color name="tabs_color"> #81D4FA </color>
+    <color name="tabs_title_color"> #FFFFFF </color>
+    <color name="white">#ffffffff</color>
+    <!-- From: file:/E:/workspace/idea/gztv/SelectedMedia/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">MediaChooser</string>
+    <string name="done"> Done </string>
+    <string name="file"> file. </string>
+    <string name="file_size_exeeded"> The file size exceeds the maximum limit of </string>
+    <string name="files"> files. </string>
+    <string name="image"> Image </string>
+    <string name="images_tab"> Images </string>
+    <string name="max_limit_file"> Max limit </string>
+    <string name="max_limit_reach_error"> Max limit 10 file. </string>
+    <string name="mb"> MB</string>
+    <string name="no_media_file_available"> No media file available.</string>
+    <string name="plaese_select_file"> Please select a file.</string>
+    <string name="please_wait_text"> Please wait</string>
+    <string name="refreshing"> Refreshing</string>
+    <string name="selected_file_size">  Selected media size is : </string>
+    <string name="video"> Video </string>
+    <string name="videos_tab"> Videos </string>
+    <!-- From: file:/E:/workspace/idea/gztv/SelectedMedia/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>

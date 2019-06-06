@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_top_circlr_bkg">
+
+    <LinearLayout android:layout_width="match_parent" android:id="@+id/logon_top_layout"
+                  android:orientation="vertical" android:background="@drawable/shape_top_circlr_bkg"
+                  android:layout_alignParentTop="true"
+                  android:layout_height="47dp">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:paddingLeft="10dp"
+                android:gravity="center_vertical"
+        >
+
+            <RelativeLayout android:layout_width="40dp" android:layout_alignParentLeft="true"
+                            android:id="@+id/back_finish_view"
+                            android:layout_height="match_parent">
+                <ImageView
+                        android:layout_width="11dp"
+                        android:layout_centerInParent="true"
+                        android:layout_height="11dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/news_commend_page_back"/>
+            </RelativeLayout>
+
+            <TextView
+                    android:id="@+id/top_number_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="17sp"
+                    android:textColor="@color/COLOR_51"
+                    android:layout_centerInParent="true"/>
+
+            <TextView
+                    android:id="@+id/right_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="14sp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/gray_a9"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+              android:background="@color/line_e9_color"/>
+    </LinearLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/logon_top_layout"
+            android:layout_above="@+id/commend_bottom_layout"
+            android:scrollbarStyle="outsideInset"
+            android:divider="#00000000"
+            android:dividerHeight="0dip"
+            android:id="@+id/pull_list"
+    />
+
+    <LinearLayout
+            android:id="@+id/commend_bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+    >
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+              android:background="@color/line_e9_color"/>
+        <LinearLayout android:layout_width="match_parent" android:paddingLeft="13dp"
+                      android:paddingRight="13dp"
+                      android:id="@+id/botttom_child_replay"
+                      android:gravity="center_vertical"
+                      android:layout_height="46dp">
+            <TextView
+                    android:textSize="15.0sp"
+                    android:textColor="@color/COLOR_21"
+                    android:layout_width="match_parent"
+                    android:id="@+id/commend_content_txt"
+                    android:layout_height="30dp"
+                    android:background="@drawable/act_commed_edit_bg"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="7dp"
+                    android:paddingRight="7dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:drawableLeft="@drawable/pen_icon"
+                    android:hint="  写评论..."
+            />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/layout/act_commendheader_list_layout.xml -->

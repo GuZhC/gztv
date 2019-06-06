@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="rectangle">
+    <!-- 填充 -->
+    <solid android:color="@color/white" />
+    <stroke android:color="@color/text_commom_font_color"  android:width="1px"  />
+</shape><!-- From: file:/E:/workspace/idea/gztv/Logonproject/src/main/res/drawable/selector_third_text_cancel_color.xml -->

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/values/attr.xml -->
+    <eat-comment/>
+    <attr format="integer" name="duration_max"/>
+    <attr format="reference" name="iconLeft"/>
+    <attr format="dimension" name="iconMargin"/>
+    <attr format="reference" name="iconRight"/>
+    <attr format="dimension" name="iconSize"/>
+    <attr format="reference" name="iconSrc"/>
+    <!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="COLOR_33">#ff333333</color>
+    <color name="COLOR_51">#515151</color>
+    <color name="COLOR_E4">#ffe4e4e4</color>
+    <color name="COLOR_f3">#fff3f3f3</color>
+    <color name="act_home_noraml_font">#ff333333</color>
+    <color name="act_home_select_font">#ff1aac19</color>
+    <color name="commnity_progress_bkg">#80000000</color>
+    <color name="conmminty_time_color">#a6a6a6</color>
+    <color name="gray_75">#ff757575</color>
+    <color name="line_e9_color">#ffe9e9e9</color>
+    <color name="nc_comnend_praise_item">#ff858585</color>
+    <color name="news_commend_avaer_color">#ff7888a9</color>
+    <color name="public_purple_bkg">#ff279ae2</color>
+    <color name="video_commend_bankground">#fff7f7f7</color>
+    <declare-styleable name="JCameraView"><attr name="iconSize"/><attr name="iconMargin"/><attr name="iconSrc"/><attr name="iconLeft"/><attr name="iconRight"/><attr name="duration_max"/></declare-styleable>
+    <declare-styleable name="PagerSlidingTabStrip"><attr format="color" name="pstsIndicatorColor"/><attr format="color" name="pstsUnderlineColor"/><attr format="color" name="pstsDividerColor"/><attr format="dimension" name="pstsIndicatorHeight"/><attr format="dimension" name="pstsUnderlineHeight"/><attr format="dimension" name="pstsDividerPadding"/><attr format="dimension" name="pstsTabPaddingLeftRight"/><attr format="dimension" name="pstsScrollOffset"/><attr format="reference" name="pstsTabBackground"/><attr format="boolean" name="pstsShouldExpand"/><attr format="boolean" name="pstsTextAllCaps"/><attr format="dimension" name="zmsTabTextSize"/><attr format="color" name="zmsTabTextColor"/><attr format="dimension" name="zmsSelectedTabTextSize"/><attr format="color" name="zmsSelectedTabTextColor"/></declare-styleable>
+    <!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="status_bar_height">0dp</dimen>
+    <!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <item name="scroll_item_texts_id" type="id"/>
+    <item name="tag_replay_cid" type="id"/>
+    <item name="tag_replay_thumb" type="id"/>
+    <string name="act_pub_title_hit">请为你的视频添加标题</string>
+    <string name="login_account">账号</string>
+    <string name="login_agin_password">确认密码</string>
+    <string name="login_email">邮箱</string>
+    <string name="login_login_button">登录</string>
+    <string name="login_nick">昵称</string>
+    <string name="login_other_button">其他登录方式</string>
+    <string name="login_password">密码</string>
+    <string name="login_register_button">注册</string>
+    <string name="login_title_button">用户登录</string>
+    <string name="register_pwd_hit">密码长度6-20，由字母、数字、符号组合</string>
+    <string name="register_user_b_sign_hit">填写个性签名让更多人了解你</string>
+    <string name="register_user_hit">用户名长度6-20，由英文、数字、下划线组成</string>
+    <string name="register_user_pwd_hit">请设置密码(密码包括大小字母，数字，6位以上)</string>
+    <string name="register_verifty_hit">验证码已发送至</string>
+    <string name="register_verifty_retry_hit">请重新获取验证码</string>
+    <!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="ActStartLoad" parent="android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="CusAnimationDialog">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_bottom_up</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_bottom_down</item>
+    </style>
+    <style name="DialogActivity" parent="android:Theme.Dialog">
+        <!-- 下面这两个是最重要的 -->
+        <item name="android:windowIsFloating">true</item> <!-- 是否浮现在activity之上 (内容会居中显示并靠左右有距离)-->
+        <item name="android:windowNoTitle">true</item> <!-- 无标题 -->
+        <!-- 设置透明下面两个一定要同时设置 -->
+        <item name="android:windowBackground">@android:color/transparent</item> <!-- 背景透明 -->
+        <item name="android:windowIsTranslucent">true</item> <!-- 半透明 -->
+        <!-- 设置模糊 -->
+        <item name="android:backgroundDimEnabled">true</item> <!-- 模糊 -->
+        <!-- 去掉边框（测试时没发现其作用） -->
+        <item name="android:windowFrame">@null</item>
+    </style>
+</resources>

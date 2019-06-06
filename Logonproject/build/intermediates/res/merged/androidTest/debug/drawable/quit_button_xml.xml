@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="false" android:state_enabled="true"  android:state_pressed="false" android:drawable="@drawable/quit_share" />
+    <item android:state_focused="false" android:state_pressed="true" android:drawable="@drawable/quit_pressed" />
+</selector>
+<!-- From: file:/E:/workspace/idea/gztv/ThirdLoginAndShare/src/main/res/drawable/quit_button_xml.xml --><!-- From: file:/E:/workspace/idea/gztv/Logonproject/build/intermediates/exploded-aar/gztv/ThirdLoginAndShare/unspecified/res/drawable/quit_button_xml.xml -->

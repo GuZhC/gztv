@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/update/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_no_new_update">没有发现新版本</string>
+    <string name="denied_message">如果你拒绝使用这个权限，你不能使用这个服务 \n \n 请在设置里的权限管理打开此权限</string>
+    <string name="dialogNegativeButton">以后再说</string>
+    <string name="dialogPositiveButton">立即下载</string>
+    <string name="download_progress">正在下载:%1$d%%</string>
+    <string name="download_success">下载完成，点击安装</string>
+    <string name="newUpdateAvailable">发现新版本</string>
+    <!-- From: file:/E:/workspace/idea/gztv/update/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="Button" parent="Theme.AppCompat.Light">
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+    </style>
+    <style name="DialogActivity" parent="Theme.AppCompat">
+        <!--对话框背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!--背景透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 是否有覆盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--背景变暗-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="UpdateDialog" parent="DialogActivity">
+        <!--背景变暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+</resources>

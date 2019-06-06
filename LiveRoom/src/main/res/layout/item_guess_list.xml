@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/public_bgd"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <com.dfsx.core.common.view.CircleButton
+            android:id="@+id/item_logo"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#d8770d"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:minWidth="60dp"
+            android:maxWidth="60dp"
+            android:textSize="15sp"
+            android:text="喵喵喵喵喵喵"/>
+
+        <TextView
+            android:id="@+id/item_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:maxWidth="130dp"
+            android:text="喵喵喵喵喵喵喵喵喵"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textColor="#424242"/>
+
+        <TextView
+            android:id="@+id/item_money_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="70dp"
+            android:textSize="15sp"
+            android:text="700乐币"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textColor="#424242"/>
+    </LinearLayout>
+</LinearLayout>

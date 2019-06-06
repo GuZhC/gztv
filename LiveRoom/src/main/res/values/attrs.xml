@@ -1,0 +1,60 @@
+<resources>
+    <!-- RectangleRelativeLayout -->
+    <declare-styleable name="RectangleRelativeLayout">
+        <attr name="ratio" format="float"/>
+    </declare-styleable>
+
+    <!-- CenterGroupChangeBar -->
+    <declare-styleable name="CenterGroupChangeBar">
+        <attr name="radioButtonRes" format="reference"/>
+        <attr name="radioGroupBackgroundRes" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="SelectGiftHeight">
+        <attr name="mheight" format="dimension"/>
+    </declare-styleable>
+
+    <attr name="slideMenuStyle" format="reference"/>
+
+    <declare-styleable name="SlideMenu_Layout">
+        <attr name="layout_role" format="enum">
+            <enum name="content" value="0"/>
+            <enum name="primaryMenu" value="1"/>
+            <enum name="secondaryMenu" value="2"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SlideMenu">
+        <attr name="primaryShadowWidth" format="dimension"/>
+        <attr name="secondaryShadowWidth" format="dimension"/>
+        <attr name="primaryShadowDrawable" format="reference"/>
+        <attr name="secondaryShadowDrawable" format="reference"/>
+        <attr name="edgeSlide" format="boolean"/>
+        <attr name="edgeSlideWidth" format="dimension"/>
+        <attr name="slideDirection" format="flags">
+            <flag name="left" value="1"/>
+            <flag name="right" value="2"/>
+        </attr>
+        <attr name="interpolator" format="reference"/>
+    </declare-styleable>
+
+    <attr name="text_origin_color" format="color"/>
+    <attr name="track_icon" format="reference"/>
+    <attr name="progress" format="float"/>
+    <attr name="scale" format="float"/>
+    <attr name="direction">
+        <enum name="left" value="0"/>
+        <enum name="right" value="1"/>
+    </attr>
+    <attr name="scale_type">
+        <enum name="fit_center" value="0"/>
+        <enum name="fit_xy" value="1"/>
+    </attr>
+
+    <declare-styleable name="LoadingView">
+        <attr name="text_origin_color"/>
+        <attr name="progress"/>
+        <attr name="direction"/>
+        <attr name="track_icon"/>
+        <attr name="scale"></attr>
+        <attr name="scale_type"></attr>
+    </declare-styleable>
+</resources>

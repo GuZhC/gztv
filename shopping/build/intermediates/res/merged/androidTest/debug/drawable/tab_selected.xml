@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- <size android:height="50dp" /> -->
+    <solid android:color="#6200EA" />
+
+    
+    <!-- <stroke
+        android:width="6dp"
+        android:color="#009688" /> -->
+
+</shape><!-- From: file:/E:/workspace/idea/gztv/SelectedMedia/src/main/res/drawable/tab_selected.xml --><!-- From: file:/E:/workspace/idea/gztv/shopping/build/intermediates/exploded-aar/gztv/SelectedMedia/unspecified/res/drawable/tab_selected.xml -->

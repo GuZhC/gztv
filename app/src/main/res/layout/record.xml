@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+        >
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <net.majorkernelpanic.streaming.gl.SurfaceView
+                android:layout_centerInParent="true"
+                android:id="@+id/surface"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        <ImageView
+                android:id="@+id/btn_switch_camera"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/icon_switch_camera"/>
+
+        <TextView
+                android:id="@+id/test_bitrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="80dp"
+                android:textSize="18sp"/>
+    </FrameLayout>
+
+    <LinearLayout
+            android:id="@+id/create_live_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#66000000"
+            android:orientation="vertical">
+
+        <include
+                layout="@layout/create_live_layout"/>
+
+    </LinearLayout>
+</RelativeLayout>
+

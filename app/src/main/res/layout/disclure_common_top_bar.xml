@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:visibility="visible"-->
+            <!--android:id="@+id/top_bar"-->
+            <!--android:background="@color/public_purple_bkg"-->
+            <!--android:layout_height="@dimen/status_bar_height"/>-->
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:gravity="center_vertical"
+            android:paddingRight="13dp"
+            android:background="@color/public_purple_bkg">
+
+        <RelativeLayout android:layout_width="48dp"  android:visibility="gone" android:id="@+id/back_btn_view" android:layout_height="match_parent">
+            <ImageView
+                    android:id="@+id/back_finish"
+                    android:layout_centerVertical="true"
+                    android:layout_width="12dp"
+                    android:layout_height="21dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="center"
+                    android:background="@drawable/icon_left_back"/>
+        </RelativeLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="爆料中心"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textSize="15.0sp"
+        />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上传"
+                android:id="@+id/file_up_btn"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textSize="13.0sp"
+        />
+    </RelativeLayout>
+    <!--<View android:layout_width="match_parent" android:layout_height="1dp" android:background="#ffbdbdbd"/>-->
+    <View android:layout_width="match_parent" android:layout_height="2dp" android:background="#fff3f3f3"/>
+    <!--<View android:layout_width="match_parent" android:layout_height="1dp" android:background="#ffbdbdbd"/>-->
+</LinearLayout>
+

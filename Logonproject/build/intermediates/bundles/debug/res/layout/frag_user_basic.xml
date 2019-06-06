@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:orientation="vertical" android:paddingTop="10dp"
+                      android:layout_height="match_parent">
+            <RelativeLayout android:layout_width="match_parent" android:paddingLeft="16dp" android:paddingRight="12dp"
+                            android:layout_height="wrap_content">
+                <ImageView android:layout_width="34dp"  android:id="@+id/top_jump_btn" android:layout_centerVertical="true"
+                           android:layout_alignParentLeft="true" android:layout_height="16dp"
+                           android:src="@drawable/user_b_pass"/>
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="match_parent"  android:layout_marginTop="13dp"
+                            android:layout_height="wrap_content">
+                <!--<RelativeLayout android:layout_width="wrap_content"  android:layout_centerInParent="true"  android:id="@+id/user_imag_layout" android:layout_height="wrap_content">-->
+                    <com.dfsx.core.common.view.CircleImageView android:layout_width="119dp"
+                                                            android:id="@+id/user_imag_btn"
+                                                               android:layout_centerInParent="true"
+                                                            android:layout_centerVertical="true"
+                                                            android:layout_height="119dp"
+                                                            android:background="@drawable/icon_defalut_no_login_logo"/>
+
+                <!--</RelativeLayout>-->
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="match_parent" android:layout_marginTop="39dp"
+                            android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent"  android:gravity="center_horizontal" android:layout_centerInParent="true"
+                              android:layout_height="wrap_content">
+                    <RadioGroup  android:id="@+id/group_sex_atr"    android:layout_width="wrap_content"    android:orientation="horizontal" android:layout_height="wrap_content">
+
+                        <RadioButton
+                                android:id="@+id/bar_man_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.1"
+                                android:button="@android:color/transparent"
+                                android:gravity="center"
+                                android:text="男"
+                                android:layout_marginRight="136dp"
+                                android:drawableTop="@drawable/tab_man_btn"
+                                android:textColor="@drawable/selector_bar_text_color"
+                                android:textSize="15sp" />
+
+                        <RadioButton
+                                android:id="@+id/bar_woman_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.1"
+                                android:button="@android:color/transparent"
+                                android:gravity="center"
+                                android:text="女"
+                                android:drawableTop="@drawable/tab_woman_btn"
+                                android:textColor="@drawable/selector_bar_text_color"
+                                android:textSize="15sp" />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </RelativeLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_marginTop="40dp" android:gravity="center_horizontal"
+                          android:orientation="vertical" android:layout_height="wrap_content">
+                <EditText
+                        android:id="@+id/user_b_sign_txt"
+                        android:layout_width="305dp"
+                        android:layout_height="48dp"
+                        android:paddingLeft="10dp"
+                        android:textSize="15.0sp"
+                        android:textColor="@color/news_title_color"
+                        android:background="@color/comment_op_background"
+                        android:hint="@string/register_user_b_sign_hit"/>
+
+                <TextView
+                        android:id="@+id/user_b_address"
+                        android:layout_width="305dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="7dp"
+                        android:paddingLeft="10dp"
+                        android:gravity="left|center"
+                        android:paddingRight="5dp"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:textSize="15.0sp"
+                        android:textColor="@color/news_title_color"
+                        android:background="@color/comment_op_background"
+                        android:hint="选择地区"/>
+
+                <EditText
+                        android:id="@+id/mail_ediddttssext"
+                        android:layout_width="305dp"
+                        android:visibility="gone"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="7dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="17dp"
+                        android:drawableRight="@drawable/reg_wel_clear"
+                        android:textSize="15.0sp"
+                        android:textColor="@color/news_title_color"
+                        android:background="@color/comment_op_background"
+                        android:hint="邮箱"/>
+
+                <TextView android:layout_width="305dp" android:id="@+id/comfirm_btn" android:layout_height="55dp" android:layout_marginTop="24dp"
+                          android:background="@color/logon_theme_bkg" android:layout_gravity="center_horizontal"
+                          android:textColor="@color/white" android:text="确认" android:textSize="17.0sp"
+                          android:gravity="center"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
+<!-- From: file:/E:/workspace/idea/gztv/Logonproject/src/main/res/layout/frag_user_basic.xml -->

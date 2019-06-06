@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/icon_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+    >
+
+        <ImageView
+            android:id="@+id/btn_play"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_back_play_playing"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"/>
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="centerInside"
+            android:layout_alignParentRight="true"
+            android:layout_toLeftOf="@+id/send_gift"
+            android:src="@drawable/icon_share"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"/>
+
+        <ImageView
+            android:id="@+id/send_gift"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/circle_black_bkg"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_gift"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"/>
+    </RelativeLayout>
+</LinearLayout>

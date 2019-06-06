@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <FrameLayout
+            android:id="@+id/video_container_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+        <com.dfsx.lzcms.liveroom.view.LoadingView
+            android:id="@+id/loading"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            app:track_icon="@drawable/v_loading_1"
+            app:direction="left"
+            app:scale_type="fit_center"
+            app:text_origin_color="#fbd42d"
+            />
+
+        <TextView
+            android:id="@+id/video_state_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:textSize="15dp"
+            android:textColor="@color/bar_red"/>
+
+        <FrameLayout
+            android:id="@+id/video_controller_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+    </RelativeLayout>
+</LinearLayout>

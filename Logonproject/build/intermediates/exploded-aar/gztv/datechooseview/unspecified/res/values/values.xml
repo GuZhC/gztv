@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/datechooseview/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="gray_bg">#f8f8f8</color>
+    <color name="line">#dddddd</color>
+    <color name="text_10">#333333</color>
+    <color name="text_11">#999999</color>
+    <color name="topbar_3">#339EFE</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <!-- From: file:/E:/workspace/idea/gztv/datechooseview/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/E:/workspace/idea/gztv/datechooseview/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">DateChooseWheelViewDemo</string>
+    <!-- From: file:/E:/workspace/idea/gztv/datechooseview/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@color/gray_bg</item>
+    </style>
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/android:transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

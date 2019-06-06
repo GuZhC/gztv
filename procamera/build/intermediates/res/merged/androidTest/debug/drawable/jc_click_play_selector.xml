@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:drawable="@drawable/jc_play_normal" android:state_pressed="false" />
+  <item android:drawable="@drawable/jc_play_pressed" android:state_pressed="true" />
+  <item android:drawable="@drawable/jc_play_normal" />
+</selector>
+<!-- From: file:/E:/workspace/idea/gztv/LiveRoom/src/main/res/drawable/jc_click_play_selector.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/drawable/jc_click_play_selector.xml -->

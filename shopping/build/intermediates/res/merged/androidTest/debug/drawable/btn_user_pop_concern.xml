@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+
+        <shape
+            android:shape="rectangle">
+
+            <solid
+                android:color="@color/public_purple_alpha_bkg"/>
+
+            <corners android:radius="15dp"/>
+        </shape>
+    </item>
+
+    <item>
+
+        <shape
+            android:shape="rectangle">
+            <solid
+                android:color="@color/public_purple_bkg"/>
+
+            <corners android:radius="15dp"/>
+        </shape>
+    </item>
+</selector><!-- From: file:/E:/workspace/idea/gztv/LiveRoom/src/main/res/drawable/btn_user_pop_concern.xml --><!-- From: file:/E:/workspace/idea/gztv/shopping/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/drawable/btn_user_pop_concern.xml -->

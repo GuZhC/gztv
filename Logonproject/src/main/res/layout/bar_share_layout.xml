@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+             >
+    <RelativeLayout android:layout_width="match_parent" android:paddingLeft="35dp" android:paddingRight="35dp"   android:layout_height="wrap_content">
+        <ImageView android:layout_width="40dp" android:id="@+id/bottom_qq_btn"  android:layout_alignParentLeft="true"
+                   android:layout_centerVertical="true"
+                   android:layout_height="40dp" android:background="@drawable/reg_wel_qq"/>
+        <ImageView android:layout_width="40dp"  android:id="@+id/bottom_weixin_btn"  android:layout_centerInParent="true"
+                   android:layout_centerVertical="true"
+                   android:layout_height="40dp" android:background="@drawable/reg_wel_vin"/>
+        <ImageView android:layout_width="40dp" android:layout_alignParentRight="true"
+                   android:layout_centerVertical="true"   android:id="@+id/bottom_weibo_btn"
+                   android:layout_height="40dp" android:background="@drawable/reg_wel_weibo"/>
+    </RelativeLayout>
+</LinearLayout>

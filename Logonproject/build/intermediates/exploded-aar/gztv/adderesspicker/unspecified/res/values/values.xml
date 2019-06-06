@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/adderesspicker/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">AdderessPicker</string>
+    <!-- From: file:/E:/workspace/idea/gztv/adderesspicker/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="Animation.Popup" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+</resources>

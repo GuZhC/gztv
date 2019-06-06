@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4d373737">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/bg_del_history_note"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="20dp"
+            android:background="@color/line_color"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/cancel_del_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/search_del_cancel"
+                android:textSize="14dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#a3a3a3"
+                />
+
+            <TextView
+                android:id="@+id/del_history"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/search_del_ok"
+                android:textSize="14dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#333333"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

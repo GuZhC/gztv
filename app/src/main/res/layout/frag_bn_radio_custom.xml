@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/public_bgd"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/radio_top_banground"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:layout_height="210dp"
+            android:orientation="horizontal">
+        <LinearLayout android:layout_width="0dp" android:layout_weight="0.5" android:layout_height="match_parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <RelativeLayout android:layout_width="match_parent"
+                                android:gravity="center"
+                                android:layout_height="wrap_content">
+                    <!--<com.dfsx.core.common.view.CircleImageView-->
+                    <ImageView
+                            android:src="@drawable/radio_circle_bankground"
+                            android:layout_width="148dp"
+                            android:layout_height="143dp"
+                            android:background="@null"
+                            android:scaleType="centerCrop"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/fm_ciru_lay"
+                    />
+                    <!--</FrameLayout>-->
+                    <!--<ImageView android:layout_width="22dp"   android:layout_centerHorizontal="true"-->
+                    <!--android:id="@+id/radio_plays_btn" android:layout_centerVertical="true"  android:layout_height="29dp"  android:src="@drawable/radio_play"-->
+                    <!--android:background="@null"  />-->
+                    <!--</RelativeLayout>-->
+                </RelativeLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="0dp" android:orientation="vertical" android:gravity="center_vertical"
+                      android:paddingRight="10dp" android:layout_weight="0.5" android:layout_height="143dp">
+            <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                          android:layout_height="wrap_content">
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="19.0sp"
+                        android:paddingLeft="10dp"
+                        android:id="@+id/HZ_TextView"
+                        android:textStyle="bold"
+                        android:text=""
+                        android:textColor="#fefeff"
+                />
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:textSize="11sp"
+                        android:maxLines="3"
+                        android:ellipsize="end"
+                        android:paddingLeft="13dp"
+                        android:id="@+id/HZ_describr_Text"
+                        android:textStyle="bold"
+                        android:text=""
+                        android:textColor="#d2d1d9"
+                />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_marginTop="50dp"
+                              android:orientation="horizontal" android:gravity="center_vertical"
+                              android:layout_height="30dp">
+
+                    <ImageView android:layout_width="53dp" android:layout_centerHorizontal="true"
+                               android:id="@+id/radio_plays_btn" android:layout_centerVertical="true"
+                               android:layout_height="28dp" android:src="@drawable/radio_play"
+                               android:background="@null"/>
+
+                    <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:textSize="13sp"
+                            android:id="@+id/fm_ciruss_lay"
+                            android:text="下一个频道"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:gravity="left"
+                            android:layout_marginLeft="22dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/bg_radio_next_bar"
+                            android:drawablePadding="3dp"
+                            android:drawableRight="@drawable/replay_right_enter"
+                    />
+                </LinearLayout>
+                <!-- android:drawableRight="@drawable/icon_right_in"     -->
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--<HorizontalScrollView-->
+            <!--android:id="@+id/hsv_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="42dp"-->
+            <!--android:background="@color/COLOR_33"-->
+            <!--android:fadingEdgeLength="0dp"-->
+            <!--android:overScrollMode="never"-->
+            <!--android:paddingLeft="18dp"-->
+            <!--android:scrollbars="none">-->
+
+        <!--<LinearLayout-->
+                <!--android:id="@+id/hsv_content"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal"></LinearLayout>-->
+
+    <!--</HorizontalScrollView>-->
+    <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="#e1e1e1" />-->
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone"
+            android:scrollbarStyle="outsideInset"
+            android:id="@+id/listAudio"
+            android:choiceMode="singleChoice"
+            android:divider="@null"
+            android:listSelector="#00000000"
+            />
+
+
+    <RadioGroup
+            android:id="@+id/radio_group_bar"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+
+        <RadioButton
+                android:id="@+id/bar_racio_tables"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@android:color/transparent"
+                android:gravity="center"
+                android:checked="true"
+                android:layout_marginRight="40dp"
+                android:text="节目单"
+                android:textColor="@drawable/selector_bar_text_color"
+                android:textSize="15sp"/>
+
+        <RadioButton
+                android:id="@+id/bar_racio_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@android:color/transparent"
+                android:gravity="left|center_vertical"
+                android:text="评论"
+                android:textColor="@drawable/selector_bar_text_color"
+                android:textSize="15sp"/>
+    </RadioGroup>
+
+
+    <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="#e1e1e1" />-->
+
+    <LinearLayout android:layout_width="match_parent"  android:visibility="gone" android:orientation="horizontal" android:layout_height="match_parent">
+        <ListView
+                android:id="@+id/tv_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/transparent"
+                android:dividerHeight="0px"
+                android:scrollbars="vertical"
+                android:listSelector="@color/transparent"/>
+        <!--</LinearLayout>-->
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/raido_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:fadingEdgeLength="0dp"
+            android:overScrollMode="never"/>
+
+</LinearLayout>

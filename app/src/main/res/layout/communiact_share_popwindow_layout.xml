@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#ebebeb">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    >
+
+                <TextView
+                        android:id="@+id/share_wx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+                        android:textColor="#adadad"
+                        android:drawableTop="@drawable/cmy_weixin_icon"
+                        android:text=""/>
+
+                <TextView
+                        android:id="@+id/share_qq"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="#adadad"
+                        android:drawableTop="@drawable/cmy_qq_icon"
+                        android:text=""/>
+
+                <TextView
+                        android:id="@+id/share_wb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/cmy_weibo_icon"
+                        android:text=""
+                        android:textSize="14sp"
+                        android:textColor="#adadad"/>
+
+                <TextView
+                        android:id="@+id/share_QQfriends"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="#adadad"
+                        android:drawableTop="@drawable/cmy_qfriends_icon"
+                        android:text=""/>
+
+                <TextView
+                        android:id="@+id/share_wxfriends"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="#adadad"
+                        android:drawableTop="@drawable/cmy_weixinfrid_icon"
+                        android:text=""/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"     android:paddingLeft="20dp"
+                  android:paddingRight="20dp" android:layout_height="1dp"
+                  android:background="#ebebeb"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                <ImageView android:layout_width="62dp" android:layout_height="24dp"
+                           android:background="@drawable/comunty_jubao_icon"
+                           android:id="@+id/comunty_jubao_btn"
+                />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:gravity="center">
+
+            <TextView
+                    android:id="@+id/btn_cancle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="取消"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/COLOR_33"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

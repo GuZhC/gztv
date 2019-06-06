@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="normal_text_color">#ff333333</color>
+    <color name="link_text_color">#ff103d87</color>
+    <!-- hy 2015-3-31 -->
+    <color name="black">#ff000000</color>
+    <color name="gray_303_bg">#fff0f0f0</color>
+    <color name="public_bgd">#f8f8f8</color>
+    <color name="public_red_bkg">#ed4040</color>
+    <color name="public_purple_bkg">#ff5193EA</color>
+    <color name="public_purple_alpha_bkg">#80003263</color>
+    <color name="comment_background">#fff1f1f1</color>
+    <color name="loadfail">#fff7f3f7</color>
+    <color name="sharedefault">#D9DEDF</color>
+    <color name="white">#ffffffff</color>
+    <color name="bottm_bankground">#fff1f1f1</color>
+    <color name="ivory">#fff2f2f2</color>
+    <color name="black_50a">#50000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="grey3">#ff999999</color>
+    <color name="grey4">#ffcccccc</color>
+    <color name="news_title_color">#ff333333</color>
+    <color name="lives_bottom_gray">#ff8b8b8b</color>
+    <color name="news_bottom_g">#ff5b5b5b</color>
+    <color name="cursor_bottm">#ff0f80dd</color>
+    <color name="blue2">#ff6eb6d7</color>
+    <color name="loading_fail_font">#ffbfbfbf</color>
+    <color name="cursor">#ff0f80dd</color>
+    <color name="setting_bkcolor">#fff67f1d</color>
+    <color name="setting_title_color">#362471</color>
+    <color name="favirtory_title_color">#f67f1d</color>
+    <color name="commend_site_color">#ff6b6b6b</color>
+    <color name="red">#ed4040</color>
+    <color name="about_lay1">#ff2b2b2b</color>
+    <color name="style_blue">#4285f4</color>
+    <color name="tab_text_unselected">#ff959595</color>
+    <color name="bar_red">#ed4040</color>
+    <color name="bar_text_normal">#ff8a8a8a</color>
+    <color name="bar_text_selected">#ffed4040</color>
+    <color name="bar_bkg">#fff3f2f3</color>
+    <color name="radio_bkg">#ffd901</color>
+    <color name="up_btn_background">#ffdc30</color>
+    <color name="my_attention_backgroud">#f8f8f8</color>
+    <color name="commnuntiy_group_soild">#ffededed</color>
+    <color name="commnuntiy_group_stroke">#ffd8d8d8</color>
+    <color name="nc_comnend_praise_item">#ff858585</color>
+    <color name="COLOR_51">#515151</color>
+    <color name="black_title_bar_color">#3c3b4a</color>
+    <color name="COLOR_33">#333333</color>
+    <color name="griditems_bg">#ffe8ecef</color>
+    <color name="grid_text_color">#ff333333</color>
+    <color name="note_password">#e6ffb71c</color>
+    <color name="note_password_error">#e6f85051</color>
+    <color name="line">#ffd3dde6</color>
+    <color name="gray_b5">#adadad</color>
+    <color name="gray_ad">#adadad</color>
+
+    <color name="text_98">#989898</color>
+
+    <!--  首页 -->
+    <color name="disclosure_bakground">#fff9f9fa</color>
+    <color name="disclsoure_font">#ff6f7d88</color>
+    <color name="news_title_color1">#ff363636</color>
+    <color name="logon_editr_color">#e69f9f9f</color>
+    <color name="news_destaul_Layou_backnground">#ffe3e3e3</color>
+    <color name="cloumn_title_font">#e6262525</color>
+    <color name="cloumn_descibr_font">#ff595959</color>
+    <color name="ewd_descibr_font">#fffe9a0e</color>
+    <color name="COLOR_WHITE_50">#80ffffff</color>
+    <color name="COLOR_LINE_E9">#ffe9e9e9</color>
+    <color name="COLOR_LINE_EB">#ffebebeb</color>
+    <color name="news_answer_head">#ff212121</color>
+    <color name="news_item_title_color">#ff212121</color>
+    <color name="news_item_title_forget_color">#ffadadad</color>
+    <color name="news_commend_avaer_color">#ff7888a9</color>
+
+    <color name="news_mulity_column_noraml">#99333333</color>
+    <color name="news_mulity_column_select">#ff3e86e8</color>
+    <color name="tv_column_nomal">#ff212121</color>
+
+    <!-- hzg 2015-4-3 -->
+    <color name="login_normal_text_color">#ff393361</color>
+    <color name="navigationbar_item_selected_text_color">#f67811</color>
+    <color name="navigationbar_item_unselected_text_color">#5b5b5b</color>
+    <color name="live_tab_selected_text_color">#f67811</color>
+    <color name="live_tab_unselected_text_color">#8798a5</color>
+    <drawable name="live_tab_indicator_selected">#b8b8b8</drawable>
+    <drawable name="live_tab_indicator_unselected">#ffffffff</drawable>
+    <drawable name="demand_video_comment_item_divider_colr">#b8b8b8</drawable>
+
+    <color name="translucent_background">#60000000</color>
+    <!-- 涓婁紶鍥剧墖娣诲姞鐨勯鑹� -->
+    <color name="none_color">#00000000</color>
+    <color name="plugin_camera_black">#000000</color>
+    <color name="albumback">#E1E0DE</color>
+
+    <color name="blue">#0000ff</color>
+    <color name="green">#ff31c27c</color>
+    <color name="style_red">#ff4c41</color>
+    <color name="style_divider_color">#C9C7CD</color>
+    <color name="line_color">#ffd3d3d3</color>
+    <color name="line_e9_color">#e9e9e9</color>
+    <color name="line_50_e9_color">#30e9e9e9</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="COLOR_E4">#ffe4e4e4</color>
+    <color name="line_ef_color">#efefef</color>
+    <color name="line_e0_color">#e0e0e0</color>
+
+
+    <color name="yellow_color">#ffdb01</color>
+    <color name="gray_75">#757575</color>
+
+    <color name="text_black_31">#312c33</color>    <!--  钀ュ北app -->
+    <color name="horscroll_bk">#fff0f0f0</color>
+    <color name="horscroll_unline_bk">#ffe2342c</color>
+    <color name="list_text_color">#ff888888</color>
+    <color name="maincolor">#d92f27</color>
+    <color name="unselectalf">#ff7e7e7e</color>
+    <color name="selecthalf">#ff363636</color>
+
+    <color name="COLOR_WHITE">#ffffffff</color>
+    <color name="COLOR_WHITE_NORMAL">#50f6f6f6</color>
+    <color name="COLOR_FO">#fff0f0f0</color>
+    <color name="COLOR_CC">#ccb0b0b0</color>
+
+    <color name="food_background_color">#eeeeee</color>
+    <color name="maket_spn_line_color">#dedede</color>
+    <color name="detail_title_text_color">#ff999999</color>
+    <color name="bottom_font_selector_color">#f26520</color>
+    <!--<color name="bunch_cloum_font_color">#262525</color>-->
+
+    <!--  渚ф粦  -->
+    <color name="slider_menu_background_color">#f8f8f8</color>
+    <color name="slider_menu_more_color">#666666</color>
+    <color name="search_font_color">#cbcbcb</color>
+    <color name="COLOR_AD">#ffadadad</color>
+    <color name="COLOR_F7">#fff7f7f7</color>
+
+    <!--2016-10-11  何洋 社区  -->
+    <color name="user_font_color">#212121</color>
+    <color name="conmminty_time_color">#a6a6a6</color>
+    <color name="conmminty_title_color">#363636</color>
+    <color name="conmminty_column_color">#757575</color>
+    <color name="conmminty_file_tilte_color">#989898</color>
+    <color name="conmminty_replay_head_banground">#f6f6f6</color>
+    <color name="conmminty_replay_username_font">#4e6dc4</color>
+    <color name="conmminty_replay_tim_font">#a9a9a9</color>
+    <color name="radio_plying_txt_font">#cc606060</color>
+    <color name="radio_d_txt_font">#ff18122c</color>
+    <color name="radio_dd_txt_font">#80757575</color>
+    <color name="video_commend_bankground">#fff7f7f7</color>
+    <color name="video_w2_bankground">#ffadadad</color>
+    <color name="video_w4_bankground">#ffe9e9e9</color>
+    <color name="tv_space_bankground">#ffefefef</color>
+
+    <!--  首页 -->
+    <color name="head_ad_font">#ff6d6d</color>
+    <color name="perosn_home_attent_font">#fffde33d</color>
+    <color name="perosn_home_aid_font">#b3ffffff</color>
+    <color name="perosn_home_name_font">#e5ffffff</color>
+    <color name="perosn_home_signe_font">#ffbebebe</color>
+    <color name="perosn_home_top_background">#ff595858</color>
+    <color name="perosn_home_midlle_sele_font">#ffffffff</color>
+    <color name="perosn_home_midlle_font">#80ffffff</color>
+    <color name="perosn_home_bottom_font">#ffffc473</color>
+    <color name="perosn_home_banground">#ff312c33</color>
+    <color name="perosn_home_banground_sel">#ffed4040</color>
+    <color name="COLOR_2E">#ff2e2e2e</color>
+    <color name="COLOR_f7f9">#fff7f7f9</color>
+    <color name="news_bar_column_normal">#ffa3a3a3</color>
+
+    <!---  我要直播 -->
+    <color name="live_head_line_banground">#62605e</color>
+
+    <!-- 电视 -->
+    <color name="tv_list_button_background_line">#737373</color>
+    <color name="tv_name">#99424242</color>
+    <color name="tv_name_selected">#424242</color>
+
+    <color name="tv_week_name">#424242</color>
+    <color name="tv_week_selected">#ffdf44</color>
+
+    <color name="commnrity_replpube_line_bankground">#e1e1e3</color>
+    <color name="img_default_bankgrond_color">#fff4f4f4</color>
+
+    <color name="item_list_view_divide_color">#f4f4f4</color>
+    <color name="label_text_color">#003263</color>
+    <color name="label_shape_box_color">#003263</color>
+
+    <color name="line_space_color">#ffF7F7F9</color>
+    <color name="telent_item_bak_color">#50e2e2e2</color>
+    <color name="telent_item_select_bak_color">#ff2cbb76</color>
+    <color name="telent_item_pos_color">#ff333333</color>
+    <color name="telent_item_title_color">#ff2e2e2e</color>
+    <color name="color_333">#333333</color>
+    <color name="color_fe">#fefefe</color>
+</resources>

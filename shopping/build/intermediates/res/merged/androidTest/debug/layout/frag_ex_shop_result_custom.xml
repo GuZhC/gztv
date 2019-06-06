@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"               android:background="@color/slider_menu_background_color"
+              android:layout_height="match_parent">
+
+    <ScrollView android:layout_width="match_parent" android:scrollbars="vertical" android:layout_height="match_parent">
+   <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+       <LinearLayout android:layout_width="match_parent" android:paddingBottom="20dp" android:orientation="vertical" android:layout_height="wrap_content"  android:layout_alignParentTop="true">
+
+           <RelativeLayout android:layout_width="match_parent"  android:paddingLeft="23dp"  android:paddingRight="13dp"
+                           android:orientation="horizontal" android:paddingTop="5dp"  android:paddingBottom="5dp"  android:background="@color/COLOR_LINE_E9"  android:gravity="center_vertical" android:layout_height="wrap_content">
+               <ImageView    android:layout_width="72dp"
+                             android:layout_height="72dp"
+                             android:layout_centerVertical="true"
+                             android:background="@null"
+                             android:id="@+id/c_shop_image"
+                             android:layout_alignParentLeft="true"
+                             android:src="@drawable/glide_default_image" />
+
+               <TextView android:layout_width="wrap_content"
+                         android:text="App Watch"
+                         android:gravity="center"
+                         android:layout_toRightOf="@+id/c_shop_image"
+                         android:layout_toLeftOf="@+id/c_shop_reamin"
+                         android:layout_centerInParent="true"
+                         android:singleLine="true"
+                         android:ellipsize="end"
+                         android:layout_marginRight="5dp"
+                         android:id="@+id/c_shop_name"
+                         android:textColor="@color/COLOR_2E"
+                         android:layout_centerVertical="true"
+                         android:textSize="19.0sp"
+                         android:layout_height="wrap_content"/>
+
+               <TextView android:layout_width="wrap_content"
+                         android:text="0"
+                         android:gravity="center"
+                         android:id="@+id/c_shop_reamin"
+                         android:layout_centerVertical="true"
+                         android:layout_alignParentRight="true"
+                         android:textColor="@color/gray_b5"
+                         android:textSize="14.0sp"
+                         android:layout_height="wrap_content"/>
+           </RelativeLayout>
+
+           <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/COLOR_LINE_E9"  />
+           <RelativeLayout android:layout_width="match_parent"
+                           android:gravity="center_vertical"
+                           android:paddingLeft="13dp"
+                           android:paddingRight="13dp"
+                           android:layout_marginTop="10dp"
+                           android:layout_height="56dp">
+               <TextView android:layout_width="wrap_content"
+                         android:text="消费积分"
+                         android:gravity="center"
+                         android:id="@+id/c_shop_interal"
+                         android:textColor="@color/COLOR_2E"
+                         android:layout_centerVertical="true"
+                         android:layout_alignParentLeft="true"
+                         android:textSize="19.0sp"
+                         android:layout_height="wrap_content"/>
+
+               <ImageView    android:layout_width="16dp"
+                             android:background="@null"
+                             android:layout_centerVertical="true"
+                             android:id="@+id/money_icon"
+                             android:layout_toLeftOf="@+id/c_shop_take_interals"
+                             android:src="@drawable/shopinfo_head_mony" android:layout_height="13dp"  />
+
+               <TextView android:layout_width="wrap_content"
+                         android:text="0"
+                         android:gravity="center"
+                         android:id="@+id/c_shop_take_interals"
+                         android:layout_marginLeft="10dp"
+                         android:textColor="@color/public_red_bkg"
+                         android:layout_centerVertical="true"
+                         android:layout_alignParentRight="true"
+                         android:textSize="14.0sp"
+                         android:layout_height="wrap_content"/>
+           </RelativeLayout>
+           <View android:layout_width="match_parent" android:layout_marginTop="10dp" android:layout_height="1dp" android:background="@color/COLOR_LINE_E9"  />
+           <RelativeLayout android:layout_width="match_parent"
+                           android:gravity="center_vertical"
+                           android:paddingLeft="13dp"
+                           android:paddingRight="13dp"
+                           android:layout_height="56dp">
+               <TextView android:layout_width="wrap_content"
+                         android:text="剩余积分"
+                         android:gravity="center"
+                         android:id="@+id/c_shop_interals"
+                         android:textColor="@color/COLOR_2E"
+                         android:layout_centerVertical="true"
+                         android:layout_alignParentLeft="true"
+                         android:textSize="19.0sp"
+                         android:layout_height="wrap_content"/>
+
+               <ImageView    android:layout_width="16dp"
+                             android:background="@null"
+                             android:layout_centerVertical="true"
+                             android:id="@+id/money_remian_icon"
+                             android:layout_toLeftOf="@+id/c_shop_remain_interal"
+                             android:src="@drawable/shopinfo_head_mony" android:layout_height="13dp"  />
+
+               <TextView android:layout_width="wrap_content"
+                         android:text="0"
+                         android:gravity="center"
+                         android:id="@+id/c_shop_remain_interal"
+                         android:layout_marginLeft="10dp"
+                         android:textColor="@color/public_red_bkg"
+                         android:layout_centerVertical="true"
+                         android:layout_alignParentRight="true"
+                         android:textSize="14.0sp"
+                         android:layout_height="wrap_content"/>
+           </RelativeLayout>
+           <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/COLOR_LINE_E9"  />
+           <RelativeLayout android:layout_width="match_parent"  android:layout_marginTop="20dp"
+                           android:paddingRight="10dp"  android:paddingLeft="10dp" android:layout_height="wrap_content">
+               <ImageView    android:layout_width="71dp"
+                             android:background="@null"
+                             android:layout_centerVertical="true"
+                             android:id="@+id/rs_shop_ok_img__icon"
+                             android:layout_alignParentLeft="true"
+                             android:src="@drawable/rs_shop_liwu" android:layout_height="70dp"  />
+
+               <TextView android:layout_width="wrap_content"
+                         android:text="兑换时间"
+                         android:gravity="center"
+                         android:layout_marginLeft="10dp"
+                         android:layout_toLeftOf="@+id/rs_shop_time"
+                         android:textColor="@color/gray_b5"
+                         android:layout_centerVertical="true"
+                         android:textSize="14.0sp"
+                         android:layout_height="wrap_content"/>
+
+               <TextView android:layout_width="wrap_content"
+                         android:text=""
+                         android:gravity="center"
+                         android:id="@+id/rs_shop_time"
+                         android:layout_marginLeft="10dp"
+                         android:textColor="@color/gray_b5"
+                         android:layout_centerVertical="true"
+                         android:layout_alignParentRight="true"
+                         android:textSize="14.0sp"
+                         android:layout_height="wrap_content"/>
+           </RelativeLayout>
+           <LinearLayout android:layout_width="match_parent"  android:id="@+id/code_container" android:layout_marginTop="20dp" android:paddingLeft="20dp" android:paddingRight="20dp"  android:layout_height="wrap_content" android:orientation="horizontal">
+               <!--<Button android:layout_width="50dp" android:textColor="@color/white"-->
+                       <!--android:id="@+id/code_one" -->
+                       <!--android:textSize="25.0sp" -->
+                       <!--android:layout_height="52dp" -->
+                       <!--android:text="0"-->
+                       <!--android:background="@drawable/rs_shop_number_bankground" />-->
+               <!--<Button android:layout_width="50dp" android:textColor="@color/white"  android:id="@+id/code_two"  android:layout_marginLeft="5dp"  android:textSize="25.0sp"   android:layout_height="52dp"  android:text="0" android:background="@drawable/rs_shop_number_bankground" />-->
+               <!--<Button android:layout_width="50dp" android:textColor="@color/white" android:id="@+id/code_three"   android:layout_marginLeft="5dp"  android:textSize="25.0sp"   android:layout_height="52dp"  android:text="0" android:background="@drawable/rs_shop_number_bankground" />-->
+               <!--<Button android:layout_width="50dp" android:textColor="@color/white" android:id="@+id/code_third"   android:layout_marginLeft="5dp"  android:textSize="25.0sp"   android:layout_height="52dp"  android:text="0" android:background="@drawable/rs_shop_number_bankground" />-->
+               <!--<Button android:layout_width="50dp" android:textColor="@color/white"  android:id="@+id/code_five"  android:layout_marginLeft="5dp"  android:textSize="25.0sp"   android:layout_height="52dp"  android:text="0" android:background="@drawable/rs_shop_number_bankground" />-->
+               <!--<Button android:layout_width="50dp" android:textColor="@color/white" android:id="@+id/code_six"  android:layout_marginLeft="5dp"  android:textSize="25.0sp"   android:layout_height="52dp"  android:text="0" android:background="@drawable/rs_shop_number_bankground" />-->
+           </LinearLayout>
+
+           <LinearLayout android:layout_width="match_parent"  android:gravity="center_horizontal" android:layout_marginTop="30dp" android:layout_height="wrap_content" android:orientation="horizontal">
+               <ImageView    android:layout_width="90dp"
+                             android:background="@null"
+                             android:layout_centerVertical="true"
+                             android:id="@+id/rs_shop_save"
+                             android:layout_alignParentLeft="true"
+                             android:src="@drawable/rs_shop_save_img" android:layout_height="32dp"  />
+           </LinearLayout>
+
+
+           <TextView android:layout_width="match_parent"
+                     android:paddingLeft="13dp"
+                     android:text="兑换说明"
+                     android:gravity="left"
+                     android:textColor="@color/gray_b5"
+                     android:layout_centerVertical="true"
+                     android:layout_marginTop="12dp"
+                     android:textSize="13.0sp"
+                     android:layout_height="wrap_content"/>
+
+
+               <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:paddingLeft="10dp"
+                       android:minHeight="100dp"
+                       android:paddingTop="10dp"
+                       android:paddingBottom="10dp"
+                       android:paddingRight="10dp"
+                       android:gravity="left|top"
+                       android:layout_marginTop="10dp"
+                       android:layout_marginLeft="10dp"
+                       android:layout_marginRight="10dp"
+                       android:drawablePadding="10dp"
+                       android:hint="@string/shop_comcire_hit"
+                       android:id="@+id/c_shop_describe" android:background="@drawable/rs_shop_shape_bg"
+                       />
+           <!--<TextView android:layout_width="match_parent"-->
+                     <!--android:paddingLeft="13dp"-->
+                     <!--android:text="@string/shop_comcire_hit"-->
+                     <!--android:gravity="left"-->
+                     <!--android:textColor="@color/gray_b5"-->
+                     <!--android:layout_centerVertical="true"-->
+                     <!--android:layout_marginTop="12dp"-->
+                     <!--android:textSize="13.0sp"-->
+                     <!--android:layout_height="wrap_content"/>-->
+
+       </LinearLayout>
+       <Button android:id="@+id/comshop_exchange_btn"   android:layout_width="match_parent"
+               android:textColor="@color/white"  android:textSize="13.0sp"  android:visibility="gone"
+               android:layout_alignParentBottom="true"
+               android:background="@color/public_red_bkg" android:layout_height="42dp" android:text="确认兑换" />
+   </RelativeLayout>
+    </ScrollView>
+</LinearLayout><!-- From: file:/E:/workspace/idea/gztv/shopping/src/main/res/layout/frag_ex_shop_result_custom.xml --><!-- From: file:/E:/workspace/idea/gztv/shopping/build/intermediates/bundles/debug/res/layout/frag_ex_shop_result_custom.xml -->

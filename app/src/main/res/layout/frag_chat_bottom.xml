@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:clipToPadding="false"
+                android:layout_height="match_parent">
+
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+            <!--android:id="@+id/swipeRefreshLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+    <!--<android.support.v7.widget.RecyclerView-->
+
+    <com.dfsx.lzcms.liveroom.view.PullToRefreshRecyclerView android:id="@+id/id_stickynavlayout_innerscrollview"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                                            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                                                            android:scrollbars="none">
+    </com.dfsx.lzcms.liveroom.view.PullToRefreshRecyclerView>
+
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+
+        <ImageView
+                android:src="@drawable/chat_send_btn"
+                android:background="@null"
+                android:layout_width="34dp"
+                android:visibility="gone"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="23dp"
+                android:layout_marginBottom="28dp"
+                android:id="@+id/send_btn"
+                android:layout_height="34dp"
+                android:layout_centerVertical="true"/>
+
+
+</RelativeLayout>
+

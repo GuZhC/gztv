@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/grid_container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/container_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="16dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="15dp"
+            android:background="@color/shop_bankground"
+            android:layout_above="@+id/bottom_horizontal_line"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/item_image_container_layout">
+
+                <ImageView
+                    android:id="@+id/shop_image_view"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"/>
+
+                <ImageView
+                    android:id="@+id/room_type_image_view"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="10dp"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/shop_buynum_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="10dp"
+                        android:text="45人兑换"
+                        android:textColor="@color/gray_b5"/>
+                </LinearLayout>
+
+                <!-- 第三部分 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    >
+
+                    <TextView
+                        android:id="@+id/shop_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:text="111111"
+                        android:singleLine="true"
+                        android:textColor="@color/COLOR_21"
+                        />
+                </LinearLayout>
+
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="13dp"
+                        >
+
+                    <LinearLayout android:layout_width="match_parent"
+                                   android:orientation="horizontal"
+                                  android:gravity="center"
+                                  android:id="@+id/shop_price_container"
+                                  android:layout_height="match_parent">
+                        <ImageView    android:layout_width="16dp"
+                                      android:background="@null"
+                                      android:id="@+id/money_icon"
+                                      android:src="@drawable/shopinfo_head_mony" android:layout_height="13dp"  />
+
+                        <TextView
+                                android:id="@+id/shop_price_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="10dp"
+                                android:text="2354"
+                                android:textColor="@color/shop_priset_font"/>
+
+                    </LinearLayout>
+
+                    <ImageView    android:layout_width="68dp"
+                                  android:background="@null"
+                                  android:layout_centerInParent="true"
+                                  android:id="@+id/shop_sail_out"
+                                  android:src="@drawable/ex_shop_out" android:layout_height="36dp"  />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/bottom_horizontal_line"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"/>
+    </RelativeLayout>
+</LinearLayout>

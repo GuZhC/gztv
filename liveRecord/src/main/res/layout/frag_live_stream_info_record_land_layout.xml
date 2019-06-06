@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/up_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/top_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/room_person_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <FrameLayout
+                        android:id="@+id/room_user_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:background="@drawable/bg_room_owner_info">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="2dp"
+                                    android:paddingBottom="2dp"
+                                    android:paddingLeft="6dp"
+                                    android:paddingRight="6dp">
+
+                                    <com.dfsx.core.common.view.CircleButton
+                                        android:id="@+id/room_user_logos"
+                                        android:layout_width="35dp"
+                                        android:layout_height="35dp"
+                                        android:layout_centerVertical="true"
+                                        android:src="@drawable/icon_defalut_no_login_logo"
+                                        android:scaleType="centerCrop"/>
+
+                                    <LinearLayout
+                                        android:id="@+id/room_info_layouts"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@+id/room_user_logos"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/live_reinfro_time"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="00:00:00"
+                                            android:textSize="14sp"
+                                            android:paddingRight="7dp"
+                                            android:textColor="@color/white"/>
+
+                                        <TextView
+                                            android:id="@+id/user_id_text"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="2dp"
+                                            android:text="ID:"
+                                            android:textSize="14sp"
+                                            android:paddingRight="7dp"
+                                            android:textColor="@color/white"/>
+                                    </LinearLayout>
+                                </RelativeLayout>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <com.dfsx.lzcms.liveroom.view.VisitorLogoListView
+                        android:id="@+id/visitor_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@+id/room_user_info"
+                        android:layout_alignBottom="@+id/room_user_info"
+                        android:scrollbars="none"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/room_person_layout">
+
+                    <RelativeLayout
+                        android:id="@+id/live_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/bg_room_coins_value_red">
+
+                        <TextView
+                            android:id="@+id/coin_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:layout_centerVertical="true"
+                            android:text="乐币"/>
+
+                        <TextView
+                            android:id="@+id/value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:layout_toRightOf="@+id/coin_text"
+                            android:textSize="12sp"
+                            android:layout_centerVertical="true"
+                            android:text="0"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/online_num_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/shape_online_num">
+
+                        <TextView
+                            android:id="@+id/online_nums"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:layout_centerVertical="true"
+                            android:textSize="12dp"
+                            android:textColor="@color/white"
+                            android:text="0人在线"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <com.dfsx.lzcms.liveroom.view.LiveSpecialEffectView
+                    android:id="@+id/receive_gift_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/barrage_list_view_container"/>
+
+                <RelativeLayout
+                    android:id="@+id/barrage_list_view_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_toLeftOf="@+id/btn_edit_view_layout"
+                    android:layout_marginRight="5dp"
+                    android:layout_alignParentBottom="true">
+
+                    <com.dfsx.lzcms.liveroom.view.BarrageListViewSimple
+                        android:id="@+id/barrage_list_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/float_heart_view_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    >
+
+                    <com.dfsx.lzcms.liveroom.view.FloatHeartBubbleSurfaceView
+                        android:id="@+id/float_heart_view"
+                        android:layout_width="110dp"
+                        android:layout_height="150dp"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/live_room_control"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/icon_live_room_control"/>
+
+                <RelativeLayout
+                    android:id="@+id/btn_edit_view_layout"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    >
+
+                    <me.lake.librestreaming.sample.ui.LiveAnchorBottomToolBar
+                        android:id="@+id/anchor_bottom_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!--  设置这个View是为了方便退出输入状态  -->
+        <View
+            android:id="@+id/edit_cover_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="58dp"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape
+                android:shape="rectangle">
+            <stroke
+                    android:width="3px"
+                    android:color="@color/white"/>
+        </shape>
+    </item>
+</layer-list><!-- From: file:/E:/workspace/idea/gztv/LiveRoom/src/main/res/drawable/bg_item_selected_gift.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/drawable/bg_item_selected_gift.xml -->

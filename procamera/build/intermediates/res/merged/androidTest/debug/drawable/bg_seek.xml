@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@android:id/background">
+        <shape android:shape="line">
+            <stroke
+                android:color="#ffffff"
+                android:width="2dp"/>
+        </shape>
+    </item>
+
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape android:shape="line">
+                <stroke
+                    android:color="#f7f40461"
+                    android:width="2dp"/>
+            </shape>
+        </clip>
+    </item>
+
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="line">
+                <stroke
+                    android:color="#fdf10707"
+                    android:width="2dp"/>
+            </shape>
+        </clip>
+    </item>
+
+</layer-list><!-- From: file:/E:/workspace/idea/gztv/VideoIjkplayer/src/main/res/drawable/bg_seek.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/VideoIjkplayer/unspecified/res/drawable/bg_seek.xml -->

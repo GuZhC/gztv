@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:descendantFocusability="blocksDescendants"
+              android:layout_height="wrap_content"> <!--android:descendantFocusability="blocksDescendants"-->
+
+    <LinearLayout android:layout_width="match_parent"  android:id="@+id/item_view"
+                  android:background="@color/white"
+                  android:paddingLeft="13dp" android:paddingRight="13dp"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal" android:layout_height="65dp">
+        <ImageView
+                android:id="@+id/item_cover_img"
+                android:layout_width="51dp"
+                android:layout_height="51dp"
+                android:layout_marginRight="13dp"
+                android:scaleType="centerCrop"/>
+
+        <LinearLayout android:layout_width="match_parent"  android:gravity="center_vertical"  android:orientation="vertical" android:layout_height="match_parent">
+            <TextView
+                    android:id="@+id/news_list_item_name"
+                    android:ellipsize="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/COLOR_33"
+                    android:textSize="16.0sp"
+            />
+            <TextView
+                    android:id="@+id/news_list_item_describe"
+                    android:ellipsize="end"
+                    android:layout_marginTop="8dp"
+                    android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray_75"
+                    android:textSize="12.0sp"
+            />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:layout_width="match_parent" android:layout_height="1dp"  android:background="@color/line_e9_color" />
+</LinearLayout>

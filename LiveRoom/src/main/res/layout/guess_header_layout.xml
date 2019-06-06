@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/public_bgd">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        >
+
+            <ImageView
+                android:id="@+id/bg_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_guess_header"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@+id/bg_image"
+                android:layout_alignBottom="@+id/bg_image"
+                android:layout_marginTop="4.5dp"
+                android:layout_marginBottom="37.5dp">
+
+                <TextView
+                    android:id="@+id/down_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#b5b5b5"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="倒计时"
+                    android:textSize="18dp"/>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+                    <TextView
+                        android:id="@+id/time_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="23dp"
+                        android:textColor="#33d7e3"
+                        android:textStyle="bold"
+                        android:text="1:52"/>
+                    <TextView
+                        android:id="@+id/time_seconds_per_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/time_text"
+                        android:layout_alignBaseline="@+id/time_text"
+                        android:textSize="14dp"
+                        android:textColor="#33d7e3"
+                        android:layout_marginLeft="2dp"
+                        android:text="s"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="54.5dp"
+                android:layout_marginBottom="3.5dp"
+                android:layout_alignTop="@+id/bg_image"
+                android:layout_alignBottom="@+id/bg_image">
+
+                <TextView
+                    android:id="@+id/guess_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#757575"
+                    android:layout_centerInParent="true"
+                    android:textSize="15dp"
+                    android:text="正在比赛"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

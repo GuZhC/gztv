@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/public_bgd">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/label_container_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/text_more"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp">
+
+                <com.dfsx.ganzcms.app.view.CustomLabelLayout
+                    android:id="@+id/room_label_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    >
+
+                </com.dfsx.ganzcms.app.view.CustomLabelLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray_ad"
+                android:drawableLeft="@drawable/icon_more_point"
+                android:drawablePadding="5dp"
+                android:padding="13dp"
+                android:visibility="gone"
+                android:layout_alignParentRight="true"
+                android:text="更多"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.dfsx.lzcms.liveroom.view.RectangleRelativeLayout
+                android:id="@+id/image_bkg_view_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:ratio="1">
+
+                <ImageView
+                    android:id="@+id/room_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@color/blue2"/>
+
+                <com.fivehundredpx.android.blur.BlurringView
+                    android:id="@+id/room_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:blurRadius="11"
+                    app:downsampleFactor="6"
+                    android:visibility="gone"
+                    app:overlayColor="#99FFFFFF"/>
+
+                <ImageView
+                    android:id="@+id/center_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/video_head_icon"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/image_back_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icon_back_live"
+                    android:layout_margin="10dp"/>
+
+                <TextView
+                    android:id="@+id/note_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/center_img"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="13sp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_note_text_bg"
+                    android:textColor="@color/white"
+                    android:text=""
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/item_room_shade_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/shape_item_room_name_bkg"/>
+
+                <TextView
+                    android:id="@+id/room_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="#2c2c2c"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="2"
+                    android:textSize="18dp"
+                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:textAppearance="@style/TextAppearance.BoldFont"
+                    android:text="11111111111111"/>
+
+            </com.dfsx.lzcms.liveroom.view.RectangleRelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_bkg_view_layout"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/item_log_imageView"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="invisible"
+                    android:layout_marginLeft="12dp"
+                    android:src="@drawable/icon_default_logo"/>
+
+                <TextView
+                    android:id="@+id/room_owner_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/item_log_imageView"
+                    android:text="拍客"
+                    android:textColor="@color/text_black_31"/>
+
+                <ImageView
+                    android:id="@+id/room_owner_grade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="1dp"
+                    android:layout_toRightOf="@+id/room_owner_text"
+                    android:layout_marginLeft="3dp"
+                    android:scaleType="centerInside"
+                    />
+
+                <TextView
+                    android:id="@+id/room_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/item_log_imageView"
+                    android:layout_below="@+id/room_owner_text"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="直播中"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray_ad"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/room_status"
+                    android:layout_centerVertical="true"
+                    android:gravity="right">
+
+                    <TextView
+                        android:id="@+id/room_msg_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12dp"
+                        android:drawablePadding="5dp"
+                        android:text="123人在观看"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_ad"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/room_start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="14sp"
+                    android:text="15:11 18/10"
+                    android:visibility="gone"
+                    android:textColor="@color/black"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/item_logo_layout"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/image_bkg_view_layout"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-10dp"
+                android:background="@drawable/shape_bg_user_logo">
+
+                <com.dfsx.core.common.view.CircleButton
+                    android:id="@+id/item_owner_logo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_margin="1.5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/icon_default_logo"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16px"
+            android:background="#dbdbdb"/>
+    </LinearLayout>
+
+</LinearLayout>

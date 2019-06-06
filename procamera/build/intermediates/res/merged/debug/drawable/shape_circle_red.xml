@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <stroke
+        android:width="3px"
+        android:color="#ed4040"/>
+</shape><!-- From: file:/E:/workspace/idea/gztv/LiveRoom/src/main/res/drawable/shape_circle_red.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/drawable/shape_circle_red.xml -->

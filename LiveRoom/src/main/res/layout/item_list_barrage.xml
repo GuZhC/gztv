@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        >
+
+        <ImageView
+            android:id="@+id/item_level_image"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="1.5dp"
+            android:layout_height="18.5dp"
+            android:scaleType="centerInside"/>
+
+        <com.dfsx.lzcms.liveroom.view.ChatMessageTextView
+            android:id="@+id/tv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ChatMessageTextShadowStyle"
+            android:layout_marginLeft="5dp"
+            android:textSize="15dp"
+            android:layout_gravity="center_vertical"
+            android:text="11"
+            android:singleLine="false"
+            android:maxLines="4"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+</LinearLayout>

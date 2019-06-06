@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:id="@+id/text_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_edit_bar"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/edit_text_text"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/transparent"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:gravity="center_vertical|left"
+                android:textColor="@color/black"
+                android:hint="说点什么吧~"
+                android:padding="7dp"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_layout"
+            android:layout_width="75dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/send_gift"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/icon_gift"
+                android:layout_alignParentRight="true"
+                android:scaleType="center"
+                android:visibility="visible"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/edit_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/empty_back_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/transparent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@color/gray_303_bg"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:id="@+id/commentLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:paddingTop="19dp"
+                android:orientation="vertical"
+                >
+
+                <!-- 输入框 -->
+                <EditText
+                    android:id="@+id/edit_send_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="5dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:background="#fff7f7f7"
+                    android:gravity="left"
+                    android:inputType="textMultiLine"
+                    android:maxLines="6"
+                    />
+                <!-- 留言按钮 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="right"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/btn_send_text"
+                        android:layout_width="70dp"
+                        android:layout_height="37dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="12dp"
+                        android:src="@drawable/btn_edit_send"
+                        android:background="@null"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

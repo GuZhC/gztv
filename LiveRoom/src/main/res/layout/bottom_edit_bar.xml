@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_edit_bar"
+            android:orientation="horizontal">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+            <EditText
+                    android:id="@+id/edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/transparent"
+                    android:scrollHorizontally="true"
+                    android:focusableInTouchMode="true"
+                    android:singleLine="true"
+                    android:gravity="center_vertical|left"
+                    android:textColor="@color/black"
+                    android:hint="说点什么吧~"
+                    android:padding="7dp"
+                    android:textSize="15sp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+                android:id="@+id/btn_layout"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="10dp"
+                >
+
+            <ImageView
+                    android:id="@+id/send_gift"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/icon_gift"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="center"
+                    android:visibility="visible"
+                    />
+
+            <Button
+                    android:id="@+id/btn_send_text"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_send_selector"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                    android:text="发送"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

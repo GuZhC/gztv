@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imageViewFromMediaChooserGridItemRowView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop" />
+
+    <CheckedTextView
+        android:id="@+id/checkTextViewFromMediaChooserGridItemRowView"
+        android:layout_marginTop="3dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@null"
+        android:layout_margin="4dp"
+        android:layout_alignRight="@+id/imageViewFromMediaChooserGridItemRowView"
+        android:checkMark="@drawable/selector_check"
+       />
+
+    <ImageView
+            android:id="@+id/video_iocon"
+            android:layout_width="7dp"
+            android:layout_height="8dp"
+            android:src="@drawable/video_icon_item2"
+            android:contentDescription="@null"
+            android:layout_alignBottom="@+id/imageViewFromMediaChooserGridItemRowView"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="7dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY" />
+
+    <TextView
+            android:id="@+id/duration_time"
+            android:textColor="@color/white"
+            android:textSize="12.0sp"
+            android:layout_alignBottom="@+id/imageViewFromMediaChooserGridItemRowView"
+            android:layout_toLeftOf="@+id/video_iocon"
+            android:layout_marginBottom="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="03:04:05"
+            />
+
+</RelativeLayout><!-- From: file:/E:/workspace/idea/gztv/SelectedMedia/src/main/res/layout/view_grid_item_media_chooser.xml --><!-- From: file:/E:/workspace/idea/gztv/Logonproject/build/intermediates/exploded-aar/gztv/SelectedMedia/unspecified/res/layout/view_grid_item_media_chooser.xml -->

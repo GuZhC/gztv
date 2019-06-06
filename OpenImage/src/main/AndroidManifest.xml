@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.dfsx.openimage">
+
+    <application
+            >
+        <activity
+                android:name=".ShowWebImageActivity"
+                android:screenOrientation="portrait"
+                android:configChanges="keyboard|keyboardHidden|uiMode"
+                android:windowSoftInputMode="stateHidden|adjustPan"
+                />
+    </application>
+
+</manifest>

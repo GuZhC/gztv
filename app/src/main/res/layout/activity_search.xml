@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@color/slider_menu_background_color"
+>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  android:paddingTop="25dp"
+                  android:paddingBottom="10dp"
+                  android:paddingLeft="10dp"
+                  android:paddingRight="10dp"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+        <RelativeLayout android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="35dp">
+            <com.dfsx.core.common.view.ClearEditText
+                android:id="@+id/filter_edit"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:inputType="text"
+                android:background="@drawable/shape_editbox"
+                android:drawableLeft="@drawable/btn_seaddrch_news_icon"
+                android:hint="请输入关键字"
+                android:textColor="@color/search_font_color"
+                android:singleLine="true"
+                android:drawablePadding="5dp"
+                android:paddingLeft="5dp"
+                android:textSize="15sp"
+                android:layout_toLeftOf="@+id/search_cancel_btn"
+            />
+            <TextView android:layout_width="wrap_content"
+                      android:text="取消"
+                      android:id="@+id/search_cancel_btn"
+                      android:gravity="center"
+                      android:layout_alignParentRight="true"
+                      android:layout_marginLeft="10dp"
+                      android:textColor="@color/logon_editr_color"
+                      android:textSize="14.0sp"
+                      android:layout_height="match_parent"/>
+        </RelativeLayout>
+        <!--android:background="@drawable/search_bar_edit_selector"-->
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+    >
+
+        <LinearLayout
+            android:id="@+id/empty_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/country_lvcountry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:divider="@color/gray_303_bg"
+            android:dividerHeight="1dp"
+        ></com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+        <!--<TextView-->
+        <!--android:id="@+id/dialog"-->
+        <!--android:layout_width="80.0dip"-->
+        <!--android:layout_height="80.0dip"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:background="@drawable/show_head_toast_bg"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="#ffffffff"-->
+        <!--android:textSize="30.0dip"-->
+        <!--android:visibility="invisible" />-->
+        <!--<com.dy.ustc.sortlistviewdemo.SideBar -->
+        <!--android:id="@+id/sidrbar"-->
+        <!--android:layout_width="30.0dip"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:layout_gravity="right|center" />-->
+
+    </FrameLayout>
+
+</LinearLayout>

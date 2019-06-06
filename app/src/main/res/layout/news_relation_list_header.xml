@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:background="@null"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout android:layout_width="match_parent" android:layout_marginTop="20dp"
+                  android:orientation="vertical" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_width="match_parent"
+                        android:background="@color/COLOR_F7" android:layout_height="35dp"
+                        android:gravity="center_vertical"
+                        android:paddingRight="15dp">
+            <LinearLayout android:layout_width="wrap_content" android:orientation="horizontal"
+                          android:layout_centerInParent="true"
+                          android:gravity="center_vertical"
+                          android:layout_height="wrap_content">
+                <ImageView android:layout_width="12dp"
+                           android:layout_centerVertical="true"
+                           android:layout_height="12dp"
+                           android:background="@drawable/video_raltion_icon"
+                           android:layout_marginRight="5dp"
+                />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:textSize="12.0sp"
+                        android:textColor="@color/search_font_color"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:text="@string/news_act_raltion_hit"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_alignParentRight="true"
+                          android:id="@+id/switch_btn"
+                          android:layout_height="match_parent">
+                <ImageView android:layout_width="13dp"
+                           android:layout_gravity="center_vertical"
+                           android:layout_centerVertical="true" android:layout_height="13dp"
+                           android:background="@drawable/video_switch_icon"
+                           android:layout_marginRight="5dp"
+                />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:textSize="12.0sp"
+                        android:gravity="center"
+                        android:textColor="@color/search_font_color"
+                        android:layout_height="match_parent"
+                        android:text="@string/news_act_sawitch_hit"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:id="@+id/video_ralation_container"
+                      android:orientation="vertical" android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>
+

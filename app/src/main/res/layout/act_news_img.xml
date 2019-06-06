@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/black">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/groups_header_view"
+            android:gravity="center_vertical"
+            android:paddingTop="15dp"
+            android:layout_height="60dp">
+
+        <RelativeLayout
+                android:id="@+id/top_back_view"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="19dp"
+                android:paddingRight="10dp">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="center"
+                    android:src="@drawable/img_group_detail_back"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/top_share_view"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="12dp">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="center"
+                    android:id="@+id/share_img"
+                    android:src="@drawable/img_group_detail_fav_share"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        <android.support.v4.view.ViewPager
+                android:id="@+id/img_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ></android.support.v4.view.ViewPager>
+
+        <ImageView
+                android:id="@+id/download_img"
+                android:visibility="gone"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/icon_download_img"
+                android:scaleType="center"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="100dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout  android:id="@+id/groups_bottom_view"  android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="1dp" android:background="#333333"  />
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginBottom="3dp">
+
+           <RelativeLayout  android:id="@+id/pub_commend_view" android:layout_width="wrap_content" android:gravity="center_vertical" android:layout_alignParentLeft="true" android:layout_height="match_parent">
+               <LinearLayout android:layout_width="wrap_content"  android:orientation="horizontal"  android:gravity="center_vertical"  android:layout_height="match_parent">
+                   <ImageView
+                           android:id="@+id/pen_img"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_centerVertical="true"
+                           android:scaleType="center"
+                           android:src="@drawable/img_group_detail_pen"/>
+
+                   <TextView
+                           android:id="@+id/edit_commit"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textSize="14.0sp"
+                           android:gravity="center"
+                           android:layout_centerVertical="true"
+                           android:layout_marginLeft="15dp"
+                           android:textColor="#909090"
+                           android:text="评一下"/>
+               </LinearLayout>
+           </RelativeLayout>
+
+
+              <RelativeLayout android:id="@+id/commend_view"    android:layout_width="wrap_content" android:layout_marginRight="41dp"     android:layout_toLeftOf="@+id/store_img" android:layout_height="match_parent">
+                  <LinearLayout android:layout_width="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:layout_height="match_parent">
+                      <ImageView
+                              android:id="@+id/commit_img"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_centerVertical="true"
+                              android:layout_marginRight="14dp"
+                              android:scaleType="center"
+                              android:src="@drawable/img_group_detail_comnd"/>
+
+                      <TextView
+                              android:id="@+id/commit_num"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:gravity="center"
+                              android:textSize="14.0sp"
+                              android:scaleType="center"
+                              android:textColor="#909090"
+                              android:text="12"/>
+                  </LinearLayout>
+              </RelativeLayout>
+
+                <ImageView
+                        android:id="@+id/store_img"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/img_group_detail_fav"/>
+        <!--<include-->
+                <!--layout="@layout/bottom_share_commit_bar"/>-->
+    </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

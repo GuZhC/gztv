@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="match_parent"  android:orientation="vertical" android:paddingLeft="12dp" android:paddingRight="12dp"  android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="match_parent"  android:paddingTop="14dp"   android:paddingBottom="10dp"   android:orientation="vertical" android:layout_height="wrap_content"
+                >
+        <LinearLayout android:layout_width="match_parent"  android:orientation="horizontal" android:layout_height="wrap_content">
+            <RelativeLayout
+                    android:id="@+id/news_list_item_image_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_centerVertical="true">
+
+                <ImageView
+                        android:id="@+id/news_news_list_item_image"
+                        android:src="@drawable/glide_default_image"
+                        android:layout_width="102dp"
+                        android:visibility="gone"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="68dp"
+                        android:scaleType="centerCrop"/>
+
+                <RelativeLayout
+                        android:id="@+id/news_list_item_title_layout"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_toLeftOf="@id/news_news_list_item_image"
+                        android:layout_alignBottom="@+id/news_news_list_item_image">
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            >
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:orientation="vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                >
+
+                            <TextView
+                                    android:textSize="18.0sp"
+                                    android:textColor="@drawable/news_title_color_xml"
+                                    android:ellipsize="end"
+                                    android:id="@+id/news_list_item_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"/>
+                            <!--  -->
+                            <TextView
+                                    android:textSize="13.0sp"
+                                    android:textColor="@color/lives_bottom_gray"
+                                    android:ellipsize="end"
+                                    android:visibility="gone"
+                                    android:id="@+id/news_list_item_content"
+                                    android:text=""
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="2"/>
+                        </LinearLayout>
+
+
+                    <LinearLayout
+                            android:id="@+id/bottom_news_layout"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="1dp"
+                            >
+
+                        <TextView
+                                android:id="@+id/news_list_item_answernum_tx"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="175回答"
+                                android:textSize="12.0sp"
+                                android:textColor="@color/public_red_bkg"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="5dp"
+                                />
+                    </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"  android:background="@color/gray_303_bg" android:layout_height="1dp"  />
+    </LinearLayout>
+</LinearLayout>

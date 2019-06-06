@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:fromXDelta="0"
+        android:toXDelta="-100%"
+        android:duration="300"
+        />
+</set><!-- From: file:/E:/workspace/idea/gztv/LiveRoom/src/main/res/anim/anim_person_out.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/anim/anim_person_out.xml -->

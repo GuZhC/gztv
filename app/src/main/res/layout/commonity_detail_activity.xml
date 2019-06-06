@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:background="@color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/newsdtauel_smain"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+            android:id="@+id/poriant_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+            >
+
+                <RelativeLayout
+                        android:id="@+id/load__news_fail_layout"
+                        android:visibility="gone"
+                        android:background="@color/ivory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                >
+
+                    <ImageButton
+                            android:id="@+id/reload_news_btn"
+                            android:layout_height="60dp"
+                            android:layout_width="68dp"
+                            android:background="@drawable/load_retry"
+                            android:layout_centerInParent="true"
+                            android:layout_centerHorizontal="true"/>
+
+                    <TextView
+                            android:textSize="13.0sp"
+                            android:textColor="@color/loading_fail_font"
+                            android:text="加载失败,请重新刷新"
+                            android:layout_below="@+id/reload_news_btn"
+                            android:layout_centerHorizontal="true"
+                            style="@style/auto_size"/>
+                </RelativeLayout>
+            </FrameLayout>
+
+            <RelativeLayout
+                    android:id="@+id/new_detail_video_return_layout"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:paddingRight="10dp"
+                    android:layout_alignParentTop="true">
+                <LinearLayout android:layout_width="match_parent" android:orientation="vertical" android:layout_height="wrap_content">
+                    <RelativeLayout android:layout_width="match_parent"
+                                  android:layout_height="wrap_content">
+                        <RelativeLayout android:layout_width="48dp"  android:id="@+id/news_image_news_back_btn"   android:layout_alignParentLeft="true"  android:layout_height="match_parent">
+                            <ImageView
+                                    android:background="@drawable/icon_triangle_left"
+                                    android:layout_width="9dp"
+                                    android:layout_height="14dp"
+                                    android:layout_centerInParent="true"
+                            />
+                        </RelativeLayout>
+
+                        <TextView
+                                android:textSize="14.0sp"
+                                android:textColor="@color/loading_fail_font"
+                                android:text=""
+                                android:id="@+id/cmy_top_title"
+                                android:layout_centerInParent="true"
+                                style="@style/auto_size"/>
+
+
+                        <ImageView
+                                android:layout_centerVertical="true"
+                                android:background="@null"
+                                android:visibility="gone"
+                                android:src="@drawable/communtiy_top_img"
+                                android:layout_width="43dp"
+                                android:layout_height="20dp"
+                                android:layout_centerInParent="true"/>
+
+
+                        <ImageButton
+                                android:layout_marginLeft="10dp"
+                                android:layout_centerVertical="true"
+                                android:background="@null"
+                                android:id="@+id/news_report_btn"
+                                android:src="@drawable/comnity_report_icon"
+                                android:scaleType="fitCenter"
+                                android:layout_width="21dp"
+                                android:visibility="gone"
+                                android:layout_height="21dp"
+                                android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/loading_fail_font" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- 中间 -->
+            <RelativeLayout
+                    android:id="@+id/news_scrollView"
+                    android:layout_above="@+id/news_detail_video_bottom"
+                    android:layout_width="fill_parent"
+                    android:scrollbars="vertical"
+                    android:layout_marginTop="1dp"
+                    android:layout_below="@+id/new_detail_video_return_layout"
+                    android:layout_height="match_parent">
+                <View android:layout_width="match_parent" android:layout_height="1dp"  android:background="@color/line_e9_color" />
+
+
+                <com.handmark.pulltorefresh.library.PullToRefreshListView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbarStyle="outsideOverlay"
+                        android:scrollbars="vertical"
+                        android:id="@+id/relati_list"
+                        android:divider="@color/transparent"
+                        android:dividerHeight="0px"
+                />
+            </RelativeLayout>
+
+            <!--  底部 -->
+            <RelativeLayout
+                    android:id="@+id/news_detail_video_bottom"
+                    android:background="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                              android:layout_height="wrap_content">
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="1dp" android:background="@color/COLOR_LINE_E9"/>
+
+                    <!-- 新版本 -->
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:paddingLeft="16dp"
+                                  android:paddingRight="20dp"
+                                  android:orientation="horizontal"
+                                  android:gravity="center_vertical"
+                                  android:layout_height="46dp">
+                        <LinearLayout android:layout_width="0dp" android:id="@+id/communityd_head_comengd_lay"
+                                      android:gravity="left|center_vertical" android:orientation="horizontal"
+                                      android:layout_weight="1.0" android:layout_height="wrap_content">
+                            <ImageView
+                                    android:src="@drawable/cvideo_pen_icon"
+                                    android:background="@null"
+                                    android:layout_width="18dp"
+                                    android:layout_height="17dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"/>
+                            <TextView
+                                    android:text="评一下"
+                                    android:textColor="@color/radio_dd_txt_font"
+                                    android:textSize="14.0sp"
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:visibility="invisible"
+                                      android:id="@+id/community_head_comengd_lay" android:gravity="center"
+                                      android:orientation="horizontal" android:layout_weight="1.0"
+                                      android:layout_height="wrap_content">
+                            <ImageView
+                                    android:background="@drawable/common_head_commned"
+                                    android:layout_width="21dp"
+                                    android:layout_height="21dp"
+                                    android:layout_marginRight="6dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"/>
+                            <TextView
+                                    android:text="评论"
+                                    android:textColor="@color/gray_75"
+                                    android:textSize="13.0sp"
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"/>
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="0dp" android:id="@+id/communtyu_favl_layout"
+                                      android:gravity="right|center_vertical" android:orientation="horizontal"
+                                      android:layout_weight="1.0" android:layout_height="wrap_content">
+                            <ImageView
+                                    android:src="@drawable/cvidoe_favirty_normal"
+                                    android:background="@null"
+                                    android:layout_width="18dp"
+                                    android:id="@+id/commnitu_isfav_img"
+                                    android:layout_height="16dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_centerVertical="true"/>
+
+                            <ImageView
+                                    android:src="@drawable/cvideo_share"
+                                    android:background="@null"
+                                    android:layout_width="18dp"
+                                    android:id="@+id/share_lay_btn"
+                                    android:layout_height="17dp"
+                                    android:layout_centerVertical="true"/>
+                            <TextView
+                                    android:text="未收藏"
+                                    android:visibility="gone"
+                                    android:id="@+id/commnitu_isfav_tx"
+                                    android:textColor="@color/gray_75"
+                                    android:textSize="13.0sp"
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+            android:id="@+id/full_screen_video_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"></FrameLayout>
+</LinearLayout>
+

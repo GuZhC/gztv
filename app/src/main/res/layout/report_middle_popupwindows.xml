@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <LinearLayout
+            android:id="@+id/pop_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:background="#b0000000"
+           >
+        <LinearLayout
+                android:id="@+id/ll_popup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+            <LinearLayout android:layout_width="match_parent"  android:background="@drawable/report_popwnd_shape_bg" android:orientation="vertical" android:layout_height="wrap_content">
+            <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="41dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:orientation="horizontal">-->
+                <!--<TextView-->
+                        <!--android:id="@+id/item_popupwindows_name"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:background="@null"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text=""-->
+                <!--/>-->
+            <!--</LinearLayout>-->
+            <!--<LinearLayout android:layout_width="match_parent" android:layout_height="1dp"  android:background="@color/comment_background"/>-->
+            <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="51dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:orientation="horizontal">-->
+                <!--<ImageView android:layout_width="25dp" android:layout_height="25dp" android:layout_marginRight="10dp"   android:src="@drawable/pop_share_icon"/>-->
+                <!--<Button-->
+                        <!--android:id="@+id/item_popupwindows_share"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:background="@null"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="分享到其他"-->
+                <!--/>-->
+            <!--</LinearLayout>-->
+            <!--<LinearLayout android:layout_width="match_parent" android:layout_height="1dp"  android:background="@color/comment_background"/>-->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                <Button
+                        android:id="@+id/item_popupwindows_report"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:textColor="#585858"
+                        android:textSize="15.0sp"
+                        android:gravity="center"
+                        android:text="举报"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="1dp"  android:background="@color/comment_background"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="51dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                    <Button
+                            android:id="@+id/item_popupwindows_cancel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:text="取消"
+                            />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

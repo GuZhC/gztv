@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+        >
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout
+                android:background="@color/white"
+                android:id="@+id/logon_top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_alignParentTop="true">
+
+            <ImageButton
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:id="@+id/btn_retun"
+                    android:src="@drawable/icon_triangle_left"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentLeft="true"/>
+
+            <TextView
+                    android:textSize="15.0sp"
+                    android:textColor="@color/conmminty_title_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/community_pub_top_title"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="意见反馈"
+            />
+
+            <ImageButton
+                    android:id="@+id/commonity_publish_btn"
+                    android:layout_width="66dp"
+                    android:layout_height="33dp"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:src="@drawable/video_send_normal"
+                    android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        <!--   title -->
+        <!--android:layout_below="@+id/header_layout"-->
+        <RelativeLayout android:id="@+id/title_laayput" android:layout_below="@+id/logon_top_layout"
+                        android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent" android:visibility="gone" android:orientation="vertical"
+                          android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:gravity="center_vertical"
+                              android:paddingLeft="13dp" android:layout_height="43dp"
+                              android:background="@color/public_bgd">
+                    <TextView android:textColor="@color/conmminty_file_tilte_color" android:textSize="12.0sp"
+                              android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:layout_centerVertical="true" android:singleLine="true" android:ellipsize="none"
+                              android:text="标题"/>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:paddingLeft="5dp" android:paddingRight="5dp"
+                              android:background="@color/white" android:orientation="horizontal"
+                              android:layout_width="match_parent" android:layout_height="@dimen/gd_playset_play_auto_h">
+                    <EditText android:textSize="16.0sp" android:id="@+id/commit_title_edt"
+                              android:background="@color/transparent"
+                              android:layout_width="fill_parent" android:layout_height="wrap_content"
+                              android:layout_marginLeft="5dp" android:layout_marginRight="10.0dip" android:hint="说点什么"
+                              android:maxLines="1"
+                              android:drawablePadding="5dp" android:singleLine="true"
+                              android:gravity="left"
+                              android:layout_centerVertical="true"/>
+                </LinearLayout>
+                <LinearLayout android:visibility="gone" android:layout_width="match_parent" android:layout_height="2dp"
+                              android:background="@color/gray_303_bg"/>
+            </LinearLayout>
+         </RelativeLayout>
+         <RelativeLayout android:id="@+id/contentxt_layout" android:layout_below="@+id/title_laayput"
+                         android:layout_above="@+id/add_pic_layout" android:layout_width="fill_parent"
+                         android:layout_height="match_parent" android:paddingLeft="5dp" android:paddingRight="5dp">
+             <LinearLayout android:layout_width="match_parent" android:orientation="vertical" android:layout_height="5dp"
+                           android:background="@color/public_bgd"/>
+             <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                           android:layout_height="match_parent">
+                 <LinearLayout android:layout_width="match_parent" android:visibility="gone"
+                               android:gravity="center_vertical" android:paddingLeft="13dp" android:layout_height="43dp"
+                               android:background="@color/public_bgd">
+                     <TextView android:textColor="@color/conmminty_file_tilte_color" android:textSize="12.0sp"
+                               android:layout_width="wrap_content" android:layout_height="wrap_content"
+                               android:layout_centerVertical="true" android:singleLine="true" android:ellipsize="none"
+                               android:text="内容"/>
+                 </LinearLayout>
+                 <LinearLayout android:gravity="center_vertical" android:orientation="horizontal"
+                               android:background="@color/white" android:layout_marginTop="5dp"
+                               android:layout_width="fill_parent" android:layout_height="130dp">
+                     <EditText android:textSize="16.0sp" android:id="@+id/commit_content_edt"
+                               android:background="@color/transparent"
+                               android:layout_width="fill_parent" android:layout_height="match_parent"
+                               android:layout_marginLeft="5dp" android:layout_marginRight="10.0dip" android:hint="说点什么"
+                               android:maxLines="5"
+                               android:drawablePadding="5dp" android:paddingTop="5dp"
+                               android:gravity="left|top"
+                               android:layout_centerVertical="true"/>
+                 </LinearLayout>
+
+
+                 <!--<view android:layout_width="match_parent" android:layout_height="1dp"  android:background="@co"  />-->
+                 <!-- tab  -->
+                 <LinearLayout
+                         android:id="@+id/live_lablel_layout"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         android:padding="10dp">
+                     i
+                     <ImageView
+                             android:id="@+id/add_comunt_label_image"
+                             android:layout_width="wrap_content"
+                             android:layout_height="45dp"
+                             android:visibility="gone"
+                             android:src="@drawable/icon_add_label_red"/>
+
+                     <RelativeLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginLeft="12dp">
+
+                         <TextView
+                                 android:id="@+id/select_label_hint_text"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="45dp"
+                                 android:visibility="gone"
+                                 android:textSize="12sp"
+                                 android:gravity="center"
+                                 android:layout_centerVertical="true"
+                                 android:textColor="#6c6c6c"
+                                 android:text="您至少选择一个"/>
+
+                         <com.dfsx.ganzcms.app.view.CustomLabelLayout
+                                 android:id="@+id/community_label_view"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="8dp">
+                         </com.dfsx.ganzcms.app.view.CustomLabelLayout>
+                     </RelativeLayout>
+                 </LinearLayout>
+
+                 <LinearLayout android:layout_width="match_parent" android:paddingTop="10dp" android:paddingBottom="10dp"
+                               android:layout_marginTop="5dp" android:layout_height="wrap_content">
+                     <GridView
+                             android:id="@+id/fileup_imgs_gridview"
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             android:horizontalSpacing="3dp"
+                             android:numColumns="3"
+                             android:scrollbars="none"
+                             android:paddingLeft="5dp"
+                             android:verticalSpacing="3dp">
+                     </GridView>
+                 </LinearLayout>
+             </LinearLayout>
+         </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
+

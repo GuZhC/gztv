@@ -1,0 +1,6 @@
+<resources>
+    <!--<string name="app_name">OpenImage</string>-->
+
+    <string name="shop_comcire_hit">请留下你的个人信息，以便工作人员联系或发货</string>
+    <string name="shop_exchange_address_hit">注意！此商品确认兑换后需要凭密码到指定地点领取</string>
+</resources>

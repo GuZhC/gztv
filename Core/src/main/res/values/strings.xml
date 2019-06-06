@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Core</string>
+    <string name="permission">权限(permission)</string>
+    <string name="no_permissions">应用需要必要的运行权限</string>
+
+    <string name="settings">设置</string>
+    <string name="help">帮助</string>
+    <string name="string_help_text">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。\n\n最后点击两次后退按钮，即可返回。</string>
+    <string name="quit">退出</string>
+    <string name="downloaded">&#160;%s %%</string>
+    <string name="denied_message">如果你拒绝使用这个权限，你不能使用这个服务 \n \n 请在设置里的权限管理打开此权限</string>
+
+
+    <string name="news_act_nocommemnd_hit">暂无评论</string>
+    <string name="news_act_replay_hit">评论不能为空</string>
+    <string name="news_act_replay_success_hit">评论成功</string>
+
+</resources>

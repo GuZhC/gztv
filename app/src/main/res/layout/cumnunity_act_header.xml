@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:scrollbars="none"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout android:layout_width="match_parent" android:id="@+id/communtiy_item_hor"
+                  android:paddingTop="10dp" android:paddingRight="23dp" android:orientation="vertical"
+                  android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="match_parent" android:paddingLeft="15dp"
+                      android:orientation="horizontal" android:layout_height="wrap_content">
+            <!--<com.dfsx.core.common.view.CircleButton-->
+            <com.dfsx.ganzcms.app.view.RecentUserImage
+                    android:id="@+id/head_img"
+                    android:src="@drawable/user_default_commend"
+                    android:layout_width="42dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"/>
+
+            <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                          android:layout_height="wrap_content">
+                <RelativeLayout android:layout_width="match_parent" android:gravity="center_vertical"
+                                android:orientation="horizontal" android:layout_height="wrap_content">
+                    <RelativeLayout android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" android:layout_alignParentTop="true"
+                                    android:layout_alignParentStart="true">
+                        <LinearLayout android:layout_width="wrap_content"
+                                      android:orientation="horizontal"
+                                      android:layout_height="50dp">
+                            <LinearLayout android:layout_width="wrap_content"
+                                          android:orientation="vertical"
+                                          android:paddingTop="2dp"
+                                          android:layout_gravity="center_vertical"
+                                          android:layout_height="match_parent">
+                                <TextView
+                                        android:textSize="15.0sp"
+                                        android:id="@+id/replay_user_name"
+                                        android:textColor="#5b6a91"
+                                        android:layout_width="wrap_content"
+                                        android:gravity="center"
+                                        android:layout_height="wrap_content"
+                                        android:text="匿名"/>
+                                <TextView
+                                        android:textSize="12.0sp"
+                                        android:layout_marginTop="4dp"
+                                        android:id="@+id/common_time"
+                                        android:textColor="#757575"
+                                        android:layout_width="wrap_content"
+                                        android:gravity="center"
+                                        android:layout_height="wrap_content"
+                                        android:text=""/>
+                            </LinearLayout>
+                            <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:id="@+id/cmy_user_level"
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_height="15dp"
+                                    android:layout_centerVertical="true"/>
+                            <!--</LinearLayout>-->
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <ImageView
+                            android:layout_width="50dp"
+                            android:id="@+id/common_guanzhu_tx"
+                            android:layout_height="24dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/commuity_att_normal"
+                            android:layout_centerVertical="true"/>
+                </RelativeLayout>
+
+                <LinearLayout android:orientation="vertical"
+                              android:layout_marginTop="10dp" android:layout_width="match_parent"
+                              android:layout_height="wrap_content">
+                    <!--<com.dfsx.dazhoucms.app.util.Richtext-->
+                    <!--android:id="@+id/disclosure_list_title"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--style="@style/baseTopiicTextStyle"-->
+                    <!--/>-->
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:orientation="vertical"
+                                  android:layout_height="match_parent">
+                        <WebView
+                                android:paddingRight="10dp"
+                                android:paddingLeft="10dp"
+                                android:id="@+id/webView_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        <!--  播放器   -->
+                        <LinearLayout
+                                android:id="@+id/news_detail_centernss"
+                                android:layout_width="match_parent"
+                                android:visibility="gone"
+                                android:layout_height="wrap_content"
+                        >
+                            <include layout="@layout/video_cmy_play_container"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- 标签  -->
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="wrap_content">
+                        <com.dfsx.ganzcms.app.view.TabGrouplayout
+                                android:layout_width="wrap_content"
+                                android:visibility="visible"
+                                android:id="@+id/cmy_group_taglay"
+                                android:layout_marginTop="9dp"
+                                android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 多图 -->
+                <LinearLayout android:id="@+id/commomtiy_imgs"
+                              android:layout_marginTop="9dp"
+                              android:orientation="vertical" android:layout_width="match_parent"
+                              android:layout_height="wrap_content"/>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_marginTop="20dp"
+                              android:layout_marginBottom="20dp"
+                              android:layout_height="wrap_content">
+
+                    <RelativeLayout android:layout_width="55dp"  android:gravity="center"  android:layout_marginRight="22dp" android:layout_height="27dp">
+                        <ImageView
+                                android:layout_width="55dp"
+                                android:layout_height="27dp"
+                                android:id="@+id/communitys_praise_btn"
+                                android:background="@drawable/community_praise_btn_noraml"
+                                android:layout_centerVertical="true"
+                        />
+                        <TextView
+                                android:textSize="10.0sp"
+                                android:id="@+id/communitys_praise_animal"
+                                android:textColor="@color/white"
+                                android:background="@color/public_purple_bkg"
+                                android:layout_width="30dp"
+                                android:visibility="gone"
+                                android:gravity="center"
+                                android:layout_height="15dp"
+                                android:text="+1"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout android:layout_width="55dp"   android:gravity="center"   android:layout_height="27dp">
+                        <ImageView
+                                android:layout_width="55dp"
+                                android:layout_height="27dp"
+                                android:id="@+id/cumonuitys_stramp_bnt"
+                                android:background="@drawable/community_stramp_btn_noraml"
+                                android:layout_centerVertical="true"
+                        />
+                        <TextView
+                                android:textSize="10.0sp"
+                                android:id="@+id/communitys_stramp_animal"
+                                android:textColor="@color/white"
+                                android:background="@color/public_purple_bkg"
+                                android:layout_width="30dp"
+                                android:visibility="gone"
+                                android:gravity="center"
+                                android:layout_height="15dp"
+                                android:text="-1"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>    <!-- 第一部分   -->
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:background="@color/comment_background"
+                  android:layout_height="8dp"/>
+
+</LinearLayout>

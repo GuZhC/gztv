@@ -1,0 +1,16 @@
+<resources>
+
+
+    <!-- heyang   2018-4-11-->
+    <string name="share_popwind_share">མཉམ་རོལ་བྱེད་ཡུལ།</string>
+    <string name="share_popwind_weixin">འཕྲིན་ཕྲན་གྲོགས་པོ།</string>
+    <string name="share_popwind_wxfriends">གྲོགས་པོའི་ར་བ།</string>
+    <string name="share_popwind_webo">ཞིན་ལའང་དྲ་བ།</string>
+    <string name="share_popwind_qq">QQ།</string>
+    <string name="loading_framlayout_hit">ནང་འཇུག་བཞིན་པ།...</string>
+
+    <string name="check_login_title">ེམས་བཟང་གི་དྲན་སྐུལ།</string>
+    <string name="check_login_msg">ཞུ་འཇུག་བྱས་པ་དང་དཔྱད་བརྗོད་བྱ་ཆོག</string>
+    <string name="check_login_btn_ok">གཏན་འཁེལ།</string>
+    <string name="check_login_btn_cancel">ཕྱིར་འཐེན་པ།</string>
+</resources>

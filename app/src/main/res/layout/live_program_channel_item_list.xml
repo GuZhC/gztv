@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_body_layout"
+                android:paddingLeft="21dp"
+                android:background="@color/white"
+                android:paddingRight="21dp"
+                android:orientation="vertical">
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_ef_color"
+                    android:orientation="horizontal"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RelativeLayout android:layout_width="match_parent"
+                                        android:layout_height="56dp">
+                                       <LinearLayout  android:layout_width="wrap_content"
+                                                      android:layout_alignParentLeft="true"
+                                                      android:gravity="center_vertical"
+                                                      android:layout_height="match_parent"  android:orientation="horizontal">
+
+                                               <TextView
+                                                       android:layout_height="wrap_content"
+                                                       android:layout_width="wrap_content"
+                                                       android:gravity="center"
+                                                       android:textSize="15.0sp"
+                                                       android:maxLength="40"
+                                                       android:singleLine="true"
+                                                       android:ellipsize="end"
+                                                       android:textColor="#333333"
+                                                       android:id="@+id/tv_item_title_tx"
+                                                       android:layout_marginRight="7dp"
+                                                       android:text="11111"/>
+                                       </LinearLayout>
+                                <ImageView android:layout_width="42dp"  android:id="@+id/channerl_select_btn" android:layout_height="18dp"
+                                           android:src="@drawable/tv_channel_normal"
+                                             android:layout_alignParentRight="true"
+                                           android:layout_centerVertical="true"  />
+                        </RelativeLayout>
+                </LinearLayout>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/line_ef_color"
+                        android:orientation="horizontal"/>
+                </LinearLayout>
+        </LinearLayout>

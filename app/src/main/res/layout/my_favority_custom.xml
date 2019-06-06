@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:background="@color/slider_menu_background_color"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+
+        <RelativeLayout
+                android:id="@+id/load_fail_layout"
+                android:visibility="gone"
+                android:background="@color/ivory"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                >
+            <ImageButton
+                    android:id="@+id/reload_btn"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/enrch_deafule"
+                    android:scaleType="centerCrop"
+                    android:background="@null"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <com.handmark.pulltorefresh.library.swipeView.PullToRefreshListLoadView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="5dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:id="@+id/news_scroll_layout"
+                android:divider="@null"
+                />
+    </FrameLayout>
+</RelativeLayout>
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+
+    <external-cache-path name="cache_download" path="download"/>
+    <external-path path="." name="web_download" />
+</paths><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/com.just.agentweb/agentweb/1.2.6/res/xml/web_download_paths.xml -->

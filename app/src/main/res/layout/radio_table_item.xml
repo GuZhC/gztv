@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:descendantFocusability="blocksDescendants"
+              android:background="@color/white"
+              android:layout_height="wrap_content">
+
+    <RelativeLayout android:layout_width="match_parent"  android:id="@+id/rad_table_lay" android:paddingLeft="31dp" android:paddingRight="12dp"
+                    android:gravity="center_vertical" android:layout_height="49dp">
+        <TextView
+                android:id="@+id/table_item_title"
+                android:singleLine="true"
+                android:text="12"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="7dp"
+                android:textColor="@color/news_item_title_color"
+                android:textSize="16.0sp"
+        />
+
+        <TextView android:layout_width="wrap_content"
+                  android:text="2017/4/23"
+                  android:id="@+id/table_time"
+                  android:textColor="@color/gray_b5"
+                  android:textSize="12.0sp"
+                  android:gravity="center"
+                  android:layout_toRightOf="@+id/table_item_title"
+                  android:layout_height="match_parent"/>
+
+        <ImageView android:layout_width="16dp"
+                   android:background="@null"
+                   android:layout_alignParentRight="true"
+                   android:id="@+id/item_status_img"
+                   android:layout_centerVertical="true"
+                   android:src="@drawable/radio_table_play" android:layout_height="16dp"/>
+    </RelativeLayout>
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/line_e9_color"  />
+
+</LinearLayout>

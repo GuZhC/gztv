@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/public_bgd">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:gravity="center_vertical">
+
+            <com.dfsx.core.common.view.CircleImageView
+                android:id="@+id/item_owner_logo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_user_default_logo"/>
+
+            <TextView
+                android:id="@+id/room_owner_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/item_owner_logo"
+                android:text="拍客"
+                android:textColor="@color/text_black_31"/>
+
+            <ImageView
+                android:id="@+id/room_owner_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="1dp"
+                android:layout_toRightOf="@+id/room_owner_text"
+                android:layout_marginLeft="3dp"
+                android:scaleType="centerInside"
+                />
+
+            <TextView
+                android:id="@+id/room_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/item_owner_logo"
+                android:layout_below="@+id/room_owner_text"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:text="直播中"
+                android:textSize="12sp"
+                android:textColor="@color/gray_ad"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/room_status"
+                android:layout_centerVertical="true"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/room_msg_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:drawablePadding="5dp"
+                    android:text="123人在观看"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_ad"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/room_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textSize="14sp"
+                android:text="15:11 18/10"
+                android:visibility="gone"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/image_bkg_view_layout"
+                android:layout_width="match_parent"
+                android:layout_height="320dp">
+
+                <ImageView
+                    android:id="@+id/room_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@color/blue2"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/icon_show_live_tag"/>
+
+                <ImageView
+                    android:id="@+id/image_back_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/icon_back_live"
+                    android:layout_margin="10dp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/room_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:shadowColor="#2c2c2c"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:padding="10dp"
+                android:shadowRadius="2"
+                android:textSize="18dp"
+                android:textColor="@color/black_33"
+                android:textAppearance="@style/TextAppearance.BoldFont"
+                android:text="11111111111111"/>
+
+            <RelativeLayout
+                android:id="@+id/label_container_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/room_name"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp">
+
+                <com.dfsx.searchlibaray.view.CustomLabelLayout
+                    android:id="@+id/room_label_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    >
+                </com.dfsx.searchlibaray.view.CustomLabelLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8px"
+            android:background="#dbdbdb"/>
+    </LinearLayout>
+
+</LinearLayout>

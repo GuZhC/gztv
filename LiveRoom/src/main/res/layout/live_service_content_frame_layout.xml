@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <FrameLayout
+        android:id="@+id/video_container"
+        android:layout_width="match_parent"
+        android:layout_height="212dp"
+        android:background="@color/black"/>
+
+    <RelativeLayout
+        android:id="@+id/top_note_info_iew"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/live_yugao_view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/video_yugao_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#8c000000"/>
+
+            <ImageView
+                android:id="@+id/image_back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerInside"
+                android:visibility="visible"
+                android:src="@drawable/icon_live_close_w"/>
+
+            <TextView
+                android:id="@+id/live_start_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:shadowColor="#2c2c2c"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="本次直播将于---开始"
+                />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/image_see_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/bg_text_see_live_video"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

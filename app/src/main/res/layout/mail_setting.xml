@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:background="@color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+            android:id="@id/reserved_bar_layout"
+            layout="@layout/common_setting_bar"/>
+
+    <RelativeLayout
+            android:id="@+id/mail_pass_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reserved_bar_layout">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:text="输入密码："
+                android:id="@+id/mail_pass_wake"
+                android:textColor="@color/black"
+                android:textSize="13.0sp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12.0dip"/>
+
+        <EditText
+                android:id="@+id/mail_password_edit"
+                android:textColor="@color/black"
+                android:background="@drawable/write_full"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:focusableInTouchMode="true"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="6.0dip"
+                android:layout_marginRight="5.0dip"
+                android:drawablePadding="5.0dip"
+                android:maxLines="1"
+                android:layout_toRightOf="@+id/mail_pass_wake"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mail_pass_layout">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:text="输入新邮箱："
+                android:id="@+id/mail_newsite_layout"
+                android:textColor="@color/black"
+                android:textSize="13.0sp"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"/>
+
+        <EditText
+                android:id="@+id/mail_mail_edit"
+                android:textColor="@color/black"
+                android:background="@drawable/write_full"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:focusableInTouchMode="true"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginTop="6.0dip"
+                android:layout_marginRight="5.0dip"
+                android:layout_toRightOf="@+id/mail_newsite_layout"
+                android:drawablePadding="5.0dip"
+                android:maxLines="1"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_marginTop="5.0dip"
+            android:layout_marginBottom="5.0dip"
+            android:layout_alignParentBottom="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/mail_btn"
+                android:textSize="18.0sp"
+                android:textColor="@color/white"
+                android:layout_width="255dp"
+                android:layout_height="55dp"
+                android:background="@drawable/baoliao_rengel_box"
+                android:text="完成"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+</RelativeLayout>
+

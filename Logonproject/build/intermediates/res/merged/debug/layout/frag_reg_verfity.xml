@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white">
+
+    <RelativeLayout android:layout_width="match_parent"  android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent" android:paddingTop="10dp" android:orientation="vertical"
+                  android:layout_height="match_parent">
+        <RelativeLayout android:layout_width="match_parent"  android:id="@+id/top_back" android:visibility="gone" android:paddingLeft="16dp" android:paddingRight="12dp"
+                        android:layout_height="wrap_content">
+            <ImageView android:layout_width="9dp"  android:id="@+id/back_btn" android:layout_centerVertical="true"
+                       android:layout_alignParentLeft="true" android:layout_height="14dp"
+                       android:background="@drawable/reg_ver_left_back"/>
+            <TextView android:layout_width="wrap_content" android:layout_centerInParent="true"
+                       android:layout_height="wrap_content" android:text="验证手机号"  android:textSize="17.0sp"
+                      android:textColor="@color/news_title_color"
+                       />
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="match_parent" android:layout_marginTop="23dp"
+                        android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_centerInParent="true"
+                      android:id="@+id/verity_telephone_txt"
+                      android:layout_height="wrap_content" android:text=""  android:textSize="15.0sp"
+                      android:textColor="@color/wel_eft_hit_font"
+            />
+        </RelativeLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_marginTop="5dp"  android:visibility="gone" android:gravity="center_horizontal"
+                      android:orientation="vertical" android:layout_height="wrap_content">
+
+            <EditText
+                    android:id="@+id/pa_v_telpe_edt"
+                    android:layout_width="305dp"
+                    android:layout_height="48dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="17dp"
+                    android:numeric="integer"
+                    android:textSize="15.0sp"
+                    android:textColor="@color/news_title_color"
+                    android:background="@color/comment_op_background"
+                    android:hint="请输入手机号"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:paddingLeft="18dp"  android:gravity="center_horizontal" android:paddingRight="23dp" android:orientation="horizontal" android:layout_marginTop="13dp"
+                      android:layout_height="48dp" android:weightSum="1">
+            <EditText
+                    android:id="@+id/verfy_number_edt"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="3dp"
+                    android:gravity="left|center"
+                    android:textSize="15.0sp"
+                    android:paddingLeft="15dp"
+                    android:numeric="integer"
+                    android:textColor="@color/news_title_color"
+                    android:background="@color/comment_op_background"
+                    android:hint="请输入验证码"/>
+            <TextView android:layout_width="145dp" android:id="@+id/verity_retry_btn"
+                      android:layout_centerVertical="true"
+                      android:textColor="@color/white" android:textSize="15.0sp"
+                      android:gravity="center" android:text="重新获取(60s)"
+                      android:background="@drawable/edit_verfity_background"
+                      android:layout_height="match_parent"
+                      android:layout_weight="0.19"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:gravity="center_horizontal" android:layout_marginTop="18dp" android:orientation="vertical" android:layout_height="wrap_content">
+              <TextView android:layout_width="305dp" android:id="@+id/verity_comfirm_btn"
+                        android:layout_height="48dp"
+                        android:background="@color/button_enable_color"
+                        android:textColor="@color/white" android:text="确认" android:textSize="17.0sp" android:gravity="center"  />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:gravity="center_horizontal"
+                      android:layout_marginTop="18dp" android:orientation="horizontal"
+                      android:layout_gravity="center_horizontal"
+                      android:visibility="gone"
+                      android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="wrap_content" android:orientation="horizontal" android:layout_height="match_parent">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/commnity_progress_bkg" android:text="注册即表示你已接受"
+                      android:textSize="17.0sp" android:gravity="center"  />
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/dz_agreee_btn"
+                      android:textColor="@color/public_purple_bkg" android:text="达州观察协议"
+                      android:textSize="17.0sp" android:gravity="center"  />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+<!-- From: file:/E:/workspace/idea/gztv/Logonproject/src/main/res/layout/frag_reg_verfity.xml -->

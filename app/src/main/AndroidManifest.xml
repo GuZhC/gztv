@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.dfsx.ganzcms.app">
+
+    <uses-sdk android:minSdkVersion="18"/>
+
+    <!-- 授予录音权限 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <!-- 地图 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECORD_VIDEO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <!-- 器他比例适配 -->
+        <meta-data
+            android:name="max_aspect"
+            android:value="2.1"/>
+        <!-- 百度地图 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="B64QZrezOB64N15tHqTU8p91cP4dPzVo"/>
+        <meta-data
+            android:name="com.bumptech.glide.integration.okhttp.OkHttpGlideModule"
+            android:value="GlideModule"/>
+
+        <activity
+            android:name=".act.GuideActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActStartLoad">
+
+            <!-- <intent-filter>  @style/FullScreen" -->
+            <!-- <action android:name="android.intent.action.MAIN"/> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER"/> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".act.WelcomeAct"
+            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActStartLoad">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".act.MainTabActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection"
+            android:exported="true"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".act.SwitchLanguageTempActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection"
+            android:exported="true"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".act.ActGanziActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection"
+            android:exported="true"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".act.NewsDetailVideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActStartLoad"
+            android:windowSoftInputMode=""/>
+        <activity
+            android:name=".act.ComunityFullVideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:theme="@style/ActStartLoad"
+            android:windowSoftInputMode=""/>
+        <activity
+            android:name=".act.ActNewsImageDetails"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActStartLoad"
+            android:windowSoftInputMode=""/>
+        <activity
+            android:name=".act.PrepareLiveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity
+            android:name=".act.VideoRecordAct"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"/>
+        <!-- <activity -->
+        <!-- android:name=".act.CommunityInfoAct" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" -->
+        <!-- android:theme="@style/ActStartLoad" -->
+        <!-- android:screenOrientation="portrait"></activity> -->
+        <activity
+            android:name=".act.QuestionInfoAct"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActStartLoad"/>
+        <!-- android:theme="@style/ActStartLoad" -->
+        <activity
+            android:name=".act.CommunityAct"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity
+            android:name=".act.CommunityNewAct"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity
+            android:name=".act.CvideoPlayAct"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".act.CmsVideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".act.TVSeriesDetailsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".act.CmsImageTextActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"/>
+        <!-- <activity -->
+        <!-- android:name=".act.LiveRecordAct" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" -->
+        <!-- android:screenOrientation="portrait"></activity> -->
+        <activity
+            android:name=".act.DeepColorTopbarActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".act.DeepColorSwitchTopbarActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActStartLoad"/>
+        <activity
+            android:name=".act.WhiteTopBarSwitchActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name=".act.GanZiTopBarActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <activity
+            android:name=".act.HostPersonInfoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
+        <!-- <activity -->
+        <!-- android:name="com.dfsx.bannacms.app.act.DefaultAbsVideoActivity" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:windowSoftInputMode="stateHidden|adjustResize"> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".act.ReportActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data
+                    android:host="com.dfsx.lscms_report"
+                    android:scheme="@string/app_name"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name=".aliapi.AliPopupPushActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <service android:name=".business.RadioMagrService"/>
+        <service android:name=".business.MyFileUpService"/>
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+        </service>
+
+        <activity
+            android:name=".act.WebUriStartAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="true"
+            android:theme="@style/TranslucentTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="@string/web_start_app_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".act.StartAdFullVideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".act.ShortVideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".act.ShortVideoDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>

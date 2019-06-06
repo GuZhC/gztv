@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_bgd">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <com.dfsx.lzcms.liveroom.view.PullToRefreshExpandableRecyclerView
+            android:id="@+id/pull_asyncExpandableCollectionView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:id="@+id/empty_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/start_service_live"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:enabled="false"
+        android:text="开始直播"
+        android:textSize="15dp"
+        android:textColor="@color/btn_start_yugao_live_text_color"
+        android:background="@drawable/btn_start_yugao_live"/>
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.dfsx.lzcms.liveroom.view.LiveRoomLinearLayout
+            android:id="@+id/act_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:orientation="vertical">
+
+        <FrameLayout
+                android:id="@+id/up_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                    android:id="@+id/up_room_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:background="@android:color/holo_blue_dark"/>
+        </FrameLayout>
+        <FrameLayout
+                android:id="@+id/center_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_red_dark">
+
+        </FrameLayout>
+        <FrameLayout
+                android:id="@+id/down_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                    android:id="@+id/down_room_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:background="@android:color/holo_green_dark"/>
+        </FrameLayout>
+    </com.dfsx.lzcms.liveroom.view.LiveRoomLinearLayout>
+</LinearLayout>

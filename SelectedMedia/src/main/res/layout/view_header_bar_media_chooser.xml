@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/postToActionBarFromMediaChooser"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_alignParentTop="true"
+    android:background="@color/black_303_item_text_title" >
+
+    <ImageView
+        android:id="@+id/backArrowImageViewFromMediaChooserHeaderView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_navigation_left_from_media_chooser_header_bar" />
+
+    <TextView
+        android:id="@+id/titleTextViewFromMediaChooserHeaderBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/backArrowImageViewFromMediaChooserHeaderView"
+        android:text="@string/video"
+        android:textColor="@color/headerbar_title_color"
+        android:textSize="15sp" />
+
+    <TextView
+            android:id="@+id/seltect_item_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:textColor="@color/headerbar_title_color"
+            android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/doneTextViewViewFromMediaChooserHeaderView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:text="完成"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:paddingTop="3dp"
+        android:paddingBottom="4dp"
+        android:background="@drawable/button_comfirm_box"
+        android:textSize="13.0sp" />
+
+    <ImageView
+        android:id="@+id/cameraImageViewFromMediaChooserHeaderBar"
+        android:layout_width="45dp"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/doneTextViewViewFromMediaChooserHeaderView"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null"
+        android:visibility="gone"
+        android:scaleType="centerInside" />
+
+</RelativeLayout>

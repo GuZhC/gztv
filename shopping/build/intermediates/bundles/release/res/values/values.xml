@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/shopping/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="COLOR_2E">#ff2e2e2e</color>
+    <color name="COLOR_LINE_E9">#ffe9e9e9</color>
+    <color name="COLOR_LINE_EB">#ffebebeb</color>
+    <color name="bar_bkg">#fff3f2f3</color>
+    <color name="bar_text_selected">#ffed4040</color>
+    <color name="black">#ff000000</color>
+    <color name="black_50a">#50000000</color>
+    <color name="blue">#0000ff</color>
+    <color name="blue2">#ff6eb6d7</color>
+    <color name="bottom_font_selector_color">#f26520</color>
+    <color name="bunch_cloum_font_color">#262525</color>
+    <color name="comment_background">#fff1f1f1</color>
+    <color name="commnity_progress_bkg">#80000000</color>
+    <color name="commnity_rcord_cprogress_bkg">#31c27c</color>
+    <color name="cursor_bottm">#ff0f80dd</color>
+    <color name="detail_title_text_color">#ff999999</color>
+    <color name="exit_font">#ff949494</color>
+    <color name="food_background_color">#eeeeee</color>
+    <color name="gray_303_bg">#fff0f0f0</color>
+    <color name="gray_75">#757575</color>
+    <color name="gray_b5">#adadad</color>
+    <color name="head_img_font">#ff9b9b9b</color>
+    <color name="head_left_font">#ff686868</color>
+    <color name="head_title_font">#ff363636</color>
+    <color name="head_txt_select">#ffff9e08</color>
+    <color name="horscroll_bk">#fff0f0f0</color>
+    <color name="horscroll_unline_bk">#ffe2342c</color>
+    <color name="line_color">#ffd3d3d3</color>
+    <color name="link_text_color">#ff103d87</color>
+    <color name="list_text_color">#ff888888</color>
+    <color name="lives_bottom_gray">#ff8b8b8b</color>
+    <color name="loadfail">#fff7f3f7</color>
+    <color name="login_normal_text_color">#ff393361</color>
+    <color name="logon_editr_color">#e69f9f9f</color>
+    <color name="logon_theme_bkg">#ff7068f5</color>
+    <color name="maincolor">#d92f27</color>
+    <color name="maincolor_person">#54abee</color>
+    <color name="maket_spn_line_color">#dedede</color>
+    <color name="news_bottom_g">#ff5b5b5b</color>
+    <color name="news_detail_color">#ff666666</color>
+    <color name="news_item_title_color">#ff212121</color>
+    <color name="news_title_color">#ff333333</color>
+    <color name="news_title_color1">#ff363636</color>
+    <color name="none_color">#00000000</color>
+    <color name="normal_text_color">#ff333333</color>
+    <color name="pass_font_font">#a9a9a9</color>
+    <color name="person_bankground_color">#f6f6f6</color>
+    <color name="plugin_camera_black">#000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="public_bgd">#f8f8f8</color>
+    <color name="public_red_bkg">#ed4040</color>
+    <color name="public_resd_bkg">#ed4040</color>
+    <color name="radio_bkg">#ffd901</color>
+    <color name="red">#ed4040</color>
+    <color name="result_view">#b0000000</color>
+    <color name="setting_bkcolor">#fff67f1d</color>
+    <color name="sharedefault">#D9DEDF</color>
+    <color name="style_divider_color">#C9C7CD</color>
+    <color name="style_red">#ff4c41</color>
+    <color name="tail_line">#ffeaeaea</color>
+    <color name="text_98">#989898</color>
+    <color name="translucent_background">#60000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="up_btn_background">#ffdc30</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="wel_eft_hit_font">#ffe2e2e2</color>
+    <color name="wel_user_sex_font">#ffbbbbbb</color>
+    <color name="wel_user_title_font">#ff333333</color>
+    <color name="white">#ffffffff</color>
+    <color name="whitehalf">#ff7e7e7e</color>
+    <color name="whiteselhalf">#ff363636</color>
+    <color name="yellow_color">#ffdb01</color>
+    <!-- From: file:/E:/workspace/idea/gztv/shopping/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="logon_text_size">14.0sp</dimen>
+    <dimen name="middle_text_size">15dp</dimen>
+    <dimen name="titlebar_titlesize">17.0sp</dimen>
+    <dimen name="weixin_title_size">12.0dip</dimen>
+    <!-- From: file:/E:/workspace/idea/gztv/shopping/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="shop_comcire_hit">请留下你的个人信息，以便工作人员联系或发货</string>
+    <string name="shop_exchange_address_hit">注意！此商品确认兑换后需要凭密码到指定地点领取</string>
+    <!-- From: file:/E:/workspace/idea/gztv/shopping/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="CCWButtonStyle" parent="@android:style/Widget.Holo.Light.Button">
+        <item name="android:textSize">@dimen/middle_text_size</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:minHeight">40dp</item>
+    </style>
+    <style name="CCWEditTextStyle" parent="@android:style/Widget.Holo.Light.EditText">
+        <item name="android:textSize">@dimen/logon_text_size</item>
+        <item name="android:textColor">@color/logon_editr_color</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/edit_background</item>
+    </style>
+    <style name="LoginToggleButtonStyle">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="LoginToggleContainerStyle">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <style name="LoginToggleTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="Theme_RecorderDialog" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+         <item name="android:windowBackground">@android:color/transparent</item>
+         <!--<item name="android:backgroundDimEnabled">true</item>-->
+         <!--<item name="android:backgroundDimAmount">0.5</item>-->
+    </style>
+    <style name="auto_size">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="customer_progress_dialog" parent="@android:style/Widget.ProgressBar">-->
+        <item name="android:indeterminateDuration">2000</item>
+        <item name="android:fullDark">@drawable/loading_nor</item>
+    </style>
+    <style mce_bogus="1" name="dialogWindowAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+    <style name="headImagThema">
+        <item name="android:textSize">11.0sp</item>
+        <item name="android:textColor">@color/head_img_font</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingLeft">7dp</item>
+    </style>
+    <style name="headMessageThema">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/head_title_font</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="headTitleThema">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:textColor">@color/head_left_font</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingLeft">7dp</item>
+    </style>
+    <style name="headpassThema">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/pass_font_font</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingLeft">7dp</item>
+    </style>
+</resources>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_width="match_parent" xmlns:more="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/tools"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <!--  头像  标题  -->
+        <RelativeLayout
+                android:id="@+id/new_detail_title_layout"
+                android:layout_width="match_parent"
+                android:layout_alignParentTop="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                          android:layout_height="wrap_content">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:textSize="16.0sp"
+                            android:id="@+id/newsDetailss_title"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:gravity="left"
+                            android:maxLines="2"
+                            android:layout_height="wrap_content"
+                            android:text=""/>
+                </LinearLayout>
+                <!--  time -->
+                <TextView
+                        android:textSize="12.0sp"
+                        android:id="@+id/news_pubtime_tv"
+                        android:textColor="@color/video_w2_bankground"
+                        android:layout_width="match_parent"
+                        android:gravity="left"
+                        android:ellipsize="end"
+                        android:layout_marginTop="13dp"
+                        android:layout_height="wrap_content"
+                        android:text=""/>
+                <!-- 头像  -->
+                <include layout="@layout/news_user_header" android:visibility="gone"/>
+                <!-- 摘要 -->
+                <LinearLayout android:layout_width="match_parent" android:layout_marginTop="17dp"
+                              android:background="@color/public_bgd" android:orientation="horizontal"
+                              android:layout_height="wrap_content">
+                    <!--<TextView android:layout_width="4dp"-->
+                    <!--android:background="@color/public_purple_bkg"  android:visibility="gone" android:layout_height="match_parent"/>-->
+                    <!--<TextView-->
+                    <!--android:textSize="14.0sp"-->
+                    <!--android:id="@+id/news_summary_text"-->
+                    <!--android:textColor="@color/tv_name_selected"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:gravity="left"-->
+                    <!--android:paddingTop="5dp"-->
+                    <!--android:paddingLeft="13dp"-->
+                    <!--android:paddingRight="13dp"-->
+                    <!--android:paddingBottom="5dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text=""/>-->
+
+                    <com.dfsx.ganzcms.app.view.MyCollapseeView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:id="@+id/news_summary_text"
+                            android:text=""
+                            android:textColor="@color/tv_name_selected"
+                            android:paddingTop="5dp"
+                            android:paddingLeft="13dp"
+                            android:paddingRight="10dp"
+                            app:collapsedLines="3"
+                            app:tipsColor="#5193EA"
+                            app:expandedText="展开"
+                            app:collapsedText="收起"
+                            app:expandedDrawable="@mipmap/ic_expanded"
+                            app:collapsedDrawable="@mipmap/ic_collapsed"
+                            app:tipsUnderline="true"
+                            app:tipsGravity="end"
+                            app:tipsClickable="true"/>
+
+                    <!--<com.dfsx.bannacms.app.view.MoreTextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:visibility="gone"-->
+                    <!--android:id="@+id/news_summary_text"-->
+                    <!--android:paddingTop="5dp"-->
+                    <!--android:paddingLeft="13dp"-->
+                    <!--android:paddingRight="10dp"-->
+                    <!--android:paddingBottom="8dp"-->
+                    <!--more:textColor="@color/tv_name_selected"-->
+                    <!--more:textSize="14.0sp"-->
+                    <!--more:maxLine="3"-->
+                    <!--more:gravity="1"-->
+                    <!--more:text=""/>-->
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout android:layout_width="match_parent" android:scrollbars="none" android:layout_marginTop="15dp"
+                        android:id="@+id/web_container" android:layout_below="@+id/new_detail_title_layout"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp" android:layout_height="match_parent">
+            <WebView
+                    android:id="@+id/webView_content"
+                    android:scrollbars="none"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+        </RelativeLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_below="@+id/web_container"
+                      android:id="@+id/bottom_lay" android:orientation="vertical" android:layout_height="wrap_content">
+            <!-- 点踩点赞 -->
+            <LinearLayout android:layout_width="match_parent"
+                          android:gravity="center_vertical"
+                          android:layout_marginTop="19dp"
+                          android:id="@+id/bottom_oper_view"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <View android:layout_width="0dp" android:layout_weight="0.1" android:layout_height="wrap_content"/>
+                <LinearLayout android:layout_width="0dp" android:layout_weight="0.8" android:gravity="center"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cvideo_praise_tx"
+                            style="@style/coummnunity_praise_theme"
+                            android:layout_marginRight="38dp"
+                            android:text="0"/>
+
+                    <TextView
+                            android:id="@+id/cvideo_stamp_tx"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/coummnunity_stramp_theme"
+                            android:text="0"/>
+                </LinearLayout>
+                <View android:layout_width="0dp" android:layout_weight="0.1" android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_marginTop="20dp" android:layout_height="1dp"
+                  android:background="@color/line_e9_color"/>
+            <!-- 点赞用户 -->
+            <LinearLayout android:layout_width="match_parent" android:paddingLeft="13dp" android:layout_marginTop="20dp"
+                          android:orientation="horizontal" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="0dp" android:gravity="left" android:layout_weight="0.1"
+                              android:layout_height="wrap_content">
+                    <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="17dp"
+                            android:id="@+id/praise_mark"
+                            android:background="@null"
+                            android:src="@drawable/community_prise_mark"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_weight="0.9"
+                              android:layout_height="wrap_content">
+                    <com.dfsx.ganzcms.app.view.MoreTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/mulite_line_txt"
+                            more:textColor="@color/public_purple_bkg"
+                            more:textSize="14.0sp"
+                            more:maxLine="3"
+                            more:text=""/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 相关推荐 -->
+            <include  layout="@layout/news_relation_list_header"  />
+
+            <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                          android:layout_height="wrap_content">
+                <LinearLayout android:id="@+id/commomtiy_imgs" android:paddingLeft="14dp" android:paddingRight="14dp"
+                              android:layout_marginBottom="10dp" android:orientation="vertical"
+                              android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <LinearLayout android:layout_width="match_parent" android:orientation="horizontal"
+                              android:paddingTop="10dp" android:paddingBottom="10dp" android:paddingLeft="10dp"
+                              android:paddingRight="14dp" android:background="@color/white"
+                              android:layout_height="wrap_content">
+                    <RelativeLayout android:layout_width="match_parent"    android:layout_height="wrap_content">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                   android:layout_centerInParent="true"
+                                  android:gravity="center"
+                                    android:text="@string/news_act_comned_hit"
+                                   android:textSize="17sp"
+                                  android:textColor="@color/news_item_title_color"
+                                   />
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:textSize="12.0sp"
+                                android:id="@+id/communtiry_brower_count_tx"
+                                android:textColor="@color/search_font_color"
+                                android:layout_alignParentRight="true"
+                                android:gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:layout_height="wrap_content"
+                           />
+                    </RelativeLayout>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:background="@color/comment_background"
+                      android:layout_height="8dp"/>
+                <LinearLayout android:id="@+id/comnend_noplay_layout" android:layout_width="match_parent"
+                              android:layout_gravity="center" android:background="@color/white"
+                              android:layout_height="160dp">
+                    <RelativeLayout android:layout_width="match_parent" android:gravity="center"
+                                    android:layout_height="match_parent">
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:orientation="vertical"
+                                      android:gravity="center_horizontal"
+                                      android:layout_height="wrap_content">
+                            <ImageView android:layout_width="48dp" android:layout_height="32dp"
+                                       android:layout_gravity="center"
+                                       android:background="@drawable/video_nocommedn_icon"/>
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:textSize="14.0sp"
+                                    android:textColor="@color/search_font_color"
+                                    android:gravity="center"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/news_act_nocommemnd_hit"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
+

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_width="match_parent" xmlns:more="http://schemas.android.com/apk/res-auto"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:scrollbars="vertical"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+             <!--  头像  标题  -->
+            <RelativeLayout
+                    android:id="@+id/new_detail_title_layout"
+                    android:layout_width="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="5dp"
+                    android:layout_height="wrap_content">
+                  <LinearLayout android:layout_width="match_parent"  android:orientation="vertical"   android:layout_height="wrap_content">
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:textSize="@dimen/titlebar_titlesize"
+                                android:id="@+id/newsDetailss_title"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:gravity="left"
+                                android:maxLines="2"
+                                android:layout_height="wrap_content"
+                                android:text=""/>
+                    </LinearLayout>
+
+                    <!-- 头像  -->
+                    <include layout="@layout/news_user_header"   />
+
+                      <!-- 摘要 -->
+                  <LinearLayout android:layout_width="match_parent" android:layout_marginTop="5dp" android:background="@color/public_bgd" android:visibility="gone" android:orientation="horizontal"   android:layout_height="wrap_content">
+                      <TextView android:layout_width="4dp"
+                                android:background="@color/public_purple_bkg"  android:layout_height="match_parent"/>
+                      <TextView
+                              android:textSize="14.0sp"
+                              android:id="@+id/news_summary_text"
+                              android:textColor="@color/tv_name_selected"
+                              android:layout_width="wrap_content"
+                              android:gravity="left"
+                              android:paddingTop="5dp"
+                              android:paddingLeft="13dp"
+                              android:paddingRight="13dp"
+                              android:paddingBottom="5dp"
+                              android:layout_height="wrap_content"
+                              android:text=""/>
+                  </LinearLayout>
+                  </LinearLayout>
+            </RelativeLayout>
+
+            <!--   播放器    android:layout_below="@+id/user_head_layout"-->
+            <RelativeLayout
+                    android:id="@+id/news_detail_centernss"
+                    android:layout_below="@+id/new_detail_title_layout"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="211dp"
+                    >
+                    <include layout="@layout/video_play_container"   />
+                <!--<FrameLayout-->
+                        <!--android:orientation="vertical"-->
+                        <!--android:id="@+id/videoSurfaceContainer"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:background="@color/black">-->
+
+                    <!--<ImageView-->
+                            <!--android:id="@+id/psoter_imagveo"-->
+                            <!--android:scaleType="fitXY"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--/>-->
+
+                    <!--<RelativeLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent">-->
+
+                        <!--<ImageView-->
+                                <!--android:visibility="gone"-->
+                                <!--android:id="@+id/player_imagveo"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_centerInParent="true"-->
+                                <!--android:src="@drawable/video_head_icon"/>-->
+                    <!--</RelativeLayout>-->
+                <!--</FrameLayout>-->
+                <ImageButton android:layout_width="43dp" android:layout_height="43dp"
+                             android:background="@null"
+                             android:id="@+id/cvideo_back_btn"
+                             android:src="@drawable/cvideo_back_btn"
+                             android:layout_alignParentLeft="true"
+                             android:layout_alignParentTop="true"
+                             android:layout_marginLeft="10dp"
+                             android:layout_marginTop="10dp"
+                        />
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/news_detail_web"
+                    android:layout_width="match_parent"
+                    android:scrollbars="none"
+                    android:layout_marginTop="17dp"
+                    android:paddingLeft="14dp"  android:paddingRight="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/news_detail_centernss"
+                    >
+                <!--<com.tencent.smtt.sdk.WebView-->
+                <!--<com.dfsx.lscms.app.view.VideoEnabledWebView-->
+                <WebView
+                        android:id="@+id/webView_content"
+                        android:visibility="gone"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@+id/webView_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:orientation="vertical"  android:layout_height="wrap_content">
+                    <!--  视频点播  -->
+                    <LinearLayout android:layout_width="match_parent"
+                                    android:orientation="vertical"
+                                  android:id="@+id/cvide_play_view"
+                                  android:visibility="gone"
+                                  android:layout_height="wrap_content">
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:gravity="left"
+                                      android:layout_height="wrap_content">
+                            <TextView
+                                    android:textSize="21.0sp"
+                                    android:id="@+id/cvideo_title_tx"
+                                    android:textColor="@color/user_font_color"
+                                    android:layout_width="wrap_content"
+                                    android:gravity="left"
+                                    android:maxLines="2"
+                                    android:layout_height="wrap_content"
+                                    android:text=""/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:gravity="left"
+                                      android:layout_marginTop="20dp"
+                                      android:layout_height="wrap_content">
+                            <TextView
+                                    android:textSize="12.0sp"
+                                    android:id="@+id/cvideo_view_txt"
+                                    android:textColor="@color/search_font_color"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:gravity="left"
+                                    android:text="112次播放"/>
+                        </LinearLayout>
+
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:gravity="center_vertical"
+                                      android:layout_marginTop="20dp"
+                                      android:orientation="horizontal"
+                                      android:layout_height="wrap_content">
+
+                            <ImageView
+                                    android:id="@+id/cvideo_play_parise_btn"
+                                    android:src="@drawable/cvideo_play_parise"
+                                    android:background="@null"
+                                    android:layout_width="18dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginRight="5dp"
+                                    />
+
+                            <TextView
+                                    android:textSize="13.0sp"
+                                    android:id="@+id/cvideo_play_parise_txt"
+                                    android:textColor="@color/user_font_color"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:gravity="center"
+                                    android:layout_marginRight="25dp"
+                                    android:text="1"/>
+
+
+                            <ImageView
+                                    android:id="@+id/cvideo_play_stramp_btn"
+                                    android:src="@drawable/cvideo_stramp_btn"
+                                    android:layout_width="18dp"
+                                    android:background="@null"
+                                    android:layout_height="16dp"
+                                    android:layout_marginRight="5dp"
+                                    />
+
+                            <TextView
+                                    android:textSize="13.0sp"
+                                    android:id="@+id/cvideo_play_stramp_txt"
+                                    android:textColor="@color/user_font_color"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:gravity="center"
+                                    android:text="1"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- 底部关注  -->
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_marginTop="30dp"
+                                  android:orientation="vertical"
+                                  android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                                android:id="@+id/replay_layout"
+                                android:layout_width="match_parent"
+                                android:visibility="gone"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:background="@color/conmminty_replay_head_banground"
+                                android:layout_height="57dp">
+
+                            <com.dfsx.core.common.view.CircleButton
+                                    android:id="@+id/replay_user_img"
+                                    android:layout_width="33dp"
+                                    android:layout_height="33dp"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:src="@drawable/user_default_commend"/>
+
+                            <TextView
+                                    android:textSize="15.0sp"
+                                    android:id="@+id/cvideo_pubauthor_name"
+                                    android:textColor="@color/user_font_color"
+                                    android:layout_toRightOf="@+id/replay_user_img"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:gravity="center"
+                                    android:text="匿名"/>
+                            <!--<ImageView-->
+                                    <!--android:id="@+id/cvideo_addatt_img"-->
+                                    <!--android:layout_width="63dp"-->
+                                    <!--android:layout_height="29dp"-->
+                                    <!--android:layout_centerVertical="true"-->
+                                    <!--android:layout_alignParentRight="true"-->
+                                    <!--android:src="@drawable/cviddeo_info_att"/>-->
+                            <TextView
+                                    android:textSize="13.0sp"
+                                    android:id="@+id/cvideo_addtt_tx"
+                                    android:layout_alignParentRight="true"
+                                    android:visibility="gone"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_centerVertical="true"
+                                    android:textColor="@color/conmminty_column_color"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="关注作者"/>
+                        </RelativeLayout>
+
+                        <!--  标签 -->
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:id="@+id/cvideo_tablink_group"
+                                      android:orientation="horizontal"
+                                      android:layout_height="wrap_content"></LinearLayout>
+
+                        <!-- 点踩点赞 -->
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:gravity="center_vertical"
+                                      android:layout_marginTop="19dp"
+                                      android:id="@+id/bottom_oper_view"
+                                      android:orientation="horizontal"
+                                      android:layout_height="wrap_content">
+                            <View android:layout_width="0dp" android:layout_weight="0.1" android:layout_height="wrap_content"  />
+                            <LinearLayout android:layout_width="0dp" android:layout_weight="0.8" android:gravity="center"  android:layout_height="wrap_content">
+                                <!--<TextView-->
+                                        <!--android:textSize="13.0sp"-->
+                                        <!--android:textColor="@color/user_font_color"-->
+                                        <!--android:layout_width="114dp"-->
+                                        <!--android:layout_height="34dp"-->
+                                        <!--android:id="@+id/cvideo_praise_tx"-->
+                                        <!--android:background="@drawable/cvideo_praise_background"-->
+                                        <!--android:layout_centerVertical="true"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:paddingLeft="8dp"-->
+                                        <!--android:layout_marginRight="15dp"-->
+                                        <!--android:text="1"/>-->
+                                <!--<TextView-->
+                                        <!--android:textSize="13.0sp"-->
+                                        <!--android:textColor="@color/user_font_color"-->
+                                        <!--android:id="@+id/cvideo_stamp_tx"-->
+                                        <!--android:layout_width="114dp"-->
+                                        <!--android:layout_height="34dp"-->
+                                        <!--android:layout_centerVertical="true"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:background="@drawable/cvideo_stamp_background"-->
+                                        <!--android:paddingLeft="12dp"-->
+                                        <!--android:text="1"/>-->
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/cvideo_praise_tx"
+                                        style="@style/coummnunity_praise_theme"
+                                        android:layout_marginRight="45dp"
+                                        android:text="0"/>
+
+
+                                <TextView
+                                        android:id="@+id/cvideo_stamp_tx"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        style="@style/coummnunity_stramp_theme"
+                                        android:text="0"/>
+
+                            </LinearLayout>
+                            <View android:layout_width="0dp" android:layout_weight="0.1" android:layout_height="wrap_content"  />
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent"  android:layout_marginTop="20dp" android:layout_height="1dp"  android:background="@color/line_e9_color"  />
+
+                        <!-- 点赞用户 -->
+                        <LinearLayout android:layout_width="match_parent" android:paddingLeft="13dp"  android:layout_marginTop="20dp"  android:orientation="horizontal"   android:layout_height="wrap_content">
+                            <LinearLayout android:layout_width="0dp" android:gravity="left" android:layout_weight="0.1" android:layout_height="wrap_content">
+                                <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="17dp"
+                                        android:background="@null"
+                                        android:src="@drawable/community_prise_mark"/>
+                            </LinearLayout>
+
+                            <LinearLayout android:layout_width="0dp"  android:layout_weight="0.9"  android:layout_height="wrap_content">
+                                <com.dfsx.ganzcms.app.view.MoreTextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/mulite_line_txt"
+                                        more:textColor="@color/public_purple_bkg"
+                                        more:textSize="14.0sp"
+                                        more:maxLine="3"
+                                        more:text=""/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout  android:id="@+id/imgs"  android:layout_width="match_parent"  android:background="@color/white" android:layout_below="@+id/news_detail_web" android:layout_height="wrap_content">
+               <LinearLayout android:layout_width="match_parent"  android:orientation="vertical" android:layout_height="wrap_content">
+                   <LinearLayout android:id="@+id/commomtiy_imgs"  android:paddingLeft="14dp"  android:paddingRight="14dp"  android:layout_marginBottom="10dp" android:orientation="vertical" android:layout_width="match_parent"   android:layout_height="wrap_content"/>
+                   <LinearLayout   android:layout_width="match_parent"    android:orientation="horizontal"  android:paddingTop="10dp"  android:paddingBottom="10dp"  android:paddingLeft="10dp" android:paddingRight="14dp"      android:background="@color/white"  android:layout_height="wrap_content">
+                      <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                          <ImageView android:layout_width="47dp" android:layout_height="16dp" android:background="@null"
+                                     android:layout_centerInParent="true"
+                                     android:src="@drawable/cvideo_reping_icon"  />
+                          <TextView
+                                  android:layout_width="wrap_content"
+                                  android:textSize="12.0sp"
+                                  android:id="@+id/communtiry_brower_count_tx"
+                                  android:textColor="@color/search_font_color"
+                                  android:singleLine="true"
+                                  android:layout_alignParentRight="true"
+                                  android:gravity="left"
+                                  android:layout_height="wrap_content"
+                                  android:text="0次浏览"/>
+                      </RelativeLayout>
+                   </LinearLayout>
+                   <LinearLayout   android:layout_width="match_parent"  android:background="@color/comment_background" android:layout_height="8dp"/>
+                <LinearLayout  android:id="@+id/comnend_noplay_layout"   android:layout_width="match_parent"    android:layout_gravity="center"     android:background="@color/white"  android:layout_height="160dp">
+                    <RelativeLayout android:layout_width="match_parent" android:gravity="center" android:layout_height="match_parent">
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:orientation="vertical"
+                                  android:gravity="center_horizontal"
+                                  android:layout_height="wrap_content">
+                        <ImageView android:layout_width="151dp" android:layout_height="116dp" android:background="@null"
+                                   android:layout_centerInParent="true"
+                                   android:src="@drawable/cvideo_no_commad"  android:scaleType="centerInside"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:textSize="14.0sp"
+                                android:textColor="@color/search_font_color"
+                                android:singleLine="true"
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:text="速度评论抢沙发"/>
+                    </LinearLayout>
+                    </RelativeLayout>
+                   </LinearLayout>
+               </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
+

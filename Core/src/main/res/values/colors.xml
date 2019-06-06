@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="normal_text_color">#ff333333</color>
+    <color name="link_text_color">#ff103d87</color>
+    <!-- hy 2015-3-31 -->
+    <color name="black">#ff000000</color>
+    <color name="gray_303_bg">#fff0f0f0</color>
+    <color name="public_bgd">#f8f8f8</color>
+    <color name="comment_background">#fff1f1f1</color>
+    <color name="comment_op_background">#fff9f9f9</color>
+    <color name="loadfail">#fff7f3f7</color>
+    <color name="sharedefault">#D9DEDF</color>
+    <color name="white">#ffffffff</color>
+    <color name="ivory">#fff2f2f2</color>
+    <color name="black_50a">#50000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="grey3">#ff999999</color>
+    <color name="grey4">#ffcccccc</color>
+    <color name="news_title_color">#ff333333</color>
+    <color name="lives_bottom_gray">#ff8b8b8b</color>
+    <color name="news_bottom_g">#ff5b5b5b</color>
+    <color name="cursor_bottm">#ff0f80dd</color>
+    <color name="blue2">#ff6eb6d7</color>
+    <color name="loading_fail_font">#ffbfbfbf</color>
+    <color name="cursor">#ff0f80dd</color>
+    <color name="setting_bkcolor">#fff67f1d</color>
+    <color name="setting_title_color">#362471</color>
+    <color name="favirtory_title_color">#f67f1d</color>
+    <color name="commend_site_color">#ff6b6b6b</color>
+    <color name="red">#ed4040</color>
+    <color name="about_lay1">#ff2b2b2b</color>
+    <color name="style_blue">#4285f4</color>
+    <color name="tab_text_unselected">#ff959595</color>
+    <color name="bar_red">#ed4040</color>
+    <color name="bar_text_normal">#ff8a8a8a</color>
+    <color name="bar_text_selected">#ffed4040</color>
+    <color name="bar_bkg">#fff3f2f3</color>
+    <color name="public_red_bkg">#ed4040</color>
+    <color name="cm_default_shared_space_color">#f7f7f9</color>
+    <color name="talent_praise_bankground">#53aefa</color>
+
+    <!--  鐖嗘枡 -->
+    <color name="disclosure_bakground">#fff9f9fa</color>
+    <color name="disclsoure_font">#ff6f7d88</color>
+    <color name="news_title_color1">#ff363636</color>
+    <color name="logon_editr_color">#ff9f9f9f</color>
+    <color name="news_destaul_Layou_backnground">#ffe3e3e3</color>
+    <color name="talent_no_rank_backnground">#66ffffff</color>
+    <color name="talent_rank_space">#f2f2f2</color>
+
+
+
+    <!-- hzg 2015-4-3 -->
+    <color name="login_normal_text_color">#ff393361</color>
+    <color name="navigationbar_item_selected_text_color">#f67811</color>
+    <color name="navigationbar_item_unselected_text_color">#5b5b5b</color>
+    <color name="live_tab_selected_text_color">#f67811</color>
+    <color name="live_tab_unselected_text_color">#8798a5</color>
+    <drawable name="live_tab_indicator_selected">#b8b8b8</drawable>
+    <drawable name="live_tab_indicator_unselected">#ffffffff</drawable>
+    <drawable name="demand_video_comment_item_divider_colr">#b8b8b8</drawable>
+    <color name="COLOR_f7f9">#fff7f7f9</color>
+
+    <color name="translucent_background">#60000000</color>
+    <!-- 涓婁紶鍥剧墖娣诲姞鐨勯鑹� -->
+    <color name="none_color">#00000000</color>
+    <color name="plugin_camera_black">#000000</color>
+    <color name="albumback">#E1E0DE</color>
+
+    <color name="blue">#0000ff</color>
+    <color name="style_red">#ff4c41</color>
+    <color name="style_divider_color">#C9C7CD</color>
+    <color name="line_color">#ffd3d3d3</color>
+
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+
+    <!--  钀ュ北app -->
+    <color name="horscroll_bk">#fff0f0f0</color>
+    <color name="horscroll_unline_bk">#ffe2342c</color>
+    <color name="list_text_color">#ff888888</color>
+    <color name="maincolor">#d92f27</color>
+    <color name="whitehalf">#80ffffff</color>
+    <color name="COLOR_21">#ff212121</color>
+    <color name="shop_priset_font">#ffcd4040</color>
+    <color name="shop_bankground">#fff7f7f9</color>
+
+    <color name="food_background_color">#eeeeee</color>
+    <color name="maket_spn_line_color">#dedede</color>
+    <color name="detail_title_text_color">#ff999999</color>
+    <color name="bottom_font_selector_color">#f26520</color>
+    <color name="bunch_cloum_font_color">#e6262525</color>
+
+    <!--  渚ф粦  -->
+    <color name="slider_menu_background_color">#f8f8f8</color>
+    <color name="slider_menu_more_color">#666666</color>
+
+    <color name="search_font_color">#cbcbcb</color>
+
+
+</resources>

@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">圣洁甘孜</string>
+    <string name="web_start_app_scheme">dfsxgztv</string>
+
+    <!-- 首页 start-->
+    <string name="tab_me">我的</string>
+    <string name="tab_first">新闻</string>
+    <string name="tab_tv">视听</string>
+    <string name="tab_live">直播</string>
+    <string name="tab_vms">圈子</string>
+
+
+    <!-- 首页 end-->
+
+    <string name="hello_world">Hello world!</string>
+    <string name="neterror">连接服务器失败</string>
+    <string name="commend_show_text">评论暂未开启</string>
+    <string name="send_text">发表</string>
+    <string name="live_tv">电视</string>
+    <string name="live_radio">电台</string>
+    <string name="news_tail_app">随时新闻爆料 扫描下载视听文山客户端</string>
+    <string name="news_tail_weibo">更多精彩,关注视听文山新浪微博</string>
+    <string name="math_format">%02d</string>
+    <string name="file_up_title">标题(必填)</string>
+    <string name="file_up_content">分享身边新鲜事</string>
+    <string name="disclure_name_hit">请填写您的姓名(必选)</string>
+    <string name="disclure_tel_hit">请填写您的电话号码(必选)</string>
+
+    <string name="app_sedcode_text">扫描二维码,获取智慧安州客户端</string>
+    <string name="yanzheng_logon_wake">登陆后可在移动设备上我的收藏，</string>
+    <string name="question_title_hit">请为你的提问输入标题</string>
+    <string name="question_content_hit">请为你的提问进行简单的描述</string>
+    <string name="shop_comcire_hit">请留下你的个人信息，以便工作人员联系或发货</string>
+    <string name="request_netdata_result">没有数据</string>
+    <string name="talent_rank_hit">未进入榜单</string>
+    <string name="shop_exchange_address_hit">注意！此商品确认兑换后需要凭密码到指定地点领取</string>
+
+
+    <string name="news_item_viewcount_hit">浏览</string>
+    <string name="news_item_viewcountex_hit">次浏览</string>
+    <string name="news_item_viewplay_hit">次播放</string>
+    <string name="news_act_daodu_hit">导读</string>
+    <string name="news_act_comned_hit">评论</string>
+    <string name="news_act_bottom_ommend_hit">评一下</string>
+    <string name="news_act_report_bottom_hit">已经到底了，没有更多评论</string>
+    <string name="news_act_video_wake_wifi_hit">您正在使用非WIFI网络，请注</string>
+    <string name="news_act_shou_hit">收起</string>
+    <string name="news_act_expend_hit">展开</string>
+    <string name="favority_success_hit">收藏成功</string>
+    <string name="favority_faild_hit">取消收藏</string>
+    <string name="columnplay_item_bottom_hit">查看更多</string>
+    <string name="news_act_raltion_hit">相关推荐</string>
+    <string name="news_act_sawitch_hit">换一换</string>
+    <string name="news_act_replay_item_hit">回复</string>
+    <string name="no_data_hit">没有数据</string>
+    <string name="news_act_no_video_hit">视频源不存在</string>
+    <string name="news_act_nocommemnd_hit">暂无评论</string>
+
+
+    <!--<string name="live_week_day1_hit">周一</string>-->
+    <!--<string name="live_week_day2_hit">周二</string>-->
+    <!--<string name="live_week_day3_hit">周三</string>-->
+    <!--<string name="live_week_day4_hit">周四</string>-->
+    <!--<string name="live_week_day5_hit">周五</string>-->
+    <!--<string name="live_week_day6_hit">周六</string>-->
+    <!--<string name="live_week_day7_hit">周日</string>-->
+
+
+    <string name="add_attention">加关注</string>
+
+
+    <string name="tv_series_num" formatted="false">共%d集</string>
+    <string name="tv_series_all_size">全部</string>
+    <string name="tv_series_play_desc" formatted="false">当前%2d集  共%d集</string>
+    <string name="tv_series_comment_desc" formatted="false">%d热评</string>
+    <string name="tv_series_size">选集</string>
+    <string name="tv_series_others">其他</string>
+    <string name="text_short_video_title">短视频</string>
+    <string name="text_featured_video">精选视频</string>
+    <string name="tv_short_video_wx">微信</string>
+    <string name="tv_look_again">再看一次</string>
+    <string name="tv_short_video_friends">朋友圈</string>
+    <string name="tv_short_video_detail_data">%1$s   %2$s播放   %3$s赞</string>
+
+</resources>

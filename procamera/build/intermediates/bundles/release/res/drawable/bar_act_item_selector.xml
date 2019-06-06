@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_checked="true" android:drawable="@drawable/bg_act_change_bar_selected"/>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/transparent"/>
+
+            <size android:width="130px"
+                android:height="27dp"/>
+        </shape>
+    </item>
+</selector><!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/drawable/bar_act_item_selector.xml -->

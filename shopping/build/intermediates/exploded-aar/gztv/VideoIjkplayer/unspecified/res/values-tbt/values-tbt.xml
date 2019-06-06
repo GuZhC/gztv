@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/workspace/idea/gztv/VideoIjkplayer/src/main/res/values-tbt/strings.xml -->
+    <eat-comment/>
+    <string name="VideoView_error_text_unknown">བརྙན་རིས་བསྣན་འཇུག་ལེགས་འགྲུབ་མ་བྱུང་བ།</string>
+    <string name="note_network">WiFi མིན་པའི་དྲྭ་སྤྱོད་བཞིན་འདུག་པས།གཏོང་ན་བཞུར་རྒྱུན་འགྲོ་གྲོན་འགྲོ་སྲིད།</string>
+    <string name="note_not_net">དྲ་སྦྲེལ་མི་ཐུབ།དྲ་བ་སྒོ་ཕྱེ་རོགས།</string>
+</resources>

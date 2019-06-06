@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <com.dfsx.ganzcms.app.act.MovieRecorderView
+                    android:id="@+id/movieRecorderView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+        </FrameLayout>
+        <RelativeLayout android:layout_width="match_parent"   android:layout_alignParentBottom="true"  android:paddingTop="30dp"    android:background="@color/black_50a" android:layout_height="wrap_content">
+            <!--<LinearLayout android:layout_width="match_parent" android:orientation="vertical" android:layout_height="match_parent">-->
+        <!--<LinearLayout android:layout_width="match_parent"  android:layout_height="match_parent">-->
+            <!--<com.dfsx.lscms.app.act.MovieRecorderView-->
+                    <!--android:id="@+id/movieRecorderView"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                     <!--/>-->
+        <!--</LinearLayout>-->
+            <LinearLayout android:layout_width="match_parent"  android:orientation="vertical" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="match_parent" android:gravity="center_vertical"  android:layout_height="wrap_content">
+           <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageButton
+                    android:id="@+id/delete_button"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/shoot_button"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:visibility="gone"
+                    android:background="@null"
+                    />
+
+            <ImageButton
+                    android:id="@+id/shoot_button"
+                    android:layout_width="119dp"
+                    android:layout_height="119dp"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:src="@drawable/video_record_btn_bacnground"
+                    />
+
+            <ImageButton
+                android:id="@+id/switch_camera_button"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/shoot_button"
+                android:layout_width="54dp"
+                android:layout_centerVertical="true"
+                android:layout_height="54dp"
+                android:background="@null"
+                android:src="@drawable/switch_camarea_btn"
+                />
+
+            <Button
+                    android:id="@+id/video_apply_button"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/shoot_button"
+                    android:visibility="gone"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:background="@drawable/video_record_public_background"
+                    android:layout_centerVertical="true"
+                    android:text="发布"
+                    android:textColor="@color/white"
+                    android:textSize="15.0sp"
+                    />
+           </RelativeLayout>
+        </LinearLayout>
+         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/localtion_fileup_btn"   android:layout_width="match_parent"  android:textColor="@color/black"  android:textSize="13.0sp" android:background="@color/up_btn_background" android:layout_height="42dp" android:text="本地上传" />
+         </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="match_parent"  android:paddingLeft="10dp"  android:layout_alignParentTop="true"  android:layout_height="wrap_content">
+            <TextView android:id="@+id/recond_time_txt"  android:visibility="gone"    android:layout_width="wrap_content"   android:layout_alignParentLeft="true"    android:gravity="center" android:textSize="13.0sp"  android:textColor="@color/white"   android:layout_height="wrap_content"  android:text="00:00:00"/>
+            <ImageButton
+                    android:id="@+id/closed_button"
+                    android:layout_width="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="38dp"
+                    android:background="@null"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/new_middle_cancel"
+                    />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

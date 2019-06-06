@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+  android:drawable="@drawable/jc_loading_bg"
+  android:fromDegrees="0.0"
+  android:pivotX="50.0%"
+  android:pivotY="50.0%"
+  android:toDegrees="360.0" />
+<!-- From: file:/E:/workspace/idea/gztv/LiveRoom/src/main/res/drawable/jc_loading.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/exploded-aar/gztv/LiveRoom/unspecified/res/drawable/jc_loading.xml -->

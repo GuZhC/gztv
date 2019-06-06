@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Statistics</string>
+    <string name="app_authorities">com.dfsx.ganzcms.app.TENCENT.MID.V3</string><!--你的包名.TENCENT.MID.V3 -->
+    <string name="app_key">AGCNYY682W8H</string>
+    <string name="app_channel">dfsx</string>
+</resources>

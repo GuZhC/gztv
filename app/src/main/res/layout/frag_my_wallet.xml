@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/public_bgd">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3c3b4a">
+
+        <ImageView
+            android:id="@+id/back_wa_finish"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_left_back"/>
+        <ImageView
+            android:id="@+id/gold_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/bg_wallet_money"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gold_img"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#8e8e8e"
+                android:layout_gravity="center_horizontal"
+                android:text="乐币余额"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/my_extra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="25sp"
+                android:text="0.0"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        android:background="@color/white">
+
+        <com.dfsx.bannacms.app.view.TwoRelyView
+            android:id="@+id/my_add_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:firstText="我充值的"
+            app:firstDrawablePadding="0dp"
+            app:firstTextColor="#8e8e8e"
+            app:firstTextSize="16sp"
+            app:viewSpace="12dp"
+            app:secondText="0"
+            app:secondTextColor="#ffae24"
+            app:secondTextSize="23sp"
+        />
+
+        <View
+            android:layout_weight="0"
+            android:layout_width="2px"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="#e9e9e9"/>
+        <com.dfsx.bannacms.app.view.TwoRelyView
+            android:id="@+id/my_receive_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:firstText="我收到的"
+            app:firstDrawablePadding="0dp"
+            app:firstTextColor="#8e8e8e"
+            app:firstTextSize="16sp"
+            app:viewSpace="12dp"
+            app:secondText="0"
+            app:secondTextColor="#ffae24"
+            app:secondTextSize="23sp"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/look_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="45dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/item_selector">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
+            android:textColor="#3c3b4a"
+            android:textSize="15sp"
+            android:text="查看记录"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_triangle_right"
+        />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/extra_little"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#989898"
+        android:layout_marginTop="35dp"
+        android:textSize="15sp"
+        android:text="乐币不够花？"/>
+
+    <Button
+        android:id="@+id/btn_buy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black_36"
+        android:background="@drawable/shape_btn_pay"
+        android:text="立即充值"
+        android:textSize="16sp"/>
+</LinearLayout>

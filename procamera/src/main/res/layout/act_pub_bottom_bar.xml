@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:background="@color/white"
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:switchbutton="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+        <!--<View-->
+                <!--android:id="@+id/divide_line"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="5dp"-->
+                <!--android:background="#f7f7f9"-->
+        <!--/>-->
+        <com.dfsx.puer.app.view.EditTextEx
+                android:id="@+id/edit_pub_title"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="left|top"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="17dp"
+                android:paddingBottom="14dp"
+                android:textSize="16dp"
+                android:background="@null"
+                android:textColor="@color/black_33"
+                android:textColorHint="#9d9d9d"
+                android:hint="@string/act_pub_title_hit"
+        />
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+              android:background="@color/line_e9_color"/>
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_marginTop="17dp"
+                        android:paddingLeft="10dp" android:paddingRight="9dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content">
+            <ImageView
+                    android:id="@+id/dis_local_mark"
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="9dp"
+                    android:src="@drawable/disclure_local_select1"/>
+            <EditText
+                    android:id="@+id/txt_local_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/open_btn"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_marginRight="5dp"
+                    android:layout_toRightOf="@+id/dis_local_mark"
+                    android:textSize="16dp"
+                    android:textColor="@color/black_33"
+                    android:textColorHint="#9d9d9d"
+            />
+
+            <com.dfsx.core.common.view.SwitchView
+                    android:id="@+id/open_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="26dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    switchbutton:primaryColor="@color/act_home_select_font"
+            />
+
+        </RelativeLayout>
+        <View android:layout_width="match_parent" android:layout_marginTop="6dp" android:layout_height="1dp"
+              android:background="@color/line_e9_color"/>
+        <!--<View android:layout_width="match_parent" android:layout_height="54dp"-->
+              <!--android:background="#fff3f3f3"-->
+              <!--android:visibility="visible"/>-->
+    </LinearLayout>
+</LinearLayout>
+

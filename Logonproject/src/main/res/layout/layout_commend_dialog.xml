@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@color/white"
+>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/gray_303_bg"
+            android:layout_height="1dp"/>
+
+    <RelativeLayout
+            android:id="@+id/commentLinear"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+    >
+
+        <!-- 输入框 -->
+        <EditText
+                android:id="@+id/commentEdit_replay_edt"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_toLeftOf="@+id/dialog_comfirm_btn"
+                android:layout_gravity="center_vertical"
+                android:textColorHint="#ffa9a9a9"
+                android:focusableInTouchMode="true"
+                android:background="#fff7f7f7"
+                android:focusable="true"
+                android:gravity="left"
+                android:layout_marginTop="6dp"
+                android:inputType="textMultiLine"
+                android:maxLines="6"
+        />
+
+       <Button android:layout_width="50dp" android:layout_height="30dp" android:layout_marginLeft="5dp"
+               android:id="@+id/dialog_comfirm_btn"  android:background="@color/public_bgd"
+                android:text="确定"  android:textColor="@color/text_commom_font_color"
+                 android:layout_centerVertical="true"  android:layout_alignParentRight="true"
+       />
+
+    </RelativeLayout>
+</LinearLayout>

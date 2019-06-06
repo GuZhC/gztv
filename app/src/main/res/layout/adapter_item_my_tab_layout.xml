@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <View
+            android:id="@+id/top_divide_line"
+            android:layout_width="match_parent"
+            android:layout_height="8px"
+            android:visibility="visible"
+            android:background="@color/public_bgd"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_divide_line">
+
+            <com.dfsx.ganzcms.app.view.TwoRelyView
+                android:id="@+id/my_item_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                app:firstDrawableRight="@drawable/icon_wallet"
+                app:firstDrawablePadding="0dp"
+                app:viewSpace="8dp"
+                app:secondText="我的钱包"
+                app:secondTextColor="@color/black_21"
+                app:secondTextSize="14sp"
+                />
+
+            <ImageView
+                android:id="@+id/right_message_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/shape_message_point"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

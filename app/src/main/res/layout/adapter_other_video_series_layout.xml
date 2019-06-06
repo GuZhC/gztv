@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.dfsx.lzcms.liveroom.view.RectangleRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ratio="0.613">
+
+        <ImageView
+            android:id="@+id/item_video_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </com.dfsx.lzcms.liveroom.view.RectangleRelativeLayout>
+
+    <TextView
+        android:id="@+id/item_video_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="20dp"
+        android:singleLine="true"
+        android:textSize="15dp"
+        android:textColor="@color/black_21"
+        android:text="11111"/>
+</LinearLayout>

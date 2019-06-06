@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#efeff0">
+        <LinearLayout  android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RelativeLayout
+            android:background="@color/white"
+            android:id="@+id/logon_top_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true">
+
+        <ImageButton
+                android:layout_marginLeft="13dp"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:id="@+id/return_btn"
+                android:src="@drawable/logon_back_btn"
+                android:paddingLeft="6.0dip"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"/>
+
+        <TextView
+                android:textSize="17.0sp"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="注册账号"
+                android:layout_centerInParent="true"/>
+    </RelativeLayout>
+        </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            >
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:drawablePadding="10dp"
+                android:id="@+id/reg_name_edt" android:background="@drawable/login_account"
+                style="@style/CCWEditTextStyle" android:padding="10dp" android:hint="@string/register_user_hit"
+                android:imeOptions="actionNext" android:inputType="textNoSuggestions|text"
+                android:singleLine="true" />
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:drawablePadding="10dp"
+                android:id="@+id/reg_pass_edt"
+                android:background="@drawable/login_account"
+                style="@style/CCWEditTextStyle" android:padding="10dp"
+                android:hint="@string/register_pwd_hit" android:layout_marginTop="-1.5dp"
+                android:singleLine="true" android:imeOptions="actionGo" android:password="true"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:drawablePadding="10dp"
+                android:id="@+id/reg_passgin_edt"
+                android:background="@drawable/login_account"
+                style="@style/CCWEditTextStyle" android:padding="10dp"
+                android:hint="@string/login_agin_password" android:layout_marginTop="-1.5dp"
+                android:singleLine="true" android:imeOptions="actionGo" android:password="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            >
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:drawablePadding="10dp"
+                android:visibility="gone"
+                android:id="@+id/reg_nick_edt" android:background="@drawable/login_account"
+                style="@style/CCWEditTextStyle" android:padding="10dp" android:hint="@string/login_nick"
+                android:imeOptions="actionNext" android:inputType="textNoSuggestions|text"
+                android:singleLine="true" />
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:drawablePadding="10dp"
+                android:id="@+id/reg_email_edt"
+                android:background="@drawable/login_account"
+                style="@style/CCWEditTextStyle" android:padding="10dp"
+                android:hint="@string/login_email" android:layout_marginTop="-1.5dp"
+                android:singleLine="true" android:imeOptions="actionGo" />
+x
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            >
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login_register_button"
+                android:id="@+id/register_btn" style="@style/CCWButtonStyle"
+                />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/E:/workspace/idea/gztv/Logonproject/src/main/res/layout/act_register_custom.xml --><!-- From: file:/E:/workspace/idea/gztv/Logonproject/build/intermediates/bundles/debug/res/layout/act_register_custom.xml -->

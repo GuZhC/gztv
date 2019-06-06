@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_width="match_parent"  android:paddingLeft="13dp" android:paddingRight="13dp"  android:paddingTop="14dp"  android:background="@color/white" android:orientation="vertical" android:layout_height="wrap_content">
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:textSize="16.0sp"
+                    android:textColor="@color/news_title_color1"
+                    android:ellipsize="end"
+                    android:id="@+id/news_list_item_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"/>
+            </LinearLayout>
+           <LinearLayout android:layout_width="match_parent"  android:layout_marginTop="10dp" android:paddingBottom="14dp"  android:orientation="horizontal" android:layout_height="wrap_content">
+                    <LinearLayout
+                            android:id="@+id/bottom_news_layout"
+                            android:layout_width="fill_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="wrap_content"
+                         >
+
+                        <TextView
+                                android:textSize="12.0sp"
+                                android:text="119"
+                                android:textColor="@color/lives_bottom_gray"
+                                android:gravity="bottom|left"
+                                android:id="@+id/news_list_view_numbr"
+                                android:layout_alignParentLeft="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                        />
+
+                        <TextView
+                                android:textSize="12.0sp"
+                                android:text="2016-11"
+                                android:textColor="@color/lives_bottom_gray"
+                                android:gravity="bottom|left"
+                                android:id="@+id/news_list_item_source"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                />
+
+                        <TextView
+                                android:id="@+id/news_list_type_tx"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="7dp"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="1dp"
+                                android:paddingRight="5dp"
+                                android:paddingBottom="1dp"
+                                android:gravity="center"
+                                android:text="广告"
+                                android:textColor="@color/head_ad_font"
+                                android:background="@drawable/news_item_ad_bankground"
+                                android:textSize="9.0sp"
+                                android:layout_centerVertical="true"
+                                />
+
+                        <!--<ImageView android:id="@+id/news_pinglunimg" android:layout_marginRight="3dp"   android:layout_toLeftOf="@+id/news_list_comemd_numbr" android:layout_width="15dp" android:layout_height="15dp" android:src="@drawable/communti_brower_img"   android:layout_centerVertical="true" />-->
+
+                </LinearLayout>
+            </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:background="@color/gray_303_bg"  android:layout_height="1dp"/>
+    </LinearLayout>
+</LinearLayout>

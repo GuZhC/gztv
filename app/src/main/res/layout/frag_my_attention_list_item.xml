@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/my_attention_backgroud">
+
+    <RelativeLayout
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center">
+
+        <com.dfsx.core.common.view.CircleButton
+            android:id="@+id/head_view"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_defalut_no_login_logo"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/head_view"
+            android:layout_toLeftOf="@+id/add_attention"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical"
+            android:paddingLeft="14dp">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="哈哈"
+                android:textColor="@color/black_36"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/user_signature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="哈哈哈哈哈"
+                android:textColor="@color/black_98"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+        <com.dfsx.ganzcms.app.view.TwoRelyView
+            android:id="@+id/add_attention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:paddingRight="15dp"
+            app:firstDrawableRight="@drawable/add_attention"
+            app:secondText="@string/add_attention"
+            app:secondTextColor="@color/black_36"
+            app:secondTextSize="8sp"></com.dfsx.ganzcms.app.view.TwoRelyView>
+    </RelativeLayout>
+
+</RelativeLayout>

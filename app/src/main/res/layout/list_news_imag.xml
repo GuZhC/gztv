@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <LinearLayout android:layout_width="match_parent"   android:paddingBottom="10dp" android:orientation="vertical" android:layout_height="wrap_content">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+           >
+
+        <ImageView
+                android:id="@+id/item_img"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"    android:layout_marginTop="5dp"
+                      android:layout_marginLeft="10dp"
+                      android:layout_marginRight="10dp"   android:background="@color/white" android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/item_title"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"   android:layout_marginTop="8dp"
+                      android:layout_marginLeft="10dp"
+
+                      android:layout_marginRight="10dp"    android:background="@color/white"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                <ImageView android:layout_width="17dp"  android:id="@+id/comglay_btn" android:layout_height="16dp" android:layout_alignParentLeft="true"   android:src="@drawable/commends_icon"/>
+                <TextView
+                        android:id="@+id/item_autor"
+                        android:layout_toRightOf="@+id/comglay_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="111"
+                        android:textColor="@color/lives_bottom_gray"
+                        android:textSize="13sp"
+                        />
+                <TextView
+                        android:id="@+id/item_create_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="17:62  08/11"
+                        android:textColor="@color/lives_bottom_gray"
+                        android:textSize="13sp"
+                        />
+            </RelativeLayout>
+        </LinearLayout>
+        </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:background="@color/gray_303_bg"  android:layout_height="8dp"/>
+</LinearLayout>

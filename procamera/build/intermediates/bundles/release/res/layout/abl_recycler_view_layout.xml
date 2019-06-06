@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_bgd">
+
+    <!--<RelativeLayout-->
+            <!--android:background="@color/white"-->
+            <!--android:id="@+id/logon_top_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:paddingLeft="15dp"-->
+            <!--android:paddingRight="10dp"-->
+            <!--android:layout_alignParentTop="true">-->
+
+        <!--<TextView-->
+                <!--android:textSize="15.0sp"-->
+                <!--android:textColor="@color/COLOR_21"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:id="@+id/top_commend_num_txt"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:gravity="center"-->
+                <!--android:text="评论234"-->
+        <!--/>-->
+
+        <!--<RelativeLayout android:layout_width="48dp"  android:id="@+id/cancel_btn" android:layout_alignParentRight="true" android:layout_height="48dp">-->
+            <!--<ImageView-->
+                    <!--android:layout_width="11dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_height="11dp"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:background="@drawable/news_commend_page_back"/>-->
+        <!--</RelativeLayout>-->
+    <!--</RelativeLayout>-->
+
+    <com.dfsx.lzcms.liveroom.view.PullToRefreshRecyclerView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbarStyle="outsideInset"
+            android:id="@+id/pull_recyclerView"
+    />
+
+
+    <ImageView
+        android:layout_width="49dp"
+        android:id="@+id/act_pub_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_height="49dp"
+        android:visibility="gone"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="13dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/activty_camera_list"/>
+
+    <!--<com.dfsx.lzcms.liveroom.view.PullToRefreshRecyclerView-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:scrollbarStyle="outsideInset"-->
+            <!--android:id="@+id/pull_recyclerView"-->
+            <!--android:choiceMode="singleChoice"-->
+            <!--android:divider="@null"-->
+            <!--android:listSelector="#00000000"-->
+    <!--/>-->
+</RelativeLayout><!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/layout/abl_recycler_view_layout.xml -->

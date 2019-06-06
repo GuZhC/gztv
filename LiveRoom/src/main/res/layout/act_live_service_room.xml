@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <include
+            layout="@layout/live_service_content_frame_layout"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:background="@color/white"
+        android:animateLayoutChanges="true"
+        >
+
+        <include layout="@layout/live_service_bottom_drawer_layout"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true">
+
+        <com.dfsx.lzcms.liveroom.view.LiveServiceBottomBar
+            android:id="@+id/live_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </FrameLayout>
+</RelativeLayout>

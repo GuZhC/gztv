@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <!--<ScrollView android:layout_width="match_parent"  android:scrollbars="vertical" android:layout_height="match_parent">-->
+    <LinearLayout android:layout_width="match_parent" android:orientation="horizontal"
+                  android:layout_height="match_parent">
+        <LinearLayout android:layout_width="0dp" android:background="#efefef" android:orientation="vertical"
+                      android:layout_weight="0.2" android:layout_height="match_parent">
+            <!--<TextView android:layout_width="match_parent"  android:visibility="gone"  android:id="@+id/tv_todat_tx"   android:textSize="16.0sp"  android:textColor="@color/tv_name_selected" android:layout_height="20dp"  android:text="今天"  android:gravity="center"/>-->
+            <ScrollView android:layout_width="match_parent" android:scrollbars="vertical"
+                        android:layout_height="match_parent">
+                <LinearLayout android:id="@+id/tv_week_bofy" android:layout_width="match_parent"
+                              android:orientation="vertical" android:layout_height="match_parent">
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="0.8" android:layout_height="match_parent">
+            <ListView
+                    android:id="@+id/tv_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@color/transparent"
+                    android:dividerHeight="0px"
+                    android:scrollbars="vertical"
+                    android:listSelector="@color/transparent"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

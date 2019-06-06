@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:visibility="visible"-->
+            <!--android:id="@+id/top_bar"-->
+            <!--android:layout_height="@dimen/status_bar_height"/>-->
+    <!--<View android:layout_width="match_parent" android:layout_height="1dp" android:background="#ffbdbdbd"/>-->
+    <!--<View android:layout_width="match_parent"   android:layout_height="1dp" android:background="@color/line_e9_color"/>-->
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/public_bgd"
+            android:gravity="center_vertical"
+            android:paddingRight="13dp"
+            android:paddingLeft="17dp"
+    >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="返回"
+                android:id="@+id/top_back_btn"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:textColor="#333333"
+                android:layout_alignParentLeft="true"
+                android:textSize="16.0sp"
+        />
+
+        <ImageView
+                android:id="@+id/back_finish"
+                android:background="@null"
+                android:layout_centerVertical="true"
+                android:layout_width="35dp"
+                android:visibility="gone"
+                android:layout_height="35dp"
+                android:scaleType="center"
+                android:src="@drawable/icon_arrow_left"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="爆料中心"
+                android:visibility="gone"
+                android:textColor="@color/black_33"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textSize="15.0sp"
+        />
+
+        <!--android:background="@drawable/shape_rect_purple_bkg"-->
+        <!--android:paddingLeft="8dp"-->
+        <!--android:paddingRight="8dp"-->
+        <!--android:paddingTop="2dp"-->
+        <!--android:paddingBottom="2dp"-->
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="发表"
+                android:id="@+id/file_up_btn"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:textColor="#1AAC19"
+                android:layout_alignParentRight="true"
+                android:textSize="16.0sp"
+        />
+    </RelativeLayout>
+    <View android:layout_width="match_parent" android:layout_height="15dp" android:background="@color/white"/>
+</LinearLayout>
+
+<!-- From: file:/E:/workspace/idea/gztv/procamera/src/main/res/layout/act_pub_top_bar.xml --><!-- From: file:/E:/workspace/idea/gztv/procamera/build/intermediates/bundles/debug/res/layout/act_pub_top_bar.xml -->

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/portrait_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/top_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/portrait_video_container"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:background="@color/black">
+
+            </FrameLayout>
+
+            <RadioGroup
+                android:id="@+id/live_radio_bar"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/shape_chat_bar"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/bar_chat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:button="@android:color/transparent"
+                    android:textColor="@drawable/selector_bar_text_color"
+                    android:drawableLeft="@drawable/img_guess_chat"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:text="聊天"/>
+
+                <RadioButton
+                    android:id="@+id/bar_guess"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:button="@android:color/transparent"
+                    android:textColor="@drawable/selector_bar_text_color"
+                    android:drawableLeft="@drawable/img_guess"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:text="竞猜"/>
+
+                <RadioButton
+                    android:id="@+id/bar_player"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:button="@android:color/transparent"
+                    android:textColor="@drawable/selector_bar_text_color"
+                    android:drawableLeft="@drawable/img_guess_player"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:text="选手"/>
+
+                <RadioButton
+                    android:id="@+id/bar_rule"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:button="@android:color/transparent"
+                    android:textColor="@drawable/selector_bar_text_color"
+                    android:drawableLeft="@drawable/img_guess_rules"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:text="规则"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="0dp"
+            android:fadingEdgeLength="0dp"
+            android:overScrollMode="never"
+            android:background="@android:color/white"
+        >
+
+        </android.support.v4.view.ViewPager>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/full_screen_video_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+    </FrameLayout>
+</LinearLayout>

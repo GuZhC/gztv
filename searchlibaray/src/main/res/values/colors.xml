@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="line_color">#e1e1e1</color>
+
+    <color name="news_item_title_forget_color">#ffadadad</color>
+    <color name="black_33">#333333</color>
+    <color name="text_black_31">#313131</color>
+    <color name="gray_b5">#adadad</color>
+    <color name="gray_ad">#adadad</color>or>
+    <color name="follow_fan_text_color">#929292</color>
+    <color name="public_purple_bkg">#ff7068f5</color>
+
+    <color name="label_text_color">@color/public_purple_bkg</color>
+    <color name="label_shape_box_color">@color/public_purple_bkg</color>
+</resources>

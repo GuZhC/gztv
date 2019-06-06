@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_body_layout"
+                        android:background="@color/public_bgd"
+                        android:orientation="horizontal">
+                        <RelativeLayout android:layout_width="match_parent"
+                                        android:paddingLeft="31dp"
+                                        android:paddingRight="13dp"
+                                        android:layout_height="49dp">
+                                       <LinearLayout  android:layout_width="wrap_content"
+                                                      android:layout_alignParentLeft="true"
+                                                      android:gravity="center_vertical"
+                                                      android:layout_height="match_parent"  android:orientation="horizontal">
+                                               <TextView
+                                                       android:layout_height="wrap_content"
+                                                       android:layout_width="wrap_content"
+                                                       android:gravity="center"
+                                                       android:textSize="16.0sp"
+                                                       android:maxLength="40"
+                                                       android:singleLine="true"
+                                                       android:ellipsize="end"
+                                                       android:textColor="@color/tv_name_selected"
+                                                       android:id="@+id/tv_item_title_tx"
+                                                       android:layout_marginRight="7dp"
+                                                       android:text=""/>
+                                               <TextView
+                                                       android:layout_height="wrap_content"
+                                                       android:layout_width="wrap_content"
+                                                       android:gravity="center"
+                                                       android:layout_marginTop="4dp"
+                                                       android:layout_marginRight="7dp"
+                                                       android:textSize="12.0sp"
+                                                       android:textColor="#737373"
+                                                       android:singleLine="true"
+                                                       android:ellipsize="end"
+                                                       android:id="@+id/tv_item_tiem"
+                                                       android:maxLength="30"
+                                                       android:text=""/>
+                                           <TextView android:layout_width="wrap_content"
+                                                     android:layout_marginTop="4dp"
+                                                     android:id="@+id/tv_item_opera_btn"  android:text=""
+                                                     android:layout_height="wrap_content" android:gravity="center"
+                                                     android:layout_centerVertical="true" android:textSize="12.0sp"
+                                                     android:textColor="#737373"  />
+                                       </LinearLayout>
+                                <ImageView android:layout_width="16dp"  android:id="@+id/radio_play_mask" android:layout_height="16dp"
+                                           android:background="@drawable/radio_item_selectmark"
+                                           android:visibility="gone"  android:layout_alignParentRight="true" android:layout_centerVertical="true"  />
+                        </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/line_e9_color"
+                        android:orientation="horizontal">
+                </LinearLayout>
+                <!--<LinearLayout android:layout_width="wrap_content" android:gravity="left|center_vertical"  android:layout_height="73dp">-->
+                        <!--<ImageView android:layout_width="87dp"  android:id="@+id/cradio_lasssb_img"  android:background="@drawable/main_page_zhibo" android:layout_height="match_parent"  android:layout_alignParentRight="true" android:layout_centerVertical="true"  />-->
+                <!--</LinearLayout>-->
+                </LinearLayout>
+        </LinearLayout>
