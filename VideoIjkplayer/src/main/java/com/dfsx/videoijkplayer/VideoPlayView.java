@@ -300,8 +300,19 @@ public class VideoPlayView extends RelativeLayout implements MediaPlayer.OnInfoL
         }
 
     }
+
+    /**
+     * 全屏隐藏
+     */
     public void setFullGone(){
         mediaController.setFullGone();
+    }
+
+    /**
+     * 静音
+     */
+    public void setMuteAudioe(){
+        mediaController.setMuteAudioe();
     }
     /**
      * 设置是否使用硬件编码

@@ -3,7 +3,9 @@ package com.dfsx.ganzcms.app.fragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,13 +21,21 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.dfsx.core.common.Util.Util;
+import com.dfsx.ganzcms.app.App;
 import com.dfsx.ganzcms.app.R;
+import com.dfsx.ganzcms.app.act.CmsVideoActivity;
 import com.dfsx.ganzcms.app.act.MainTabActivity;
 import com.dfsx.ganzcms.app.act.ShortVideoDetailActivity;
 import com.dfsx.ganzcms.app.adapter.ShortVideoAdapter;
 import com.dfsx.ganzcms.app.adapter.ShortVideoViewPagerAdapter;
 import com.dfsx.ganzcms.app.model.ShortVideoBean;
+import com.dfsx.lzcms.liveroom.view.SharePopupwindow;
+import com.dfsx.thirdloginandshare.share.AbsShare;
+import com.dfsx.thirdloginandshare.share.ShareContent;
+import com.dfsx.thirdloginandshare.share.ShareFactory;
+import com.dfsx.thirdloginandshare.share.SharePlatform;
 import com.dfsx.videoijkplayer.VideoPlayView;
+import com.dfsx.videoijkplayer.media.VideoVoiceManager;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 import java.util.ArrayList;
@@ -53,11 +63,14 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
     private List<ShortVideoBean> mVideoData = new ArrayList<>();
     private FrameLayout videoFullLayout;
     private VideoPlayView videoPlayer;
+    private SharePopupwindow sharePopupwindow;
+    private View rootView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         this.inflater = inflater;
-        return inflater.inflate(R.layout.fragment_short_video, null);
+        rootView = inflater.inflate(R.layout.fragment_short_video, null);
+        return rootView;
     }
 
     @Override
@@ -65,6 +78,15 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         super.onViewCreated(view, savedInstanceState);
         videoRecycler = (RecyclerView) view.findViewById(R.id.recycler_short_video);
         videoFullLayout = (FrameLayout) view.findViewById(R.id.fl_short_video_full);
+        //设置播放器
+        videoPlayer = new VideoPlayView(getActivity());
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        videoPlayer.setLayoutParams(params);
+        videoPlayer.setFullGone();
+        videoPlayer.setMuteAudioe();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            videoPlayer.setTransitionName("comm_short_video");
+        }
         initData();
         inintView();
     }
@@ -96,10 +118,6 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         //设置recycler
         mLayoutManager = new LinearLayoutManager(getActivity());
         videoRecycler.setLayoutManager(mLayoutManager);
-        videoPlayer = new VideoPlayView(getActivity());
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        videoPlayer.setLayoutParams(params);
-        videoPlayer.setFullGone();
         adapter = new ShortVideoAdapter(mVideoData, videoPlayer);
         videoRecycler.setAdapter(adapter);
         adapter.addHeaderView(topView);
@@ -133,27 +151,25 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
             }
         }
     }
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if(isVisibleToUser){
-            //TODO now it's visible to user
-        } else {
-            videoPlayer.pause();
-        }
-    }
-
 
     @Override
     public void onResume() {
         super.onResume();
+        startBannerScroll();
+        playVideo();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        videoViewPagerAdapter.stopScroll();
-        videoPlayer.pause();
+        stopBannerScroll();
+        stopPVideo();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        stopPVideo();
     }
 
     @Override
@@ -173,11 +189,6 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
                 if (context == null) {
                     return;
                 }
-//                Intent intent = new Intent(context,ShortVideoActivity.class);
-//                View commView =  adapter.getViewByPosition(videoRecycler,position+1,R.id.tv_short_video_test);
-//                Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(context,commView,"short_video").toBundle();
-//                startActivity(intent,bundle);
-
             }
         });
         //banner点击
@@ -212,9 +223,9 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     playVideo();
                     if (playPostion == 1) {
-                        videoViewPagerAdapter.startScroll();
+                        startBannerScroll();
                     } else {
-                        videoViewPagerAdapter.stopScroll();
+                        stopBannerScroll();
                     }
                 }
             }
@@ -256,7 +267,18 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         });
     }
 
-    private void stopPVideo() {
+
+    public void startBannerScroll() {
+        if (videoViewPagerAdapter == null) return;
+        videoViewPagerAdapter.startScroll();
+    }
+
+    public void stopBannerScroll() {
+        if (videoViewPagerAdapter == null) return;
+        videoViewPagerAdapter.stopScroll();
+    }
+
+    public void stopPVideo() {
         if (isPlay) {
             videoPlayer.stop();
             isPlay = false;
@@ -267,7 +289,7 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
 
     }
 
-    private void playVideo() {
+    public void playVideo() {
         if (!isPlay) {
             isPlay = true;
             mVideoData.get(newPosition - 1).setVideo_state(ShortVideoAdapter.VIDEO_PLAY);
@@ -289,27 +311,41 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
 
     @Override
     public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        Intent intent = new Intent();
+        View commView =  adapter.getViewByPosition(videoRecycler,position+1,R.id.rl_short_video_share_content);
+
+        Bundle bundle1 = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(),commView,"comm_short_video").toBundle();
         switch (view.getId()) {
             case R.id.tv_short_video_play:
                 playAgain(position);
                 break;
             case R.id.tv_short_video_comment:
+                Bundle bundle = new Bundle();
+                bundle.putLong("index", 14017178);
+                intent.setClass(getContext(), CmsVideoActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent,bundle1);
                 Log.e("play", "setPlay: tv_short_video_comment：" + newPosition);
                 break;
             case R.id.tv_short_video_go_detail:
+                intent.setClass(getContext(), ShortVideoDetailActivity.class);
+                startActivity(intent);
                 Log.e("play", "setPlay: cb_short_video_sound：" + newPosition);
                 break;
             case R.id.tv_short_video_share:
-                Log.e("play", "setPlay: tv_short_video_share：" + newPosition);
+                shareWnd();
+//                Log.e("play", "setPlay: tv_short_video_share：" + newPosition);
                 break;
             case R.id.tv_short_video_share_friends:
-                Log.e("play", "setPlay: tv_short_video_share_friends：" + newPosition);
+                onSharePlatfrom(SharePlatform.Wechat_FRIENDS);
+//                Log.e("play", "setPlay: tv_short_video_share_friends：" + newPosition);
                 break;
             case R.id.tv_short_video_share_wx:
-                Log.e("play", "setPlay: tv_short_video_share_wx：" + newPosition);
+                onSharePlatfrom(SharePlatform.Wechat);
+//                Log.e("play", "setPlay: tv_short_video_share_wx：" + newPosition);
                 break;
             case R.id.cb_short_video_sound:
-                Log.e("play", "setPlay: cb_short_video_sound：" + newPosition);
+//                Log.e("play", "setPlay: cb_short_video_sound：" + newPosition);
                 break;
             case R.id.tv_short_video_praise:
                 Log.e("play", "setPlay: tv_short_video_praise：" + newPosition);
@@ -325,5 +361,47 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         newPosition = position + 1;
         View nowView = mLayoutManager.findViewByPosition(position + 1);
         videoRecycler.smoothScrollBy(0, nowView.getTop());
+    }
+
+    public void shareWnd() {
+        if (sharePopupwindow == null) {
+            sharePopupwindow = new SharePopupwindow(getContext());
+            sharePopupwindow.setOnShareClickListener(new SharePopupwindow.OnShareClickListener() {
+                @Override
+                public void onShareClick(View v) {
+                    int vId = v.getId();
+                    if (vId == com.dfsx.lzcms.liveroom.R.id.share_qq) {
+                        onSharePlatfrom(SharePlatform.QQ);
+                    } else if (vId == com.dfsx.lzcms.liveroom.R.id.share_wb) {
+                        onSharePlatfrom(SharePlatform.WeiBo);
+                    } else if (vId == com.dfsx.lzcms.liveroom.R.id.share_wx) {
+                        onSharePlatfrom(SharePlatform.Wechat);
+                    } else if (vId == com.dfsx.lzcms.liveroom.R.id.share_wxfriends) {
+                        onSharePlatfrom(SharePlatform.Wechat_FRIENDS);
+                    }
+                }
+            });
+        }
+        sharePopupwindow.show(rootView);
+    }
+
+    public void onSharePlatfrom(SharePlatform platform) {
+        ShareContent info = new ShareContent();
+        info.title = "mtitle";
+        info.type = ShareContent.UrlType.WebPage;
+        String server = App.getInstance().getBaseUrl();
+        info.thumb = "mthumb";
+        info.url = server;
+        info.disc = "mInfo";
+//        if (mCotentInfoeny == null) return;
+//        ShareContent content = new ShareContent();
+//        content.title = mCotentInfoeny.getTitle();
+//        content.disc = mCotentInfoeny.getSummary();
+//        if (mCotentInfoeny.getThumbnail_urls() != null && mCotentInfoeny.getThumbnail_urls().size() > 0)
+//            content.thumb = mCotentInfoeny.getThumbnail_urls().get(0);
+//        content.type = ShareContent.UrlType.WebPage;
+//        content.url = App.getInstance().getContentShareUrl() + mCotentInfoeny.getId();
+        AbsShare share = ShareFactory.createShare(getContext(), platform);
+        share.share(info);
     }
 }

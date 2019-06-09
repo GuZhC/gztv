@@ -1,29 +1,39 @@
 package com.dfsx.ganzcms.app.act;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.dfsx.core.common.Util.SystemBarTintManager;
+import com.dfsx.core.common.Util.Util;
 import com.dfsx.ganzcms.app.App;
 import com.dfsx.ganzcms.app.R;
 import com.dfsx.ganzcms.app.adapter.ShortVideoAdapter;
 import com.dfsx.ganzcms.app.adapter.ShortVideoDetailAdapter;
 import com.dfsx.ganzcms.app.model.ShortVideoBean;
-import com.dfsx.thirdloginandshare.share.ShareContent;
-import com.dfsx.thirdloginandshare.share.ShareUtil;
+import com.dfsx.ganzcms.app.model.TopicalEntry;
+import com.dfsx.lzcms.liveroom.view.SharePopupwindow;
+import com.dfsx.thirdloginandshare.share.*;
 import com.dfsx.videoijkplayer.VideoPlayView;
+import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQuickAdapter.OnItemChildClickListener {
 
+    private SystemBarTintManager systemBarTintManager;
+    private SharePopupwindow sharePopupwindow;
     private RecyclerView videoRecycler;
     private LinearLayoutManager mLayoutManager;
     private ShortVideoDetailAdapter adapter;
@@ -31,14 +41,18 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
     //将要播放位置
     private int newPosition = 0;
     //播放状态
-    private boolean isPlay = true;
+    private boolean isPlay = false;
     private int playPostion = 0;
     private FrameLayout videoFullLyout;
+    private ImageView ivBack;
+    private View rootView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_short_video_detail);
+        rootView = getLayoutInflater().inflate(R.layout.activity_short_video_detail, null);
+        setContentView(rootView);
+        systemBarTintManager = Util.applyKitKatTranslucency(this, ContextCompat.getColor(this,R.color.transparent));
         initData();
         initView();
         initListener();
@@ -48,15 +62,21 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
     private void initView() {
         videoRecycler = (RecyclerView) findViewById(R.id.rl_video_detail_recycler);
         videoFullLyout = (FrameLayout) findViewById(R.id.fl_video_detail_full);
-        LinearLayout topView = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.layout_short_video_detail_top, null);
+        ivBack = (ImageView) findViewById(R.id.iv_video_detail_back);
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         //设置recycler
         mLayoutManager = new LinearLayoutManager(this);
         videoRecycler.setLayoutManager(mLayoutManager);
 
         adapter = new ShortVideoDetailAdapter(mVideoData, videoPlayer);
-//        VideoVoiceManager.getInstance(this).muteAudio();
-
         videoRecycler.setAdapter(adapter);
+        playVideo();
+
     }
 
     private void initData() {
@@ -69,7 +89,19 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
     private void initListener() {
+        videoPlayer.setCompletionListener(new VideoPlayView.CompletionListener() {
+            @Override
+            public void completion(IMediaPlayer mp) {
+                mVideoData.get(playPostion ).setVideo_state(ShortVideoAdapter.VIDEO_END);
+                adapter.notifyItemChanged(playPostion);
+            }
+        });
         adapter.setOnItemChildClickListener(this);
         videoRecycler.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -126,30 +158,23 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
     public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
         switch (view.getId()) {
             case R.id.tv_short_video_play:
-                if (isPlay) {
-                    return;
-                }
+
                 playAgain(position);
                 break;
             case R.id.tv_short_video_comment:
                 Log.e("play", "setPlay: tv_short_video_comment：" + newPosition);
                 break;
             case R.id.tv_short_video_share:
-                ShareContent info = new ShareContent();
-                info.title = "mtitle";
-                info.type = ShareContent.UrlType.WebPage;
-                String server = App.getInstance().getBaseUrl();
-                info.thumb = "mthumb";
-                info.url = server;
-                info.disc = "mInfo";
-                ShareUtil.share(this, info);
-                Log.e("play", "setPlay: tv_short_video_share：" + newPosition);
+                shareWnd();
+//                Log.e("play", "setPlay: tv_short_video_share：" + newPosition);
                 break;
             case R.id.tv_short_video_share_friends:
-                Log.e("play", "setPlay: tv_short_video_share_friends：" + newPosition);
+                onSharePlatfrom(SharePlatform.Wechat_FRIENDS);
+//                Log.e("play", "setPlay: tv_short_video_share_friends：" + newPosition);
                 break;
             case R.id.tv_short_video_share_wx:
-                Log.e("play", "setPlay: tv_short_video_share_wx：" + newPosition);
+                onSharePlatfrom(SharePlatform.Wechat);
+//                Log.e("play", "setPlay: tv_short_video_share_wx：" + newPosition);
                 break;
             case R.id.cb_short_video_sound:
                 Log.e("play", "setPlay: cb_short_video_sound：" + newPosition);
@@ -170,15 +195,19 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
                 Log.e("play", "setPlay: iv_short_video_detail_comment：" + newPosition);
                 break;
             case R.id.iv_short_video_detail_share_wx:
+                onSharePlatfrom(SharePlatform.Wechat);
                 Log.e("play", "setPlay: iv_short_video_detail_share_wx：" + newPosition);
                 break;
             case R.id.iv_short_video_detail_share_pyq:
+                onSharePlatfrom(SharePlatform.Wechat_FRIENDS);
                 Log.e("play", "setPlay: iv_short_video_detail_share_pyq：" + newPosition);
                 break;
             case R.id.iv_short_video_detail_share_wb:
+                onSharePlatfrom(SharePlatform.WeiBo);
                 Log.e("play", "setPlay: iv_short_video_detail_share_wb：" + newPosition);
                 break;
             case R.id.iv_short_video_detail_share_qq:
+                onSharePlatfrom(SharePlatform.QQ);
                 Log.e("play", "setPlay: iv_short_video_detail_share_qq：" + newPosition);
                 break;
         }
@@ -189,6 +218,7 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
         newPosition = position;
         View nowView = mLayoutManager.findViewByPosition(position);
         videoRecycler.smoothScrollBy(0, nowView.getTop());
+        playVideo();
     }
 
     private void stopPVideo() {
@@ -233,6 +263,47 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
 
     }
 
+    public void shareWnd() {
+        if (sharePopupwindow == null) {
+            sharePopupwindow = new SharePopupwindow(this);
+            sharePopupwindow.setOnShareClickListener(new SharePopupwindow.OnShareClickListener() {
+                @Override
+                public void onShareClick(View v) {
+                    int vId = v.getId();
+                    if (vId == com.dfsx.lzcms.liveroom.R.id.share_qq) {
+                        onSharePlatfrom(SharePlatform.QQ);
+                    } else if (vId == com.dfsx.lzcms.liveroom.R.id.share_wb) {
+                        onSharePlatfrom(SharePlatform.WeiBo);
+                    } else if (vId == com.dfsx.lzcms.liveroom.R.id.share_wx) {
+                        onSharePlatfrom(SharePlatform.Wechat);
+                    } else if (vId == com.dfsx.lzcms.liveroom.R.id.share_wxfriends) {
+                        onSharePlatfrom(SharePlatform.Wechat_FRIENDS);
+                    }
+                }
+            });
+        }
+        sharePopupwindow.show(rootView);
+    }
+
+    public void onSharePlatfrom(SharePlatform platform) {
+        ShareContent info = new ShareContent();
+        info.title = "mtitle";
+        info.type = ShareContent.UrlType.WebPage;
+        String server = App.getInstance().getBaseUrl();
+        info.thumb = "mthumb";
+        info.url = server;
+        info.disc = "mInfo";
+//        if (mCotentInfoeny == null) return;
+//        ShareContent content = new ShareContent();
+//        content.title = mCotentInfoeny.getTitle();
+//        content.disc = mCotentInfoeny.getSummary();
+//        if (mCotentInfoeny.getThumbnail_urls() != null && mCotentInfoeny.getThumbnail_urls().size() > 0)
+//            content.thumb = mCotentInfoeny.getThumbnail_urls().get(0);
+//        content.type = ShareContent.UrlType.WebPage;
+//        content.url = App.getInstance().getContentShareUrl() + mCotentInfoeny.getId();
+        AbsShare share = ShareFactory.createShare(this, platform);
+        share.share(info);
+    }
     @Override
     public void addVideoPlayerToContainer(VideoPlayView videoPlayer) {
         addVideoToLayout(videoPlayer);
@@ -241,12 +312,9 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
     private boolean addVideoToLayout(VideoPlayView videoPlayer) {
         FrameLayout videoLyout = (FrameLayout) adapter.getViewByPosition(videoRecycler, newPosition, R.id.fl_short_video_video);
         if (videoLyout != null) {
-            if (videoLyout.getChildAt(0) == null ||
-                    !(videoLyout.getChildAt(0)
-                            instanceof VideoPlayView)) {
+            videoLyout.removeAllViews();
                 videoLyout.addView(videoPlayer, 0);
                 return true;
-            }
         }
         return false;
     }

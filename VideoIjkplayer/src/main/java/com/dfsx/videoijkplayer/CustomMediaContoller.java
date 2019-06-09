@@ -141,6 +141,12 @@ public class CustomMediaContoller implements IMediaController {
         full.setVisibility(View.GONE);
     }
 
+    public void setMuteAudioe() {
+        sound.setImageResource(R.mipmap.sound_mult_icon);
+        VideoVoiceManager.getInstance(context).muteAudio();
+        isSound = false;
+    }
+
     private void initAction() {
         sound_seek.setEnabled(false);
         brightness_seek.setEnabled(false);

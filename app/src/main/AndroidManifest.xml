@@ -246,12 +246,14 @@
             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".act.ShortVideoActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:name=".act.ShortVideoCommentActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection"
+            android:exported="true"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".act.ShortVideoDetailActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:configChanges="keyboardHidden|orientation|screenSize|layoutDirection"
+            android:exported="true"
             android:screenOrientation="portrait"/>
     </application>
 

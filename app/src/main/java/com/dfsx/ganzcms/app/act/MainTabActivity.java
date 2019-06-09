@@ -39,7 +39,6 @@ import com.dfsx.ganzcms.app.push.NotificationMessageStartManager;
 import com.dfsx.ganzcms.app.view.LiveVideoPopupWindow;
 import com.dfsx.lzcms.liveroom.fragment.BaseAndroidWebFragment;
 import com.dfsx.lzcms.liveroom.view.adwareVIew.VideoAdwarePlayView;
-import com.dfsx.videoijkplayer.VideoPlayView;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 import com.loveplusplus.update.UpdateChecker;
@@ -82,9 +81,12 @@ public class MainTabActivity extends AbsVideoScreenSwitchActivity implements Com
     private TextView _bottomRedTip;
     protected SystemBarTintManager systemBarTintManager;
     public FrameLayout mFlFullVideo;
+    private ShortVideoFragment mShortVideoFragment = null;
+
     public FrameLayout getmFlFullVideo() {
         return mFlFullVideo;
     }
+
     public FrameLayout getActivityContainer() {
         return activityContainer;
     }
@@ -126,7 +128,7 @@ public class MainTabActivity extends AbsVideoScreenSwitchActivity implements Com
                 getStatusBarColor());
         rootView = getLayoutInflater().inflate(R.layout.act_main_tab, null);
         setContentView(rootView);
-        LanguageUtil.switchLanguage(this,"zh_CN");
+        LanguageUtil.switchLanguage(this, "zh_CN");
         //        setContentView(R.layout.act_main_tab);
         context = this;
         newsDatailHelper = new NewsDatailHelper(this);
@@ -488,7 +490,7 @@ public class MainTabActivity extends AbsVideoScreenSwitchActivity implements Com
         });
     }
 
-    public void switchTab(int checkedId){
+    public void switchTab(int checkedId) {
         if (checkedId != R.id.bottom_tab_me) setLastRadSelected(false);
 //        if (checkedId == mMiddleAddBtn.getId()) return;
         if (currentShowId == checkedId) return;
@@ -497,6 +499,10 @@ public class MainTabActivity extends AbsVideoScreenSwitchActivity implements Com
         reSetFragment(manager);
         hideTab(transaction);
         currentShowId = checkedId;
+        if (currentShowId != R.id.bottom_add_news && mShortVideoFragment != null) {
+            mShortVideoFragment.stopPVideo();
+            mShortVideoFragment.stopBannerScroll();
+        }
         switch (checkedId) {
             case R.id.bottom_tab_news:
                 if (newsFrag == null) {
@@ -537,9 +543,12 @@ public class MainTabActivity extends AbsVideoScreenSwitchActivity implements Com
 //                            liveFrag = new LiveTabFragment();
 //                    liveFrag = new LiveWebLinkFragment();
                     liveFrag = new ShortVideoFragment();
+                    mShortVideoFragment = (ShortVideoFragment) liveFrag;
                     transaction.add(R.id.container, liveFrag, TAG_LIVE_FRAG);
                 } else {
                     transaction.show(liveFrag);
+                    mShortVideoFragment.playVideo();
+                    mShortVideoFragment.startBannerScroll();
                 }
                 RxBus.getInstance().post(new TabItem(TabItem.BOTTOM_TAB_LIVE));
                 break;

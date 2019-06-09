@@ -50,6 +50,7 @@ import java.util.TimerTask;
 
 /**
  * Created by heyang on 2017/12/5.
+ *
  */
 public class CmsVideoActivity extends AbsCmsActivity {
     private final static String TAG = "CmsVideoActivity";
