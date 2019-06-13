@@ -1,15 +1,17 @@
 package com.dfsx.ganzcms.app.fragment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -18,24 +20,36 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.dfsx.core.common.Util.Util;
+import com.dfsx.core.exception.ApiException;
+import com.dfsx.core.network.datarequest.DataRequest;
 import com.dfsx.ganzcms.app.App;
 import com.dfsx.ganzcms.app.R;
 import com.dfsx.ganzcms.app.act.CmsVideoActivity;
-import com.dfsx.ganzcms.app.act.MainTabActivity;
 import com.dfsx.ganzcms.app.act.ShortVideoDetailActivity;
 import com.dfsx.ganzcms.app.adapter.ShortVideoAdapter;
 import com.dfsx.ganzcms.app.adapter.ShortVideoViewPagerAdapter;
-import com.dfsx.ganzcms.app.model.ShortVideoBean;
+import com.dfsx.ganzcms.app.business.ColumnBasicListManager;
+import com.dfsx.ganzcms.app.business.ContentCmsApi;
+import com.dfsx.ganzcms.app.business.HeadlineListManager;
+import com.dfsx.ganzcms.app.model.ColumnCmsEntry;
+import com.dfsx.ganzcms.app.model.ContentCmsEntry;
+import com.dfsx.ganzcms.app.model.ContentCmsInfoEntry;
+import com.dfsx.lzcms.liveroom.util.IsLoginCheck;
+import com.dfsx.lzcms.liveroom.view.PullToRefreshRecyclerView;
 import com.dfsx.lzcms.liveroom.view.SharePopupwindow;
 import com.dfsx.thirdloginandshare.share.AbsShare;
 import com.dfsx.thirdloginandshare.share.ShareContent;
 import com.dfsx.thirdloginandshare.share.ShareFactory;
 import com.dfsx.thirdloginandshare.share.SharePlatform;
 import com.dfsx.videoijkplayer.VideoPlayView;
-import com.dfsx.videoijkplayer.media.VideoVoiceManager;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import rx.Observable;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 import java.util.ArrayList;
@@ -47,9 +61,11 @@ import java.util.List;
  * @description :  短视频页面fragment
  */
 public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnItemChildClickListener {
+    public static final Long FEATURED_VIDEO = Long.valueOf(0x1);
+    private PullToRefreshRecyclerView mPullToRefreshRecyclerView;
     private RecyclerView videoRecycler;
     private ShortVideoAdapter adapter;
-    private List<String> mData = new ArrayList<>();
+    private List<ContentCmsEntry> mBannerData = new ArrayList<>();
     private LayoutInflater inflater;
     private ImageView topVideoMore;
     public ViewPager topViewPager;
@@ -60,11 +76,138 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
     //播放状态
     private boolean isPlay = true;
     private int playPostion = 1;
-    private List<ShortVideoBean> mVideoData = new ArrayList<>();
+    private List<ContentCmsInfoEntry> mVideoData = new ArrayList<>();
     private FrameLayout videoFullLayout;
     private VideoPlayView videoPlayer;
     private SharePopupwindow sharePopupwindow;
     private View rootView;
+    private ColumnCmsEntry entry, pagerEntry;
+    private HeadlineListManager dataRequester, pagerDataRequester;
+    ContentCmsApi _contentCmsApi;
+    private IsLoginCheck mloginCheck;
+    int mPager = 1;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initRequster();
+    }
+
+    private void initRequster() {
+        mloginCheck = new IsLoginCheck(getContext());
+        entry = ColumnBasicListManager.getInstance().findColumnByName("dsp");
+        pagerEntry = ColumnBasicListManager.getInstance().findColumnByName("jxsp");
+        if (pagerEntry != null) {
+            pagerDataRequester = new HeadlineListManager(getContext(), pagerEntry.getId() + "", pagerEntry.getId(), pagerEntry.getMachine_code());
+            pagerDataRequester.setCallback(new DataRequest.DataCallback<ArrayList<ContentCmsEntry>>() {
+                @Override
+                public void onSuccess(final boolean isAppend, ArrayList<ContentCmsEntry> data) {
+                    Log.e("pagerEntry", data.toString());
+                    mBannerData.clear();
+                    mBannerData.addAll(data);
+                    if (dataRequester != null) {
+                        dataRequester.start(false, false, mPager);
+                    } else {
+                        if (mPullToRefreshRecyclerView != null)
+                            mPullToRefreshRecyclerView.onRefreshComplete();
+                    }
+                }
+
+                @Override
+                public void onFail(ApiException e) {
+                    e.printStackTrace();
+                    if (mPullToRefreshRecyclerView != null)
+                        mPullToRefreshRecyclerView.onRefreshComplete();
+                    Log.e("pagerEntry", e.getMessage());
+                }
+            });
+        }
+        if (entry != null) {
+            _contentCmsApi = new ContentCmsApi(getContext());
+            dataRequester = new HeadlineListManager(getContext(), entry.getId() + "", entry.getId(), entry.getMachine_code());
+            dataRequester.setCallback(new DataRequest.DataCallback<ArrayList<ContentCmsEntry>>() {
+                @Override
+                public void onSuccess(final boolean isAppend, ArrayList<ContentCmsEntry> data) {
+                    Log.e("http", data.toString());
+                    if (!(data == null || data.isEmpty())) {
+                        Observable.from(data)
+                                .subscribeOn(Schedulers.io())
+                                .flatMap(new Func1<ContentCmsEntry, Observable<ContentCmsInfoEntry>>() {
+                                    @Override
+                                    public Observable<ContentCmsInfoEntry> call(ContentCmsEntry topicalEntry) {
+                                        //视频查询详情
+                                        if (!TextUtils.equals(topicalEntry.getType(), "video")) return null;
+                                        ContentCmsInfoEntry cmsInfoEntry = _contentCmsApi.getEnteyFromJson(topicalEntry.getId());
+                                        return Observable.just(cmsInfoEntry);
+                                    }
+                                })
+                                .map(new Func1<ContentCmsInfoEntry, ContentCmsInfoEntry>() {
+                                         private List<ContentCmsInfoEntry.VideosBean> videoGroups;
+
+                                         @Override
+                                         public ContentCmsInfoEntry call(ContentCmsInfoEntry cmsInfoEntry) {
+                                             videoGroups = cmsInfoEntry.getVideoGroups();
+                                             if (videoGroups != null && !videoGroups.isEmpty()) {
+                                                 ContentCmsInfoEntry.VideosBean videosBean = _contentCmsApi.getWebVideoBeanById(videoGroups.get(0).getId());
+                                                 if (videosBean != null) {
+                                                     cmsInfoEntry.setVideoDuration(videosBean.getDuration());
+                                                 }
+                                             }
+                                             return cmsInfoEntry;
+                                         }
+                                     }
+                                )
+                                .toList()
+                                .observeOn(AndroidSchedulers.mainThread())
+                                .subscribe(new Observer<List<ContentCmsInfoEntry>>() {
+                                    @Override
+                                    public void onCompleted() {
+                                        if (mPullToRefreshRecyclerView != null)
+                                            mPullToRefreshRecyclerView.onRefreshComplete();
+                                    }
+
+                                    @Override
+                                    public void onError(Throwable e) {
+                                        if (mPullToRefreshRecyclerView != null)
+                                            mPullToRefreshRecyclerView.onRefreshComplete();
+                                        e.printStackTrace();
+                                        Log.e("onError", e.getMessage());
+                                    }
+
+                                    @Override
+                                    public void onNext(List<ContentCmsInfoEntry> data) {
+                                        Log.e("mPager","  "+mPager);
+                                        if (!isAppend) {
+//                                            stopPVideo();
+                                            mVideoData.clear();
+                                            mVideoData.addAll(data);
+                                            mVideoData.get(0).setVideo_state(ShortVideoAdapter.VIDEO_PLAY);
+                                            adapter.notifyDataSetChanged();
+                                            inintView();
+                                        } else {
+                                            mVideoData.addAll(data);
+                                            adapter.notifyDataSetChanged();
+                                        }
+                                        if (!data.isEmpty())
+                                            ++mPager;
+                                    }
+                                });
+                    } else {
+                        if (mPullToRefreshRecyclerView != null)
+                            mPullToRefreshRecyclerView.onRefreshComplete();
+                    }
+                }
+
+                @Override
+                public void onFail(ApiException e) {
+                    e.printStackTrace();
+                    if (mPullToRefreshRecyclerView != null)
+                        mPullToRefreshRecyclerView.onRefreshComplete();
+                    Log.e("http", e.getMessage());
+                }
+            });
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -76,7 +219,21 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        videoRecycler = (RecyclerView) view.findViewById(R.id.recycler_short_video);
+        mPullToRefreshRecyclerView = (PullToRefreshRecyclerView) view.findViewById(R.id.recycler_short_video);
+        mPullToRefreshRecyclerView.setMode(PullToRefreshBase.Mode.BOTH);
+        mPullToRefreshRecyclerView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<RecyclerView>() {
+            @Override
+            public void onPullDownToRefresh(PullToRefreshBase<RecyclerView> refreshView) {
+                initData();
+            }
+
+            @Override
+            public void onPullUpToRefresh(PullToRefreshBase<RecyclerView> refreshView) {
+                dataRequester.start(true, false, mPager);
+            }
+        });
+
+        videoRecycler = mPullToRefreshRecyclerView.getRefreshableView();
         videoFullLayout = (FrameLayout) view.findViewById(R.id.fl_short_video_full);
         //设置播放器
         videoPlayer = new VideoPlayView(getActivity());
@@ -87,24 +244,54 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             videoPlayer.setTransitionName("comm_short_video");
         }
-        initData();
+
+//        isWifi = type != NetworkUtil.TYPE_WIFI ? false : true; todo
         inintView();
+        initData();
+    }
+
+    private void initData() {
+        if (pagerDataRequester != null) {
+            mPager = 1;
+            pagerDataRequester.start(false, false, 1);
+        } else {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    initRequster();
+                    if (pagerDataRequester != null) {
+                        mPager = 1;
+                        pagerDataRequester.start(false, false, 1);
+                    } else {
+                        if (dataRequester != null) {
+                            mPager = 1;
+                            dataRequester.start(false, false, mPager);
+                        } else {
+                            if (mPullToRefreshRecyclerView != null)
+                                mPullToRefreshRecyclerView.onRefreshComplete();
+                        }
+                    }
+                }
+            }, 500);
+        }
     }
 
     private void inintView() {
-
         //设置banner
         LinearLayout topView = (LinearLayout) inflater.inflate(R.layout.layout_short_video_top, null);
         FrameLayout mViewPagerContainer = (FrameLayout) topView.findViewById(R.id.fl_short_video_vp_root);
         topViewPager = (ViewPager) topView.findViewById(R.id.vp_short_video_top);
         topVideoMore = (ImageView) topView.findViewById(R.id.img_short_video_more);
-        videoViewPagerAdapter = new ShortVideoViewPagerAdapter(mData, getContext(), topViewPager);
+        videoViewPagerAdapter = new ShortVideoViewPagerAdapter(mBannerData, getContext(), topViewPager);
         topViewPager.setAdapter(videoViewPagerAdapter);
         //默认在中间，使用户看不到边界
         int p = Integer.MAX_VALUE / 3;
-        topViewPager.setCurrentItem(p - p % mData.size());
+        if (mBannerData.size() != 0) {
+            topViewPager.setCurrentItem(p - p % mBannerData.size());
+        }
         topViewPager.setOffscreenPageLimit(3);
         topViewPager.setPageMargin(Util.dp2px(getContext(), 6));
+        startBannerScroll();
         //将容器的触摸事件反馈给ViewPager
         mViewPagerContainer.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -127,7 +314,6 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
     //    @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        Log.e("TAG", "onConfigurationChanged -- ");
         if (videoPlayer != null) {
             videoPlayer.onChanged(newConfig);
             ViewGroup view = (ViewGroup) videoPlayer.getParent();
@@ -182,27 +368,30 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
     }
 
     private void initListener() {
-        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Activity context = getActivity();
-                if (context == null) {
-                    return;
-                }
-            }
-        });
+        adapter.setOnItemChildClickListener(this);
         //banner点击
         videoViewPagerAdapter.setPagerClick(new ShortVideoViewPagerAdapter.PagerClick() {
             @Override
-            public void onPagerClik(String data) {
-                startActivity(new Intent(getActivity(), ShortVideoDetailActivity.class));
+            public void onPagerClik(Long id) {
+                Intent intent = new Intent();
+//                intent.putExtra("index", 14017178);
+                Bundle bundle = new Bundle();
+                bundle.putLong("index", id);
+                intent.setClass(getContext(), CmsVideoActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
         //查看更多精选视频
         topVideoMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "show more", Toast.LENGTH_SHORT);
+                Intent intentDetail = new Intent();
+                Bundle bundleDetail = new Bundle();
+                bundleDetail.putLong("index", FEATURED_VIDEO);
+                intentDetail.setClass(getActivity(), ShortVideoDetailActivity.class);
+                intentDetail.putExtras(bundleDetail);
+                startActivity(intentDetail);
             }
         });
         //视频播放结束
@@ -213,7 +402,6 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
                 adapter.notifyItemChanged(playPostion);
             }
         });
-        adapter.setOnItemChildClickListener(this);
         //recyclerView滑动监听
         videoRecycler.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -279,6 +467,7 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
     }
 
     public void stopPVideo() {
+        if (mVideoData.isEmpty()) return;
         if (isPlay) {
             videoPlayer.stop();
             isPlay = false;
@@ -290,64 +479,63 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
     }
 
     public void playVideo() {
+        if (mVideoData.isEmpty()) return;
         if (!isPlay) {
             isPlay = true;
             mVideoData.get(newPosition - 1).setVideo_state(ShortVideoAdapter.VIDEO_PLAY);
             playPostion = newPosition;
             adapter.notifyItemChanged(newPosition);
-//            Log.e("play", "setPlay: 播放：" + newPosition);
+            Log.e("play", "setPlay: 播放：" + newPosition);
         }
     }
-
-    private void initData() {
-        for (int i = 0; i < 15; i++) {
-            mData.add(i + " item");
-            ShortVideoBean shortVideoBean = new ShortVideoBean();
-            if (i == 0) shortVideoBean.setVideo_state(ShortVideoAdapter.VIDEO_PLAY);
-            shortVideoBean.setTitle(i + " video item");
-            mVideoData.add(shortVideoBean);
-        }
+    private void playAgain(int position) {
+        stopPVideo();
+        newPosition = position + 1;
+        View nowView = mLayoutManager.findViewByPosition(position + 1);
+        videoRecycler.smoothScrollBy(0, nowView.getTop());
     }
 
     @Override
     public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
         Intent intent = new Intent();
-        View commView =  adapter.getViewByPosition(videoRecycler,position+1,R.id.rl_short_video_share_content);
-
-        Bundle bundle1 = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(),commView,"comm_short_video").toBundle();
+        Bundle bundle = new Bundle();
+        bundle.putLong("index", mVideoData.get(position).getId());
+        View commView = adapter.getViewByPosition(videoRecycler, position + 1, R.id.rl_short_video_share_content);
+        Bundle bundle1 = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), commView, "comm_short_video").toBundle();
         switch (view.getId()) {
             case R.id.tv_short_video_play:
                 playAgain(position);
                 break;
             case R.id.tv_short_video_comment:
-                Bundle bundle = new Bundle();
-                bundle.putLong("index", 14017178);
                 intent.setClass(getContext(), CmsVideoActivity.class);
                 intent.putExtras(bundle);
-                startActivity(intent,bundle1);
-                Log.e("play", "setPlay: tv_short_video_comment：" + newPosition);
+                startActivity(intent, bundle1);
                 break;
             case R.id.tv_short_video_go_detail:
-                intent.setClass(getContext(), ShortVideoDetailActivity.class);
-                startActivity(intent);
-                Log.e("play", "setPlay: cb_short_video_sound：" + newPosition);
+//                intent.setClass(getActivity(), ShortVideoDetailActivity.class);
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+//                Log.e("play", "setPlay: cb_short_video_sound：" + newPosition);
                 break;
             case R.id.tv_short_video_share:
-                shareWnd();
+                shareWnd(position);
 //                Log.e("play", "setPlay: tv_short_video_share：" + newPosition);
                 break;
             case R.id.tv_short_video_share_friends:
-                onSharePlatfrom(SharePlatform.Wechat_FRIENDS);
+                onSharePlatfrom(SharePlatform.Wechat_FRIENDS, position);
 //                Log.e("play", "setPlay: tv_short_video_share_friends：" + newPosition);
                 break;
             case R.id.tv_short_video_share_wx:
-                onSharePlatfrom(SharePlatform.Wechat);
+                onSharePlatfrom(SharePlatform.Wechat, position);
 //                Log.e("play", "setPlay: tv_short_video_share_wx：" + newPosition);
                 break;
             case R.id.cb_short_video_sound:
 //                Log.e("play", "setPlay: cb_short_video_sound：" + newPosition);
                 break;
             case R.id.tv_short_video_praise:
+                ContentCmsInfoEntry nowVideoData = mVideoData.get(position + 1);
+//                if (nowVideoData.)
+                addPraisebtn(nowVideoData.getId());
                 Log.e("play", "setPlay: tv_short_video_praise：" + newPosition);
                 break;
             case R.id.btn_short_video_look_again:
@@ -356,28 +544,36 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         }
     }
 
-    private void playAgain(int position) {
-        stopPVideo();
-        newPosition = position + 1;
-        View nowView = mLayoutManager.findViewByPosition(position + 1);
-        videoRecycler.smoothScrollBy(0, nowView.getTop());
-    }
 
-    public void shareWnd() {
+    public void addPraisebtn(long id) {
+        if (!mloginCheck.checkLogin()) return;
+        _contentCmsApi.pubContentPraise(id,  new DataRequest.DataCallback() {
+            @Override
+            public void onSuccess(boolean isAppend, Object data) {
+
+            }
+
+            @Override
+            public void onFail(ApiException e) {
+
+            }
+        });
+    }
+    public void shareWnd(final int pos) {
         if (sharePopupwindow == null) {
-            sharePopupwindow = new SharePopupwindow(getContext());
+            sharePopupwindow = new SharePopupwindow(getActivity());
             sharePopupwindow.setOnShareClickListener(new SharePopupwindow.OnShareClickListener() {
                 @Override
                 public void onShareClick(View v) {
                     int vId = v.getId();
                     if (vId == com.dfsx.lzcms.liveroom.R.id.share_qq) {
-                        onSharePlatfrom(SharePlatform.QQ);
+                        onSharePlatfrom(SharePlatform.QQ, pos);
                     } else if (vId == com.dfsx.lzcms.liveroom.R.id.share_wb) {
-                        onSharePlatfrom(SharePlatform.WeiBo);
+                        onSharePlatfrom(SharePlatform.WeiBo, pos);
                     } else if (vId == com.dfsx.lzcms.liveroom.R.id.share_wx) {
-                        onSharePlatfrom(SharePlatform.Wechat);
+                        onSharePlatfrom(SharePlatform.Wechat, pos);
                     } else if (vId == com.dfsx.lzcms.liveroom.R.id.share_wxfriends) {
-                        onSharePlatfrom(SharePlatform.Wechat_FRIENDS);
+                        onSharePlatfrom(SharePlatform.Wechat_FRIENDS, pos);
                     }
                 }
             });
@@ -385,23 +581,25 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         sharePopupwindow.show(rootView);
     }
 
-    public void onSharePlatfrom(SharePlatform platform) {
-        ShareContent info = new ShareContent();
-        info.title = "mtitle";
-        info.type = ShareContent.UrlType.WebPage;
-        String server = App.getInstance().getBaseUrl();
-        info.thumb = "mthumb";
-        info.url = server;
-        info.disc = "mInfo";
-//        if (mCotentInfoeny == null) return;
-//        ShareContent content = new ShareContent();
-//        content.title = mCotentInfoeny.getTitle();
-//        content.disc = mCotentInfoeny.getSummary();
-//        if (mCotentInfoeny.getThumbnail_urls() != null && mCotentInfoeny.getThumbnail_urls().size() > 0)
-//            content.thumb = mCotentInfoeny.getThumbnail_urls().get(0);
-//        content.type = ShareContent.UrlType.WebPage;
-//        content.url = App.getInstance().getContentShareUrl() + mCotentInfoeny.getId();
+    public void onSharePlatfrom(SharePlatform platform, int pos) {
+//        ShareContent info = new ShareContent();
+//        info.title = "mtitle";
+//        info.type = ShareContent.UrlType.WebPage;
+//        String server = App.getInstance().getBaseUrl();
+//        info.thumb = "mthumb";
+//        info.url = server;
+//        info.disc = "mInfo";
+        ++pos;
+        ContentCmsInfoEntry mCotentInfoeny = mVideoData.get(pos);
+        if (mCotentInfoeny == null) return;
+        ShareContent content = new ShareContent();
+        content.title = mCotentInfoeny.getTitle();
+        content.disc = mCotentInfoeny.getSummary();
+        if (mCotentInfoeny.getThumbnail_urls() != null && mCotentInfoeny.getThumbnail_urls().size() > 0)
+            content.thumb = mCotentInfoeny.getThumbnail_urls().get(0);
+        content.type = ShareContent.UrlType.WebPage;
+        content.url = App.getInstance().getContentShareUrl() + mCotentInfoeny.getId();
         AbsShare share = ShareFactory.createShare(getContext(), platform);
-        share.share(info);
+        share.share(content);
     }
 }

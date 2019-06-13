@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.dfsx.core.img.GlideRoundTransform;
 import com.dfsx.ganzcms.app.R;
+import com.dfsx.ganzcms.app.model.ContentCmsEntry;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,30 +28,38 @@ import java.util.List;
  */
 public class ShortVideoViewPagerAdapter extends PagerAdapter implements ViewPager.OnPageChangeListener {
     private final Context context;
-    private final List<String> mData;
+    private final List<ContentCmsEntry> mData = new ArrayList<>();
     private PagerClick pagerClick;
     private ViewPager viewPager;
     Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+            if (getCount() > viewPager.getCurrentItem()){
+                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+            }
         }
     };
 
 
-    public ShortVideoViewPagerAdapter(List<String> mData, Context context, ViewPager viewPager) {
-        this.mData = mData;
+    public ShortVideoViewPagerAdapter(List<ContentCmsEntry> mData, Context context, ViewPager viewPager) {
+        for (int i = 0; i < mData.size(); i++) {
+            if (i == 5) break;
+            this.mData.add(mData.get(i));
+        }
         this.context = context;
         this.viewPager = viewPager;
         viewPager.addOnPageChangeListener(this);
     }
 
-
+    @Override
+    public int getItemPosition(Object object) {
+        return POSITION_NONE;
+    }
     @Override
     public int getCount() {
         if (mData.size() < 2) {
-            return mData.size();
+            return 1;
         } else {
             return Integer.MAX_VALUE;
         }
@@ -67,19 +78,30 @@ public class ShortVideoViewPagerAdapter extends PagerAdapter implements ViewPage
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        position %= mData.size();
-        final String data = mData.get(position);
-        View view = LayoutInflater.from(container.getContext()).inflate( R.layout.item_short_video_top_viewpager, null);
+        View view = LayoutInflater.from(container.getContext()).inflate(R.layout.item_short_video_top_viewpager, null);
         ImageView img = (ImageView) view.findViewById(R.id.img_short_video_top);
         TextView tvContent = (TextView) view.findViewById(R.id.tv_short_video_top_content);
-        tvContent.setText(data);
-        Glide.with(context)
-                .load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559367407524&di=2a7d6a1a12707287e908d61922a637c2&imgtype=0&src=http%3A%2F%2Fpic72.nipic.com%2Ffile%2F20150715%2F9448607_192612583000_2.jpg")
-                .transform(new CenterCrop(context), new GlideRoundTransform(context,8))
-                .into(img);
-        //对ViewPager页号求模取出View列表中要显示的项
-        if (position < 0) {
-            position = mData.size() + position;
+        if (mData.size() != 0) {
+            position %= mData.size();
+            //对ViewPager页号求模取出View列表中要显示的项
+            if (position < 0) {
+                position = mData.size() + position;
+            }
+            final String title = mData.get(position).getTitle();
+            tvContent.setText(title);
+            Glide.with(context)
+                    .load(mData.get(position).getThumbnail_urls().get(0))
+                    .transform(new CenterCrop(context), new GlideRoundTransform(context, 8))
+                    .into(img);
+            final int finalPosition = position;
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (pagerClick != null) {
+                        pagerClick.onPagerClik(mData.get(finalPosition).getId());
+                    }
+                }
+            });
         }
         //如果View已经在之前添加到了一个父组件，则必须先remove，否则会抛出IllegalStateException。
         ViewParent vp = view.getParent();
@@ -88,15 +110,6 @@ public class ShortVideoViewPagerAdapter extends PagerAdapter implements ViewPage
             parent.removeView(view);
         }
         container.addView(view);
-        final int finalPosition = position;
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (pagerClick != null) {
-                    pagerClick.onPagerClik(mData.get(finalPosition));
-                }
-            }
-        });
         return view;
     }
 
@@ -143,6 +156,6 @@ public class ShortVideoViewPagerAdapter extends PagerAdapter implements ViewPage
     }
 
     public interface PagerClick {
-        void onPagerClik(String data);
+        void onPagerClik(Long id);
     }
 }

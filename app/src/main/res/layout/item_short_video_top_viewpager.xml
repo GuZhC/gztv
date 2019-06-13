@@ -8,7 +8,7 @@
 
     <ImageView
         android:id="@+id/img_short_video_top"
-        android:src="@color/public_purple_bkg"
+        android:background="@drawable/shape_bg_item_vbanner"
         android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
@@ -19,9 +19,8 @@
         android:textColor="@color/white"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="14dp"
-        android:drawableLeft="@mipmap/img_group_detail_fav"
+        android:drawableLeft="@mipmap/icon_short_video_banner_hot"
         android:drawablePadding="6dp"
-        android:text="@string/text_featured_video"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

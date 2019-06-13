@@ -34,11 +34,20 @@
     </RelativeLayout>
 
 
-    <android.support.v7.widget.RecyclerView
+    <com.dfsx.lzcms.liveroom.view.PullToRefreshRecyclerView
             android:id="@+id/rl_video_detail_recycler"
             android:layout_below="@id/rl_video_detail_topbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/tv_video_detail_loding"
+        android:layout_width="match_parent"
+        android:layout_below="@id/rl_video_detail_topbar"
+        android:textSize="16sp"
+        android:textColor="@color/gray_75"
+        android:text="数据加载中..."
+        android:gravity="center"
+        android:layout_height="match_parent"/>
 
     <FrameLayout
             android:id="@+id/fl_video_detail_full"

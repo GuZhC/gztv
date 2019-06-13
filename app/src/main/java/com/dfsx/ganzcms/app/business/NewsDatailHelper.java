@@ -1,5 +1,6 @@
 package com.dfsx.ganzcms.app.business;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
@@ -263,7 +264,7 @@ public class NewsDatailHelper {
                     public ContentCmsInfoEntry call(ContentCmsInfoEntry entry) {
                         if (entry == null) return null;
                         List<ContentCmsEntry> dlist = null;
-                        dlist = mContentCmsApi.getRelationContenList(entry.getId(), type);
+                        dlist = mContentCmsApi.getRelationContenList(entry.getId(), type,4);
                         if (dlist != null && !dlist.isEmpty())
                             entry.setRaletionList(dlist);
                         String praiseList = mContentCmsApi.getPraiseNumberList(entry.getId());
@@ -1082,9 +1083,9 @@ public class NewsDatailHelper {
      * @param rootView
      * @param content
      */
-    public void shareBottomUiWnd(View rootView, final ShareContent content) {
+    public void shareBottomUiWnd(View rootView, final ShareContent content, Activity activity) {
         if (shareBottomPopupwindow == null) {
-            shareBottomPopupwindow = new SharePopupwindow(context);
+            shareBottomPopupwindow = new SharePopupwindow(activity);
             shareBottomPopupwindow.setOnShareClickListener(new SharePopupwindow.OnShareClickListener() {
                 @Override
                 public void onShareClick(View v) {

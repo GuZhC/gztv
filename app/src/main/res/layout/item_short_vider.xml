@@ -15,7 +15,7 @@
             android:id="@+id/rl_short_video_share_content"
             android:layout_width="match_parent"
             android:transitionName="comm_short_video"
-            android:background="@color/head_ad_font"
+            android:background="@color/radio_dd_txt_font"
             android:layout_height="match_parent">
 
             <ImageView
@@ -141,16 +141,17 @@
         <View
             android:id="@+id/tv_short_video_go_detail"
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:layout_height="match_parent"/>
 
         <CheckBox
             android:id="@+id/tv_short_video_praise"
             android:layout_width="wrap_content"
+            android:layout_weight="1"
             android:button="@drawable/selector_short_video_prise"
             android:checked="true"
             android:textSize="15sp"
-            android:layout_marginRight="6dp"
+            android:layout_marginLeft="26dp"
             tools:text="25432"
             android:padding="6dp"
             android:textColor="@color/color_333"
@@ -162,7 +163,7 @@
             android:textSize="15sp"
             android:gravity="center_vertical"
             android:padding="@dimen/dp_10"
-            android:layout_marginRight="6dp"
+            android:layout_weight="1"
             android:drawablePadding="6dp"
             android:drawableLeft="@mipmap/icon_short_video_look_num"
             android:textColor="@color/color_333"
@@ -175,7 +176,7 @@
             android:textSize="15sp"
             android:gravity="center_vertical"
             android:padding="@dimen/dp_10"
-            android:layout_marginRight="6dp"
+            android:layout_weight="1"
             android:drawablePadding="6dp"
             android:drawableLeft="@mipmap/icon_short_viewo_comment"
             android:textColor="@color/color_333"
@@ -188,7 +189,7 @@
             android:textSize="15sp"
             android:gravity="center_vertical"
             android:padding="@dimen/dp_10"
-            android:layout_marginRight="6dp"
+            android:layout_weight="1"
             android:drawablePadding="6dp"
             android:drawableLeft="@mipmap/icon_short_video_share"
             android:textColor="@color/color_333"

@@ -1634,7 +1634,19 @@ public class UtilHelp {
             adItem.setVideoAdItem(bean);
         }
     }
-
+    /**
+     *
+     * @param time  秒
+     * @return
+     */
+    public static String getFormatMinute(long time){
+        StringBuilder stringBuilder = new StringBuilder();
+        long minute = time/60;
+        long sec = time%60;
+        stringBuilder.append(minute < 10 ? "0"+ minute : minute);
+        stringBuilder.append(":").append(sec < 10 ? "0" + sec : sec);
+        return stringBuilder.toString();
+    }
 }
 
 

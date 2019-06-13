@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
+import android.util.Log;
 import com.dfsx.core.exception.ApiException;
 import com.dfsx.core.network.HttpParameters;
 import com.dfsx.core.network.HttpUtil;
@@ -295,6 +296,7 @@ public abstract class DataRequest<T> {
             try {
                 json = jsonParseString(response);
                 checkError(json);
+//                Log.e("json", "run: "+json.toString() );
                 T data = jsonToBean(json);
                 saveCache(data, booleanTag);
                 sendSuccessMsg(data, booleanTag);

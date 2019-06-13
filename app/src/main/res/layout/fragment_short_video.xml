@@ -22,7 +22,7 @@
 
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <com.dfsx.lzcms.liveroom.view.PullToRefreshRecyclerView
             android:layout_marginTop="16dp"
             android:id="@+id/recycler_short_video"
             android:layout_below="@id/ll_short_title"

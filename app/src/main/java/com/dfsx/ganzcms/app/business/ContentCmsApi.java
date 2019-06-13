@@ -228,6 +228,54 @@ public class ContentCmsApi {
         return dlist;
     }
 
+
+    /***
+     * 根据图片id,同步获取网页視頻实体类
+     * @param id
+     * @return
+     */
+    public ContentCmsInfoEntry.VideosBean getWebVideoBeanById(long id) {
+        ContentCmsInfoEntry.VideosBean tag = null;
+        String url = severUrl + "/public/videos/" + id;
+        try {
+            String response = HttpUtil.executeGet(url, new HttpParameters(), App.getInstance().getCurrentToken());
+            JSONObject json = JsonCreater.jsonParseString(response);
+            if (json != null) {
+                JSONArray arr = json.optJSONArray("result");
+                if (arr != null && arr.length() > 0) {
+                    JSONObject ob = (JSONObject) arr.get(0);
+                    if (ob != null) {
+                        JSONArray varr = ob.optJSONArray("versions");
+                        if (varr != null && varr.length() > 0) {
+                            tag = new ContentCmsInfoEntry.VideosBean();
+                            Gson g = new Gson();
+                            for (int i = 0; i < varr.length(); i++) {
+                                JSONObject item = (JSONObject) varr.get(i);
+                                ContentCmsInfoEntry.VersionsBean entry = g.fromJson(item.toString(), ContentCmsInfoEntry.VersionsBean.class);
+                                if (entry != null) {
+                                    int prefix = entry.getUrl().lastIndexOf(".");
+                                    if (entry.getUrl() != null &&
+                                            TextUtils.equals(entry.getUrl().toString().substring(prefix), ".mp4")) {
+                                        tag.setVersions(entry);
+                                        tag.setId(id);
+                                        tag.setCoverUrl(ob.optString("cover_url"));
+                                        break;
+                                    }
+                                }
+                            }
+                            tag.setDuration(ob.optLong("duration"));
+                        }
+                    }
+                }
+            }
+        } catch (ApiException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return tag;
+    }
+
     /***
      * 根据图片id,同步获取网页視頻实体类
      * @param ids
@@ -1091,9 +1139,9 @@ public class ContentCmsApi {
      * @param type
      * @return
      */
-    public List<ContentCmsEntry> getRelationContenList(long id, String type) {
+    public List<ContentCmsEntry> getRelationContenList(long id, String type,int count) {
         List<ContentCmsEntry> list = null;
-        String url = severUrl + "/public/contents/" + id + "/correlates?types=" + type + "&count=4";
+        String url = severUrl + "/public/contents/" + id + "/correlates?types=" + type + "&count="+count;
         try {
             String response = HttpUtil.executeGet(url, new HttpParameters(), App.getInstance().getCurrentToken());
             JSONObject jsonObject = JsonCreater.jsonParseString(response);

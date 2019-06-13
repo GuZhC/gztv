@@ -3,10 +3,7 @@ package com.dfsx.lzcms.liveroom.view;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import com.dfsx.lzcms.liveroom.R;
@@ -17,7 +14,7 @@ import com.dfsx.thirdloginandshare.share.SharePlatform;
  */
 public class SharePopupwindow {
 
-    private Context context;
+    private Activity context;
 
     private PopupWindow popupWindow;
 
@@ -30,7 +27,7 @@ public class SharePopupwindow {
     private OnShareClickListener onShareClickListener;
 
 
-    public SharePopupwindow(Context context) {
+    public SharePopupwindow(Activity  context) {
         this.context = context;
         init();
     }
@@ -114,10 +111,12 @@ public class SharePopupwindow {
     }
 
     public void show(View parent) {
+        darkenBackground(0.5f);
         popupWindow.showAtLocation(parent, Gravity.BOTTOM, 0, 0);
     }
 
     public void dismiss() {
+        darkenBackground(1f);
         popupWindow.dismiss();
     }
 
@@ -138,7 +137,12 @@ public class SharePopupwindow {
         }
         return sharePlatform;
     }
-
+    private void darkenBackground(Float bgcolor) {
+        WindowManager.LayoutParams lp = context.getWindow().getAttributes();
+        lp.alpha = bgcolor;
+        context.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        context.getWindow().setAttributes(lp);
+    }
     public interface OnShareClickListener {
         void onShareClick(View v);
     }

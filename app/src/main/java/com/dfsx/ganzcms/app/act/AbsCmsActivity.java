@@ -203,7 +203,7 @@ public abstract class AbsCmsActivity extends AbsVideoActivity implements PullToR
 //        if (LanguageUtil.isTibetanLanguage(this)) {
 //            content.language = "zn_tbr";
 //        }
-        _newsHelper.shareBottomUiWnd(v, content);
+        _newsHelper.shareBottomUiWnd(v, content,this);
     }
 
     public void writeCommendbtn(View v, long id, long ref_id, final DataRequest.DataCallback callback) {

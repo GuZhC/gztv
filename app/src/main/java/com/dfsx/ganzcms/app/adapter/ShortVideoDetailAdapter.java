@@ -2,10 +2,16 @@ package com.dfsx.ganzcms.app.adapter;
 
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.dfsx.core.common.Util.Util;
 import com.dfsx.ganzcms.app.R;
+import com.dfsx.ganzcms.app.fragment.ShortVideoFragment;
+import com.dfsx.ganzcms.app.model.ContentCmsInfoEntry;
 import com.dfsx.ganzcms.app.model.ShortVideoBean;
+import com.dfsx.ganzcms.app.util.UtilHelp;
 import com.dfsx.videoijkplayer.VideoPlayView;
 import com.dfsx.videoijkplayer.media.VideoVoiceManager;
 
@@ -19,11 +25,14 @@ import java.util.List;
 public class ShortVideoDetailAdapter extends BaseMultiItemQuickAdapter<ShortVideoBean, BaseViewHolder> {
     private final VideoPlayView videoPlayer;
     private FrameLayout portraintContainer;
-    public ShortVideoDetailAdapter(List<ShortVideoBean> data, VideoPlayView videoPlayer) {
+    private Long type;
+
+    public ShortVideoDetailAdapter(List<ShortVideoBean> data, VideoPlayView videoPlayer, Long type) {
         super(data);
         addItemType(ShortVideoBean.TYPE_SHARE, R.layout.layout_short_video_detail_top);
         addItemType(ShortVideoBean.TYPE_VIDEO, R.layout.item_short_vider);
-        this.videoPlayer =videoPlayer;
+        this.videoPlayer = videoPlayer;
+        this.type = type;
     }
 
 
@@ -39,10 +48,11 @@ public class ShortVideoDetailAdapter extends BaseMultiItemQuickAdapter<ShortVide
         }
     }
 
-    private void setShareItem(BaseViewHolder helper, ShortVideoBean item) {
+    private void setShareItem(BaseViewHolder helper, ShortVideoBean data) {
+        ContentCmsInfoEntry item = data.getContentCmsInfoEntry();
         helper.setText(R.id.tv_short_video_detail_title, item.getTitle())
                 .setText(R.id.tv_short_video_detail_data, mContext.getResources()
-                        .getString(R.string.tv_short_video_detail_data,"04.16-15:25","1458","226"))
+                        .getString(R.string.tv_short_video_detail_data, Util.getTimeString("MM.dd-HH:mm", item.getPublish_time()), String.valueOf(item.getView_count()), String.valueOf(item.getLike_count())))
                 .addOnClickListener(R.id.iv_short_video_detail_praise)
                 .addOnClickListener(R.id.iv_short_video_detail_comment)
                 .addOnClickListener(R.id.iv_short_video_detail_share_wx)
@@ -51,14 +61,20 @@ public class ShortVideoDetailAdapter extends BaseMultiItemQuickAdapter<ShortVide
                 .addOnClickListener(R.id.iv_short_video_detail_share_qq);
     }
 
-    private void setVideoItem(BaseViewHolder helper, ShortVideoBean item) {
+    private void setVideoItem(BaseViewHolder helper, ShortVideoBean data) {
+        ContentCmsInfoEntry item = data.getContentCmsInfoEntry();
         portraintContainer = helper.getView(R.id.fl_short_video_video);
-        if (helper.getLayoutPosition() == 0) {
+        if (helper.getLayoutPosition() == 0 && type != ShortVideoFragment.FEATURED_VIDEO) {
             helper.setGone(R.id.ll_short_video_bottom, false);
         } else {
             helper.setGone(R.id.ll_short_video_bottom, true);
         }
+        Glide.with(mContext).load(item.getVideoThumb()).into((ImageView) helper.getView(R.id.img_short_video_bg));
         helper.setText(R.id.tv_short_video_title, item.getTitle())
+                .setText(R.id.tv_short_video_time, UtilHelp.getFormatMinute(item.getVideoDuration()))
+                .setText(R.id.tv_short_video_praise, String.valueOf(item.getLike_count()))
+                .setText(R.id.tv_short_video_look_count, String.valueOf(item.getView_count()))
+                .setText(R.id.tv_short_video_comment, String.valueOf(item.getComment_count()))
                 .setGone(R.id.rl_short_video_share, false)
                 .setGone(R.id.tv_short_video_play, true)
                 .addOnClickListener(R.id.tv_short_video_play)
@@ -70,7 +86,7 @@ public class ShortVideoDetailAdapter extends BaseMultiItemQuickAdapter<ShortVide
                 .addOnClickListener(R.id.tv_short_video_praise)
                 .addOnClickListener(R.id.tv_short_video_go_detail)
                 .addOnClickListener(R.id.btn_short_video_look_again);
-        int videoState = item.getVideo_state();
+        int videoState = data.getVideo_state();
         switch (videoState) {
             case ShortVideoAdapter.VIDEO_NULL:
                 break;

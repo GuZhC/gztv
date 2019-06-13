@@ -17,13 +17,13 @@ public class ShortVideoCommentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_short_video_comment);
+//        setContentView(R.layout.activity_short_video_comment);
         systemBarTintManager = Util.applyKitKatTranslucency(this, ContextCompat.getColor(this,R.color.transparent));
         initView();
     }
 
     private void initView() {
-        tvBack = (TextView) findViewById(R.id.iv_video_comt_back);
+//        tvBack = (TextView) findViewById(R.id.iv_video_comt_back);
         tvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

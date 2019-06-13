@@ -11,17 +11,18 @@ import com.dfsx.ganzcms.app.adapter.ShortVideoAdapter;
 public class ShortVideoBean implements MultiItemEntity {
     public static final int TYPE_SHARE = 100;
     public static final int TYPE_VIDEO = 101;
-    private String title;
     private int vitemType = TYPE_VIDEO;
+    private ContentCmsInfoEntry contentCmsInfoEntry;
+
+    public ContentCmsInfoEntry getContentCmsInfoEntry() {
+        return contentCmsInfoEntry;
+    }
+
+    public void setContentCmsInfoEntry(ContentCmsInfoEntry contentCmsInfoEntry) {
+        this.contentCmsInfoEntry = contentCmsInfoEntry;
+    }
+
     private int  video_state = ShortVideoAdapter.VIDEO_NULL;
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public int getVideo_state() {
         return video_state;

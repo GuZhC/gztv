@@ -1,5 +1,6 @@
 package com.dfsx.ganzcms.app.model;
 
+import com.dfsx.ganzcms.app.adapter.ShortVideoAdapter;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
@@ -89,6 +90,27 @@ public class ContentCmsInfoEntry implements Serializable {
     private HashMap<String, Object> fieldsMap;
 
     private List<ContentCmsEntry> raletionList;
+
+    //2.0短视频 use
+    private int  video_state = ShortVideoAdapter.VIDEO_NULL;
+
+    private long videoDuration; //视频时长
+
+    public long getVideoDuration() {
+        return videoDuration;
+    }
+
+    public void setVideoDuration(long videoDuration) {
+        this.videoDuration = videoDuration;
+    }
+    public int getVideo_state() {
+        return video_state;
+    }
+
+    public void setVideo_state(int video_state) {
+        this.video_state = video_state;
+    }
+    //2.0短视频 use end
 
     public List<ContentCmsEntry> getRaletionList() {
         return raletionList;

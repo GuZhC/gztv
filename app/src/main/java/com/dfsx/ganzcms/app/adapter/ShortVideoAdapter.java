@@ -3,11 +3,17 @@ package com.dfsx.ganzcms.app.adapter;
 import android.support.annotation.Nullable;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.dfsx.ganzcms.app.R;
+import com.dfsx.ganzcms.app.model.ContentCmsEntry;
+import com.dfsx.ganzcms.app.model.ContentCmsInfoEntry;
 import com.dfsx.ganzcms.app.model.ShortVideoBean;
+import com.dfsx.ganzcms.app.util.UtilHelp;
 import com.dfsx.videoijkplayer.VideoPlayView;
+import rx.Observer;
 
 import java.util.List;
 
@@ -16,10 +22,9 @@ import java.util.List;
  * @date : 2019/5/30 16:53
  * @description : 短视频页面recycleViews适配器，添加头布局
  */
-public class ShortVideoAdapter extends BaseQuickAdapter<ShortVideoBean, BaseViewHolder> {
+public class ShortVideoAdapter extends BaseQuickAdapter<ContentCmsInfoEntry, BaseViewHolder> {
 
     protected VideoPlayView videoPlayer;
-
 
     private FrameLayout portraintContainer;
     //不加载视频控件
@@ -33,17 +38,23 @@ public class ShortVideoAdapter extends BaseQuickAdapter<ShortVideoBean, BaseView
     //结束
     public static final int VIDEO_END = 3;
 
-    public ShortVideoAdapter(@Nullable List<ShortVideoBean> data, VideoPlayView videoPlayer) {
+    public ShortVideoAdapter(@Nullable List<ContentCmsInfoEntry> data, VideoPlayView videoPlayer) {
         super(R.layout.item_short_vider, data);
         this.videoPlayer = videoPlayer;
     }
 
 
     @Override
-    protected void convert(BaseViewHolder helper, ShortVideoBean item) {
+    protected void convert(BaseViewHolder helper, ContentCmsInfoEntry item) {
         portraintContainer = helper.getView(R.id.fl_short_video_video);
+
+        Glide.with(mContext).load(item.getVideoThumb()).into((ImageView) helper.getView(R.id.img_short_video_bg));
 //        commView = helper.getView(R.id.tv_short_video_test);
         helper.setText(R.id.tv_short_video_title, item.getTitle())
+                .setText(R.id.tv_short_video_time, UtilHelp.getFormatMinute(item.getVideoDuration()))
+                .setText(R.id.tv_short_video_praise, String.valueOf(item.getLike_count()))
+                .setText(R.id.tv_short_video_look_count, String.valueOf(item.getView_count()))
+                .setText(R.id.tv_short_video_comment, String.valueOf(item.getComment_count()))
                 .setGone(R.id.rl_short_video_share, false)
                 .setGone(R.id.tv_short_video_play, true)
                 .addOnClickListener(R.id.tv_short_video_play)
@@ -61,7 +72,14 @@ public class ShortVideoAdapter extends BaseQuickAdapter<ShortVideoBean, BaseView
                 break;
             case VIDEO_PLAY:
                 helper.setGone(R.id.tv_short_video_play, false);
-                startPlay();
+                stopPlay();
+                if (portraintContainer == null) return;
+                if (portraintContainer.getChildCount() <= 0 || !(portraintContainer.getChildAt(0) instanceof VideoPlayView)) {
+                    portraintContainer.addView(videoPlayer, 0);
+                }
+                if (videoPlayer != null) {
+                    videoPlayer.start(item.getUrl());
+                }
                 break;
             case VIDEO_STOP:
                 helper.setGone(R.id.tv_short_video_play, true);
@@ -79,14 +97,7 @@ public class ShortVideoAdapter extends BaseQuickAdapter<ShortVideoBean, BaseView
 
 
     public void startPlay() {
-        stopPlay();
-        if (portraintContainer == null) return;
-        if (portraintContainer.getChildCount() <= 0 || !(portraintContainer.getChildAt(0) instanceof VideoPlayView)) {
-            portraintContainer.addView(videoPlayer, 0);
-        }
-        if (videoPlayer != null) {
-            videoPlayer.start("http://file.yatv.tv/cms/videos/nmip-media/2019-05-29/4370046821-v0-mp4/8F58BC10D49511829BD82C260052FDEB.mp4");
-        }
+
     }
 
     public void stopPlay() {
@@ -96,14 +107,6 @@ public class ShortVideoAdapter extends BaseQuickAdapter<ShortVideoBean, BaseView
             if (view != null) {
                 view.removeView(videoPlayer);
             }
-        }
-    }
-
-    public FrameLayout getPortraintContainer() {
-        if (portraintContainer != null) {
-            return portraintContainer;
-        } else {
-            return null;
         }
     }
 }

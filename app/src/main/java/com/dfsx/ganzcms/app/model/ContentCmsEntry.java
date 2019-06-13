@@ -1,6 +1,7 @@
 package com.dfsx.ganzcms.app.model;
 
 import android.text.TextUtils;
+import com.dfsx.ganzcms.app.adapter.ShortVideoAdapter;
 import com.dfsx.searchlibaray.model.ISearchData;
 import com.dfsx.searchlibaray.model.SearchItemInfo;
 import com.google.gson.annotations.SerializedName;
@@ -63,6 +64,7 @@ public class ContentCmsEntry implements Serializable, ISearchData {
     private ArrayList<EmergencyIcon> emergencyIcons;    //应急消息图标组
     private String emergencyType;   //应急消息图标类型
 
+
     public String getEmergencyType() {
         return emergencyType;
     }
@@ -106,7 +108,7 @@ public class ContentCmsEntry implements Serializable, ISearchData {
         this.liveInfo = liveInfo;
     }
 
-    private long  show_id;  //  直播回放id
+    private long show_id;  //  直播回放id
     private LiveInfo liveInfo;  //直播详情
 
     public ShowExtends getShowExtends() {
@@ -462,11 +464,11 @@ public class ContentCmsEntry implements Serializable, ISearchData {
 
     /**
      * url: "http://file.ganzitv.com/cms/pictures/20190114/b5b61e8eb7c4a009fdeb1a50ebc2164d/b5b61e8eb7c4a009fdeb1a50ebc2164d.png",
-     width: 1000,
-     height: 666,
-     id: 1239430109
+     * width: 1000,
+     * height: 666,
+     * id: 1239430109
      */
-    public class EmergencyIcon implements Serializable{
+    public class EmergencyIcon implements Serializable {
         private String url;
         private int width;
         private int height;
