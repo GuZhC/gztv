@@ -85,16 +85,29 @@ public class ContentCmsInfoEntry implements Serializable {
     private String videoThumb;
     private boolean isAttend;
     private String nextLiveName;
-
+    private int attitude_state; // 点赞状态： 0未操作，1点赞，2点踩
     @SerializedName("fields")
     private HashMap<String, Object> fieldsMap;
 
     private List<ContentCmsEntry> raletionList;
 
     //2.0短视频 use
-    private int  video_state = ShortVideoAdapter.VIDEO_NULL;
+    private int video_state = ShortVideoAdapter.VIDEO_NULL;
 
     private long videoDuration; //视频时长
+    private boolean isLike = false;
+
+    public boolean isLike() {
+        return attitude_state == 1;
+    }
+
+    public void setLike(boolean like) {
+        if (like){
+            attitude_state =1;
+        }else {
+            attitude_state = 0;
+        }
+    }
 
     public long getVideoDuration() {
         return videoDuration;
@@ -103,6 +116,7 @@ public class ContentCmsInfoEntry implements Serializable {
     public void setVideoDuration(long videoDuration) {
         this.videoDuration = videoDuration;
     }
+
     public int getVideo_state() {
         return video_state;
     }
@@ -111,6 +125,14 @@ public class ContentCmsInfoEntry implements Serializable {
         this.video_state = video_state;
     }
     //2.0短视频 use end
+
+    public int getAttitude_state() {
+        return attitude_state;
+    }
+
+    public void setAttitude_state(int attitude_state) {
+        this.attitude_state = attitude_state;
+    }
 
     public List<ContentCmsEntry> getRaletionList() {
         return raletionList;

@@ -74,25 +74,30 @@ public abstract class AbsVideoScreenSwitchActivity extends BaseActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         Log.e("TAG", "onConfigurationChanged -- ");
-        if (videoPlayer != null) {
-            videoPlayer.onChanged(newConfig);
-            ViewGroup videoContainer = (ViewGroup) videoPlayer.getParent();
-            removeVideoPlayerFromContainer(videoPlayer);
-            if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-                if (portraitVideoContainer == null) {
-                    addVideoPlayerToContainer();
+        if (!isShortVideoFragmetVideoFull()) {
+            if (videoPlayer != null) {
+                videoPlayer.onChanged(newConfig);
+                ViewGroup videoContainer = (ViewGroup) videoPlayer.getParent();
+                removeVideoPlayerFromContainer(videoPlayer);
+                if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    if (portraitVideoContainer == null) {
+                        addVideoPlayerToContainer();
+                    } else {
+                        addVideoPlayerView(portraitVideoContainer);
+                    }
+                    if (fullScreenContainer != null) {
+                        fullScreenContainer.setVisibility(View.GONE);
+                    }
                 } else {
-                    addVideoPlayerView(portraitVideoContainer);
+                    addVideoPlayerToFullScreenContainer(videoPlayer);
+                    portraitVideoContainer = videoContainer;
                 }
-                if (fullScreenContainer != null) {
-                    fullScreenContainer.setVisibility(View.GONE);
-                }
-            } else {
-                addVideoPlayerToFullScreenContainer(videoPlayer);
-                portraitVideoContainer = videoContainer;
             }
         }
     }
+
+    //是不是首页的短视频
+    protected abstract boolean isShortVideoFragmetVideoFull();
 
     protected final void addVideoPlayerView(ViewGroup container) {
         if (container != null) {
@@ -208,7 +213,7 @@ public abstract class AbsVideoScreenSwitchActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(videoPlayer != null) {
+        if (videoPlayer != null) {
             videoPlayer.stop();
             videoPlayer.release();
             videoPlayer.onDestroy();

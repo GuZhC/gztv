@@ -753,6 +753,7 @@ public class ContentCmsApi {
         String url = severUrl + "/public/contents/" + id;
         try {
             String response = HttpUtil.executeGet(url, new HttpParameters(), App.getInstance().getCurrentToken());
+            Log.e( "getEnteyFromJson: ", response);
             JSONObject jsonObject = JsonCreater.jsonParseString(response);
             if (jsonObject != null && !TextUtils.isEmpty(jsonObject.toString())
                     && !TextUtils.equals(jsonObject.toString(), "{}")) {

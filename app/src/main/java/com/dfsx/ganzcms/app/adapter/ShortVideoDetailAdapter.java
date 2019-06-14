@@ -75,6 +75,7 @@ public class ShortVideoDetailAdapter extends BaseMultiItemQuickAdapter<ShortVide
                 .setText(R.id.tv_short_video_praise, String.valueOf(item.getLike_count()))
                 .setText(R.id.tv_short_video_look_count, String.valueOf(item.getView_count()))
                 .setText(R.id.tv_short_video_comment, String.valueOf(item.getComment_count()))
+                .setChecked(R.id.tv_short_video_praise, item.isLike())
                 .setGone(R.id.rl_short_video_share, false)
                 .setGone(R.id.tv_short_video_play, true)
                 .addOnClickListener(R.id.tv_short_video_play)

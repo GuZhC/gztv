@@ -1,7 +1,9 @@
 package com.dfsx.ganzcms.app.act;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +11,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,6 +32,8 @@ import com.dfsx.ganzcms.app.model.ColumnCmsEntry;
 import com.dfsx.ganzcms.app.model.ContentCmsEntry;
 import com.dfsx.ganzcms.app.model.ContentCmsInfoEntry;
 import com.dfsx.ganzcms.app.model.ShortVideoBean;
+import com.dfsx.ganzcms.app.util.LSUtils;
+import com.dfsx.lzcms.liveroom.util.IsLoginCheck;
 import com.dfsx.lzcms.liveroom.view.PullToRefreshRecyclerView;
 import com.dfsx.lzcms.liveroom.view.SharePopupwindow;
 import com.dfsx.thirdloginandshare.share.AbsShare;
@@ -36,6 +41,7 @@ import com.dfsx.thirdloginandshare.share.ShareContent;
 import com.dfsx.thirdloginandshare.share.ShareFactory;
 import com.dfsx.thirdloginandshare.share.SharePlatform;
 import com.dfsx.videoijkplayer.VideoPlayView;
+import com.dfsx.videoijkplayer.util.NetworkUtil;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import rx.Observable;
 import rx.Observer;
@@ -70,12 +76,16 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
     private HeadlineListManager pagerDataRequester = null;
     private int mPager = 1;
     private TextView mLoding;
+    private IsLoginCheck mloginCheck;
+    private boolean isWifi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         rootView = getLayoutInflater().inflate(R.layout.activity_short_video_detail, null);
         setContentView(rootView);
+        int type = NetworkUtil.getConnectivityStatus(this);
+        isWifi = type != NetworkUtil.TYPE_WIFI ? false : true;
         systemBarTintManager = Util.applyKitKatTranslucency(this, ContextCompat.getColor(this, R.color.transparent));
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -86,6 +96,15 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
         initData();
     }
 
+
+    @Override
+    public void onBackPressed() {
+        if (videoPlayer.isFullScreen()) {
+            videoPlayer.switchScreen();
+            return;
+        }
+        super.onBackPressed();
+    }
 
     private void initView() {
         mPullToRefreshRecyclerView = (PullToRefreshRecyclerView) findViewById(R.id.rl_video_detail_recycler);
@@ -129,7 +148,7 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
         mLayoutManager = new LinearLayoutManager(this);
         videoRecycler.setLayoutManager(mLayoutManager);
 
-        adapter = new ShortVideoDetailAdapter(mVideoData, videoPlayer,videoId);
+        adapter = new ShortVideoDetailAdapter(mVideoData, videoPlayer, videoId);
         videoRecycler.setAdapter(adapter);
         initListener();
     }
@@ -210,14 +229,16 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
                                                 mVideoData.addAll(data);
                                                 mVideoData.get(0).setVideo_state(ShortVideoAdapter.VIDEO_PLAY);
                                                 adapter.notifyDataSetChanged();
-                                                stopPVideo();
-                                                playVideo();
+                                                if (isWifi) {
+                                                    stopPVideo();
+                                                    playVideo();
+                                                }
                                             } else {
                                                 int p = mVideoData.size();
                                                 mVideoData.addAll(data);
-                                                adapter.notifyItemRangeChanged(p,data.size());
+                                                adapter.notifyItemRangeChanged(p, data.size());
                                             }
-                                            if (!data.isEmpty()){
+                                            if (!data.isEmpty()) {
                                                 showChontent();
                                                 ++mPager;
                                             }
@@ -232,8 +253,9 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
                                         }
                                     });
                         } else {
-                            if (mPullToRefreshRecyclerView != null)
+                            if (mPullToRefreshRecyclerView != null) {
                                 mPullToRefreshRecyclerView.onRefreshComplete();
+                            }
                         }
                     }
 
@@ -246,6 +268,10 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
                         Log.e("pagerEntry", e.getMessage());
                     }
                 });
+            }
+            if (pagerDataRequester == null) {
+                showEmpty();
+                return;
             }
             pagerDataRequester.start(false, false, mPager);
             return;
@@ -312,7 +338,7 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
                     public void onNext(List<ContentCmsInfoEntry> contentCmsInfoEntry) {
                         if (contentCmsInfoEntry.size() > 0) {
                             mVideoData.clear();
-                        }else {
+                        } else {
                             showEmpty();
                             return;
                         }
@@ -352,9 +378,11 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                playVideo();
+                if (isWifi) {
+                    playVideo();
+                }
             }
-        }, 500);
+        }, 600);
     }
 
     private void initListener() {
@@ -371,7 +399,9 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
                 super.onScrollStateChanged(recyclerView, newState);
                 //静止的时候
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    playVideo();
+                    if (isWifi) {
+                        playVideo();
+                    }
                 }
             }
 
@@ -390,8 +420,8 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
                 }
                 //向上滑动
                 if (dy > 0) {
+                    newPosition = firstVisibleItem + 1;
                     if (firstView.getHeight() + firstView.getTop() <= firstView.getHeight() * 2 / 3) {
-                        newPosition = firstVisibleItem + 1;
                         if (newPosition == playPostion) return;
                         if (mVideoData.get(newPosition).getItemType() == ShortVideoBean.TYPE_SHARE) {
                             ++newPosition;
@@ -418,60 +448,77 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
 
     @Override
     public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putLong("index", mVideoData.get(position).getContentCmsInfoEntry().getId());
+        View commView = adapter.getViewByPosition(videoRecycler, position, R.id.rl_short_video_share_content);
+        Bundle bundle1 = ActivityOptionsCompat.makeSceneTransitionAnimation(this, commView, "comm_short_video").toBundle();
         switch (view.getId()) {
             case R.id.tv_short_video_play:
                 playAgain(position);
                 break;
             case R.id.tv_short_video_comment:
-                Log.e("play", "setPlay: tv_short_video_comment：" + newPosition);
+                intent.setClass(this, CmsVideoActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent, bundle1);
                 break;
             case R.id.tv_short_video_share:
                 shareWnd(position);
-//                Log.e("play", "setPlay: tv_short_video_share：" + newPosition);
                 break;
             case R.id.tv_short_video_share_friends:
                 onSharePlatfrom(SharePlatform.Wechat_FRIENDS, position);
-//                Log.e("play", "setPlay: tv_short_video_share_friends：" + newPosition);
                 break;
             case R.id.tv_short_video_share_wx:
                 onSharePlatfrom(SharePlatform.Wechat, position);
-//                Log.e("play", "setPlay: tv_short_video_share_wx：" + newPosition);
                 break;
             case R.id.cb_short_video_sound:
-                Log.e("play", "setPlay: cb_short_video_sound：" + newPosition);
                 break;
             case R.id.tv_short_video_go_detail:
-
 //                videoId = mVideoData.get(position).getContentCmsInfoEntry().getId();
 //                initData();
                 break;
             case R.id.tv_short_video_praise:
-                Log.e("play", "setPlay: tv_short_video_praise：" + newPosition);
+                if (mloginCheck == null) {
+                    mloginCheck = new IsLoginCheck(this);
+                }
+                ContentCmsInfoEntry nowVideoData = mVideoData.get(position).getContentCmsInfoEntry();
+                CheckBox cbPrise = (CheckBox) view;
+                int priseNum = (int) nowVideoData.getLike_count();
+                if (cbPrise.isChecked()) {
+                    nowVideoData.setLike_count(nowVideoData.getLike_count() + 1);
+                    cbPrise.setText(nowVideoData.getLike_count() + "");
+                    addPraisebtn(nowVideoData.getId(), nowVideoData, cbPrise);
+                } else {
+                    if (priseNum > 0) {
+                        nowVideoData.setLike_count(nowVideoData.getLike_count() - 1);
+                        cbPrise.setText(nowVideoData.getLike_count() + "");
+                        cbPrise.setText(nowVideoData.getLike_count() + "");
+                    }
+                    cancelCmsPraise(nowVideoData.getId(), nowVideoData, cbPrise);
+                }
                 break;
             case R.id.btn_short_video_look_again:
                 playAgain(position);
                 break;
             case R.id.iv_short_video_detail_praise:
-                Log.e("play", "setPlay: iv_short_video_detail_praise：" + newPosition);
+
                 break;
             case R.id.iv_short_video_detail_comment:
-                Log.e("play", "setPlay: iv_short_video_detail_comment：" + newPosition);
+                intent.setClass(this, CmsVideoActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
                 break;
             case R.id.iv_short_video_detail_share_wx:
                 onSharePlatfrom(SharePlatform.Wechat, position);
-//                Log.e("play", "setPlay: iv_short_video_detail_share_wx：" + newPosition);
                 break;
             case R.id.iv_short_video_detail_share_pyq:
                 onSharePlatfrom(SharePlatform.Wechat_FRIENDS, position);
-//                Log.e("play", "setPlay: iv_short_video_detail_share_pyq：" + newPosition);
                 break;
             case R.id.iv_short_video_detail_share_wb:
                 onSharePlatfrom(SharePlatform.WeiBo, position);
-//                Log.e("play", "setPlay: iv_short_video_detail_share_wb：" + newPosition);
                 break;
             case R.id.iv_short_video_detail_share_qq:
                 onSharePlatfrom(SharePlatform.QQ, position);
-//                Log.e("play", "setPlay: iv_short_video_detail_share_qq：" + newPosition);
                 break;
         }
     }
@@ -498,9 +545,10 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
             isPlay = false;
             mVideoData.get(playPostion).setVideo_state(ShortVideoAdapter.VIDEO_STOP);
             adapter.notifyItemChanged(playPostion);
-            Log.e("play", "setPlay: 暂停：" + playPostion);
+//            Log.e("play", "setPlay: 暂停：" + playPostion);
         }
     }
+
     private void endPVideo() {
         if (mVideoData.isEmpty()) return;
         if (isPlay) {
@@ -536,7 +584,7 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
             isPlay = true;
             if (addVideoToLayout(videoPlayer)) {
                 videoPlayer.start(mVideoData.get(playPostion).getContentCmsInfoEntry().getUrl());
-                Log.e("play", "setPlay: 播放：" + newPosition);
+//                Log.e("play", "setPlay: 播放：" + newPosition);
             } else {
                 stopPVideo();
             }
@@ -606,25 +654,86 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
         }
     }
 
-    public void showLoding(){
+    /**
+     * 点赞
+     *
+     * @param id
+     * @param nowVideoData
+     * @param cbPrise
+     */
+    public void addPraisebtn(long id, final ContentCmsInfoEntry nowVideoData, final CheckBox cbPrise) {
+        if (!mloginCheck.checkLogin()) return;
+        mContentCmsApi.pubContentPraise(id, new DataRequest.DataCallback() {
+            @Override
+            public void onSuccess(boolean isAppend, Object data) {
+                nowVideoData.setLike(true);
+//                LSUtils.toastMsgFunction(ShortVideoDetailActivity.this,  "点赞成功");
+            }
+
+            @Override
+            public void onFail(ApiException e) {
+                if (cbPrise != null) {
+                    cbPrise.setChecked(false);
+                }
+                nowVideoData.setLike(false);
+                nowVideoData.setLike_count(nowVideoData.getLike_count() - 1);
+                cbPrise.setText(nowVideoData.getLike_count() + "");
+                LSUtils.toastMsgFunction(ShortVideoDetailActivity.this, "点赞失败");
+            }
+        });
+    }
+
+    /**
+     * 取消点赞
+     *
+     * @param id
+     * @param nowVideoData
+     * @param cbPrise
+     */
+    public void cancelCmsPraise(long id, final ContentCmsInfoEntry nowVideoData, final CheckBox cbPrise) {
+        if (!mloginCheck.checkLogin()) return;
+        mContentCmsApi.cancelCmsPraise(id, new DataRequest.DataCallback() {
+            @Override
+            public void onSuccess(boolean isAppend, Object data) {
+                nowVideoData.setLike(false);
+//                LSUtils.toastMsgFunction(ShortVideoDetailActivity.this, "取消点赞成功");
+            }
+
+            @Override
+            public void onFail(ApiException e) {
+                nowVideoData.setLike_count(nowVideoData.getLike_count() + 1);
+                nowVideoData.setLike(true);
+                if (cbPrise != null) {
+                    cbPrise.setText(nowVideoData.getLike_count() + "");
+                    cbPrise.setChecked(true);
+                }
+                LSUtils.toastMsgFunction(ShortVideoDetailActivity.this, "取消点赞失败");
+            }
+        });
+    }
+
+    public void showLoding() {
         mLoding.setVisibility(View.VISIBLE);
         mLoding.setEnabled(false);
         mPullToRefreshRecyclerView.setVisibility(View.GONE);
         mLoding.setText("数据加载中...");
     }
-    public void showEmpty(){
+
+    public void showEmpty() {
         mLoding.setEnabled(true);
         mLoding.setVisibility(View.VISIBLE);
         mPullToRefreshRecyclerView.setVisibility(View.GONE);
         mLoding.setText("暂无数据");
     }
-    public void showError(){
+
+    public void showError() {
         mLoding.setEnabled(true);
         mLoding.setVisibility(View.VISIBLE);
         mPullToRefreshRecyclerView.setVisibility(View.GONE);
         mLoding.setText("数据加错误，点击重试");
     }
-    public void  showChontent(){
+
+    public void showChontent() {
         mLoding.setEnabled(false);
         mLoding.setVisibility(View.GONE);
         mPullToRefreshRecyclerView.setVisibility(View.VISIBLE);

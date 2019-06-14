@@ -55,6 +55,7 @@ public class ShortVideoAdapter extends BaseQuickAdapter<ContentCmsInfoEntry, Bas
                 .setText(R.id.tv_short_video_praise, String.valueOf(item.getLike_count()))
                 .setText(R.id.tv_short_video_look_count, String.valueOf(item.getView_count()))
                 .setText(R.id.tv_short_video_comment, String.valueOf(item.getComment_count()))
+                .setChecked(R.id.tv_short_video_praise, item.isLike())
                 .setGone(R.id.rl_short_video_share, false)
                 .setGone(R.id.tv_short_video_play, true)
                 .addOnClickListener(R.id.tv_short_video_play)
@@ -71,26 +72,27 @@ public class ShortVideoAdapter extends BaseQuickAdapter<ContentCmsInfoEntry, Bas
             case VIDEO_NULL:
                 break;
             case VIDEO_PLAY:
-                helper.setGone(R.id.tv_short_video_play, false);
+                helper.setGone(R.id.tv_short_video_play, false)
+                        .setGone(R.id.fl_short_video_video, true);
                 stopPlay();
                 if (portraintContainer == null) return;
-                if (portraintContainer.getChildCount() <= 0 || !(portraintContainer.getChildAt(0) instanceof VideoPlayView)) {
-                    portraintContainer.addView(videoPlayer, 0);
-                }
+                portraintContainer.addView(videoPlayer, 0);
                 if (videoPlayer != null) {
                     videoPlayer.start(item.getUrl());
                 }
                 break;
             case VIDEO_STOP:
-                helper.setGone(R.id.tv_short_video_play, true);
-                stopPlay();
+                helper.setGone(R.id.tv_short_video_play, true)
+                        .setGone(R.id.fl_short_video_video, false);
+//                stopPlay();
                 break;
             case VIDEO_PUSE:
                 break;
             case VIDEO_END:
                 stopPlay();
                 helper.setGone(R.id.rl_short_video_share, true)
-                        .setGone(R.id.tv_short_video_play, false);
+                        .setGone(R.id.tv_short_video_play, false)
+                        .setGone(R.id.fl_short_video_video, false);
                 break;
         }
     }

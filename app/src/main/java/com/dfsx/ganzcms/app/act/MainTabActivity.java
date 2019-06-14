@@ -39,6 +39,8 @@ import com.dfsx.ganzcms.app.push.NotificationMessageStartManager;
 import com.dfsx.ganzcms.app.view.LiveVideoPopupWindow;
 import com.dfsx.lzcms.liveroom.fragment.BaseAndroidWebFragment;
 import com.dfsx.lzcms.liveroom.view.adwareVIew.VideoAdwarePlayView;
+import com.dfsx.videoijkplayer.VideoPlayView;
+import com.dfsx.videoijkplayer.util.NetworkUtil;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 import com.loveplusplus.update.UpdateChecker;
@@ -82,6 +84,7 @@ public class MainTabActivity extends AbsVideoScreenSwitchActivity implements Com
     protected SystemBarTintManager systemBarTintManager;
     public FrameLayout mFlFullVideo;
     private ShortVideoFragment mShortVideoFragment = null;
+    private boolean isWifi;
 
     public FrameLayout getmFlFullVideo() {
         return mFlFullVideo;
@@ -123,6 +126,8 @@ public class MainTabActivity extends AbsVideoScreenSwitchActivity implements Com
             savedInstanceState.putParcelable("android:support:fragments", null);
         }
         super.onCreate(savedInstanceState);
+        int type = NetworkUtil.getConnectivityStatus(this);
+        isWifi = type != NetworkUtil.TYPE_WIFI ? false : true;
         UpdateChecker.checkForDialog(MainTabActivity.this, App.getInstance().getPotrtServerUrl() + "/public/apps");
         systemBarTintManager = Util.applyKitKatTranslucency(this,
                 getStatusBarColor());
@@ -152,6 +157,7 @@ public class MainTabActivity extends AbsVideoScreenSwitchActivity implements Com
 
         isOpenAdLink();
     }
+
 
     public void isOpenAdLink() {
         if (PictureManager.getInstance().isIsshowAd()) {
@@ -547,7 +553,9 @@ public class MainTabActivity extends AbsVideoScreenSwitchActivity implements Com
                     transaction.add(R.id.container, liveFrag, TAG_LIVE_FRAG);
                 } else {
                     transaction.show(liveFrag);
-                    mShortVideoFragment.playVideo();
+                    if (isWifi) {
+                        mShortVideoFragment.playVideo();
+                    }
                     mShortVideoFragment.startBannerScroll();
                 }
                 RxBus.getInstance().post(new TabItem(TabItem.BOTTOM_TAB_LIVE));
@@ -654,6 +662,10 @@ public class MainTabActivity extends AbsVideoScreenSwitchActivity implements Com
     @Override
     public void onBackPressed() {
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            if (isShortVideoFragmetVideoFull()){
+                mShortVideoFragment.onBackPressed();
+                return;
+            }
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             return;
         }
@@ -676,22 +688,34 @@ public class MainTabActivity extends AbsVideoScreenSwitchActivity implements Com
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
         //        if (currentShowId != R.id.bottom_tab_live) {
         //            return;
         //        }
-        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            if (activityContainer != null && systemBarTintManager != null) {
-                activityContainer.setPadding(0, systemBarTintManager.getConfig().getStatusBarHeight(), 0, 0);
+        if (isShortVideoFragmetVideoFull()){
+            if (mShortVideoFragment != null) {
+                mShortVideoFragment.onActivityConfigurationChanged(newConfig, mFlFullVideo);
             }
-        } else {
-            if (activityContainer != null) {
-                activityContainer.setPadding(0, 0, 0, 0);
+        }else {
+            if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+                if (activityContainer != null && systemBarTintManager != null) {
+                    activityContainer.setPadding(0, systemBarTintManager.getConfig().getStatusBarHeight(), 0, 0);
+                }
+            } else {
+                if (activityContainer != null) {
+                    activityContainer.setPadding(0, 0, 0, 0);
+                }
             }
         }
-        super.onConfigurationChanged(newConfig);
-
     }
-
+    @Override
+    protected boolean isShortVideoFragmetVideoFull() {
+        if (mShortVideoFragment != null) {
+            return mShortVideoFragment.isPaly();
+        }else {
+            return false;
+        }
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

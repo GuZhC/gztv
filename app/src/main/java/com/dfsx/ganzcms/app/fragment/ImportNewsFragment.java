@@ -270,6 +270,7 @@ public class ImportNewsFragment extends HeadLineFragment implements View.OnClick
                     item = null;
                 }
             }
+            itemList.add(new ScrollItem("直播", new LiveWebLinkFragment()));
         }
         //   LogUtils.e("TAG", "initAction()= " + itemList.size());
         fragments.clear();

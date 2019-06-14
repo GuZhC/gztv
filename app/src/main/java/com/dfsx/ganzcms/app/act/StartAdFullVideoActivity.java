@@ -66,6 +66,11 @@ public class StartAdFullVideoActivity extends AbsVideoScreenSwitchActivity {
         videoPlayer.setLayoutParams(params);
     }
 
+    @Override
+    protected boolean isShortVideoFragmetVideoFull() {
+        return false;
+    }
+
     public void initData() {
         List<MediaItem> datalist = new ArrayList<>();
         if (isStartApp) {

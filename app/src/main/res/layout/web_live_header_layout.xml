@@ -5,6 +5,8 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
+        android:id="@+id/rl_web_live_toolbar"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/top_bar_bankground">

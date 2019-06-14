@@ -52,7 +52,7 @@ public class AppSession {
     /**
      * 控制使用内网测试，还是使用外网的域名
      */
-    private static final boolean isTestHost = true;
+    private static final boolean isTestHost = false;
     /**
      * 内网测试的host
      */

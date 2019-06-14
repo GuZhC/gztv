@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.ViewGroup;
 import com.dfsx.core.common.act.BaseActivity;
 import com.dfsx.videoijkplayer.VideoPlayView;
@@ -50,6 +51,7 @@ public abstract class AbsVideoActivity extends BaseActivity {
             }
         }
     }
+
 
     /**
      * 向现实Video的容器里添加VideoPlayer

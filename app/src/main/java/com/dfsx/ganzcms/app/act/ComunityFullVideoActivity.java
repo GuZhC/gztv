@@ -40,6 +40,11 @@ public class ComunityFullVideoActivity extends AbsVideoScreenSwitchActivity {
         initView();
     }
 
+    @Override
+    protected boolean isShortVideoFragmetVideoFull() {
+        return false;
+    }
+
     private void initView() {
         //        portraintLayout = findViewById(R.id.portrait_layout);
         fullScreenLayout = (FrameLayout) findViewById(R.id.full_screen_layout);

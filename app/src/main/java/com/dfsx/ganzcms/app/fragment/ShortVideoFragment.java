@@ -1,6 +1,7 @@
 package com.dfsx.ganzcms.app.fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,16 +18,16 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.*;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.dfsx.core.common.Util.JsonCreater;
 import com.dfsx.core.common.Util.Util;
 import com.dfsx.core.exception.ApiException;
 import com.dfsx.core.network.datarequest.DataRequest;
 import com.dfsx.ganzcms.app.App;
 import com.dfsx.ganzcms.app.R;
 import com.dfsx.ganzcms.app.act.CmsVideoActivity;
+import com.dfsx.ganzcms.app.act.MainTabActivity;
 import com.dfsx.ganzcms.app.act.ShortVideoDetailActivity;
 import com.dfsx.ganzcms.app.adapter.ShortVideoAdapter;
 import com.dfsx.ganzcms.app.adapter.ShortVideoViewPagerAdapter;
@@ -36,6 +37,7 @@ import com.dfsx.ganzcms.app.business.HeadlineListManager;
 import com.dfsx.ganzcms.app.model.ColumnCmsEntry;
 import com.dfsx.ganzcms.app.model.ContentCmsEntry;
 import com.dfsx.ganzcms.app.model.ContentCmsInfoEntry;
+import com.dfsx.ganzcms.app.util.LSUtils;
 import com.dfsx.lzcms.liveroom.util.IsLoginCheck;
 import com.dfsx.lzcms.liveroom.view.PullToRefreshRecyclerView;
 import com.dfsx.lzcms.liveroom.view.SharePopupwindow;
@@ -44,6 +46,7 @@ import com.dfsx.thirdloginandshare.share.ShareContent;
 import com.dfsx.thirdloginandshare.share.ShareFactory;
 import com.dfsx.thirdloginandshare.share.SharePlatform;
 import com.dfsx.videoijkplayer.VideoPlayView;
+import com.dfsx.videoijkplayer.util.NetworkUtil;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import rx.Observable;
 import rx.Observer;
@@ -86,10 +89,15 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
     ContentCmsApi _contentCmsApi;
     private IsLoginCheck mloginCheck;
     int mPager = 1;
+    private boolean isWifi;
+    private boolean isPlayAgain;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        videoPlayer = new VideoPlayView(getActivity());
+        int type = NetworkUtil.getConnectivityStatus(getContext());
+        isWifi = type != NetworkUtil.TYPE_WIFI ? false : true;
         initRequster();
     }
 
@@ -176,12 +184,13 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
 
                                     @Override
                                     public void onNext(List<ContentCmsInfoEntry> data) {
-                                        Log.e("mPager","  "+mPager);
+//                                        Log.e("mPager", "  " + mPager);
                                         if (!isAppend) {
 //                                            stopPVideo();
                                             mVideoData.clear();
                                             mVideoData.addAll(data);
-                                            mVideoData.get(0).setVideo_state(ShortVideoAdapter.VIDEO_PLAY);
+                                            if (isWifi)
+                                                mVideoData.get(0).setVideo_state(ShortVideoAdapter.VIDEO_PLAY);
                                             adapter.notifyDataSetChanged();
                                             inintView();
                                         } else {
@@ -236,16 +245,14 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         videoRecycler = mPullToRefreshRecyclerView.getRefreshableView();
         videoFullLayout = (FrameLayout) view.findViewById(R.id.fl_short_video_full);
         //设置播放器
-        videoPlayer = new VideoPlayView(getActivity());
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         videoPlayer.setLayoutParams(params);
-        videoPlayer.setFullGone();
+//        videoPlayer.setFullGone();
         videoPlayer.setMuteAudioe();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             videoPlayer.setTransitionName("comm_short_video");
         }
 
-//        isWifi = type != NetworkUtil.TYPE_WIFI ? false : true; todo
         inintView();
         initData();
     }
@@ -311,9 +318,8 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         initListener();
     }
 
-    //    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
+    public void onActivityConfigurationChanged(Configuration newConfig,FrameLayout videoFullFlLayout) {
+        if (!isPlay) return;
         if (videoPlayer != null) {
             videoPlayer.onChanged(newConfig);
             ViewGroup view = (ViewGroup) videoPlayer.getParent();
@@ -321,28 +327,49 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
                 view.removeView(videoPlayer);
             }
             if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-                FrameLayout portraintContainer = (FrameLayout) adapter.getViewByPosition(videoRecycler, playPostion, R.id.fl_short_video_video);
-                if (portraintContainer == null) return;
-                if (portraintContainer.getChildCount() <= 0 ||
-                        !(portraintContainer.getChildAt(0) instanceof VideoPlayView)) {
-                    portraintContainer.addView(videoPlayer, 0);
+                FrameLayout videoLyout =(FrameLayout) adapter.getViewByPosition(videoRecycler, playPostion, R.id.fl_short_video_video);
+                if (videoLyout != null) {
+                    videoLyout.removeAllViews();
+                    videoLyout.addView(videoPlayer, 0);
                 }
             } else {
-//                videoFullLayout = ((MainTabActivity)getActivity()).getmFlFullVideo();
-                if (videoFullLayout.getChildCount() <= 0 ||
-                        !(videoFullLayout.getChildAt(0) instanceof VideoPlayView)) {
-                    videoFullLayout.addView(videoPlayer, 0);
+                if (videoFullFlLayout != null) {
+                    videoFullFlLayout.removeAllViews();
+                    videoFullFlLayout.addView(videoPlayer, 0);
                 }
 
             }
         }
+    }
+    public void onBackPressed() {
+        if (videoPlayer.isFullScreen()) {
+            videoPlayer.switchScreen();
+            return;
+        }
+    }
+    public boolean isPaly() {
+        return isPlay;
+    }
+    public VideoPlayView getVideoPlayer() {
+        return videoPlayer;
     }
 
     @Override
     public void onResume() {
         super.onResume();
         startBannerScroll();
-        playVideo();
+        if (isWifi) {
+            playVideo();
+        }
+        if (getResumePlayerStatus()) {
+            videoPlayer.start();
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
     }
 
     @Override
@@ -350,6 +377,13 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         super.onPause();
         stopBannerScroll();
         stopPVideo();
+        clearVideoPlayStatus();
+        if (videoPlayer.isPlay()) {
+            saveVideoPlayStatus();
+            videoPlayer.pause();
+        } else if (!videoPlayer.isInPlaybackState()) {
+            videoPlayer.release();
+        }
     }
 
     @Override
@@ -365,6 +399,26 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         videoPlayer.release();
         videoPlayer.onDestroy();
         videoPlayer = null;
+    }
+
+    private boolean getResumePlayerStatus() {
+        String key = "ABsVideo_play_" + getClass().getName();
+        SharedPreferences sp = getContext().getSharedPreferences(key, 0);
+        boolean isPaly = sp.getBoolean(key, false);
+        sp.edit().clear().commit();
+        return isPaly;
+    }
+
+    private void saveVideoPlayStatus() {
+        String key = "ABsVideo_play_" + getClass().getName();
+        SharedPreferences sp = getContext().getSharedPreferences(key, 0);
+        sp.edit().putBoolean(key, videoPlayer.isPlay()).commit();
+    }
+
+    private void clearVideoPlayStatus() {
+        String key = "ABsVideo_play_" + getClass().getName();
+        SharedPreferences sp = getContext().getSharedPreferences(key, 0);
+        sp.edit().clear().commit();
     }
 
     private void initListener() {
@@ -409,7 +463,9 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
                 super.onScrollStateChanged(recyclerView, newState);
                 //静止的时候
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    playVideo();
+                    if (isWifi) {
+                        playVideo();
+                    }
                     if (playPostion == 1) {
                         startBannerScroll();
                     } else {
@@ -469,7 +525,7 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
     public void stopPVideo() {
         if (mVideoData.isEmpty()) return;
         if (isPlay) {
-            videoPlayer.stop();
+            videoPlayer.pause();
             isPlay = false;
             mVideoData.get(playPostion - 1).setVideo_state(ShortVideoAdapter.VIDEO_STOP);
             adapter.notifyItemChanged(playPostion);
@@ -485,14 +541,18 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
             mVideoData.get(newPosition - 1).setVideo_state(ShortVideoAdapter.VIDEO_PLAY);
             playPostion = newPosition;
             adapter.notifyItemChanged(newPosition);
+            isPlayAgain = false;
             Log.e("play", "setPlay: 播放：" + newPosition);
         }
     }
+
     private void playAgain(int position) {
+        isPlayAgain = true;
         stopPVideo();
         newPosition = position + 1;
         View nowView = mLayoutManager.findViewByPosition(position + 1);
         videoRecycler.smoothScrollBy(0, nowView.getTop());
+        playVideo();
     }
 
     @Override
@@ -533,10 +593,21 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
 //                Log.e("play", "setPlay: cb_short_video_sound：" + newPosition);
                 break;
             case R.id.tv_short_video_praise:
-                ContentCmsInfoEntry nowVideoData = mVideoData.get(position + 1);
-//                if (nowVideoData.)
-                addPraisebtn(nowVideoData.getId());
-                Log.e("play", "setPlay: tv_short_video_praise：" + newPosition);
+                ContentCmsInfoEntry nowVideoData = mVideoData.get(position);
+                CheckBox cbPrise = (CheckBox) view;
+                int priseNum = (int) nowVideoData.getLike_count();
+                if (cbPrise.isChecked()) {
+                    nowVideoData.setLike_count(nowVideoData.getLike_count() + 1);
+                    cbPrise.setText(nowVideoData.getLike_count() + "");
+                    addPraisebtn(nowVideoData.getId(), nowVideoData, cbPrise);
+                } else {
+                    if (priseNum > 0) {
+                        nowVideoData.setLike_count(nowVideoData.getLike_count() - 1);
+                        cbPrise.setText(nowVideoData.getLike_count() + "");
+                        cbPrise.setText(nowVideoData.getLike_count() + "");
+                    }
+                    cancelCmsPraise(nowVideoData.getId(), nowVideoData, cbPrise);
+                }
                 break;
             case R.id.btn_short_video_look_again:
                 playAgain(position);
@@ -545,20 +616,71 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
     }
 
 
-    public void addPraisebtn(long id) {
+    /**
+     * 点赞
+     *
+     * @param id
+     * @param nowVideoData
+     * @param cbPrise
+     */
+    public void addPraisebtn(long id, final ContentCmsInfoEntry nowVideoData, final CheckBox cbPrise) {
         if (!mloginCheck.checkLogin()) return;
-        _contentCmsApi.pubContentPraise(id,  new DataRequest.DataCallback() {
+        _contentCmsApi.pubContentPraise(id, new DataRequest.DataCallback() {
             @Override
             public void onSuccess(boolean isAppend, Object data) {
-
+                nowVideoData.setLike(true);
+//                LSUtils.toastMsgFunction(getContext(), "点赞成功");
             }
 
             @Override
             public void onFail(ApiException e) {
-
+                if (cbPrise != null) {
+                    cbPrise.setChecked(false);
+                }
+                nowVideoData.setLike(false);
+                nowVideoData.setLike_count(nowVideoData.getLike_count() - 1);
+                cbPrise.setText(nowVideoData.getLike_count() + "");
+                LSUtils.toastMsgFunction(getContext(), "点赞失败");
             }
         });
     }
+
+    /**
+     * 取消点赞
+     *
+     * @param id
+     * @param nowVideoData
+     * @param cbPrise
+     */
+    public void cancelCmsPraise(long id, final ContentCmsInfoEntry nowVideoData, final CheckBox cbPrise) {
+        if (!mloginCheck.checkLogin()) return;
+        _contentCmsApi.cancelCmsPraise(id, new DataRequest.DataCallback() {
+            @Override
+            public void onSuccess(boolean isAppend, Object data) {
+                nowVideoData.setLike(false);
+//                LSUtils.toastMsgFunction(getContext(), "取消点赞成功");
+            }
+
+            @Override
+            public void onFail(ApiException e) {
+                nowVideoData.setLike_count(nowVideoData.getLike_count() + 1);
+                nowVideoData.setLike(true);
+                if (cbPrise != null) {
+                    cbPrise.setText(nowVideoData.getLike_count() + "");
+                    cbPrise.setChecked(true);
+                }
+                Log.e("onFail: ", e.getLocalizedMessage());
+                LSUtils.toastMsgFunction(getContext(), "取消点赞失败");
+            }
+        });
+    }
+
+
+    /**
+     * 分享弹窗
+     *
+     * @param pos
+     */
     public void shareWnd(final int pos) {
         if (sharePopupwindow == null) {
             sharePopupwindow = new SharePopupwindow(getActivity());
@@ -581,15 +703,12 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         sharePopupwindow.show(rootView);
     }
 
+    /**
+     * 分享
+     *
+     * @param pos
+     */
     public void onSharePlatfrom(SharePlatform platform, int pos) {
-//        ShareContent info = new ShareContent();
-//        info.title = "mtitle";
-//        info.type = ShareContent.UrlType.WebPage;
-//        String server = App.getInstance().getBaseUrl();
-//        info.thumb = "mthumb";
-//        info.url = server;
-//        info.disc = "mInfo";
-        ++pos;
         ContentCmsInfoEntry mCotentInfoeny = mVideoData.get(pos);
         if (mCotentInfoeny == null) return;
         ShareContent content = new ShareContent();
