@@ -53,7 +53,7 @@ import tv.danmaku.ijk.media.player.IMediaPlayer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQuickAdapter.OnItemChildClickListener {
+  public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQuickAdapter.OnItemChildClickListener {
 
     private SystemBarTintManager systemBarTintManager;
     private SharePopupwindow sharePopupwindow;
@@ -483,17 +483,9 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
                 }
                 ContentCmsInfoEntry nowVideoData = mVideoData.get(position).getContentCmsInfoEntry();
                 CheckBox cbPrise = (CheckBox) view;
-                int priseNum = (int) nowVideoData.getLike_count();
                 if (cbPrise.isChecked()) {
-                    nowVideoData.setLike_count(nowVideoData.getLike_count() + 1);
-                    cbPrise.setText(nowVideoData.getLike_count() + "");
                     addPraisebtn(nowVideoData.getId(), nowVideoData, cbPrise);
                 } else {
-                    if (priseNum > 0) {
-                        nowVideoData.setLike_count(nowVideoData.getLike_count() - 1);
-                        cbPrise.setText(nowVideoData.getLike_count() + "");
-                        cbPrise.setText(nowVideoData.getLike_count() + "");
-                    }
                     cancelCmsPraise(nowVideoData.getId(), nowVideoData, cbPrise);
                 }
                 break;
@@ -662,7 +654,12 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
      * @param cbPrise
      */
     public void addPraisebtn(long id, final ContentCmsInfoEntry nowVideoData, final CheckBox cbPrise) {
-        if (!mloginCheck.checkLogin()) return;
+        if (!mloginCheck.checkLogin()){
+            nowVideoData.setLike(false);
+            return;
+        }
+        nowVideoData.setLike_count(nowVideoData.getLike_count() + 1);
+        cbPrise.setText(nowVideoData.getLike_count() + "");
         mContentCmsApi.pubContentPraise(id, new DataRequest.DataCallback() {
             @Override
             public void onSuccess(boolean isAppend, Object data) {
@@ -691,7 +688,15 @@ public class ShortVideoDetailActivity extends AbsVideoActivity implements BaseQu
      * @param cbPrise
      */
     public void cancelCmsPraise(long id, final ContentCmsInfoEntry nowVideoData, final CheckBox cbPrise) {
-        if (!mloginCheck.checkLogin()) return;
+        if (!mloginCheck.checkLogin()){
+            cbPrise.setChecked(true);
+            return;
+        }
+        if ((int) nowVideoData.getLike_count() > 0) {
+            nowVideoData.setLike_count(nowVideoData.getLike_count() - 1);
+            cbPrise.setText(nowVideoData.getLike_count() + "");
+            cbPrise.setText(nowVideoData.getLike_count() + "");
+        }
         mContentCmsApi.cancelCmsPraise(id, new DataRequest.DataCallback() {
             @Override
             public void onSuccess(boolean isAppend, Object data) {

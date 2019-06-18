@@ -156,6 +156,7 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
                                          public ContentCmsInfoEntry call(ContentCmsInfoEntry cmsInfoEntry) {
                                              videoGroups = cmsInfoEntry.getVideoGroups();
                                              if (videoGroups != null && !videoGroups.isEmpty()) {
+                                                 //获取时长
                                                  ContentCmsInfoEntry.VideosBean videosBean = _contentCmsApi.getWebVideoBeanById(videoGroups.get(0).getId());
                                                  if (videosBean != null) {
                                                      cmsInfoEntry.setVideoDuration(videosBean.getDuration());
@@ -194,8 +195,9 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
                                             adapter.notifyDataSetChanged();
                                             inintView();
                                         } else {
+                                            int lSize =  mVideoData.size();
                                             mVideoData.addAll(data);
-                                            adapter.notifyDataSetChanged();
+                                            adapter.notifyItemRangeChanged(lSize+1,data.size());
                                         }
                                         if (!data.isEmpty())
                                             ++mPager;
@@ -358,9 +360,6 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
     public void onResume() {
         super.onResume();
         startBannerScroll();
-        if (isWifi) {
-            playVideo();
-        }
         if (getResumePlayerStatus()) {
             videoPlayer.start();
         }
@@ -550,8 +549,10 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
         isPlayAgain = true;
         stopPVideo();
         newPosition = position + 1;
-        View nowView = mLayoutManager.findViewByPosition(position + 1);
-        videoRecycler.smoothScrollBy(0, nowView.getTop());
+        if (newPosition!=1){
+            View nowView = mLayoutManager.findViewByPosition(position + 1);
+            videoRecycler.smoothScrollBy(0, nowView.getTop());
+        }
         playVideo();
     }
 
@@ -595,17 +596,9 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
             case R.id.tv_short_video_praise:
                 ContentCmsInfoEntry nowVideoData = mVideoData.get(position);
                 CheckBox cbPrise = (CheckBox) view;
-                int priseNum = (int) nowVideoData.getLike_count();
                 if (cbPrise.isChecked()) {
-                    nowVideoData.setLike_count(nowVideoData.getLike_count() + 1);
-                    cbPrise.setText(nowVideoData.getLike_count() + "");
                     addPraisebtn(nowVideoData.getId(), nowVideoData, cbPrise);
                 } else {
-                    if (priseNum > 0) {
-                        nowVideoData.setLike_count(nowVideoData.getLike_count() - 1);
-                        cbPrise.setText(nowVideoData.getLike_count() + "");
-                        cbPrise.setText(nowVideoData.getLike_count() + "");
-                    }
                     cancelCmsPraise(nowVideoData.getId(), nowVideoData, cbPrise);
                 }
                 break;
@@ -624,7 +617,12 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
      * @param cbPrise
      */
     public void addPraisebtn(long id, final ContentCmsInfoEntry nowVideoData, final CheckBox cbPrise) {
-        if (!mloginCheck.checkLogin()) return;
+        if (!mloginCheck.checkLogin()){
+            nowVideoData.setLike(false);
+            return;
+        }
+        nowVideoData.setLike_count(nowVideoData.getLike_count() + 1);
+        cbPrise.setText(nowVideoData.getLike_count() + "");
         _contentCmsApi.pubContentPraise(id, new DataRequest.DataCallback() {
             @Override
             public void onSuccess(boolean isAppend, Object data) {
@@ -653,7 +651,15 @@ public class ShortVideoFragment extends Fragment implements BaseQuickAdapter.OnI
      * @param cbPrise
      */
     public void cancelCmsPraise(long id, final ContentCmsInfoEntry nowVideoData, final CheckBox cbPrise) {
-        if (!mloginCheck.checkLogin()) return;
+        if (!mloginCheck.checkLogin()) {
+            cbPrise.setChecked(true);
+            return;
+        }
+        if ((int) nowVideoData.getLike_count() > 0) {
+            nowVideoData.setLike_count(nowVideoData.getLike_count() - 1);
+            cbPrise.setText(nowVideoData.getLike_count() + "");
+            cbPrise.setText(nowVideoData.getLike_count() + "");
+        }
         _contentCmsApi.cancelCmsPraise(id, new DataRequest.DataCallback() {
             @Override
             public void onSuccess(boolean isAppend, Object data) {

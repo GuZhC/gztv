@@ -25,6 +25,7 @@
     <com.dfsx.lzcms.liveroom.view.PullToRefreshRecyclerView
             android:layout_marginTop="16dp"
             android:id="@+id/recycler_short_video"
+            android:background="#f7f7f7"
             android:layout_below="@id/ll_short_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
